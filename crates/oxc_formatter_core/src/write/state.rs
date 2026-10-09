@@ -16,9 +16,9 @@ pub struct FormatState<'ast, C> {
     // For the document IR printing process
     /// The interned elements that have been printed to this point
     printed_interned_elements: FxHashMap<Interned<'ast>, usize>,
-    /// Heap staging vector shared by all [`crate::HeapVecBuffer`]s of this format run;
-    /// see [`crate::HeapVecBuffer`] for the watermark scheme keeping their views disjoint.
-    scratch: Vec<FormatElement<'ast>>,
+    /// The element stack every [`crate::Formatter`] of this format run writes into;
+    /// see [`crate::Formatter`] for how their views stay disjoint.
+    elements: Vec<FormatElement<'ast>>,
 }
 
 impl<C: std::fmt::Debug> std::fmt::Debug for FormatState<'_, C> {
@@ -49,7 +49,7 @@ impl<'ast, C> FormatState<'ast, C> {
             context,
             session,
             printed_interned_elements: FxHashMap::default(),
-            scratch: Vec::new(),
+            elements: Vec::new(),
         }
     }
 
@@ -58,14 +58,16 @@ impl<'ast, C> FormatState<'ast, C> {
         &self.session
     }
 
-    /// The heap staging vector shared by all [`crate::HeapVecBuffer`]s of this format run.
-    pub(crate) fn scratch(&self) -> &[FormatElement<'ast>] {
-        &self.scratch
+    /// The element stack every [`crate::Formatter`] of this format run writes into.
+    #[inline]
+    pub(crate) fn elements(&self) -> &[FormatElement<'ast>] {
+        &self.elements
     }
 
-    /// Mutable access to the heap staging vector; see [`FormatState::scratch`].
-    pub(crate) fn scratch_mut(&mut self) -> &mut Vec<FormatElement<'ast>> {
-        &mut self.scratch
+    /// Mutable access to the element stack; see [`FormatState::elements`].
+    #[inline]
+    pub(crate) fn elements_mut(&mut self) -> &mut Vec<FormatElement<'ast>> {
+        &mut self.elements
     }
 
     /// Returns the allocator used for arena-allocating format elements.
