@@ -1462,6 +1462,32 @@ mod test {
     }
 
     #[test]
+    fn test_angular_template_directives() {
+        let args = &["-c", ".oxlintrc.json", "--report-unused-disable-directives"];
+        Tester::new()
+            .with_cwd("fixtures/cli/angular_template_directives".into())
+            .test_and_snapshot(args);
+    }
+
+    #[test]
+    fn test_angular_template_directives_plugin_off() {
+        // `<!-- -->` directives are neither applied nor reported without the plugin.
+        let args = &["-c", ".oxlintrc-plugin-off.json", "--report-unused-disable-directives"];
+        Tester::new()
+            .with_cwd("fixtures/cli/angular_template_directives".into())
+            .test_and_snapshot(args);
+    }
+
+    #[test]
+    fn test_angular_template_files() {
+        // Only `src/app` templates, `.html` and inline, are linted, except `*.generated.html`.
+        let args = &["-c", ".oxlintrc.json"];
+        Tester::new()
+            .with_cwd("fixtures/cli/angular_template_files".into())
+            .test_and_snapshot(args);
+    }
+
+    #[test]
     fn test_report_unused_directives_from_config() {
         // Verify that `reportUnusedDisableDirectives` in the config file enables reporting
         // without needing a CLI flag.

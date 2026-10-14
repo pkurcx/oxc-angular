@@ -1,0 +1,11 @@
+{
+  "plugins": ["typescript"],
+  "overrides": [
+    {
+      "files": ["src/app/**/*.{html,ts}"],
+      "excludeFiles": ["**/*.generated.html"],
+      "plugins": ["angular-template"],
+      "rules": { "angular-template/no-any": "error" }
+    }
+  ]
+}

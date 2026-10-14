@@ -1,0 +1,80 @@
+---
+source: apps/oxlint/src/lsp/tester.rs
+assertion_line: 270
+---
+########## 
+Linted file: fixtures/lsp/angular_template/app.component.html
+----------
+########## Diagnostic Reports
+File URI: file://<variable>/fixtures/lsp/angular_template/app.component.html
+
+code: "angular-template(no-any)"
+code_description.href: "https://oxc.rs/docs/guide/usage/linter/rules/angular_template/no-any.html"
+message: String("Avoid using \"$any\" in templates\nhelp: Remove $any")
+range: Range { start: Position { line: 0, character: 8 }, end: Position { line: 0, character: 15 } }
+related_information[0].message: ""
+related_information[0].location.uri: "file://<variable>/fixtures/lsp/angular_template/app.component.html"
+related_information[0].location.range: Range { start: Position { line: 0, character: 8 }, end: Position { line: 0, character: 15 } }
+severity: Some(Warning)
+source: Some("oxc")
+tags: None
+
+########### Code Actions/Commands
+CodeAction: 
+Title: Remove $any
+Is Preferred: Some(true)
+TextEdit: TextEdit {
+    range: Range {
+        start: Position {
+            line: 0,
+            character: 8,
+        },
+        end: Position {
+            line: 0,
+            character: 15,
+        },
+    },
+    new_text: "x",
+}
+
+
+########### Fix All Action
+None
+########## 
+Linted file: fixtures/lsp/angular_template/app.component.ts
+----------
+########## Diagnostic Reports
+File URI: file://<variable>/fixtures/lsp/angular_template/app.component.ts
+
+code: "angular-template(no-any)"
+code_description.href: "https://oxc.rs/docs/guide/usage/linter/rules/angular_template/no-any.html"
+message: String("Avoid using \"$any\" in templates\nhelp: Remove $any")
+range: Range { start: Position { line: 4, character: 12 }, end: Position { line: 4, character: 19 } }
+related_information[0].message: ""
+related_information[0].location.uri: "file://<variable>/fixtures/lsp/angular_template/app.component.ts"
+related_information[0].location.range: Range { start: Position { line: 4, character: 12 }, end: Position { line: 4, character: 19 } }
+severity: Some(Warning)
+source: Some("oxc")
+tags: None
+
+########### Code Actions/Commands
+CodeAction: 
+Title: Remove $any
+Is Preferred: Some(true)
+TextEdit: TextEdit {
+    range: Range {
+        start: Position {
+            line: 4,
+            character: 12,
+        },
+        end: Position {
+            line: 4,
+            character: 19,
+        },
+    },
+    new_text: "x",
+}
+
+
+########### Fix All Action
+None

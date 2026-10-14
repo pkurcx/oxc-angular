@@ -1,0 +1,4 @@
+{
+  "plugins": ["angular-template"],
+  "rules": { "angular-template/no-any": "warn" }
+}

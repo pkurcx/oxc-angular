@@ -46,6 +46,11 @@ impl<'a> JavaScriptSource<'a> {
         Self { source_text, source_type, start, is_partial: true, framework_options }
     }
 
+    /// Text of an Angular `.html` template section.
+    pub fn angular_template_text(&self) -> Option<&'a str> {
+        (self.framework_options == FrameworkOptions::AngularTemplate).then_some(self.source_text)
+    }
+
     pub fn as_str(&self) -> &'a str {
         &self.source_text[(self.start as usize)..]
     }

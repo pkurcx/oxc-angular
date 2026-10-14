@@ -402,6 +402,8 @@ Note: The following plugin names are reserved because they are implemented nativ
 - promise
 - node
 - vue
+- angular-template (includes @angular-eslint/template)
+- angular (includes @angular-eslint)
 - eslint
 
 If you need to use the JavaScript version of any of these plugins, provide a custom alias to avoid conflicts.
@@ -599,6 +601,8 @@ Note: The following plugin names are reserved because they are implemented nativ
 - promise
 - node
 - vue
+- angular-template (includes @angular-eslint/template)
+- angular (includes @angular-eslint)
 - eslint
 
 If you need to use the JavaScript version of any of these plugins, provide a custom alias to avoid conflicts.
@@ -624,7 +628,7 @@ omitted, the base config's plugins are used.
 
 ##### overrides[n].plugins[n]
 
-type: `"eslint" | "react" | "unicorn" | "typescript" | "oxc" | "import" | "jsdoc" | "jest" | "vitest" | "jsx-a11y" | "nextjs" | "react-perf" | "promise" | "node" | "vue"`
+type: `"eslint" | "react" | "unicorn" | "typescript" | "oxc" | "import" | "jsdoc" | "jest" | "vitest" | "jsx-a11y" | "nextjs" | "react-perf" | "promise" | "node" | "vue" | "angular-template" | "angular"`
 
 
 
@@ -654,7 +658,7 @@ The `plugins` array should reflect all of the plugins you want to use.
 
 ### plugins[n]
 
-type: `"eslint" | "react" | "unicorn" | "typescript" | "oxc" | "import" | "jsdoc" | "jest" | "vitest" | "jsx-a11y" | "nextjs" | "react-perf" | "promise" | "node" | "vue"`
+type: `"eslint" | "react" | "unicorn" | "typescript" | "oxc" | "import" | "jsdoc" | "jest" | "vitest" | "jsx-a11y" | "nextjs" | "react-perf" | "promise" | "node" | "vue" | "angular-template" | "angular"`
 
 
 

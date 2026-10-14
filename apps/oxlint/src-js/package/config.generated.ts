@@ -26,6 +26,8 @@ export type ExternalPluginEntry =
        * - promise
        * - node
        * - vue
+       * - angular-template (includes @angular-eslint/template)
+       * - angular (includes @angular-eslint)
        * - eslint
        *
        * If you need to use the JavaScript version of any of these plugins, provide a custom alias to avoid conflicts.
@@ -56,7 +58,9 @@ export type LintPluginOptionsSchema =
   | "react-perf"
   | "promise"
   | "node"
-  | "vue";
+  | "vue"
+  | "angular-template"
+  | "angular";
 export type LintPlugins = LintPluginOptionsSchema[];
 export type RuleNoConfig = AllowWarnDeny | [AllowWarnDeny];
 export type Mode2 = "as-needed" | "always" | "never";
@@ -886,6 +890,7 @@ export interface OxlintOverride {
  */
 export interface DummyRuleMap {
   "accessor-pairs"?: RuleNoConfig | [AllowWarnDeny, AccessorPairsConfig];
+  "angular-template/no-any"?: RuleNoConfig;
   "array-callback-return"?: RuleNoConfig | [AllowWarnDeny, ArrayCallbackReturn];
   "arrow-body-style"?: RuleNoConfig | [AllowWarnDeny, Mode2] | [AllowWarnDeny, Mode2, ArrowBodyStyleConfig];
   "block-scoped-var"?: RuleNoConfig;

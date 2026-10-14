@@ -5553,3 +5553,8 @@ impl RuleRunner for crate::rules::vue::valid_next_tick::ValidNextTick {
     ]));
     const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::Run;
 }
+
+impl RuleRunner for crate::rules::angular_template::no_any::NoAny {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}

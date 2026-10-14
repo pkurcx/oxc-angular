@@ -1,0 +1,48 @@
+---
+source: apps/oxlint/src/tester.rs
+assertion_line: 163
+---
+########## 
+arguments: -c .oxlintrc.json --report-unused-disable-directives
+working directory: fixtures/cli/angular_template_directives
+----------
+
+  ! Unused eslint-disable directive (no problems were reported).
+   ,-[app.component.html:3:1]
+ 2 | <div>{{ $any(x) }}</div>
+ 3 | <!-- eslint-disable-next-line @angular-eslint/template/no-any -->
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 4 | <div>{{ x }}</div>
+   `----
+
+  ! Unused eslint-disable directive (no problems were reported).
+   ,-[component.ts:5:5]
+ 4 |   template: `
+ 5 |     <!-- eslint-disable-next-line @angular-eslint/template/no-call-expression -->
+   :     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 6 |     <div>{{ f() }}</div>
+   `----
+
+  ! angular-template(no-any): Avoid using "$any" in templates
+    ,-[component.ts:13:33]
+ 12 | 
+ 13 | @Component({ template: `<div>{{ $any(b) }}</div>` })
+    :                                 ^^^^^^^
+ 14 | export class B {}
+    `----
+  help: Remove $any
+
+  x eslint(no-unused-vars): Function 'unused' is declared but never used.
+    ,-[component.ts:17:10]
+ 16 | // A template's directives do not reach the script.
+ 17 | function unused() {}
+    :          ^^^|^^
+    :             `-- 'unused' is declared here
+    `----
+  help: Consider removing this declaration.
+
+Found 3 warnings and 1 error.
+Finished in <variable>ms on 2 files with 70 rules using 1 threads.
+----------
+CLI result: LintFoundErrors
+----------

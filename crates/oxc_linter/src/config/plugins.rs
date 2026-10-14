@@ -68,6 +68,7 @@ pub fn plugin_display_name(plugin_name: &str) -> &str {
     match plugin_name {
         "jsx_a11y" => "jsx-a11y",
         "react_perf" => "react-perf",
+        "angular_template" => "angular-template",
         "nextjs" => "next",
         _ => plugin_name,
     }
@@ -121,6 +122,10 @@ bitflags! {
         const NODE = 1 << 12;
         /// `eslint-plugin-vue`
         const VUE = 1 << 13;
+        /// `@angular-eslint/eslint-plugin-template`
+        const ANGULAR_TEMPLATE = 1 << 14;
+        /// `@angular-eslint/eslint-plugin`
+        const ANGULAR = 1 << 15;
     }
 }
 
@@ -186,6 +191,10 @@ impl TryFrom<&str> for LintPlugins {
             "promise" => Ok(LintPlugins::PROMISE),
             "node" => Ok(LintPlugins::NODE),
             "vue" => Ok(LintPlugins::VUE),
+            "angular-template" | "angular_template" | "@angular-eslint/template" => {
+                Ok(LintPlugins::ANGULAR_TEMPLATE)
+            }
+            "angular" | "@angular-eslint" => Ok(LintPlugins::ANGULAR),
             // "eslint" is not really a plugin, so it's 'empty'. This has the added benefit of
             // making it the default value.
             "eslint" => Ok(LintPlugins::ESLINT),
@@ -211,6 +220,8 @@ impl From<LintPlugins> for &'static str {
             LintPlugins::PROMISE => "promise",
             LintPlugins::NODE => "node",
             LintPlugins::VUE => "vue",
+            LintPlugins::ANGULAR_TEMPLATE => "angular-template",
+            LintPlugins::ANGULAR => "angular",
             _ => "",
         }
     }
@@ -282,6 +293,8 @@ impl JsonSchema for LintPlugins {
             Promise,
             Node,
             Vue,
+            AngularTemplate,
+            Angular,
         }
 
         let enum_schema = r#gen.subschema_for::<LintPluginOptionsSchema>();

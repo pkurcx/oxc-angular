@@ -1407,6 +1407,12 @@ mod test {
     }
 
     #[test]
+    fn test_angular_template() {
+        Tester::new("fixtures/lsp/angular_template", json!({}))
+            .test_and_snapshot_multiple_file(&["app.component.html", "app.component.ts"]);
+    }
+
+    #[test]
     fn test_invalid_syntax_file() {
         Tester::new("fixtures/lsp/invalid_syntax", json!({}))
             .test_and_snapshot_multiple_file(&["debugger.ts", "invalid.vue"]);

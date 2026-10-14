@@ -984,6 +984,14 @@ pub(crate) mod vue {
     pub mod valid_next_tick;
 }
 
+/// <https://github.com/angular-eslint/angular-eslint/tree/main/packages/eslint-plugin-template>
+pub(crate) mod angular_template {
+    pub mod no_any;
+}
+
+/// <https://github.com/angular-eslint/angular-eslint/tree/main/packages/eslint-plugin>
+pub(crate) mod angular {}
+
 pub(crate) mod shared;
 
 // Re-export RuleEnum, RULES, and all rule type aliases from generated code

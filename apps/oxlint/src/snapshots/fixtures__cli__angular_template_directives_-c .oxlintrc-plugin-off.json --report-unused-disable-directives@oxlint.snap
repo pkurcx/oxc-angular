@@ -1,0 +1,23 @@
+---
+source: apps/oxlint/src/tester.rs
+assertion_line: 163
+---
+########## 
+arguments: -c .oxlintrc-plugin-off.json --report-unused-disable-directives
+working directory: fixtures/cli/angular_template_directives
+----------
+
+  x eslint(no-unused-vars): Function 'unused' is declared but never used.
+    ,-[component.ts:17:10]
+ 16 | // A template's directives do not reach the script.
+ 17 | function unused() {}
+    :          ^^^|^^
+    :             `-- 'unused' is declared here
+    `----
+  help: Consider removing this declaration.
+
+Found 0 warnings and 1 error.
+Finished in <variable>ms on 2 files with 69 rules using 1 threads.
+----------
+CLI result: LintFoundErrors
+----------

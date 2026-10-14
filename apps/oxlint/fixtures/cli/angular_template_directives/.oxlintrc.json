@@ -1,0 +1,7 @@
+{
+  "plugins": ["typescript", "angular-template"],
+  "rules": {
+    "no-unused-vars": "error",
+    "angular-template/no-any": "warn"
+  }
+}

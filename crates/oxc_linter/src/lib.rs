@@ -104,7 +104,7 @@ use crate::{
     loader::LINT_PARTIAL_LOADER_EXTENSIONS,
     rules::RuleEnum,
     timing::{RuleTimingRecorder, RuleTimingStat},
-    utils::iter_possible_jest_call_node,
+    utils::{iter_possible_jest_call_node, report_angular_template_diagnostics},
 };
 
 #[cfg(target_pointer_width = "64")]
@@ -395,10 +395,17 @@ impl Linter {
         // Pass 1: Run native rules on every sub host in turn
         loop {
             let semantic = ctx_host.semantic();
+            let is_angular_template = ctx_host.current_sub_host().angular_template_text().is_some();
             let rules = rules
                 .iter()
                 .filter(|(rule, _)| {
                     if rule.is_tsgolint_rule() {
+                        return false;
+                    }
+
+                    // An Angular `.html` template has only an empty script, which other rules
+                    // would misreport (e.g. as an empty file).
+                    if is_angular_template && rule.plugin_name() != "angular_template" {
                         return false;
                     }
 
@@ -485,17 +492,26 @@ impl Linter {
             }
         }
 
+        // Not reported by the rules, since the debug run above repeats them on the cached parse.
+        // Template directives only cover native rules, so their unused ones are known here.
+        report_angular_template_diagnostics(
+            &ctx_host,
+            self.options.report_unused_directive.filter(|severity| severity.is_warn_deny()),
+        );
+
         // Pass 2: Run JS plugin rules on every sub host in turn
         ctx_host.rewind_sub_hosts();
         loop {
-            self.run_external_rules(
-                &external_rules,
-                path,
-                &mut ctx_host,
-                allocator,
-                js_allocator_pool,
-                rule_timing_store,
-            );
+            if ctx_host.current_sub_host().angular_template_text().is_none() {
+                self.run_external_rules(
+                    &external_rules,
+                    path,
+                    &mut ctx_host,
+                    allocator,
+                    js_allocator_pool,
+                    rule_timing_store,
+                );
+            }
 
             if !ctx_host.next_sub_host() {
                 break;

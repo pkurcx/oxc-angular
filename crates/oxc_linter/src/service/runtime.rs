@@ -647,6 +647,9 @@ impl Runtime {
                                     section.source.start,
                                     ContextSubHostOptions {
                                         framework_options: section.source.framework_options,
+                                        angular_template_text: section
+                                            .source
+                                            .angular_template_text(),
                                         parser_tokens: section.parser_tokens,
                                         respect_eslint_disable_directives,
                                         ..Default::default()
@@ -788,6 +791,9 @@ impl Runtime {
                                         section.source.start,
                                         ContextSubHostOptions {
                                             framework_options: section.source.framework_options,
+                                            angular_template_text: section
+                                                .source
+                                                .angular_template_text(),
                                             parser_tokens: section.parser_tokens,
                                             respect_eslint_disable_directives,
                                             ..Default::default()
@@ -931,6 +937,9 @@ impl Runtime {
                                     section.source.start,
                                     ContextSubHostOptions {
                                         framework_options: section.source.framework_options,
+                                        angular_template_text: section
+                                            .source
+                                            .angular_template_text(),
                                         parser_tokens: section.parser_tokens,
                                         respect_eslint_disable_directives,
                                         ..Default::default()
@@ -1082,10 +1091,16 @@ impl Runtime {
             [Result<ResolvedModuleRecord, Vec<OxcDiagnostic>>; 1],
         >::with_capacity(section_sources.len());
         for section_source in section_sources {
+            // An Angular `.html` template has no script, so it is linted on an empty one.
+            let script_text = if section_source.angular_template_text().is_some() {
+                ""
+            } else {
+                section_source.source_text
+            };
             match self.process_source_section(
                 path,
                 allocator,
-                section_source.source_text,
+                script_text,
                 section_source.source_type,
                 check_syntax_errors,
             ) {

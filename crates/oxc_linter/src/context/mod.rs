@@ -19,11 +19,14 @@ use crate::{
     disable_directives::DisableDirectives,
     fixer::{Fix, FixKind, Message, PossibleFixes, RuleFix, RuleFixer},
     frameworks::FrameworkOptions,
-    utils::{ReactCompilerResults, build_react_compiler_results},
+    utils::{
+        AngularTemplate, ReactCompilerResults, build_angular_templates,
+        build_react_compiler_results,
+    },
 };
 
 mod host;
-pub use host::{ContextHost, ContextSubHost, ContextSubHostOptions};
+pub use host::{ContextHost, ContextSubHost, ContextSubHostOptions, imports_angular};
 
 /// Contains all of the state and context specific to this lint rule.
 ///
@@ -87,6 +90,32 @@ impl<'a> LintContext<'a> {
         self.parent.allocator()
     }
 
+    /// Source text of the current script block, or the template of an Angular `.html` file.
+    /// Shadows [`Semantic::source_text`], which is empty for the latter.
+    #[inline]
+    pub fn source_text(&self) -> &'a str {
+        self.parent.source_text()
+    }
+
+    /// The Angular templates of the file, parsed on first access.
+    pub fn angular_templates(&self) -> &[AngularTemplate<'a>] {
+        &self
+            .parent
+            .angular_templates
+            .get_or_init(|| build_angular_templates(&self.parent))
+            .templates
+    }
+
+    fn is_disabled_in_angular_template(&self, span: Span) -> bool {
+        self.current_plugin_name == "angular_template"
+            && self.parent.angular_templates.get().is_some_and(|templates| {
+                templates.templates.iter().any(|template| {
+                    template.contains(span)
+                        && template.directives.contains(self.current_rule_name, span)
+                })
+            })
+    }
+
     /// Shared per-file result of the React Compiler lint run, for the React
     /// Compiler family of rules. The compiler runs at most once per file, on
     /// first access; it never runs when no rule in the family is enabled.
@@ -118,7 +147,7 @@ impl<'a> LintContext<'a> {
     /// Get a snippet of source text covered by the given [`Span`]. For details,
     /// see [`Span::source_text`].
     pub fn source_range(&self, span: Span) -> &'a str {
-        span.source_text(self.parent.semantic().source_text())
+        span.source_text(self.parent.source_text())
     }
 
     /// Finds the next occurrence of the given token within a bounded span,
@@ -264,7 +293,9 @@ impl<'a> LintContext<'a> {
     /// Add a diagnostic message to the list of diagnostics. Outputs a diagnostic with the current rule
     /// name, severity, and a link to the rule's documentation URL.
     fn add_diagnostic(&self, mut message: Message) {
-        if self.parent.disable_directives().contains(self.current_rule_name, message.span) {
+        if self.is_disabled_in_angular_template(message.span)
+            || self.parent.disable_directives().contains(self.current_rule_name, message.span)
+        {
             return;
         }
         message.error = message

@@ -1027,6 +1027,13 @@ mod test {
             "react-perf/jsx-no-new-object-as-prop"
         );
         assert_eq!(super::normalize_rule_name("@next/next/no-img-element"), "next/no-img-element");
+        // Bare names shared with `angular-template` keep resolving to the older plugins.
+        assert_eq!(super::normalize_rule_name("eqeqeq"), "eqeqeq");
+        assert_eq!(super::normalize_rule_name("alt-text"), "jsx-a11y/alt-text");
+        assert_eq!(
+            super::normalize_rule_name("@angular-eslint/template/eqeqeq"),
+            "angular-template/eqeqeq"
+        );
     }
 
     #[test]

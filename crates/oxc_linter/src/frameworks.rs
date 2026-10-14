@@ -108,6 +108,7 @@ pub fn has_jest_imports(module_record: &ModuleRecord) -> bool {
 #[derive(Debug, Clone, Copy, Eq, PartialEq)]
 
 pub enum FrameworkOptions {
-    Default,  // default
-    VueSetup, // context is inside `<script setup>`
+    Default,         // default
+    VueSetup,        // context is inside `<script setup>`
+    AngularTemplate, // an Angular `.html` template, which has no script
 }

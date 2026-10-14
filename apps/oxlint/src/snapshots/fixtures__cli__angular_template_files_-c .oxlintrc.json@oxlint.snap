@@ -1,0 +1,29 @@
+---
+source: apps/oxlint/src/tester.rs
+---
+########## 
+arguments: -c .oxlintrc.json
+working directory: fixtures/cli/angular_template_files
+----------
+
+  x angular-template(no-any): Avoid using "$any" in templates
+   ,-[src/app/app.component.html:1:9]
+ 1 | <div>{{ $any(x) }}</div>
+   :         ^^^^^^^
+   `----
+  help: Remove $any
+
+  x angular-template(no-any): Avoid using "$any" in templates
+   ,-[src/app/inline.component.ts:3:57]
+ 2 | 
+ 3 | @Component({ selector: "app-inline", template: "<div>{{ $any(x) }}</div>" })
+   :                                                         ^^^^^^^
+ 4 | export class InlineComponent {}
+   `----
+  help: Remove $any
+
+Found 0 warnings and 2 errors.
+Finished in <variable>ms on 6 files with 70 rules using 1 threads.
+----------
+CLI result: LintFoundErrors
+----------

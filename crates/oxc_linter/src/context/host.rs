@@ -25,7 +25,7 @@ use crate::{
     module_record::ModuleRecord,
     options::LintOptions,
     rules::RuleEnum,
-    utils::ReactCompilerResults,
+    utils::{AngularTemplates, ReactCompilerResults},
 };
 
 #[cfg(not(test))]
@@ -50,6 +50,9 @@ pub struct ContextSubHost<'a> {
     pub(super) parser_tokens: ArenaBox<'a, [Token]>,
     /// The source text offset of the sub host
     pub(super) source_text_offset: u32,
+    /// Text of an Angular `.html` template, linted on an empty script.
+    pub(super) angular_template_text: Option<&'a str>,
+    pub(crate) respect_eslint_disable_directives: bool,
 }
 
 impl<'a> ContextSubHost<'a> {
@@ -83,6 +86,8 @@ impl<'a> ContextSubHost<'a> {
             disable_directives,
             framework_options: options.framework_options,
             parser_tokens: options.parser_tokens,
+            angular_template_text: options.angular_template_text,
+            respect_eslint_disable_directives: options.respect_eslint_disable_directives,
         }
     }
 
@@ -108,11 +113,21 @@ impl<'a> ContextSubHost<'a> {
         self.framework_options
     }
 
-    /// Source text of this script block.
+    /// Source text of this script block, or the template of an Angular `.html` file.
     #[inline]
     pub fn source_text(&self) -> &'a str {
-        self.semantic.source_text()
+        self.angular_template_text.unwrap_or_else(|| self.semantic.source_text())
     }
+
+    /// Text of an Angular `.html` template section.
+    #[inline]
+    pub fn angular_template_text(&self) -> Option<&'a str> {
+        self.angular_template_text
+    }
+}
+
+pub fn imports_angular(module_record: &ModuleRecord) -> bool {
+    module_record.import_entries.iter().any(|entry| entry.module_request.name() == "@angular/core")
 }
 
 #[non_exhaustive]
@@ -120,6 +135,7 @@ pub struct ContextSubHostOptions<'a> {
     pub framework_options: FrameworkOptions,
     pub parser_tokens: ArenaBox<'a, [Token]>,
     pub respect_eslint_disable_directives: bool,
+    pub angular_template_text: Option<&'a str>,
 }
 
 impl Default for ContextSubHostOptions<'_> {
@@ -128,6 +144,7 @@ impl Default for ContextSubHostOptions<'_> {
             framework_options: FrameworkOptions::Default,
             parser_tokens: ArenaBox::new_empty_boxed_slice(),
             respect_eslint_disable_directives: true,
+            angular_template_text: None,
         }
     }
 }
@@ -185,6 +202,10 @@ pub struct ContextHost<'a> {
     /// every rule in the React Compiler family (`react/hooks`, `react/refs`, …).
     /// Stays empty until the first such rule runs on this file.
     pub(super) react_compiler_results: OnceCell<ReactCompilerResults>,
+    /// Lazily-parsed Angular templates, shared by every `angular-template` rule.
+    /// shortcut: per file, like `react_compiler_results`; templates never share a file with
+    /// multiple script sections.
+    pub(crate) angular_templates: OnceCell<AngularTemplates<'a>>,
 }
 
 impl std::fmt::Debug for ContextHost<'_> {
@@ -225,6 +246,7 @@ impl<'a> ContextHost<'a> {
             frameworks: options.framework_hints,
             with_ignore_fixes: options.with_ignore_fixes,
             react_compiler_results: OnceCell::new(),
+            angular_templates: OnceCell::new(),
         }
         .sniff_for_frameworks()
     }
@@ -334,7 +356,10 @@ impl<'a> ContextHost<'a> {
     /// by any rule to report issues.
     #[inline]
     pub(crate) fn push_diagnostic(&self, mut diagnostic: Message) {
-        if self.with_ignore_fixes {
+        // `//` comments would be text in a template, which only takes `<!-- -->` directives.
+        let in_angular_template =
+            diagnostic.error.code.scope.as_deref() == Some(plugin_display_name("angular_template"));
+        if self.with_ignore_fixes && !in_angular_template {
             let source_text = self.source_text();
             diagnostic.add_ignore_fix(self.current_sub_host().source_text_offset, source_text);
         }
