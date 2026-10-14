@@ -1,0 +1,244 @@
+name: Release oxlint-angular
+
+# Publishes oxlint (with the angular-template plugin) as `@pkurcx/oxlint-angular`.
+# Packages are renamed in the publish job only, so the branch stays mergeable with upstream.
+# The version is upstream's, from `npm/oxlint/package.json`.
+
+permissions: {}
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  # A cancelled run can leave some binding packages published.
+  cancel-in-progress: false
+
+jobs:
+  build-oxlint:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+            build: pnpm run build-napi-release --target x86_64-pc-windows-msvc
+
+          - os: windows-latest
+            target: aarch64-pc-windows-msvc
+            build: pnpm run build-napi-release --target aarch64-pc-windows-msvc
+
+          - os: windows-latest
+            target: i686-pc-windows-msvc
+            build: pnpm run build-napi-release --target i686-pc-windows-msvc
+
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            build: pnpm run build-napi-release --target x86_64-unknown-linux-gnu --use-napi-cross
+
+          - os: ubuntu-latest
+            target: aarch64-unknown-linux-gnu
+            build: pnpm run build-napi-release --target aarch64-unknown-linux-gnu --use-napi-cross
+
+          - os: ubuntu-latest
+            target: armv7-unknown-linux-gnueabihf
+            build: pnpm run build-napi-release --target armv7-unknown-linux-gnueabihf --use-napi-cross
+
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-musl
+            build: pnpm run build-napi-release --target x86_64-unknown-linux-musl -x
+
+          - os: ubuntu-latest
+            target: aarch64-unknown-linux-musl
+            build: pnpm run build-napi-release --target aarch64-unknown-linux-musl -x
+
+          - os: ubuntu-latest
+            target: armv7-unknown-linux-musleabihf
+            build: pnpm run build-napi-release --target armv7-unknown-linux-musleabihf -x
+
+          - os: macos-latest
+            target: x86_64-apple-darwin
+            build: pnpm run build-napi-release --target x86_64-apple-darwin
+
+          - os: macos-latest
+            target: aarch64-apple-darwin
+            build: pnpm run build-napi-release --target aarch64-apple-darwin
+
+          - os: ubuntu-latest
+            target: aarch64-linux-android
+            build: pnpm run build-napi-release --target aarch64-linux-android
+
+          - os: ubuntu-latest
+            target: armv7-linux-androideabi
+            build: pnpm run build-napi-release --target armv7-linux-androideabi
+
+          - os: ubuntu-latest
+            target: aarch64-unknown-linux-ohos
+            build: pnpm run build-napi-release --target aarch64-unknown-linux-ohos
+
+          - os: ubuntu-latest
+            target: powerpc64le-unknown-linux-gnu
+            build: pnpm run build-napi-release --target powerpc64le-unknown-linux-gnu --use-napi-cross
+
+          - os: ubuntu-latest
+            target: riscv64gc-unknown-linux-gnu
+            build: |
+              sudo apt-get update
+              sudo apt-get install gcc-riscv64-linux-gnu g++-riscv64-linux-gnu -y
+              export TARGET_CC=riscv64-linux-gnu-gcc
+              export CXX=riscv64-linux-gnu-g++
+              pnpm run build-napi-release --target riscv64gc-unknown-linux-gnu
+
+          - os: ubuntu-latest
+            target: riscv64gc-unknown-linux-musl
+            build: pnpm run build-napi-release --target riscv64gc-unknown-linux-musl -x
+
+          - os: ubuntu-latest
+            target: s390x-unknown-linux-gnu
+            build: export CFLAGS="-fuse-ld=lld" && pnpm run build-napi-release --target s390x-unknown-linux-gnu --use-napi-cross
+
+    name: Build Oxlint ${{ matrix.target }}
+    runs-on: ${{ matrix.os }}
+    env:
+      # `clang` lacks the `__ldar64`/`__stlr64` MSVC intrinsics that mimalloc's
+      # atomic.h uses on the ARM64 MSVC C path, so leave TARGET_CC unset on
+      # `*-pc-windows-msvc` targets and let cc-rs pick `cl.exe`.
+      TARGET_CC: ${{ !contains(matrix.target, 'pc-windows-msvc') && 'clang' || '' }} # for mimalloc
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - if: ${{ contains(matrix.os, 'windows') }}
+        run: git config --system core.longpaths true
+
+      - uses: taiki-e/checkout-action@7d1e50e93dc4fb3bba58f85018fadf77898aee8b # v1.4.2
+
+      # No Rust cache is provided, to avoid cache poisoning attack.
+
+      - parallel:
+          - uses: oxc-project/setup-node@f46a72f95efdc55273fcd042d61c84e723b2892c # v1.4.1
+          # For cargo-zigbuild in musl builds.
+          - uses: goto-bus-stop/setup-zig@abea47f85e598557f500fa1fd2ab7464fcb39406 # v2.2.1
+            if: ${{ contains(matrix.target, 'musl') }}
+            with:
+              version: 0.13.0
+          - name: Setup OpenHarmony SDK
+            if: ${{ contains(matrix.target, 'ohos') }}
+            uses: Boshen/setup-ohos-sdk@edb865a89a712f1f15dbad932dfa9cfce849d95c # v1.0.0
+
+      - name: Add Rust Target
+        run: rustup target add ${{ matrix.target }}
+
+      - name: Build oxlint for node.js
+        working-directory: apps/oxlint
+        run: ${{ matrix.build }}
+
+      - name: Upload NAPI artifact
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          if-no-files-found: error
+          name: oxlint-bindings-${{ matrix.target }}
+          path: |
+            apps/oxlint/src-js/*.node
+            apps/oxlint/src-js/*.wasm
+
+  build-oxlint-freebsd:
+    name: Build Oxlint FreeBSD
+    runs-on: ubuntu-latest
+    steps:
+      - uses: taiki-e/checkout-action@7d1e50e93dc4fb3bba58f85018fadf77898aee8b # v1.4.2
+
+      - parallel:
+          - uses: oxc-project/setup-node@f46a72f95efdc55273fcd042d61c84e723b2892c # v1.4.1
+          - run: rustup target add x86_64-unknown-freebsd
+          - name: Install Zig
+            uses: mlugg/setup-zig@d1434d08867e3ee9daa34448df10607b98908d29 # v2.2.1
+            with:
+              version: "0.15.2"
+          - name: Install cargo-zigbuild
+            uses: jaxxstorm/action-install-gh-release@25e24d2d23ae098373794ef1d6faecb48ee52da8 # v3.0.0
+            with:
+              repo: rust-cross/cargo-zigbuild
+
+      - name: Build oxlint for node.js
+        working-directory: apps/oxlint
+        run: pnpm run build-napi-release --target x86_64-unknown-freebsd -x
+
+      - name: Upload NAPI artifact
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          if-no-files-found: error
+          name: oxlint-bindings-x86_64-unknown-freebsd
+          path: apps/oxlint/src-js/*.node
+
+  publish:
+    name: Publish @pkurcx/oxlint-angular
+    needs: [build-oxlint, build-oxlint-freebsd]
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # for `--provenance`
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    env:
+      package_path: npm/oxlint
+      npm_dir: npm/oxlint-release
+      # Read by the `.npmrc` that setup-node writes.
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      NPM_CONFIG_PROVENANCE: true
+    steps:
+      - uses: taiki-e/checkout-action@7d1e50e93dc4fb3bba58f85018fadf77898aee8b # v1.4.2
+
+      - parallel:
+          - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+            with:
+              path: artifacts
+              pattern: oxlint-bindings-*
+          - uses: oxc-project/setup-node@f46a72f95efdc55273fcd042d61c84e723b2892c # v1.4.1
+
+      - id: version
+        run: echo "version=$(node -p "require('./${package_path}/package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Rename packages to @pkurcx/oxlint-angular
+        run: bash .github/scripts/rename-oxlint-angular.sh
+
+      - name: Generate oxlint JS build
+        working-directory: apps/oxlint
+        run: pnpm run build-js
+
+      - run: mkdir -p ${npm_dir}
+
+      - run: pnpm napi create-npm-dirs --package-json-path ${package_path}/package.json --npm-dir ${npm_dir}
+
+      - run: pnpm napi artifacts --package-json-path ${package_path}/package.json --build-output-dir apps/oxlint/src-js --npm-dir ${npm_dir}
+
+      - name: Copy dist files to npm package
+        run: cp -r apps/oxlint/dist ${package_path}/dist
+
+      - name: Publish
+        run: |
+          # Publishes the binding packages and adds them as `optionalDependencies` of the main package.
+          pnpm napi pre-publish --no-gh-release -t npm --package-json-path ${package_path}/package.json --npm-dir ${npm_dir}
+          # npm publish can finish before package metadata and tarballs are available.
+          node .github/scripts/wait-for-npm-packages.mjs ${npm_dir}/*
+          bash .github/scripts/publish-if-needed.sh ${package_path} --provenance --access public --no-git-checks
+
+  smoke:
+    needs: publish
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+          - os: ubuntu-latest
+          - os: ubuntu-latest
+            container: node:24-alpine # musl
+          - os: macos-latest
+    name: Smoke Test ${{ matrix.os }} ${{ matrix.container }}
+    runs-on: ${{ matrix.os }}
+    container: ${{ matrix.container }}
+    steps:
+      - name: Test
+        # Default shells: pwsh on windows, bash on ubuntu/macos, sh on alpine.
+        run: | # zizmor: ignore[template-injection]
+          echo "" > test.js
+          npx -y @pkurcx/oxlint-angular@${{ needs.publish.outputs.version }} ./test.js
