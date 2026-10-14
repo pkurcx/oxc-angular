@@ -1,0 +1,20 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(banana-in-box): Invalid binding syntax. Use [(expr)] instead
+   ╭─[banana_in_box.ts:1:75]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: '<input ([x])="y">' }) class A {}
+   ·                                                                           ─────────
+   ╰────
+  help: Replace `([x])` with `[(x)]`.
+
+  ⚠ angular-template(banana-in-box): Invalid binding syntax. Use [(expr)] instead
+   ╭─[banana_in_box.ts:2:10]
+ 1 │ import { Component } from '@angular/core'; @Component({ selector: 'a', template: `
+ 2 │   <input ([x])="y">
+   ·          ─────────
+ 3 │ ` }) class A {}
+   ╰────
+  help: Replace `([x])` with `[(x)]`.

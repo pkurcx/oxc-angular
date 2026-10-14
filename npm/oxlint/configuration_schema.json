@@ -470,6 +470,12 @@
       ],
       "markdownDescription": "Kinds of functions that can be allowed to be empty."
     },
+    "AllowMode": {
+      "type": "string",
+      "enum": [
+        "dynamic"
+      ]
+    },
     "AllowObjectTypes": {
       "oneOf": [
         {
@@ -489,6 +495,18 @@
           "markdownDescription": "Always allow object type literals with no fields."
         }
       ]
+    },
+    "AllowOption": {
+      "description": "`true` or `false`, or `\"dynamic\"` to allow only bindings whose value is not a constant.",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "$ref": "#/definitions/AllowMode"
+        }
+      ],
+      "markdownDescription": "`true` or `false`, or `\"dynamic\"` to allow only bindings whose value is not a constant."
     },
     "AllowSingleElementEquality": {
       "oneOf": [
@@ -553,6 +571,66 @@
           "markdownDescription": "The `\"always\"` option requires that literal values must always come first in comparisons."
         }
       ]
+    },
+    "AllowedAliases": {
+      "type": "object",
+      "properties": {
+        "$count": {
+          "description": "Aliases for `$count` that are allowed to be used.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Aliases for `$count` that are allowed to be used."
+        },
+        "$even": {
+          "description": "Aliases for `$even` that are allowed to be used.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Aliases for `$even` that are allowed to be used."
+        },
+        "$first": {
+          "description": "Aliases for `$first` that are allowed to be used.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Aliases for `$first` that are allowed to be used."
+        },
+        "$index": {
+          "description": "Aliases for `$index` that are allowed to be used.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Aliases for `$index` that are allowed to be used."
+        },
+        "$last": {
+          "description": "Aliases for `$last` that are allowed to be used.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Aliases for `$last` that are allowed to be used."
+        },
+        "$odd": {
+          "description": "Aliases for `$odd` that are allowed to be used.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Aliases for `$odd` that are allowed to be used."
+        }
+      },
+      "additionalProperties": false
     },
     "AllowedOrDisallowInFunc": {
       "type": "string",
@@ -723,6 +801,65 @@
             "type": "string"
           },
           "markdownDescription": "Custom prop names to treat as link destinations."
+        }
+      },
+      "additionalProperties": false
+    },
+    "AngularLabelHasAssociatedControlConfig": {
+      "type": "object",
+      "properties": {
+        "checkIds": {
+          "description": "Require the `for` value to match the `id` of a control in the same template.",
+          "default": false,
+          "type": "boolean",
+          "markdownDescription": "Require the `for` value to match the `id` of a control in the same template."
+        },
+        "controlComponents": {
+          "description": "Element names of controls, in addition to `input`, `meter`, `output`, `progress`,\n`select` and `textarea`.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Element names of controls, in addition to `input`, `meter`, `output`, `progress`,\n`select` and `textarea`."
+        },
+        "labelComponents": {
+          "description": "Label components, in addition to `label` with the `for` and `htmlFor` inputs.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LabelComponent"
+          },
+          "markdownDescription": "Label components, in addition to `label` with the `for` and `htmlFor` inputs."
+        }
+      },
+      "additionalProperties": false
+    },
+    "AngularTemplateEqeqeqConfig": {
+      "type": "object",
+      "properties": {
+        "allowNullOrUndefined": {
+          "description": "Allow `==` and `!=` when one side is `null` or `undefined`.",
+          "default": false,
+          "type": "boolean",
+          "markdownDescription": "Allow `==` and `!=` when one side is `null` or `undefined`."
+        }
+      },
+      "additionalProperties": false
+    },
+    "AngularTemplateInteractiveSupportsFocusConfig": {
+      "type": "object",
+      "properties": {
+        "allowList": {
+          "description": "Elements that are not checked, like `form`, where click and key events of the controls\ninside bubble up.",
+          "default": [
+            "form"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Elements that are not checked, like `form`, where click and key events of the controls\ninside bubble up."
         }
       },
       "additionalProperties": false
@@ -971,6 +1108,37 @@
         }
       ]
     },
+    "AttributesOrder": {
+      "$ref": "#/definitions/AttributesOrderConfig"
+    },
+    "AttributesOrderConfig": {
+      "type": "object",
+      "properties": {
+        "alphabetical": {
+          "description": "Sort attributes of the same kind alphabetically.",
+          "default": false,
+          "type": "boolean",
+          "markdownDescription": "Sort attributes of the same kind alphabetically."
+        },
+        "order": {
+          "description": "The order of the kinds of attributes.",
+          "default": [
+            "STRUCTURAL_DIRECTIVE",
+            "TEMPLATE_REFERENCE",
+            "ATTRIBUTE_BINDING",
+            "INPUT_BINDING",
+            "TWO_WAY_BINDING",
+            "OUTPUT_BINDING"
+          ],
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderType"
+          },
+          "markdownDescription": "The order of the kinds of attributes."
+        }
+      },
+      "additionalProperties": false
+    },
     "AutocompleteValidConfig": {
       "type": "object",
       "properties": {
@@ -1149,6 +1317,24 @@
           "default": true,
           "type": "boolean",
           "markdownDescription": "If true, allow `type=\"submit\"`."
+        }
+      },
+      "additionalProperties": false
+    },
+    "ButtonHasType2": {
+      "$ref": "#/definitions/ButtonHasTypeConfig"
+    },
+    "ButtonHasTypeConfig": {
+      "type": "object",
+      "properties": {
+        "ignoreWithDirectives": {
+          "description": "Directive names that, when present on the element, cause it to be ignored. Entries\nwrapped in slashes, e.g. `/^tui/`, are treated as regular expressions.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/IgnoredDirectives"
+            }
+          ],
+          "markdownDescription": "Directive names that, when present on the element, cause it to be ignored. Entries\nwrapped in slashes, e.g. `/^tui/`, are treated as regular expressions."
         }
       },
       "additionalProperties": false
@@ -1438,6 +1624,39 @@
       },
       "additionalProperties": false
     },
+    "ClickEventsHaveKeyEvents": {
+      "$ref": "#/definitions/ClickEventsHaveKeyEventsConfig"
+    },
+    "ClickEventsHaveKeyEventsConfig": {
+      "type": "object",
+      "properties": {
+        "allowedKeyCodes": {
+          "description": "Only key events whose key (the last segment of the pseudo-event, e.g. `enter` in\n`(keydown.shift.enter)`) is in this list satisfy the rule. Implies `requireKeyCode`.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Only key events whose key (the last segment of the pseudo-event, e.g. `enter` in\n`(keydown.shift.enter)`) is in this list satisfy the rule. Implies `requireKeyCode`."
+        },
+        "ignoreWithDirectives": {
+          "description": "Directive names that, when present on the element, cause it to be ignored. Entries\nwrapped in slashes, e.g. `/^tui/`, are treated as regular expressions.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/IgnoredDirectives"
+            }
+          ],
+          "markdownDescription": "Directive names that, when present on the element, cause it to be ignored. Entries\nwrapped in slashes, e.g. `/^tui/`, are treated as regular expressions."
+        },
+        "requireKeyCode": {
+          "description": "Require key events to specify a key via a pseudo-event, e.g. `(keydown.enter)`. A bare\n`(keydown)` will not satisfy the rule.",
+          "default": false,
+          "type": "boolean",
+          "markdownDescription": "Require key events to specify a key via a pseudo-event, e.g. `(keydown.enter)`. A bare\n`(keydown)` will not satisfy the rule."
+        }
+      },
+      "additionalProperties": false
+    },
     "CommentConfigJson": {
       "type": "object",
       "properties": {
@@ -1514,6 +1733,20 @@
           "$ref": "#/definitions/ComplexityConfig"
         }
       ]
+    },
+    "ConditionalComplexity": {
+      "type": "object",
+      "properties": {
+        "maxComplexity": {
+          "description": "The maximum number of binary and conditional operators in one expression.",
+          "default": 5,
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0,
+          "markdownDescription": "The maximum number of binary and conditional operators in one expression."
+        }
+      },
+      "additionalProperties": false
     },
     "Config": {
       "type": "array",
@@ -1974,6 +2207,50 @@
         }
       ]
     },
+    "CyclomaticComplexity": {
+      "type": "object",
+      "properties": {
+        "maxComplexity": {
+          "description": "The maximum number of branches in a template.",
+          "default": 5,
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0,
+          "markdownDescription": "The maximum number of branches in a template."
+        },
+        "variant": {
+          "description": "How switches are counted.",
+          "default": "classic",
+          "allOf": [
+            {
+              "$ref": "#/definitions/CyclomaticComplexityVariant"
+            }
+          ],
+          "markdownDescription": "How switches are counted."
+        }
+      },
+      "additionalProperties": false
+    },
+    "CyclomaticComplexityVariant": {
+      "oneOf": [
+        {
+          "description": "Counts `@if`, `@for`, each `@case` and `@default`, and `ngIf`, `ngForOf`,\n`ngSwitchCase` and `ngSwitchDefault`.",
+          "type": "string",
+          "enum": [
+            "classic"
+          ],
+          "markdownDescription": "Counts `@if`, `@for`, each `@case` and `@default`, and `ngIf`, `ngForOf`,\n`ngSwitchCase` and `ngSwitchDefault`."
+        },
+        {
+          "description": "Counts each `@switch` and `ngSwitch` once instead of each of its cases.",
+          "type": "string",
+          "enum": [
+            "modified"
+          ],
+          "markdownDescription": "Counts each `@switch` and `ngSwitch` once instead of each of its cases."
+        }
+      ]
+    },
     "DeclarationStyle": {
       "oneOf": [
         {
@@ -2221,7 +2498,436 @@
             }
           ]
         },
+        "angular-template/alt-text": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/attributes-order": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/AttributesOrder"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/banana-in-box": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/button-has-type": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/ButtonHasType2"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/click-events-have-key-events": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/ClickEventsHaveKeyEvents"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/conditional-complexity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/ConditionalComplexity"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/cyclomatic-complexity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/CyclomaticComplexity"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/elements-content": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/ElementsContent"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/eqeqeq": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/AngularTemplateEqeqeqConfig"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/i18n": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/I18n"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/interactive-supports-focus": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/InteractiveSupportsFocus"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/label-has-associated-control": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/LabelHasAssociatedControl"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/mouse-events-have-key-events": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
         "angular-template/no-any": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/no-autofocus": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/no-call-expression": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/NoCallExpression"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/no-distracting-elements": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/no-duplicate-attributes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/NoDuplicateAttributes"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/no-empty-control-flow": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/no-inline-styles": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/NoInlineStyles"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/no-interpolation-in-attributes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/NoInterpolationInAttributes"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/no-negated-async": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/no-nested-tags": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/no-non-null-assertion": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/no-outerhtml": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/no-positive-tabindex": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/prefer-at-else": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/prefer-at-empty": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/prefer-built-in-pipes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/PreferBuiltInPipes"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/prefer-class-binding": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/prefer-contextual-for-variables": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/PreferContextualForVariables"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/prefer-control-flow": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/prefer-ngsrc": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/prefer-self-closing-tags": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/prefer-static-string-properties": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/PreferStaticStringProperties"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/prefer-style-binding": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/prefer-template-literal": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/require-switch-default": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/role-has-required-aria": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/table-scope": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular-template/use-track-by-function": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/UseTrackByFunction"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular-template/valid-aria": {
           "$ref": "#/definitions/RuleNoConfig"
         },
         "array-callback-return": {
@@ -10796,6 +11502,24 @@
       "additionalProperties": false,
       "markdownDescription": "One entry in `elementOverrides`: the base options plus override-only fields."
     },
+    "ElementsContent": {
+      "$ref": "#/definitions/ElementsContentConfig"
+    },
+    "ElementsContentConfig": {
+      "type": "object",
+      "properties": {
+        "allowList": {
+          "description": "Attributes and inputs that provide content, in addition to `aria-label`, `innerHtml`,\n`innerHTML`, `innerText`, `outerHTML`, `textContent` and `title`.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Attributes and inputs that provide content, in addition to `aria-label`, `innerHtml`,\n`innerHTML`, `innerText`, `outerHTML`, `textContent` and `title`."
+        }
+      },
+      "additionalProperties": false
+    },
     "EmptyTagsConfig": {
       "type": "object",
       "properties": {
@@ -11725,6 +12449,115 @@
       },
       "additionalProperties": false
     },
+    "I18n": {
+      "$ref": "#/definitions/I18nConfig"
+    },
+    "I18nConfig": {
+      "type": "object",
+      "properties": {
+        "allowMarkupInContent": {
+          "description": "Allow elements and `<ng-template>`s inside an element with an `i18n` attribute.",
+          "default": true,
+          "type": "boolean",
+          "markdownDescription": "Allow elements and `<ng-template>`s inside an element with an `i18n` attribute."
+        },
+        "boundTextAllowedPattern": {
+          "description": "A pattern; interpolated text whose static parts match it needs no `i18n` attribute.",
+          "type": "string",
+          "markdownDescription": "A pattern; interpolated text whose static parts match it needs no `i18n` attribute."
+        },
+        "checkAttributes": {
+          "description": "Report attributes with text that have no `i18n-<attribute>`.",
+          "default": true,
+          "type": "boolean",
+          "markdownDescription": "Report attributes with text that have no `i18n-<attribute>`."
+        },
+        "checkDuplicateId": {
+          "description": "Report custom IDs used more than once.",
+          "default": true,
+          "type": "boolean",
+          "markdownDescription": "Report custom IDs used more than once."
+        },
+        "checkId": {
+          "description": "Report `i18n` and `i18n-<attribute>` attributes without a custom ID (`@@id`).",
+          "default": true,
+          "type": "boolean",
+          "markdownDescription": "Report `i18n` and `i18n-<attribute>` attributes without a custom ID (`@@id`)."
+        },
+        "checkText": {
+          "description": "Report text, interpolations and ICU expressions outside an element with `i18n`.",
+          "default": true,
+          "type": "boolean",
+          "markdownDescription": "Report text, interpolations and ICU expressions outside an element with `i18n`."
+        },
+        "ignoreAttributes": {
+          "description": "Attributes that need no translation, as `name` or `element[name]`, in addition to the\ndefaults.",
+          "default": [
+            "autocomplete",
+            "charset",
+            "class",
+            "color",
+            "colspan",
+            "dir",
+            "fill",
+            "for",
+            "formArrayName",
+            "formControlName",
+            "formGroupName",
+            "height",
+            "href",
+            "id",
+            "lang",
+            "list",
+            "name",
+            "ngClass",
+            "ngProjectAs",
+            "role",
+            "routerLink",
+            "routerLinkActive",
+            "src",
+            "stroke",
+            "stroke-width",
+            "style",
+            "svgIcon",
+            "tabindex",
+            "target",
+            "type",
+            "value",
+            "viewBox",
+            "width",
+            "xmlns"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Attributes that need no translation, as `name` or `element[name]`, in addition to the\ndefaults."
+        },
+        "ignoreTags": {
+          "description": "Elements whose text and attributes are not checked.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Elements whose text and attributes are not checked."
+        },
+        "requireDescription": {
+          "description": "Require a description in `i18n` and `i18n-<attribute>` attributes.",
+          "default": false,
+          "type": "boolean",
+          "markdownDescription": "Require a description in `i18n` and `i18n-<attribute>` attributes."
+        },
+        "requireMeaning": {
+          "description": "Require a meaning in `i18n` attributes.",
+          "default": false,
+          "type": "boolean",
+          "markdownDescription": "Require a meaning in `i18n` attributes."
+        }
+      },
+      "additionalProperties": false
+    },
     "IdDenylist": {
       "type": "array",
       "additionalItems": {
@@ -11923,6 +12756,14 @@
       "additionalProperties": false,
       "markdownDescription": "Options for ignoring specific primitive types."
     },
+    "IgnoredDirectives": {
+      "description": "The `ignoreWithDirectives` option: exact names, or `/pattern/flags` regular expressions.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "The `ignoreWithDirectives` option: exact names, or `/pattern/flags` regular expressions."
+    },
     "ImgRedundantAltConfig": {
       "type": "object",
       "properties": {
@@ -12078,6 +12919,9 @@
         }
       },
       "additionalProperties": false
+    },
+    "InteractiveSupportsFocus": {
+      "$ref": "#/definitions/AngularTemplateInteractiveSupportsFocusConfig"
     },
     "InteractiveSupportsFocusConfig": {
       "type": "object",
@@ -12702,6 +13546,32 @@
         }
       },
       "additionalProperties": false
+    },
+    "LabelComponent": {
+      "type": "object",
+      "required": [
+        "selector"
+      ],
+      "properties": {
+        "inputs": {
+          "description": "Inputs that associate it with a control, like `for`.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Inputs that associate it with a control, like `for`."
+        },
+        "selector": {
+          "description": "Element name of the label component.",
+          "type": "string",
+          "markdownDescription": "Element name of the label component."
+        }
+      },
+      "additionalProperties": false
+    },
+    "LabelHasAssociatedControl": {
+      "$ref": "#/definitions/AngularLabelHasAssociatedControlConfig"
     },
     "LabelHasAssociatedControlConfig": {
       "type": "object",
@@ -13878,6 +14748,36 @@
       },
       "additionalProperties": false
     },
+    "NoCallExpression": {
+      "$ref": "#/definitions/NoCallExpressionConfig"
+    },
+    "NoCallExpressionConfig": {
+      "type": "object",
+      "properties": {
+        "allowList": {
+          "description": "Names of functions and methods that may be called.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Names of functions and methods that may be called."
+        },
+        "allowPrefix": {
+          "description": "Functions and methods whose name starts with this prefix may be called.",
+          "default": null,
+          "type": "string",
+          "markdownDescription": "Functions and methods whose name starts with this prefix may be called."
+        },
+        "allowSuffix": {
+          "description": "Functions and methods whose name ends with this suffix may be called.",
+          "default": null,
+          "type": "string",
+          "markdownDescription": "Functions and methods whose name ends with this suffix may be called."
+        }
+      },
+      "additionalProperties": false
+    },
     "NoCallbackInPromiseConfig": {
       "type": "object",
       "properties": {
@@ -14125,6 +15025,36 @@
             "type": "string"
           },
           "markdownDescription": "Additional group names to search for duplicate keys in, on top of the\nbuilt-in `props`, `computed`, `data`, `methods` and `setup` groups."
+        }
+      },
+      "additionalProperties": false
+    },
+    "NoDuplicateAttributes": {
+      "$ref": "#/definitions/NoDuplicateAttributesConfig"
+    },
+    "NoDuplicateAttributesConfig": {
+      "type": "object",
+      "properties": {
+        "allowStylePrecedenceDuplicates": {
+          "description": "Allow the `class` and `style` attributes next to their bindings, which Angular merges.\nSee <https://angular.dev/guide/templates/class-binding#styling-precedence>.",
+          "default": false,
+          "type": "boolean",
+          "markdownDescription": "Allow the `class` and `style` attributes next to their bindings, which Angular merges.\nSee <https://angular.dev/guide/templates/class-binding#styling-precedence>."
+        },
+        "allowTwoWayDataBinding": {
+          "description": "Allow a two-way binding next to an output of the same event, as in\n`[(ngModel)]=\"value\" (ngModelChange)=\"changed()\"`.",
+          "default": true,
+          "type": "boolean",
+          "markdownDescription": "Allow a two-way binding next to an output of the same event, as in\n`[(ngModel)]=\"value\" (ngModelChange)=\"changed()\"`."
+        },
+        "ignore": {
+          "description": "Input or output names that may appear more than once.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Input or output names that may appear more than once."
         }
       },
       "additionalProperties": false
@@ -14550,6 +15480,32 @@
       },
       "additionalProperties": false
     },
+    "NoInlineStyles": {
+      "type": "object",
+      "properties": {
+        "allowBindToStyle": {
+          "description": "Whether `[style]`, `[style.property]` and `style=\"{{ }}\"` bindings are allowed.\n`\"dynamic\"` allows them only when the bound value is not a constant:\n`[style.width.px]=\"column.width\"` is allowed, `[style.color]=\"'red'\"` is not.",
+          "default": false,
+          "allOf": [
+            {
+              "$ref": "#/definitions/AllowOption"
+            }
+          ],
+          "markdownDescription": "Whether `[style]`, `[style.property]` and `style=\"{{ }}\"` bindings are allowed.\n`\"dynamic\"` allows them only when the bound value is not a constant:\n`[style.width.px]=\"column.width\"` is allowed, `[style.color]=\"'red'\"` is not."
+        },
+        "allowNgStyle": {
+          "description": "Whether `[ngStyle]` bindings are allowed. `\"dynamic\"` allows them only when the bound\nvalue is not a constant: `{ color: textColor }` is allowed, `{ color: 'red' }` is not.",
+          "default": false,
+          "allOf": [
+            {
+              "$ref": "#/definitions/AllowOption"
+            }
+          ],
+          "markdownDescription": "Whether `[ngStyle]` bindings are allowed. `\"dynamic\"` allows them only when the bound\nvalue is not a constant: `{ color: textColor }` is allowed, `{ color: 'red' }` is not."
+        }
+      },
+      "additionalProperties": false
+    },
     "NoInnerDeclarations": {
       "type": "array",
       "items": [
@@ -14679,6 +15635,18 @@
           "type": "string"
         }
       }
+    },
+    "NoInterpolationInAttributes": {
+      "type": "object",
+      "properties": {
+        "allowSubstringInterpolation": {
+          "description": "Allow interpolation that is only part of the value, as in `alt=\"{{ name }} is online\"`.",
+          "default": false,
+          "type": "boolean",
+          "markdownDescription": "Allow interpolation that is only part of the value, as in `alt=\"{{ name }} is online\"`."
+        }
+      },
+      "additionalProperties": false
     },
     "NoInvalidRegexpConfig": {
       "type": "object",
@@ -17048,6 +18016,58 @@
         }
       ]
     },
+    "OrderType": {
+      "oneOf": [
+        {
+          "description": "`*ngIf=\"...\"`",
+          "type": "string",
+          "enum": [
+            "STRUCTURAL_DIRECTIVE"
+          ],
+          "markdownDescription": "`*ngIf=\"...\"`"
+        },
+        {
+          "description": "`#ref`",
+          "type": "string",
+          "enum": [
+            "TEMPLATE_REFERENCE"
+          ],
+          "markdownDescription": "`#ref`"
+        },
+        {
+          "description": "`class=\"...\"`",
+          "type": "string",
+          "enum": [
+            "ATTRIBUTE_BINDING"
+          ],
+          "markdownDescription": "`class=\"...\"`"
+        },
+        {
+          "description": "`[value]=\"...\"`",
+          "type": "string",
+          "enum": [
+            "INPUT_BINDING"
+          ],
+          "markdownDescription": "`[value]=\"...\"`"
+        },
+        {
+          "description": "`[(value)]=\"...\"`",
+          "type": "string",
+          "enum": [
+            "TWO_WAY_BINDING"
+          ],
+          "markdownDescription": "`[(value)]=\"...\"`"
+        },
+        {
+          "description": "`(click)=\"...\"`",
+          "type": "string",
+          "enum": [
+            "OUTPUT_BINDING"
+          ],
+          "markdownDescription": "`(click)=\"...\"`"
+        }
+      ]
+    },
     "Override": {
       "type": "object",
       "properties": {
@@ -17603,6 +18623,35 @@
       },
       "additionalProperties": false
     },
+    "PreferBuiltInPipes": {
+      "$ref": "#/definitions/PreferBuiltInPipesConfig"
+    },
+    "PreferBuiltInPipesConfig": {
+      "type": "object",
+      "properties": {
+        "allowInOutputHandlers": {
+          "description": "Whether to allow these method calls inside output event handlers.",
+          "default": true,
+          "type": "boolean",
+          "markdownDescription": "Whether to allow these method calls inside output event handlers."
+        },
+        "disallowList": {
+          "description": "Method names to disallow. Replaces the default list: `toLowerCase`, `toUpperCase`,\n`toLocaleLowerCase` and `toLocaleUpperCase`.",
+          "default": [
+            "toLowerCase",
+            "toUpperCase",
+            "toLocaleLowerCase",
+            "toLocaleUpperCase"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Method names to disallow. Replaces the default list: `toLowerCase`, `toUpperCase`,\n`toLocaleLowerCase` and `toLocaleUpperCase`."
+        }
+      },
+      "additionalProperties": false
+    },
     "PreferConst": {
       "$ref": "#/definitions/PreferConstConfig"
     },
@@ -17624,6 +18673,32 @@
           "default": false,
           "type": "boolean",
           "markdownDescription": "If `true`, the rule will not report variables that are read before their initial assignment.\nThis is mainly useful for preventing conflicts with the `typescript/no-use-before-define` rule."
+        }
+      },
+      "additionalProperties": false
+    },
+    "PreferContextualForVariables": {
+      "$ref": "#/definitions/PreferContextualForVariablesConfig"
+    },
+    "PreferContextualForVariablesConfig": {
+      "type": "object",
+      "properties": {
+        "allowedAliases": {
+          "description": "Alias names allowed for each contextual variable.",
+          "default": {
+            "$count": [],
+            "$index": [],
+            "$first": [],
+            "$last": [],
+            "$even": [],
+            "$odd": []
+          },
+          "allOf": [
+            {
+              "$ref": "#/definitions/AllowedAliases"
+            }
+          ],
+          "markdownDescription": "Alias names allowed for each contextual variable."
         }
       },
       "additionalProperties": false
@@ -18144,6 +19219,24 @@
             "type": "string"
           },
           "markdownDescription": "Methods to ignore."
+        }
+      },
+      "additionalProperties": false
+    },
+    "PreferStaticStringProperties": {
+      "$ref": "#/definitions/PreferStaticStringPropertiesConfig"
+    },
+    "PreferStaticStringPropertiesConfig": {
+      "type": "object",
+      "properties": {
+        "ignore": {
+          "description": "Property names this rule ignores.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Property names this rule ignores."
         }
       },
       "additionalProperties": false
@@ -19625,6 +20718,24 @@
           "default": true,
           "type": "boolean",
           "markdownDescription": "Whether to disallow NaN in switch cases and discriminants"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UseTrackByFunction": {
+      "$ref": "#/definitions/UseTrackByFunctionConfig"
+    },
+    "UseTrackByFunctionConfig": {
+      "type": "object",
+      "properties": {
+        "alias": {
+          "description": "Input names accepted in place of `ngForTrackBy`, such as `ngForTrackById` for a\ndirective that adds a `trackById` key to `*ngFor`.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Input names accepted in place of `ngForTrackBy`, such as `ngForTrackById` for a\ndirective that adds a `trackById` key to `*ngFor`."
         }
       },
       "additionalProperties": false

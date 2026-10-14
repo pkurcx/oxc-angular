@@ -1,0 +1,39 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-autofocus): The `autofocus` attribute should not be used, as it reduces usability and accessibility for users
+   ╭─[no_autofocus.html:1:8]
+ 1 │ <input autofocus>
+   ·        ─────────
+   ╰────
+  help: Delete this code.
+
+  ⚠ angular-template(no-autofocus): The `autofocus` attribute should not be used, as it reduces usability and accessibility for users
+   ╭─[no_autofocus.html:1:9]
+ 1 │ <button autofocus="autofocus"></button>
+   ·         ─────────────────────
+   ╰────
+  help: Delete this code.
+
+  ⚠ angular-template(no-autofocus): The `autofocus` attribute should not be used, as it reduces usability and accessibility for users
+   ╭─[no_autofocus.html:1:6]
+ 1 │ <div [autofocus]="true"></div>
+   ·      ──────────────────
+   ╰────
+  help: Delete this code.
+
+  ⚠ angular-template(no-autofocus): The `autofocus` attribute should not be used, as it reduces usability and accessibility for users
+   ╭─[no_autofocus.html:1:26]
+ 1 │ <div *ngIf="x"><textarea autofocus></textarea></div>
+   ·                          ─────────
+   ╰────
+  help: Delete this code.
+
+  ⚠ angular-template(no-autofocus): The `autofocus` attribute should not be used, as it reduces usability and accessibility for users
+   ╭─[no_autofocus.html:1:8]
+ 1 │ <input [attr.autofocus]="false">
+   ·        ────────────────────────
+   ╰────
+  help: Delete this code.

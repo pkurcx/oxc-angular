@@ -1,0 +1,81 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(valid-aria): The `aria-labeledby` is an invalid ARIA attribute
+   ╭─[valid_aria.html:1:8]
+ 1 │ <input aria-labeledby="Text">
+   ·        ─────────────────────
+   ╰────
+  help: Remove attribute `aria-labeledby`
+
+  ⚠ angular-template(valid-aria): The `aria-bogus` is an invalid ARIA attribute
+   ╭─[valid_aria.html:1:6]
+ 1 │ <div [attr.aria-bogus]="x"></div>
+   ·      ─────────────────────
+   ╰────
+  help: Remove attribute `aria-bogus`
+
+  ⚠ angular-template(valid-aria): The `aria-required` has an invalid value.
+   ╭─[valid_aria.html:1:8]
+ 1 │ <input aria-required="yes">
+   ·        ───────────────────
+   ╰────
+  help: Check the valid values at https://raw.githack.com/w3c/aria/stable/#roles
+
+  ⚠ angular-template(valid-aria): The `aria-level` has an invalid value.
+   ╭─[valid_aria.html:1:6]
+ 1 │ <div aria-level="2.5"></div>
+   ·      ────────────────
+   ╰────
+  help: Check the valid values at https://raw.githack.com/w3c/aria/stable/#roles
+
+  ⚠ angular-template(valid-aria): The `aria-valuenow` has an invalid value.
+   ╭─[valid_aria.html:1:6]
+ 1 │ <div [attr.aria-valuenow]="'x'"></div>
+   ·      ──────────────────────────
+   ╰────
+  help: Check the valid values at https://raw.githack.com/w3c/aria/stable/#roles
+
+  ⚠ angular-template(valid-aria): The `aria-live` has an invalid value.
+   ╭─[valid_aria.html:1:6]
+ 1 │ <div aria-live="loud"></div>
+   ·      ────────────────
+   ╰────
+  help: Check the valid values at https://raw.githack.com/w3c/aria/stable/#roles
+
+  ⚠ angular-template(valid-aria): The `aria-relevant` has an invalid value.
+   ╭─[valid_aria.html:1:6]
+ 1 │ <div aria-relevant="additions bogus"></div>
+   ·      ───────────────────────────────
+   ╰────
+  help: Check the valid values at https://raw.githack.com/w3c/aria/stable/#roles
+
+  ⚠ angular-template(valid-aria): The `aria-relevant` has an invalid value.
+   ╭─[valid_aria.html:1:6]
+ 1 │ <div aria-relevant="   "></div>
+   ·      ───────────────────
+   ╰────
+  help: Check the valid values at https://raw.githack.com/w3c/aria/stable/#roles
+
+  ⚠ angular-template(valid-aria): The `aria-busy` has an invalid value.
+   ╭─[valid_aria.html:1:6]
+ 1 │ <div [attr.aria-busy]="[]"></div>
+   ·      ─────────────────────
+   ╰────
+  help: Check the valid values at https://raw.githack.com/w3c/aria/stable/#roles
+
+  ⚠ angular-template(valid-aria): The `aria-hidden` has an invalid value.
+   ╭─[valid_aria.html:1:6]
+ 1 │ <DIV aria-hidden="nope"></DIV>
+   ·      ──────────────────
+   ╰────
+  help: Check the valid values at https://raw.githack.com/w3c/aria/stable/#roles
+
+  ⚠ angular-template(valid-aria): The `aria-expanded` has an invalid value.
+   ╭─[valid_aria.html:1:6]
+ 1 │ <div aria-expanded></div>
+   ·      ─────────────
+   ╰────
+  help: Check the valid values at https://raw.githack.com/w3c/aria/stable/#roles

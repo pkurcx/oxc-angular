@@ -239,7 +239,9 @@ impl Parse for LintRuleMeta {
 }
 
 pub fn rule_name_converter() -> Converter {
-    Converter::new().remove_boundary(Boundary::LowerDigit).to_case(Case::Kebab)
+    Converter::new()
+        .remove_boundaries(&[Boundary::LowerDigit, Boundary::UpperDigit, Boundary::DigitLower])
+        .to_case(Case::Kebab)
 }
 
 pub fn declare_oxc_lint(metadata: LintRuleMeta) -> TokenStream {

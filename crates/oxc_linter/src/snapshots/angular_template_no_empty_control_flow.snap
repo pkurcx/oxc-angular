@@ -1,0 +1,162 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:2:11]
+ 1 │ 
+ 2 │           @if (a) {} @else if (b) {
+   ·           ────
+ 3 │             2
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:2:11]
+ 1 │ 
+ 2 │           @if (a) {
+   ·           ────
+ 3 │           } @else if (b) {
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:4:13]
+ 3 │             1
+ 4 │           } @else if (b) {} @else {
+   ·             ─────────
+ 5 │             3
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:4:13]
+ 3 │             1
+ 4 │           } @else if (b) {
+   ·             ─────────
+ 5 │           } @else {
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:6:13]
+ 5 │             2
+ 6 │           } @else {}
+   ·             ──────
+ 7 │           
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:6:13]
+ 5 │             2
+ 6 │           } @else {
+   ·             ──────
+ 7 │           }
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:2:11]
+ 1 │ 
+ 2 │           @for (item of items; track item.id) {} @empty {
+   ·           ─────
+ 3 │             2
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:2:11]
+ 1 │ 
+ 2 │           @for (item of items; track item.id) {
+   ·           ─────
+ 3 │           } @empty {
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:4:13]
+ 3 │             1
+ 4 │           } @empty {}
+   ·             ───────
+ 5 │           
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:4:13]
+ 3 │             1
+ 4 │           } @empty {
+   ·             ───────
+ 5 │           }
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:2:11]
+ 1 │ 
+ 2 │           @switch (condition) {}
+   ·           ────────
+ 3 │           
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:2:11]
+ 1 │ 
+ 2 │           @switch (condition) {
+   ·           ────────
+ 3 │           }
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:3:13]
+ 2 │           @switch (condition) {
+ 3 │             @case (a) {}
+   ·             ──────
+ 4 │             @default {
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:3:13]
+ 2 │           @switch (condition) {
+ 3 │             @case (a) {
+   ·             ──────
+ 4 │             }
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:6:13]
+ 5 │             }
+ 6 │             @default {}
+   ·             ─────────
+ 7 │           }
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:6:13]
+ 5 │             }
+ 6 │             @default {
+   ·             ─────────
+ 7 │             }
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:1:23]
+ 1 │ @switch (condition) { @case (a) @case (b) { } @default { 2 } }
+   ·                       ──────
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:1:1]
+ 1 │ @if (a) {<!-- only a comment -->}
+   · ────
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:1:16]
+ 1 │ <div *ngIf="x">@if (a) {}</div>
+   ·                ────
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:1:14]
+ 1 │ <ng-template>@for (item of items; track item) { }</ng-template>
+   ·              ─────
+   ╰────
+
+  ⚠ angular-template(no-empty-control-flow): Unexpected empty control flow block.
+   ╭─[no_empty_control_flow.html:1:10]
+ 1 │ @defer { @if (a) { } }
+   ·          ────
+   ╰────

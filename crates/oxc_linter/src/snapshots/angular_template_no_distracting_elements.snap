@@ -1,0 +1,25 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-distracting-elements): Do not use <marquee> elements as they can create visual accessibility issues and are deprecated
+   ╭─[no_distracting_elements.html:1:1]
+ 1 │ <marquee></marquee>
+   · ───────────────────
+   ╰────
+  help: Delete this code.
+
+  ⚠ angular-template(no-distracting-elements): Do not use <blink> elements as they can create visual accessibility issues and are deprecated
+   ╭─[no_distracting_elements.html:1:1]
+ 1 │ <blink></blink>
+   · ───────────────
+   ╰────
+  help: Delete this code.
+
+  ⚠ angular-template(no-distracting-elements): Do not use <MARQUEE> elements as they can create visual accessibility issues and are deprecated
+   ╭─[no_distracting_elements.html:1:6]
+ 1 │ <div><MARQUEE>x</MARQUEE></div>
+   ·      ────────────────────
+   ╰────
+  help: Delete this code.

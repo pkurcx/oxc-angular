@@ -1,0 +1,40 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-control-flow): Use built-in control flow instead of directive ngIf.
+   ╭─[prefer_control_flow.html:1:7]
+ 1 │ <div *ngIf="x"></div>
+   ·       ───────
+   ╰────
+
+  ⚠ angular-template(prefer-control-flow): Use built-in control flow instead of directive ngForOf.
+   ╭─[prefer_control_flow.html:1:19]
+ 1 │ <li *ngFor="let x of xs; trackBy: id"></li>
+   ·                   ───────
+   ╰────
+
+  ⚠ angular-template(prefer-control-flow): Use built-in control flow instead of directive ngSwitch.
+   ╭─[prefer_control_flow.html:1:6]
+ 1 │ <div [ngSwitch]="x"><span *ngSwitchCase="1"></span></div>
+   ·      ──────────────
+   ╰────
+
+  ⚠ angular-template(prefer-control-flow): Use built-in control flow instead of directive ngIf.
+   ╭─[prefer_control_flow.html:1:14]
+ 1 │ <ng-template [ngIf]="x"><p></p></ng-template>
+   ·              ──────────
+   ╰────
+
+  ⚠ angular-template(prefer-control-flow): Use built-in control flow instead of directive ngIf.
+   ╭─[prefer_control_flow.html:1:7]
+ 1 │ <div *ngIf="x" [ngSwitch]="y"></div>
+   ·       ───────
+   ╰────
+
+  ⚠ angular-template(prefer-control-flow): Use built-in control flow instead of directive ngSwitch.
+   ╭─[prefer_control_flow.html:1:16]
+ 1 │ <div *ngIf="x" [ngSwitch]="y"></div>
+   ·                ──────────────
+   ╰────

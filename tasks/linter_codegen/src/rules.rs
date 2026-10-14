@@ -1,6 +1,6 @@
 use std::path::Path;
 
-use convert_case::{Case, Casing};
+use convert_case::{Boundary, Case, Converter};
 
 /// Represents a lint rule entry in the `declare_all_lint_rules!` macro.
 #[derive(PartialEq, Eq, PartialOrd, Ord)]
@@ -18,7 +18,11 @@ pub struct RuleEntry<'e> {
 impl RuleEntry<'_> {
     /// Get the rule's struct name, like `NoDebugger` in `eslint::no_debugger::NoDebugger`.
     pub fn rule_struct_name(&self) -> String {
-        self.rule_module_name.to_case(Case::Pascal)
+        // Splits on underscores only, so `i18n` stays `I18n`.
+        Converter::new()
+            .set_boundaries(&[Boundary::Underscore])
+            .to_case(Case::Pascal)
+            .convert(self.rule_module_name)
     }
 }
 

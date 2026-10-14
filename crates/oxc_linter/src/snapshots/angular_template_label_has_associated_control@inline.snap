@@ -1,0 +1,12 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(label-has-associated-control): A label component must be associated with a form element
+   ╭─[label_has_associated_control.ts:2:25]
+ 1 │ import { Component } from '@angular/core';
+ 2 │ @Component({ template: '<label for="n"></label>' }) class A {}
+   ·                         ───────────────────────
+ 3 │ @Component({ template: '<input id="n">' }) class B {}
+   ╰────

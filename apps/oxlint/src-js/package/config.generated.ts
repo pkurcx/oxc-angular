@@ -63,6 +63,23 @@ export type LintPluginOptionsSchema =
   | "angular";
 export type LintPlugins = LintPluginOptionsSchema[];
 export type RuleNoConfig = AllowWarnDeny | [AllowWarnDeny];
+export type OrderType =
+  | "STRUCTURAL_DIRECTIVE"
+  | "TEMPLATE_REFERENCE"
+  | "ATTRIBUTE_BINDING"
+  | "INPUT_BINDING"
+  | "TWO_WAY_BINDING"
+  | "OUTPUT_BINDING";
+/**
+ * The `ignoreWithDirectives` option: exact names, or `/pattern/flags` regular expressions.
+ */
+export type IgnoredDirectives = string[];
+export type CyclomaticComplexityVariant = "classic" | "modified";
+/**
+ * `true` or `false`, or `"dynamic"` to allow only bindings whose value is not a constant.
+ */
+export type AllowOption = boolean | AllowMode;
+export type AllowMode = "dynamic";
 export type Mode2 = "as-needed" | "always" | "never";
 export type AlwaysNever = "always" | "never";
 export type OptionsJsonEnum =
@@ -890,7 +907,52 @@ export interface OxlintOverride {
  */
 export interface DummyRuleMap {
   "accessor-pairs"?: RuleNoConfig | [AllowWarnDeny, AccessorPairsConfig];
+  "angular-template/alt-text"?: RuleNoConfig;
+  "angular-template/attributes-order"?: RuleNoConfig | [AllowWarnDeny, AttributesOrderConfig];
+  "angular-template/banana-in-box"?: RuleNoConfig;
+  "angular-template/button-has-type"?: RuleNoConfig | [AllowWarnDeny, ButtonHasTypeConfig];
+  "angular-template/click-events-have-key-events"?: RuleNoConfig | [AllowWarnDeny, ClickEventsHaveKeyEventsConfig];
+  "angular-template/conditional-complexity"?: RuleNoConfig | [AllowWarnDeny, ConditionalComplexity];
+  "angular-template/cyclomatic-complexity"?: RuleNoConfig | [AllowWarnDeny, CyclomaticComplexity];
+  "angular-template/elements-content"?: RuleNoConfig | [AllowWarnDeny, ElementsContentConfig];
+  "angular-template/eqeqeq"?: RuleNoConfig | [AllowWarnDeny, AngularTemplateEqeqeqConfig];
+  "angular-template/i18n"?: RuleNoConfig | [AllowWarnDeny, I18NConfig];
+  "angular-template/interactive-supports-focus"?:
+    RuleNoConfig | [AllowWarnDeny, AngularTemplateInteractiveSupportsFocusConfig];
+  "angular-template/label-has-associated-control"?:
+    RuleNoConfig | [AllowWarnDeny, AngularLabelHasAssociatedControlConfig];
+  "angular-template/mouse-events-have-key-events"?: RuleNoConfig;
   "angular-template/no-any"?: RuleNoConfig;
+  "angular-template/no-autofocus"?: RuleNoConfig;
+  "angular-template/no-call-expression"?: RuleNoConfig | [AllowWarnDeny, NoCallExpressionConfig];
+  "angular-template/no-distracting-elements"?: RuleNoConfig;
+  "angular-template/no-duplicate-attributes"?: RuleNoConfig | [AllowWarnDeny, NoDuplicateAttributesConfig];
+  "angular-template/no-empty-control-flow"?: RuleNoConfig;
+  "angular-template/no-inline-styles"?: RuleNoConfig | [AllowWarnDeny, NoInlineStyles];
+  "angular-template/no-interpolation-in-attributes"?: RuleNoConfig | [AllowWarnDeny, NoInterpolationInAttributes];
+  "angular-template/no-negated-async"?: RuleNoConfig;
+  "angular-template/no-nested-tags"?: RuleNoConfig;
+  "angular-template/no-non-null-assertion"?: RuleNoConfig;
+  "angular-template/no-outerhtml"?: RuleNoConfig;
+  "angular-template/no-positive-tabindex"?: RuleNoConfig;
+  "angular-template/prefer-at-else"?: RuleNoConfig;
+  "angular-template/prefer-at-empty"?: RuleNoConfig;
+  "angular-template/prefer-built-in-pipes"?: RuleNoConfig | [AllowWarnDeny, PreferBuiltInPipesConfig];
+  "angular-template/prefer-class-binding"?: RuleNoConfig;
+  "angular-template/prefer-contextual-for-variables"?:
+    RuleNoConfig | [AllowWarnDeny, PreferContextualForVariablesConfig];
+  "angular-template/prefer-control-flow"?: RuleNoConfig;
+  "angular-template/prefer-ngsrc"?: RuleNoConfig;
+  "angular-template/prefer-self-closing-tags"?: RuleNoConfig;
+  "angular-template/prefer-static-string-properties"?:
+    RuleNoConfig | [AllowWarnDeny, PreferStaticStringPropertiesConfig];
+  "angular-template/prefer-style-binding"?: RuleNoConfig;
+  "angular-template/prefer-template-literal"?: RuleNoConfig;
+  "angular-template/require-switch-default"?: RuleNoConfig;
+  "angular-template/role-has-required-aria"?: RuleNoConfig;
+  "angular-template/table-scope"?: RuleNoConfig;
+  "angular-template/use-track-by-function"?: RuleNoConfig | [AllowWarnDeny, UseTrackByFunctionConfig];
+  "angular-template/valid-aria"?: RuleNoConfig;
   "array-callback-return"?: RuleNoConfig | [AllowWarnDeny, ArrayCallbackReturn];
   "arrow-body-style"?: RuleNoConfig | [AllowWarnDeny, Mode2] | [AllowWarnDeny, Mode2, ArrowBodyStyleConfig];
   "block-scoped-var"?: RuleNoConfig;
@@ -1806,6 +1868,24 @@ export interface DummyRuleMap {
     | DummyRule
     | RuleNoConfig
     | [AllowWarnDeny, AccessorPairsConfig]
+    | [AllowWarnDeny, AttributesOrderConfig]
+    | [AllowWarnDeny, ButtonHasTypeConfig]
+    | [AllowWarnDeny, ClickEventsHaveKeyEventsConfig]
+    | [AllowWarnDeny, ConditionalComplexity]
+    | [AllowWarnDeny, CyclomaticComplexity]
+    | [AllowWarnDeny, ElementsContentConfig]
+    | [AllowWarnDeny, AngularTemplateEqeqeqConfig]
+    | [AllowWarnDeny, I18NConfig]
+    | [AllowWarnDeny, AngularTemplateInteractiveSupportsFocusConfig]
+    | [AllowWarnDeny, AngularLabelHasAssociatedControlConfig]
+    | [AllowWarnDeny, NoCallExpressionConfig]
+    | [AllowWarnDeny, NoDuplicateAttributesConfig]
+    | [AllowWarnDeny, NoInlineStyles]
+    | [AllowWarnDeny, NoInterpolationInAttributes]
+    | [AllowWarnDeny, PreferBuiltInPipesConfig]
+    | [AllowWarnDeny, PreferContextualForVariablesConfig]
+    | [AllowWarnDeny, PreferStaticStringPropertiesConfig]
+    | [AllowWarnDeny, UseTrackByFunctionConfig]
     | [AllowWarnDeny, ArrayCallbackReturn]
     | [AllowWarnDeny, Mode2]
     | [AllowWarnDeny, Mode2, ArrowBodyStyleConfig]
@@ -2168,6 +2248,249 @@ export interface AccessorPairsConfig {
    * Report a setter without a getter.
    */
   setWithoutGet?: boolean;
+}
+export interface AttributesOrderConfig {
+  /**
+   * Sort attributes of the same kind alphabetically.
+   */
+  alphabetical?: boolean;
+  /**
+   * The order of the kinds of attributes.
+   */
+  order?: OrderType[];
+}
+export interface ButtonHasTypeConfig {
+  /**
+   * Directive names that, when present on the element, cause it to be ignored. Entries
+   * wrapped in slashes, e.g. `/^tui/`, are treated as regular expressions.
+   */
+  ignoreWithDirectives?: IgnoredDirectives;
+}
+export interface ClickEventsHaveKeyEventsConfig {
+  /**
+   * Only key events whose key (the last segment of the pseudo-event, e.g. `enter` in
+   * `(keydown.shift.enter)`) is in this list satisfy the rule. Implies `requireKeyCode`.
+   */
+  allowedKeyCodes?: string[];
+  /**
+   * Directive names that, when present on the element, cause it to be ignored. Entries
+   * wrapped in slashes, e.g. `/^tui/`, are treated as regular expressions.
+   */
+  ignoreWithDirectives?: IgnoredDirectives;
+  /**
+   * Require key events to specify a key via a pseudo-event, e.g. `(keydown.enter)`. A bare
+   * `(keydown)` will not satisfy the rule.
+   */
+  requireKeyCode?: boolean;
+}
+export interface ConditionalComplexity {
+  /**
+   * The maximum number of binary and conditional operators in one expression.
+   */
+  maxComplexity?: number;
+}
+export interface CyclomaticComplexity {
+  /**
+   * The maximum number of branches in a template.
+   */
+  maxComplexity?: number;
+  /**
+   * How switches are counted.
+   */
+  variant?: CyclomaticComplexityVariant;
+}
+export interface ElementsContentConfig {
+  /**
+   * Attributes and inputs that provide content, in addition to `aria-label`, `innerHtml`,
+   * `innerHTML`, `innerText`, `outerHTML`, `textContent` and `title`.
+   */
+  allowList?: string[];
+}
+export interface AngularTemplateEqeqeqConfig {
+  /**
+   * Allow `==` and `!=` when one side is `null` or `undefined`.
+   */
+  allowNullOrUndefined?: boolean;
+}
+export interface I18NConfig {
+  /**
+   * Allow elements and `<ng-template>`s inside an element with an `i18n` attribute.
+   */
+  allowMarkupInContent?: boolean;
+  /**
+   * A pattern; interpolated text whose static parts match it needs no `i18n` attribute.
+   */
+  boundTextAllowedPattern?: string;
+  /**
+   * Report attributes with text that have no `i18n-<attribute>`.
+   */
+  checkAttributes?: boolean;
+  /**
+   * Report custom IDs used more than once.
+   */
+  checkDuplicateId?: boolean;
+  /**
+   * Report `i18n` and `i18n-<attribute>` attributes without a custom ID (`@@id`).
+   */
+  checkId?: boolean;
+  /**
+   * Report text, interpolations and ICU expressions outside an element with `i18n`.
+   */
+  checkText?: boolean;
+  /**
+   * Attributes that need no translation, as `name` or `element[name]`, in addition to the
+   * defaults.
+   */
+  ignoreAttributes?: string[];
+  /**
+   * Elements whose text and attributes are not checked.
+   */
+  ignoreTags?: string[];
+  /**
+   * Require a description in `i18n` and `i18n-<attribute>` attributes.
+   */
+  requireDescription?: boolean;
+  /**
+   * Require a meaning in `i18n` attributes.
+   */
+  requireMeaning?: boolean;
+}
+export interface AngularTemplateInteractiveSupportsFocusConfig {
+  /**
+   * Elements that are not checked, like `form`, where click and key events of the controls
+   * inside bubble up.
+   */
+  allowList?: string[];
+}
+export interface AngularLabelHasAssociatedControlConfig {
+  /**
+   * Require the `for` value to match the `id` of a control in the same template.
+   */
+  checkIds?: boolean;
+  /**
+   * Element names of controls, in addition to `input`, `meter`, `output`, `progress`,
+   * `select` and `textarea`.
+   */
+  controlComponents?: string[];
+  /**
+   * Label components, in addition to `label` with the `for` and `htmlFor` inputs.
+   */
+  labelComponents?: LabelComponent[];
+}
+export interface LabelComponent {
+  /**
+   * Inputs that associate it with a control, like `for`.
+   */
+  inputs?: string[];
+  /**
+   * Element name of the label component.
+   */
+  selector: string;
+}
+export interface NoCallExpressionConfig {
+  /**
+   * Names of functions and methods that may be called.
+   */
+  allowList?: string[];
+  /**
+   * Functions and methods whose name starts with this prefix may be called.
+   */
+  allowPrefix?: string;
+  /**
+   * Functions and methods whose name ends with this suffix may be called.
+   */
+  allowSuffix?: string;
+}
+export interface NoDuplicateAttributesConfig {
+  /**
+   * Allow the `class` and `style` attributes next to their bindings, which Angular merges.
+   * See <https://angular.dev/guide/templates/class-binding#styling-precedence>.
+   */
+  allowStylePrecedenceDuplicates?: boolean;
+  /**
+   * Allow a two-way binding next to an output of the same event, as in
+   * `[(ngModel)]="value" (ngModelChange)="changed()"`.
+   */
+  allowTwoWayDataBinding?: boolean;
+  /**
+   * Input or output names that may appear more than once.
+   */
+  ignore?: string[];
+}
+export interface NoInlineStyles {
+  /**
+   * Whether `[style]`, `[style.property]` and `style="{{ }}"` bindings are allowed.
+   * `"dynamic"` allows them only when the bound value is not a constant:
+   * `[style.width.px]="column.width"` is allowed, `[style.color]="'red'"` is not.
+   */
+  allowBindToStyle?: AllowOption;
+  /**
+   * Whether `[ngStyle]` bindings are allowed. `"dynamic"` allows them only when the bound
+   * value is not a constant: `{ color: textColor }` is allowed, `{ color: 'red' }` is not.
+   */
+  allowNgStyle?: AllowOption;
+}
+export interface NoInterpolationInAttributes {
+  /**
+   * Allow interpolation that is only part of the value, as in `alt="{{ name }} is online"`.
+   */
+  allowSubstringInterpolation?: boolean;
+}
+export interface PreferBuiltInPipesConfig {
+  /**
+   * Whether to allow these method calls inside output event handlers.
+   */
+  allowInOutputHandlers?: boolean;
+  /**
+   * Method names to disallow. Replaces the default list: `toLowerCase`, `toUpperCase`,
+   * `toLocaleLowerCase` and `toLocaleUpperCase`.
+   */
+  disallowList?: string[];
+}
+export interface PreferContextualForVariablesConfig {
+  /**
+   * Alias names allowed for each contextual variable.
+   */
+  allowedAliases?: AllowedAliases;
+}
+export interface AllowedAliases {
+  /**
+   * Aliases for `$count` that are allowed to be used.
+   */
+  $count?: string[];
+  /**
+   * Aliases for `$even` that are allowed to be used.
+   */
+  $even?: string[];
+  /**
+   * Aliases for `$first` that are allowed to be used.
+   */
+  $first?: string[];
+  /**
+   * Aliases for `$index` that are allowed to be used.
+   */
+  $index?: string[];
+  /**
+   * Aliases for `$last` that are allowed to be used.
+   */
+  $last?: string[];
+  /**
+   * Aliases for `$odd` that are allowed to be used.
+   */
+  $odd?: string[];
+}
+export interface PreferStaticStringPropertiesConfig {
+  /**
+   * Property names this rule ignores.
+   */
+  ignore?: string[];
+}
+export interface UseTrackByFunctionConfig {
+  /**
+   * Input names accepted in place of `ngForTrackBy`, such as `ngForTrackById` for a
+   * directive that adds a `trackById` key to `*ngFor`.
+   */
+  alias?: string[];
 }
 export interface ArrayCallbackReturn {
   /**

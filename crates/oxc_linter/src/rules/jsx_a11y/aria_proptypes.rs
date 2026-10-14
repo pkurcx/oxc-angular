@@ -99,8 +99,8 @@ impl Rule for AriaProptypes {
 }
 
 // ref: https://www.w3.org/TR/wai-aria-1.2/#propcharacteristic_value
-#[derive(Debug, Clone, PartialEq)]
-enum AriaPropType {
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum AriaPropType {
     Id,
     Boolean,
     String,
@@ -263,7 +263,7 @@ fn is_target_literal_value(value: &JSXAttributeValue) -> bool {
 }
 
 // ref: https://github.com/A11yance/aria-query/blob/main/src/ariaPropsMap.js
-fn get_aria_prop_type(prop_name: AriaProperty) -> AriaPropType {
+pub fn get_aria_prop_type(prop_name: AriaProperty) -> AriaPropType {
     match prop_name {
         AriaProperty::ActiveDescendant | AriaProperty::Details | AriaProperty::ErrorMessage => {
             AriaPropType::Id

@@ -1,0 +1,39 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(role-has-required-aria): The span with role="checkbox" does not have required ARIA properties: aria-checked
+   ╭─[role_has_required_aria.html:1:7]
+ 1 │ <span role="checkbox"></span>
+   ·       ───────────────
+   ╰────
+  help: Remove role `checkbox`
+
+  ⚠ angular-template(role-has-required-aria): The div with role="combobox" does not have required ARIA properties: aria-controls
+   ╭─[role_has_required_aria.html:1:6]
+ 1 │ <div role="combobox" aria-expanded="false"></div>
+   ·      ───────────────
+   ╰────
+  help: Remove role `combobox`
+
+  ⚠ angular-template(role-has-required-aria): The div with role="scrollbar" does not have required ARIA properties: aria-controls, aria-valuenow
+   ╭─[role_has_required_aria.html:1:6]
+ 1 │ <div role="scrollbar"></div>
+   ·      ────────────────
+   ╰────
+  help: Remove role `scrollbar`
+
+  ⚠ angular-template(role-has-required-aria): The DIV with role="treeitem" does not have required ARIA properties: aria-selected
+   ╭─[role_has_required_aria.html:1:6]
+ 1 │ <DIV role="treeitem"></DIV>
+   ·      ───────────────
+   ╰────
+  help: Remove role `treeitem`
+
+  ⚠ angular-template(role-has-required-aria): The input with role="switch" does not have required ARIA properties: aria-checked
+   ╭─[role_has_required_aria.html:1:20]
+ 1 │ <input type="text" role="switch">
+   ·                    ─────────────
+   ╰────
+  help: Remove role `switch`

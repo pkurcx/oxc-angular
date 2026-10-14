@@ -1,0 +1,94 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 9 exceeds the defined limit 5
+   ╭─[conditional_complexity.html:1:13]
+ 1 │ <div *ngIf="a === '3' || (b === '3' && c.d !== '1' && e.f !== '6' && q !== g)"></div>
+   ·             ─────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 9 exceeds the defined limit 4
+   ╭─[conditional_complexity.html:1:13]
+ 1 │ <div *ngIf="(a === '3' || (b === '3' && c.d !== '1' && e.f !== '6' && q !== g)) | async"></div>
+   ·             ───────────────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 7 exceeds the defined limit 6
+   ╭─[conditional_complexity.html:1:4]
+ 1 │ {{ a === 1 || b === 2 || c === 3 || d === 4 }}
+   ·    ────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 7 exceeds the defined limit 6
+   ╭─[conditional_complexity.html:1:6]
+ 1 │ @if (a === 1 || b === 2 || c === 3 || d === 4) { x }
+   ·      ────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 3 exceeds the defined limit 2
+   ╭─[conditional_complexity.html:1:10]
+ 1 │ @switch (a ? b ? c : d : e ? f : g) { @default { x } }
+   ·          ─────────────────────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 2 exceeds the defined limit 1
+   ╭─[conditional_complexity.html:1:10]
+ 1 │ @let v = a && b && c;
+   ·          ───────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 2 exceeds the defined limit 1
+   ╭─[conditional_complexity.html:1:14]
+ 1 │ <img alt="{{ a && b && c }} text">
+   ·              ───────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 4 exceeds the defined limit 3
+   ╭─[conditional_complexity.html:1:22]
+ 1 │ <ng-container *ngIf="control && control.invalid && (control.touched || (showOnDirty && control.dirty))"></ng-container>
+   ·                      ─────────────────────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 5 exceeds the defined limit 2
+   ╭─[conditional_complexity.html:1:22]
+ 1 │ <ng-container *ngIf="control && control.invalid && (control.touched || (showOnDirty && control.dirty)) && control.errors | keys as errorKeys">{{ errorKeys }}</ng-container>
+   ·                      ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 4 exceeds the defined limit 3
+   ╭─[conditional_complexity.html:1:22]
+ 1 │ <ng-container *ngIf="(control | isDefined) && control.invalid && (control.touched || (showOnDirty && control.dirty))"></ng-container>
+   ·                      ───────────────────────────────────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 7 exceeds the defined limit 5
+   ╭─[conditional_complexity.html:1:20]
+ 1 │ <div [class.px-4]="a <= b || (b > c && c >= d && d < e)"></div>
+   ·                    ────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 9 exceeds the defined limit 5
+   ╭─[conditional_complexity.html:1:20]
+ 1 │ <div [class.my-2]="a === 'x' ? v === c : b === 3 ? 0 : c > 3 && d === 9 ? 9 : 'xa'"></div>
+   ·                    ───────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 8 exceeds the defined limit 5
+   ╭─[conditional_complexity.html:1:19]
+ 1 │ {{ test.xyz }} {{ ab > 2 && cd === 9 && control?.invalid && (control.touched || (showOnDirty && control.dirty)) ? 'some value' : 'another value' }} {{ control.touched }}
+   ·                   ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 3 exceeds the defined limit 2
+   ╭─[conditional_complexity.html:1:6]
+ 1 │ @if ((a && b && c && d) | async; as result) { {{ result }} }
+   ·      ──────────────────────────
+   ╰────
+
+  ⚠ angular-template(conditional-complexity): The conditional complexity 3 exceeds the defined limit 2
+   ╭─[conditional_complexity.html:1:29]
+ 1 │ @if (a) { First } @else if (b && c && d && e) { Second } @else { Third }
+   ·                             ────────────────
+   ╰────

@@ -1,0 +1,11 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-static-string-properties): Using a property is more efficient than binding a static string.
+   ╭─[prefer_static_string_properties.ts:1:73]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: `<img [alt]="'Profile'">` }) class A {}
+   ·                                                                         ─────────────────
+   ╰────
+  help: Replace `[alt]="'Profile'"` with `alt="Profile"`.

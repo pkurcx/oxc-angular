@@ -1,0 +1,11 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-outerhtml): Do not use `outerHTML`. Binding to `[outerHTML]` throws on update because setting `outerHTML` replaces the host element itself, so Angular loses its reference to the node ("This element has no parent node"); a static `outerHTML` attribute is not a real DOM attribute and has no effect. Use `[innerHTML]` (being mindful of sanitization) or restructure the
+  │ template instead.
+   ╭─[no_outerhtml.ts:1:74]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: '<div [outerHTML]="html"></div>' }) class A {}
+   ·                                                                          ─────────
+   ╰────

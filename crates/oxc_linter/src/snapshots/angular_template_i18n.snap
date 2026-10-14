@@ -1,0 +1,517 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular-template(i18n): Attribute "tooltip" has no corresponding i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#mark-element-attributes-for-translations
+   ╭─[i18n.html:1:6]
+ 1 │ <div tooltip="This requires translation"></div>
+   ·      ───────
+   ╰────
+  help: Insert ` i18n-tooltip`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:3:15]
+ 2 │       <div>
+ 3 │         <span>test{{data_from_backend}}</span>
+   ·               ─────────────────────────
+ 4 │       </div>
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:1]
+ 1 │ { value, plural, =0 {No elements} =1 {111} }
+   · ────────────────────────────────────────────
+   ╰────
+  help: Insert `<ng-container i18n>`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:1]
+ 1 │ { value, plural, =0 {<div>No elements</div>} =1 {111} }
+   · ───────────────────────────────────────────────────────
+   ╰────
+  help: Insert `<ng-container i18n>`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:3:23]
+ 2 │       <div>
+ 3 │         <ng-container>Some text&nbsp;t&#64; tr1nslate</ng-container>
+   ·                       ───────────────────────────────
+ 4 │       </div>
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:4]
+ 1 │ <p>Lorem ipsum <em i18n="@@dolor">dolor</em> sit amet.</p>
+   ·    ────────────
+   ╰────
+  help: Add the `i18n` attribute
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:46]
+ 1 │ <p>Lorem ipsum <em i18n="@@dolor">dolor</em> sit amet.</p>
+   ·                                              ─────────
+   ╰────
+  help: Add the `i18n` attribute
+
+  ⚠ angular-template(i18n): Missing custom ID on attribute "i18n-tooltip". See more at https://angular.dev/guide/i18n-optional-manage-marked-text
+   ╭─[i18n.html:1:6]
+ 1 │ <div tooltip="This requires translation" i18n-tooltip></div>
+   ·      ───────
+   ╰────
+
+  ⚠ angular-template(i18n): Missing custom ID on element. See more at https://angular.dev/guide/i18n-optional-manage-marked-text
+   ╭─[i18n.html:3:9]
+ 2 │           <div>
+ 3 │ ╭─▶         <span i18n label="label is ignored in 'ignoreAttributes'">
+ 4 │ │             Missing custom ID
+ 5 │ ╰─▶         </span>
+ 6 │           </div>
+   ╰────
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@custom-id". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:4:9]
+ 3 │         i18n-tooltip="@@custom-id"
+ 4 │         tooltip="This requires translation"
+   ·         ───────────────────────────────────
+ 5 │         label="Custom label"
+   ╰────
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@custom-id". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:5:9]
+ 4 │         tooltip="This requires translation"
+ 5 │         label="Custom label"
+   ·         ────────────────────
+ 6 │         i18n-label="@@custom-id"
+   ╰────
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@myId". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:2:7]
+ 1 │ 
+ 2 │       <h3 i18n="@@myId">Hello</h3>
+   ·       ────────────────────────────
+ 3 │       <p i18n="@@myId">Good bye</p>
+   ╰────
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@myId". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:3:7]
+ 2 │       <h3 i18n="@@myId">Hello</h3>
+ 3 │       <p i18n="@@myId">Good bye</p>
+   ·       ─────────────────────────────
+ 4 │     
+   ╰────
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@custom-id". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:3:9]
+ 2 │       <div i18n-tooltip="@@custom-id" tooltip="This requires translation">
+ 3 │         <span i18n="@@custom-id">Some text to translate</span>
+   ·         ──────────────────────────────────────────────────────
+ 4 │       </div>
+   ╰────
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@custom-id". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:2:39]
+ 1 │ 
+ 2 │       <div i18n-tooltip="@@custom-id" tooltip="This requires translation">
+   ·                                       ───────────────────────────────────
+ 3 │         <span i18n="@@custom-id">Some text to translate</span>
+   ╰────
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@custom-id". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:3:9]
+ 2 │       <div i18n-tooltip="@@custom-id" tooltip="This requires translation">
+ 3 │         <span i18n="@@custom-id">Some text to translate</span>
+   ·         ──────────────────────────────────────────────────────
+ 4 │       </div>
+   ╰────
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@custom-id". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:2:39]
+ 1 │ 
+ 2 │       <div i18n-tooltip="@@custom-id" tooltip="This requires translation">
+   ·                                       ───────────────────────────────────
+ 3 │         <span i18n="@@custom-id">Some text to translate</span>
+   ╰────
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@custom-id". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:5:37]
+ 4 │       </div>
+ 5 │       <div i18n-label="@@custom-id" label="A label"></div>
+   ·                                     ───────────────
+ 6 │     
+   ╰────
+
+  ⚠ angular-template(i18n): Missing custom ID on element. See more at https://angular.dev/guide/i18n-optional-manage-marked-text
+    ╭─[i18n.html:13:11]
+ 12 │             >
+ 13 │ ╭─▶           <span i18n label="label is ignored in 'ignoreAttributes'">
+ 14 │ │               Missing custom ID
+ 15 │ ╰─▶           </span>
+ 16 │             </div>
+    ╰────
+
+  ⚠ angular-template(i18n): Attribute "label" has no corresponding i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#mark-element-attributes-for-translations
+    ╭─[i18n.html:11:11]
+ 10 │           width="100px"
+ 11 │           label="Templates need translation too."
+    ·           ─────
+ 12 │         >
+    ╰────
+  help: Insert ` i18n-label`
+
+  ⚠ angular-template(i18n): Attribute "tooltip" has no corresponding i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#mark-element-attributes-for-translations
+   ╭─[i18n.html:3:9]
+ 2 │       <div
+ 3 │         tooltip="This requires translation"
+   ·         ───────
+ 4 │         i18n-placeholder
+   ╰────
+  help: Insert ` i18n-tooltip`
+
+  ⚠ angular-template(i18n): Missing custom ID on attribute "i18n-placeholder". See more at https://angular.dev/guide/i18n-optional-manage-marked-text
+   ╭─[i18n.html:5:9]
+ 4 │         i18n-placeholder
+ 5 │         placeholder="More translation, please"
+   ·         ───────────
+ 6 │         class="red"
+   ╰────
+
+  ⚠ angular-template(i18n): Missing i18n description on element. See more at https://angular.dev/guide/i18n-common-prepare#i18n-metadata-for-translation
+   ╭─[i18n.html:1:1]
+ 1 │ <h1 i18n>Hello</h1>
+   · ───────────────────
+   ╰────
+
+  ⚠ angular-template(i18n): Missing i18n description on element. See more at https://angular.dev/guide/i18n-common-prepare#i18n-metadata-for-translation
+   ╭─[i18n.html:1:1]
+ 1 │ <h1 i18n="@@custom-id">Hello</h1>
+   · ─────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(i18n): Missing i18n description on element. See more at https://angular.dev/guide/i18n-common-prepare#i18n-metadata-for-translation
+   ╭─[i18n.html:2:49]
+ 1 │ 
+ 2 │       <span i18n="A balloon that displays data" data-balloon="Translated title" i18n-data-balloon>
+   ·                                                 ────────────
+ 3 │         Hello
+   ╰────
+
+  ⚠ angular-template(i18n): Missing i18n description on element. See more at https://angular.dev/guide/i18n-common-prepare#i18n-metadata-for-translation
+   ╭─[i18n.html:2:73]
+ 1 │ 
+ 2 │       <h1 i18n="Title of the sample@@custom-id" i18n-title="@@title-id" title="Translated title">
+   ·                                                                         ─────
+ 3 │         Hello
+   ╰────
+
+  ⚠ angular-template(i18n): Missing i18n description on element. See more at https://angular.dev/guide/i18n-common-prepare#i18n-metadata-for-translation
+   ╭─[i18n.html:1:30]
+ 1 │ <img [src]="logo" i18n-title title="App Logo" i18n-alt="App logo" alt="App Logo"/>
+   ·                              ─────
+   ╰────
+
+  ⚠ angular-template(i18n): Missing i18n meaning on element. See more at https://angular.dev/guide/i18n-common-prepare#i18n-metadata-for-translation
+   ╭─[i18n.html:1:1]
+ 1 │ <h1 i18n>Hello</h1>
+   · ───────────────────
+   ╰────
+
+  ⚠ angular-template(i18n): Missing i18n meaning on element. See more at https://angular.dev/guide/i18n-common-prepare#i18n-metadata-for-translation
+   ╭─[i18n.html:1:1]
+ 1 │ <h1 i18n="An introduction header for this sample">Hello</h1>
+   · ────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(i18n): Missing i18n meaning on element. See more at https://angular.dev/guide/i18n-common-prepare#i18n-metadata-for-translation
+   ╭─[i18n.html:1:1]
+ 1 │ <h1 i18n="An introduction header for this sample@@custom-id">Hello</h1>
+   · ───────────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(i18n): Missing i18n meaning on element. See more at https://angular.dev/guide/i18n-common-prepare#i18n-metadata-for-translation
+   ╭─[i18n.html:1:1]
+ 1 │ <h1 i18n="|An introduction header for this sample">Hello</h1>
+   · ─────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:14]
+ 1 │ <ng-template>No people or teams matched your search</ng-template>
+   ·              ──────────────────────────────────────
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:1]
+ 1 │ { value, plural, =0 {<ng-template>No elements</ng-template>} =1 {111} }
+   · ───────────────────────────────────────────────────────────────────────
+   ╰────
+  help: Insert `<ng-container i18n>`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:3:22]
+ 2 │       <div>
+ 3 │         <ng-template>Some text&nbsp;t&#64; tr1nslate</ng-template>
+   ·                      ───────────────────────────────
+ 4 │       </div>
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:14]
+ 1 │ <ng-template>Lorem ipsum <ng-template i18n="@@dolor">dolor</ng-template> sit amet.</ng-template>
+   ·              ────────────
+   ╰────
+  help: Add the `i18n` attribute
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:74]
+ 1 │ <ng-template>Lorem ipsum <ng-template i18n="@@dolor">dolor</ng-template> sit amet.</ng-template>
+   ·                                                                          ─────────
+   ╰────
+  help: Add the `i18n` attribute
+
+  ⚠ angular-template(i18n): Missing custom ID on element. See more at https://angular.dev/guide/i18n-optional-manage-marked-text
+   ╭─[i18n.html:2:7]
+ 1 │     
+ 2 │ ╭─▶       <ng-template i18n>
+ 3 │ │           The author is {gender, select, male {male} female {female} other {other}}
+ 4 │ ╰─▶       </ng-template>
+ 5 │         
+   ╰────
+
+  ⚠ angular-template(i18n): Missing custom ID on element. See more at https://angular.dev/guide/i18n-optional-manage-marked-text
+   ╭─[i18n.html:1:1]
+ 1 │ <p *ngIf="condition" i18n>Text</p>
+   · ──────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@myId". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:2:7]
+ 1 │ 
+ 2 │       <h3 i18n="@@myId">Hello</h3>
+   ·       ────────────────────────────
+ 3 │       <ng-template i18n="@@myId">Good bye</ng-template>
+   ╰────
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@myId". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:3:7]
+ 2 │       <h3 i18n="@@myId">Hello</h3>
+ 3 │       <ng-template i18n="@@myId">Good bye</ng-template>
+   ·       ─────────────────────────────────────────────────
+ 4 │     
+   ╰────
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:4:19]
+ 3 │           @if (a > b) {
+ 4 │             <span>{{a}} is greater than {{b}}</span>
+   ·                   ───────────────────────────
+ 5 │           } @else if (b > a) {
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:6:19]
+ 5 │           } @else if (b > a) {
+ 6 │             <span>{{a}} is less than {{b}}</span>
+   ·                   ────────────────────────
+ 7 │           } @else {
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:8:19]
+ 7 │           } @else {
+ 8 │             <span>{{a}} is equal to {{b}}</span>
+   ·                   ───────────────────────
+ 9 │           }
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:4:19]
+ 3 │           @for (item of items; track item.id) {
+ 4 │             <span>Item: {{ item.name }}</span>
+   ·                   ─────────────────────
+ 5 │           } @empty {
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:6:20]
+ 5 │           } @empty {
+ 6 │              <span>There are no items.</span>
+   ·                    ───────────────────
+ 7 │           }
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:5:21]
+ 4 │             @case (caseA) {
+ 5 │               <span>Case A.</span>
+   ·                     ───────
+ 6 │             }
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:8:21]
+ 7 │             @case (caseB) {
+ 8 │               <span>Case B.</span>
+   ·                     ───────
+ 9 │             }
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+    ╭─[i18n.html:11:21]
+ 10 │             @default {
+ 11 │               <span>Default case.</span>
+    ·                     ─────────────
+ 12 │             }
+    ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:4:16]
+ 3 │           @defer {
+ 4 │             <p>Large component:</p> <large-component />
+   ·                ────────────────
+ 5 │           } @loading {
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+    ╭─[i18n.html:10:16]
+  9 │           } @placeholder (minimum 500ms) {
+ 10 │             <p>Placeholder content</p>
+    ·                ───────────────────
+ 11 │           }
+    ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:6:16]
+ 5 │           } @loading {
+ 6 │             <p>Loading...</p>
+   ·                ──────────
+ 7 │           } @error {
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:8:16]
+ 7 │           } @error {
+ 8 │             <p>Error</p>
+   ·                ─────
+ 9 │           } @placeholder (minimum 500ms) {
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Avoid HTML markup in an element with an i18n attribute.
+   ╭─[i18n.html:4:9]
+ 3 │         Text to translate
+ 4 │         <foo></foo>
+   ·         ───────────
+ 5 │       </div>
+   ╰────
+
+  ⚠ angular-template(i18n): Avoid HTML markup in an element with an i18n attribute.
+   ╭─[i18n.html:4:9]
+ 3 │         Text to translate
+ 4 │         <foo></foo>
+   ·         ───────────
+ 5 │       </ng-template>
+   ╰────
+
+  ⚠ angular-template(i18n): Avoid HTML markup in an element with an i18n attribute.
+   ╭─[i18n.html:3:7]
+ 2 │         <div i18n>
+ 3 │ ╭─▶       <div i18n>
+ 4 │ │           Text to translate
+ 5 │ ╰─▶       </div>
+ 6 │         </div>
+   ╰────
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:30]
+ 1 │ <div *ngIf="x" title="Hello">Text</div>
+   ·                              ────
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Attribute "title" has no corresponding i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#mark-element-attributes-for-translations
+   ╭─[i18n.html:1:16]
+ 1 │ <div *ngIf="x" title="Hello">Text</div>
+   ·                ─────
+   ╰────
+  help: Insert ` i18n-title`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:24]
+ 1 │ <ng-template *ngIf="x">Text</ng-template>
+   ·                        ────
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@a". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:1:1]
+ 1 │ <ng-template i18n="@@a"></ng-template><p i18n="@@a"></p>
+   · ──────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@a". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:1:39]
+ 1 │ <ng-template i18n="@@a"></ng-template><p i18n="@@a"></p>
+   ·                                       ──────────────────
+   ╰────
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:6]
+ 1 │ <div>My company untranslatable name</div>
+   ·      ──────────────────────────────
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:13]
+ 1 │ <ng-content>Fallback</ng-content>
+   ·             ────────
+   ╰────
+  help: Insert `<ng-container i18n>`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:6]
+ 1 │ <div>test{{x}}</div>
+   ·      ─────────
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@ a". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:1:1]
+ 1 │ <p i18n="@@ a">A</p><p title="T" i18n-title="@@ a"></p>
+   · ────────────────────
+   ╰────
+
+  ⚠ angular-template(i18n): Duplicate custom ID "@@ a". See more at https://angular.dev/guide/i18n-optional-manage-marked-text#define-unique-custom-ids
+   ╭─[i18n.html:1:24]
+ 1 │ <p i18n="@@ a">A</p><p title="T" i18n-title="@@ a"></p>
+   ·                        ─────────
+   ╰────
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:4]
+ 1 │ <p>Hello <span *ngIf="x">a</span></p>
+   ·    ──────
+   ╰────
+  help: Insert ` i18n`
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.html:1:26]
+ 1 │ <p>Hello <span *ngIf="x">a</span></p>
+   ·                          ─
+   ╰────
+  help: Insert ` i18n`

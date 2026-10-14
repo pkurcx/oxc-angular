@@ -1,0 +1,70 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-class-binding): Consider using [class] bindings instead of [ngClass] where applicable.
+   ╭─[prefer_class_binding.html:1:6]
+ 1 │ <div [ngClass]="className"></div>
+   ·      ─────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-class-binding): Consider using [class] bindings instead of [ngClass] where applicable.
+   ╭─[prefer_class_binding.html:1:6]
+ 1 │ <div [ngClass]="getClasses()"></div>
+   ·      ────────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-class-binding): Consider using [class] bindings instead of [ngClass] where applicable.
+   ╭─[prefer_class_binding.html:1:9]
+ 1 │ <button [ngClass]="isActive ? 'active' : 'inactive'"></button>
+   ·         ────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-class-binding): Consider using [class] bindings instead of [ngClass] where applicable.
+   ╭─[prefer_class_binding.html:1:21]
+ 1 │ <div class="static" [ngClass]="dynamicClass"></div>
+   ·                     ────────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-class-binding): Consider using [class] bindings instead of [ngClass] where applicable.
+   ╭─[prefer_class_binding.html:1:20]
+ 1 │ <input type="text" [ngClass]="inputClass" [value]="text">
+   ·                    ──────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-class-binding): Consider using [class] bindings instead of [ngClass] where applicable.
+   ╭─[prefer_class_binding.html:1:6]
+ 1 │ <div [ngClass]="['class1', 'class2']"></div>
+   ·      ────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-class-binding): Consider using [class] bindings instead of [ngClass] where applicable.
+   ╭─[prefer_class_binding.html:1:6]
+ 1 │ <div [ngClass]="{ active: true, disabled: false }"></div>
+   ·      ─────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-class-binding): Consider using [class] bindings instead of [ngClass] where applicable.
+   ╭─[prefer_class_binding.html:1:6]
+ 1 │ <div [ngClass]="{ ...base, 'a': x }"></div>
+   ·      ───────────────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-class-binding): Consider using [class] bindings instead of [ngClass] where applicable.
+   ╭─[prefer_class_binding.html:1:19]
+ 1 │ <div *ngIf="show" [ngClass]="classes"></div>
+   ·                   ───────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-class-binding): Consider using [class] bindings instead of [ngClass] where applicable.
+   ╭─[prefer_class_binding.html:1:28]
+ 1 │ <ng-template [ngIf]="show" [ngClass]="classes"><span></span></ng-template>
+   ·                            ───────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-class-binding): Consider using [class] bindings instead of [ngClass] where applicable.
+   ╭─[prefer_class_binding.html:1:20]
+ 1 │ @if (show) { <span bind-ngClass="classes"></span> }
+   ·                    ──────────────────────
+   ╰────

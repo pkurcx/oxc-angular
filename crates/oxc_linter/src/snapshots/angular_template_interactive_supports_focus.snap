@@ -1,0 +1,117 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <div aria-hidden="false" (click)="onClick()"></div>
+   · ───────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <div [attr.aria-hidden]="false" (click)="onClick()"></div>
+   · ──────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <div role="button" aria-disabled="false" (click)="onClick()"></div>
+   · ───────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <div [attr.aria-disabled]="false" (click)="onClick()"></div>
+   · ────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <div role="button" (click)="onClick()"></div>
+   · ─────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <span (click)="onClick()">Submit</span>
+   · ───────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <SPAN (click)="onClick()">Submit</SPAN>
+   · ───────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <div (click)="onClick()" [attr.aria-label]="clickableThing"></div>
+   · ──────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <div (click)="onClick()" role="invalid"></div>
+   · ──────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <area (click)="onClick()" class="foo">
+   · ──────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <a (click)="onClick()">Click me</a>
+   · ───────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <div (keyup)="onKeyUp()" (keydown)="onKeyDown()" (keypress)="onKeyPress()">Cannot be focused</div>
+   · ──────────────────────────────────────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <div [attr.contenteditable]="false" (keyup)="onKeyUp()">Cannot be focused</div>
+   · ───────────────────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <form (keydown)="onKeyDown()"></form>
+   · ─────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <div role="row" (click)="onClick()"></div>
+   · ──────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <div [tabIndex]="0" (click)="onClick()"></div>
+   · ──────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:1]
+ 1 │ <div *ngIf="show" (click)="onClick()"></div>
+   · ────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:14]
+ 1 │ <ng-template><span (click)="onClick()"></span></ng-template>
+   ·              ─────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.html:1:36]
+ 1 │ @for (item of items; track item) { <li (click)="select(item)"></li> }
+   ·                                    ────────────────────────────────
+   ╰────

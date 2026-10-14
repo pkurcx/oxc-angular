@@ -1,0 +1,12 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(use-track-by-function): Missing trackBy function in ngFor directive
+   ╭─[use_track_by_function.ts:2:7]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: `
+ 2 │   <li *ngFor="let x of xs"></li>
+   ·       ────────────────────
+ 3 │ ` }) class A {}
+   ╰────

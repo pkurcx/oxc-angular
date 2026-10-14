@@ -1,0 +1,305 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input [name]="foo" [name]="bar">
+   ·        ────────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:21]
+ 1 │ <input [name]="foo" [name]="bar">
+   ·                     ────────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input [name]="foo" name="bar">
+   ·        ────────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:21]
+ 1 │ <input [name]="foo" name="bar">
+   ·                     ──────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input name="foo" name="bar">
+   ·        ──────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:19]
+ 1 │ <input name="foo" name="bar">
+   ·                   ──────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `change`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input (change)="foo($event)" (change)="bar($event)">
+   ·        ──────────────────────
+   ╰────
+  help: Remove attribute `change`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `change`
+   ╭─[no_duplicate_attributes.html:1:31]
+ 1 │ <input (change)="foo($event)" (change)="bar($event)">
+   ·                               ──────────────────────
+   ╰────
+  help: Remove attribute `change`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `ngModel`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input [(ngModel)]="model" [(ngModel)]="otherModel">
+   ·        ───────────────────
+   ╰────
+  help: Remove attribute `ngModel`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `ngModel`
+   ╭─[no_duplicate_attributes.html:1:28]
+ 1 │ <input [(ngModel)]="model" [(ngModel)]="otherModel">
+   ·                            ────────────────────────
+   ╰────
+  help: Remove attribute `ngModel`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input [name]="foo" [other]="bam" [name]="bar">
+   ·        ────────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:35]
+ 1 │ <input [name]="foo" [other]="bam" [name]="bar">
+   ·                                   ────────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input [name]="foo" [name]="bar" [name]="bam">
+   ·        ────────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:21]
+ 1 │ <input [name]="foo" [name]="bar" [name]="bam">
+   ·                     ────────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:34]
+ 1 │ <input [name]="foo" [name]="bar" [name]="bam">
+   ·                                  ────────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `ngModel`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input [(ngModel)]="model" [name]="foo" [(ngModel)]="otherModel" name="bar">
+   ·        ───────────────────
+   ╰────
+  help: Remove attribute `ngModel`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:28]
+ 1 │ <input [(ngModel)]="model" [name]="foo" [(ngModel)]="otherModel" name="bar">
+   ·                            ────────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `ngModel`
+   ╭─[no_duplicate_attributes.html:1:41]
+ 1 │ <input [(ngModel)]="model" [name]="foo" [(ngModel)]="otherModel" name="bar">
+   ·                                         ────────────────────────
+   ╰────
+  help: Remove attribute `ngModel`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:66]
+ 1 │ <input [(ngModel)]="model" [name]="foo" [(ngModel)]="otherModel" name="bar">
+   ·                                                                  ──────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `@fade.start`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input (@fade.start)="animationStarted($event)" (@fade.start)="animationStarted($event)">
+   ·        ────────────────────────────────────────
+   ╰────
+  help: Remove attribute `@fade.start`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `@fade.start`
+   ╭─[no_duplicate_attributes.html:1:49]
+ 1 │ <input (@fade.start)="animationStarted($event)" (@fade.start)="animationStarted($event)">
+   ·                                                 ────────────────────────────────────────
+   ╰────
+  help: Remove attribute `@fade.start`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `window:resize`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input (window:resize)="windowResized($event)" (resize)="resize()" (window:resize)="windowResized2($event)">
+   ·        ───────────────────────────────────────
+   ╰────
+  help: Remove attribute `window:resize`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `window:resize`
+   ╭─[no_duplicate_attributes.html:1:68]
+ 1 │ <input (window:resize)="windowResized($event)" (resize)="resize()" (window:resize)="windowResized2($event)">
+   ·                                                                    ────────────────────────────────────────
+   ╰────
+  help: Remove attribute `window:resize`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `ngModelChange`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input [(ngModel)]="model" (ngModelChange)="modelChanged()">
+   ·        ───────────────────
+   ╰────
+  help: Remove attribute `ngModelChange`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `ngModelChange`
+   ╭─[no_duplicate_attributes.html:1:28]
+ 1 │ <input [(ngModel)]="model" (ngModelChange)="modelChanged()">
+   ·                            ────────────────────────────────
+   ╰────
+  help: Remove attribute `ngModelChange`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input [name]="foo" class="css-static" name="bar" [class]="dynamic">
+   ·        ────────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:40]
+ 1 │ <input [name]="foo" class="css-static" name="bar" [class]="dynamic">
+   ·                                        ──────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `class`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input class="foo" class="bar" [class]="dynamic">
+   ·        ───────────
+   ╰────
+  help: Remove attribute `class`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `class`
+   ╭─[no_duplicate_attributes.html:1:20]
+ 1 │ <input class="foo" class="bar" [class]="dynamic">
+   ·                    ───────────
+   ╰────
+  help: Remove attribute `class`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `style`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input style="color: blue" [style]="styleExpression" style="width:50px">
+   ·        ───────────────────
+   ╰────
+  help: Remove attribute `style`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `style`
+   ╭─[no_duplicate_attributes.html:1:54]
+ 1 │ <input style="color: blue" [style]="styleExpression" style="width:50px">
+   ·                                                      ──────────────────
+   ╰────
+  help: Remove attribute `style`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `class`
+   ╭─[no_duplicate_attributes.html:1:16]
+ 1 │ <div class="a" [class]="b"></div>
+   ·                ───────────
+   ╰────
+  help: Remove attribute `class`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `class`
+   ╭─[no_duplicate_attributes.html:1:6]
+ 1 │ <div class="a" [class]="b"></div>
+   ·      ─────────
+   ╰────
+  help: Remove attribute `class`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input [attr.name]="foo" name="bar">
+   ·        ─────────────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:26]
+ 1 │ <input [attr.name]="foo" name="bar">
+   ·                          ──────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `ngModel`
+   ╭─[no_duplicate_attributes.html:1:8]
+ 1 │ <input bindon-ngModel="model" [(ngModel)]="otherModel">
+   ·        ──────────────────────
+   ╰────
+  help: Remove attribute `ngModel`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `ngModel`
+   ╭─[no_duplicate_attributes.html:1:31]
+ 1 │ <input bindon-ngModel="model" [(ngModel)]="otherModel">
+   ·                               ────────────────────────
+   ╰────
+  help: Remove attribute `ngModel`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:19]
+ 1 │ <div *ngIf="show" [name]="foo" [name]="bar"></div>
+   ·                   ────────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:32]
+ 1 │ <div *ngIf="show" [name]="foo" [name]="bar"></div>
+   ·                                ────────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:35]
+ 1 │ <ng-template [ngIf]="show"><input name="a" name="b"></ng-template>
+   ·                                   ────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `name`
+   ╭─[no_duplicate_attributes.html:1:44]
+ 1 │ <ng-template [ngIf]="show"><input name="a" name="b"></ng-template>
+   ·                                            ────────
+   ╰────
+  help: Remove attribute `name`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `change`
+   ╭─[no_duplicate_attributes.html:1:21]
+ 1 │ @if (show) { <input (change)="a()" (change)="b()"> }
+   ·                     ──────────────
+   ╰────
+  help: Remove attribute `change`
+
+  ⚠ angular-template(no-duplicate-attributes): Duplicate attribute `change`
+   ╭─[no_duplicate_attributes.html:1:36]
+ 1 │ @if (show) { <input (change)="a()" (change)="b()"> }
+   ·                                    ──────────────
+   ╰────
+  help: Remove attribute `change`

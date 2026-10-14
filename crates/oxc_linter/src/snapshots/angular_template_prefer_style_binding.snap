@@ -1,0 +1,82 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.html:1:6]
+ 1 │ <div [ngStyle]="{ color: textColor, 'background-color': backgroundColor }"></div>
+   ·      ─────────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.html:1:6]
+ 1 │ <div [ngStyle]="styles"></div>
+   ·      ──────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.html:1:6]
+ 1 │ <div [ngStyle]="getStyles()"></div>
+   ·      ───────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.html:1:9]
+ 1 │ <button [ngStyle]="isActive ? activeStyles : inactiveStyles"></button>
+   ·         ────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.html:1:24]
+ 1 │ <div style="margin: 0" [ngStyle]="dynamicStyles"></div>
+   ·                        ─────────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.html:1:6]
+ 1 │ <div [ngStyle]="{ color: textColor }" [style.font-weight]="'bold'"></div>
+   ·      ────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.html:1:20]
+ 1 │ <input type="text" [ngStyle]="inputStyles" [value]="text">
+   ·                    ───────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.html:1:11]
+ 1 │ <app-card [ngStyle]="cardStyles"></app-card>
+   ·           ──────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.html:1:6]
+ 1 │ <div [ngStyle]="{ 'max-width.px': width }"></div>
+   ·      ─────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.html:1:6]
+ 1 │ <div bind-ngStyle="styles"></div>
+   ·      ─────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.html:1:19]
+ 1 │ <div *ngIf="show" [ngStyle]="styles"></div>
+   ·                   ──────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.html:1:28]
+ 1 │ <ng-template [ngIf]="show" [ngStyle]="styles"><span></span></ng-template>
+   ·                            ──────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.html:1:42]
+ 1 │ @for (item of items; track item) { <span [ngStyle]="item.styles"></span> }
+   ·                                          ───────────────────────
+   ╰────

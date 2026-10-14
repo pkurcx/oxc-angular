@@ -1,0 +1,40 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(elements-content): <h1> should have content
+   ╭─[elements_content.html:1:1]
+ 1 │ <h1></h1>
+   · ─────────
+   ╰────
+
+  ⚠ angular-template(elements-content): <a> should have content
+   ╭─[elements_content.html:1:1]
+ 1 │ <a></a>
+   · ───────
+   ╰────
+
+  ⚠ angular-template(elements-content): <button> should have content
+   ╭─[elements_content.html:1:1]
+ 1 │ <button></button>
+   · ─────────────────
+   ╰────
+
+  ⚠ angular-template(elements-content): <H6> should have content
+   ╭─[elements_content.html:1:1]
+ 1 │ <H6 class="x"></H6>
+   · ───────────────────
+   ╰────
+
+  ⚠ angular-template(elements-content): <button> should have content
+   ╭─[elements_content.html:1:1]
+ 1 │ <button [attr.aria-hidden]="hidden"></button>
+   · ─────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(elements-content): <button> should have content
+   ╭─[elements_content.html:1:1]
+ 1 │ <button appTooltip></button>
+   · ────────────────────────────
+   ╰────

@@ -1,0 +1,12 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-nested-tags): <a> elements must not be nested! This breaks angular incremental hydration as all browsers will convert "<a>1<a>2</a>3</a>" into "<a>1</a><a>2</a>3", creating a DOM mismatch between SSR and Angular
+   ╭─[no_nested_tags.ts:2:3]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: `<a>
+ 2 │   <a></a>
+   ·   ───────
+ 3 │ </a>` }) class A {}
+   ╰────

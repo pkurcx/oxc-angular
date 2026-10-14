@@ -1,0 +1,66 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-nested-tags): <a> elements must not be nested! This breaks angular incremental hydration as all browsers will convert "<a>1<a>2</a>3</a>" into "<a>1</a><a>2</a>3", creating a DOM mismatch between SSR and Angular
+   ╭─[no_nested_tags.html:1:4]
+ 1 │ <a><a></a></a>
+   ·    ───────
+   ╰────
+
+  ⚠ angular-template(no-nested-tags): <A> elements must not be nested! This breaks angular incremental hydration as all browsers will convert "<A>1<A>2</A>3</A>" into "<A>1</A><A>2</A>3", creating a DOM mismatch between SSR and Angular
+   ╭─[no_nested_tags.html:1:4]
+ 1 │ <a><A></A></a>
+   ·    ───────
+   ╰────
+
+  ⚠ angular-template(no-nested-tags): <p> elements must not be nested! This breaks angular incremental hydration as all browsers will convert "<p>1<p>2</p>3</p>" into "<p>1</p><p>2</p>3", creating a DOM mismatch between SSR and Angular
+   ╭─[no_nested_tags.html:1:15]
+ 1 │ <p>@if(true) {<p></p>}</p>
+   ·               ───────
+   ╰────
+
+  ⚠ angular-template(no-nested-tags): <a> elements must not be nested! This breaks angular incremental hydration as all browsers will convert "<a>1<a>2</a>3</a>" into "<a>1</a><a>2</a>3", creating a DOM mismatch between SSR and Angular
+   ╭─[no_nested_tags.html:1:4]
+ 1 │ <a><a *ngFor="let item of items"></a></a>
+   ·    ──────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-nested-tags): <p> elements must not be nested! This breaks angular incremental hydration as all browsers will convert "<p>1<p>2</p>3</p>" into "<p>1</p><p>2</p>3", creating a DOM mismatch between SSR and Angular
+   ╭─[no_nested_tags.html:1:18]
+ 1 │ <p><ng-container><p></p></ng-container></p>
+   ·                  ───────
+   ╰────
+
+  ⚠ angular-template(no-nested-tags): <a> elements must not be nested! This breaks angular incremental hydration as all browsers will convert "<a>1<a>2</a>3</a>" into "<a>1</a><a>2</a>3", creating a DOM mismatch between SSR and Angular
+   ╭─[no_nested_tags.html:2:3]
+ 1 │ <a><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div>
+ 2 │   <a>fail</a>
+   ·   ───────────
+ 3 │ </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></a>
+   ╰────
+
+  ⚠ angular-template(no-nested-tags): <a> elements must not be nested! This breaks angular incremental hydration as all browsers will convert "<a>1<a>2</a>3</a>" into "<a>1</a><a>2</a>3", creating a DOM mismatch between SSR and Angular
+   ╭─[no_nested_tags.html:1:20]
+ 1 │ <a *ngIf="x"><span><a></a></span></a>
+   ·                    ───────
+   ╰────
+
+  ⚠ angular-template(no-nested-tags): <a> elements must not be nested! This breaks angular incremental hydration as all browsers will convert "<a>1<a>2</a>3</a>" into "<a>1</a><a>2</a>3", creating a DOM mismatch between SSR and Angular
+   ╭─[no_nested_tags.html:1:17]
+ 1 │ <ng-template><a><a></a></a></ng-template>
+   ·                 ───────
+   ╰────
+
+  ⚠ angular-template(no-nested-tags): <p> elements must not be nested! This breaks angular incremental hydration as all browsers will convert "<p>1<p>2</p>3</p>" into "<p>1</p><p>2</p>3", creating a DOM mismatch between SSR and Angular
+   ╭─[no_nested_tags.html:1:12]
+ 1 │ <p>@defer {<p></p>} @placeholder {<p></p>}</p>
+   ·            ───────
+   ╰────
+
+  ⚠ angular-template(no-nested-tags): <p> elements must not be nested! This breaks angular incremental hydration as all browsers will convert "<p>1<p>2</p>3</p>" into "<p>1</p><p>2</p>3", creating a DOM mismatch between SSR and Angular
+   ╭─[no_nested_tags.html:1:35]
+ 1 │ <p>@defer {<p></p>} @placeholder {<p></p>}</p>
+   ·                                   ───────
+   ╰────

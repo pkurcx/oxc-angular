@@ -1,0 +1,292 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ foo! }}
+   ·    ────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ foo!.bar }}
+   ·    ────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ user.name! | uppercase }}
+   ·    ──────────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:34]
+ 1 │ {{ user | uppercase : firstArg : secondArg! }}
+   ·                                  ──────────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:29]
+ 1 │ {{ user.name | uppercase : (prefix! | lowercase) }}
+   ·                             ───────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:15]
+ 1 │ <div [title]="user!.name"></div>
+   ·               ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:13]
+ 1 │ @let user = a.b!.c;
+   ·             ────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:13]
+ 1 │ @let user = getUser()!;
+   ·             ──────────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:17]
+ 1 │ {{ x.y({ param: a.b!.c }) }}
+   ·                 ────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ getValue()! }}
+   ·    ───────────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ foo.bar!.baz }}
+   ·    ────────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ foo?.bar!.baz }}
+   ·    ─────────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:26]
+ 1 │ <button (click)="handler(item!)">Click</button>
+   ·                          ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:13]
+ 1 │ <div *ngIf="foo!">Content</div>
+   ·             ────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:6]
+ 1 │ @if (user!) { <div>Content</div> }
+   ·      ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:6]
+ 1 │ @if (user!.isActive) { <div>Active</div> }
+   ·      ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:15]
+ 1 │ @for (item of items!; track item.id) { <div>{{ item.name }}</div> }
+   ·               ──────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:28]
+ 1 │ @for (item of items; track item!.id) { <div>{{ item.name }}</div> }
+   ·                            ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:10]
+ 1 │ @switch (status!) { @case ('active') { <div>Active</div> } }
+   ·          ───────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:27]
+ 1 │ @switch (status) { @case (activeStatus!) { <div>Active</div> } }
+   ·                           ─────────────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ user.getProfile()!.getName() }}
+   ·    ──────────────────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:7]
+ 1 │ @if ((data!.items?.length ?? 0) > 0) { <div>Has items</div> }
+   ·       ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ user! ? user.name : 'Guest' }}
+   ·    ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ items![0] }}
+   ·    ──────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ items![0]?.[0] }}
+   ·    ──────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ items[0]! }}
+   ·    ─────────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ value! + 10 }}
+   ·    ──────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:9]
+ 1 │ {{ 10 + value! }}
+   ·         ──────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ value! === 'test' }}
+   ·    ──────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:5]
+ 1 │ {{ !value! }}
+   ·     ──────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ condition! ? 'yes' : 'no' }}
+   ·    ──────────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:16]
+ 1 │ {{ condition ? value! : 'no' }}
+   ·                ──────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:8]
+ 1 │ {{ a + b?.c! - d == 42 }}
+   ·        ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:8]
+ 1 │ {{ a + b?.c! - d === 42 }}
+   ·        ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:8]
+ 1 │ {{ a + b?.c! - d < 42 }}
+   ·        ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:8]
+ 1 │ {{ a + b?.c! - d <= 42 }}
+   ·        ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:8]
+ 1 │ {{ a + b?.c! - d > 42 }}
+   ·        ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:8]
+ 1 │ {{ a + b?.c! - d >= 42 }}
+   ·        ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:17]
+ 1 │ {{ condition ?? value! }}
+   ·                 ──────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:24]
+ 1 │ {{ condition ? 'yes' : value! }}
+   ·                        ──────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ service!.getData() }}
+   ·    ────────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ x[y]![z] }}
+   ·    ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ x[y][z]! }}
+   ·    ────────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ x.y.z!() }}
+   ·    ──────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:4]
+ 1 │ {{ x.y?.z!() }}
+   ·    ───────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:28]
+ 1 │ <div *ngIf="show" [title]="user!.name"></div>
+   ·                            ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:22]
+ 1 │ <ng-template [ngIf]="user!"><p>x</p></ng-template>
+   ·                      ─────
+   ╰────
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.html:1:14]
+ 1 │ @defer (when ready!) { <x-cmp/> }
+   ·              ──────
+   ╰────

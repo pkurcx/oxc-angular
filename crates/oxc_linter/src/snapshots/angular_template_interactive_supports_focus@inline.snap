@@ -1,0 +1,10 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(interactive-supports-focus): Elements with interaction handlers must be focusable.
+   ╭─[interactive_supports_focus.ts:1:68]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: '<span (click)="a()"></span>' }) class A {}
+   ·                                                                    ───────────────────────────
+   ╰────

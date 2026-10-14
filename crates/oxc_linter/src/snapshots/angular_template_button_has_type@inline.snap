@@ -1,0 +1,10 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(button-has-type): Type for <button> is missing
+   ╭─[button_has_type.ts:1:68]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: '<button></button>' }) class A {}
+   ·                                                                    ─────────────────
+   ╰────

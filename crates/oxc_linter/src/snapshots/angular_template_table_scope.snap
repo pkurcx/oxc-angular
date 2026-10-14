@@ -1,0 +1,25 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(table-scope): The `scope` attribute should only be on the `<th>` element
+   ╭─[table_scope.html:1:6]
+ 1 │ <div scope="col"></div>
+   ·      ───────────
+   ╰────
+  help: Delete this code.
+
+  ⚠ angular-template(table-scope): The `scope` attribute should only be on the `<th>` element
+   ╭─[table_scope.html:1:5]
+ 1 │ <td [attr.scope]="scope"></td>
+   ·     ────────────────────
+   ╰────
+  help: Delete this code.
+
+  ⚠ angular-template(table-scope): The `scope` attribute should only be on the `<th>` element
+   ╭─[table_scope.html:1:6]
+ 1 │ <DIV scope="row"></DIV>
+   ·      ───────────
+   ╰────
+  help: Delete this code.

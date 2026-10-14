@@ -1,0 +1,10 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-class-binding): Consider using [class] bindings instead of [ngClass] where applicable.
+   ╭─[prefer_class_binding.ts:1:73]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: '<div [ngClass]="classes"></div>' }) class A {}
+   ·                                                                         ───────────────────
+   ╰────

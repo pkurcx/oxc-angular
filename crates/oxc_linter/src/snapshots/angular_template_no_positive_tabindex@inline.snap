@@ -1,0 +1,10 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-positive-tabindex): The `tabindex` attribute should not be positive
+   ╭─[no_positive_tabindex.ts:1:84]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: '<span tabindex="3"></span>' }) class A {}
+   ·                                                                                    ─
+   ╰────

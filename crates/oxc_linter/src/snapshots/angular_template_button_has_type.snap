@@ -1,0 +1,81 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular-template(button-has-type): Type for <button> is missing
+   ╭─[button_has_type.html:1:1]
+ 1 │ <button></button>
+   · ─────────────────
+   ╰────
+
+  ⚠ angular-template(button-has-type): Type for <button> is missing
+   ╭─[button_has_type.html:1:1]
+ 1 │ <BUTTON></BUTTON>
+   · ─────────────────
+   ╰────
+
+  ⚠ angular-template(button-has-type): Type for <button> is missing
+   ╭─[button_has_type.html:1:1]
+ 1 │ <button (click)="onClick()"></button>
+   · ─────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(button-has-type): "whatever" can not be used as a type for <button>
+   ╭─[button_has_type.html:1:9]
+ 1 │ <button type="whatever"></button>
+   ·         ───────────────
+   ╰────
+
+  ⚠ angular-template(button-has-type): "whatever" can not be used as a type for <button>
+   ╭─[button_has_type.html:1:9]
+ 1 │ <button [attr.type]="'whatever'"></button>
+   ·         ────────────────────────
+   ╰────
+
+  ⚠ angular-template(button-has-type): Type for <button> is missing
+   ╭─[button_has_type.html:1:1]
+ 1 │ <button myDirective></button>
+   · ─────────────────────────────
+   ╰────
+
+  ⚠ angular-template(button-has-type): Type for <button> is missing
+   ╭─[button_has_type.html:1:1]
+ 1 │ <button myButton></button>
+   · ──────────────────────────
+   ╰────
+
+  ⚠ angular-template(button-has-type): Type for <button> is missing
+   ╭─[button_has_type.html:1:1]
+ 1 │ <button tuiButton></button>
+   · ───────────────────────────
+   ╰────
+
+  ⚠ angular-template(button-has-type): "whatever" can not be used as a type for <button>
+   ╭─[button_has_type.html:1:18]
+ 1 │ <button myButton type="whatever"></button>
+   ·                  ───────────────
+   ╰────
+
+  ⚠ angular-template(button-has-type): Type for <button> is missing
+   ╭─[button_has_type.html:1:1]
+ 1 │ <button *ngIf="show"></button>
+   · ──────────────────────────────
+   ╰────
+
+  ⚠ angular-template(button-has-type): "whatever" can not be used as a type for <button>
+   ╭─[button_has_type.html:1:22]
+ 1 │ <button *ngIf="show" type="whatever"></button>
+   ·                      ───────────────
+   ╰────
+
+  ⚠ angular-template(button-has-type): Type for <button> is missing
+   ╭─[button_has_type.html:1:14]
+ 1 │ <ng-template><button></button></ng-template>
+   ·              ─────────────────
+   ╰────
+
+  ⚠ angular-template(button-has-type): Type for <button> is missing
+   ╭─[button_has_type.html:1:14]
+ 1 │ @if (show) { <button></button> }
+   ·              ─────────────────
+   ╰────

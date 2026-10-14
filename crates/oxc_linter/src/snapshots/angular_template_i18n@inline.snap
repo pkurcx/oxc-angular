@@ -1,0 +1,13 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(i18n): Each element containing text node should have an i18n attribute. See more at https://angular.dev/guide/i18n-common-prepare#icu-expressions and https://angular.dev/guide/i18n-common-prepare#mark-text-in-component-template
+   ╭─[i18n.ts:2:9]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: `<div>
+ 2 │   <span>Text</span>
+   ·         ────
+ 3 │ </div>` }) class A {}
+   ╰────
+  help: Insert ` i18n`

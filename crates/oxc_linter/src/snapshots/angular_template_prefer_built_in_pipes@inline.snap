@@ -1,0 +1,10 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-built-in-pipes): Avoid using method "toLowerCase" in templates. Prefer the Angular built-in pipes instead (e.g. lowercase, uppercase, titlecase).
+   ╭─[prefer_built_in_pipes.ts:1:71]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: '{{ name.toLowerCase() }}' }) class A {}
+   ·                                                                       ────────────────
+   ╰────

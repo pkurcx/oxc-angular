@@ -986,7 +986,48 @@ pub(crate) mod vue {
 
 /// <https://github.com/angular-eslint/angular-eslint/tree/main/packages/eslint-plugin-template>
 pub(crate) mod angular_template {
+    pub mod alt_text;
+    pub mod attributes_order;
+    pub mod banana_in_box;
+    pub mod button_has_type;
+    pub mod click_events_have_key_events;
+    pub mod conditional_complexity;
+    pub mod cyclomatic_complexity;
+    pub mod elements_content;
+    pub mod eqeqeq;
+    pub mod i18n;
+    pub mod interactive_supports_focus;
+    pub mod label_has_associated_control;
+    pub mod mouse_events_have_key_events;
     pub mod no_any;
+    pub mod no_autofocus;
+    pub mod no_call_expression;
+    pub mod no_distracting_elements;
+    pub mod no_duplicate_attributes;
+    pub mod no_empty_control_flow;
+    pub mod no_inline_styles;
+    pub mod no_interpolation_in_attributes;
+    pub mod no_negated_async;
+    pub mod no_nested_tags;
+    pub mod no_non_null_assertion;
+    pub mod no_outerhtml;
+    pub mod no_positive_tabindex;
+    pub mod prefer_at_else;
+    pub mod prefer_at_empty;
+    pub mod prefer_built_in_pipes;
+    pub mod prefer_class_binding;
+    pub mod prefer_contextual_for_variables;
+    pub mod prefer_control_flow;
+    pub mod prefer_ngsrc;
+    pub mod prefer_self_closing_tags;
+    pub mod prefer_static_string_properties;
+    pub mod prefer_style_binding;
+    pub mod prefer_template_literal;
+    pub mod require_switch_default;
+    pub mod role_has_required_aria;
+    pub mod table_scope;
+    pub mod use_track_by_function;
+    pub mod valid_aria;
 }
 
 /// <https://github.com/angular-eslint/angular-eslint/tree/main/packages/eslint-plugin>

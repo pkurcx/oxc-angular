@@ -1,0 +1,10 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-style-binding): Consider using [style] or [style.property] bindings instead of [ngStyle] where applicable.
+   ╭─[prefer_style_binding.ts:1:73]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: '<div [ngStyle]="styles"></div>' }) class A {}
+   ·                                                                         ──────────────────
+   ╰────

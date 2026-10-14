@@ -1,0 +1,11 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.ts:1:73]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: '<img [src]="value">' }) class A {}
+   ·                                                                         ─────────────
+   ╰────
+  help: Replace [src] with [ngSrc]

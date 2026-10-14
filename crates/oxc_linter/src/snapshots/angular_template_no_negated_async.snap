@@ -1,0 +1,53 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-negated-async): Async pipe results should not be negated.
+   ╭─[no_negated_async.html:1:4]
+ 1 │ {{ !(foo | async) }}
+   ·    ──────────────
+   ╰────
+  help: Use `(observable | async) === false`, `(observable | async) === null`, or `(observable | async) === undefined` to check its value instead
+
+  ⚠ angular-template(no-negated-async): Async pipe results should not be negated.
+   ╭─[no_negated_async.html:1:4]
+ 1 │ {{ !(foo | somethingElse | async) }}
+   ·    ──────────────────────────────
+   ╰────
+  help: Use `(observable | async) === false`, `(observable | async) === null`, or `(observable | async) === undefined` to check its value instead
+
+  ⚠ angular-template(no-negated-async): Async pipe results should not be negated.
+   ╭─[no_negated_async.html:1:13]
+ 1 │ <div *ngIf="!(a | async)"></div>
+   ·             ────────────
+   ╰────
+  help: Use `(observable | async) === false`, `(observable | async) === null`, or `(observable | async) === undefined` to check its value instead
+
+  ⚠ angular-template(no-negated-async): Async pipe results should not be negated.
+   ╭─[no_negated_async.html:1:16]
+ 1 │ {{ nullable ?? !(obsVar | async) }}
+   ·                ─────────────────
+   ╰────
+  help: Use `(observable | async) === false`, `(observable | async) === null`, or `(observable | async) === undefined` to check its value instead
+
+  ⚠ angular-template(no-negated-async): Values used with the async pipe should not be negated.
+   ╭─[no_negated_async.html:1:21]
+ 1 │ <button [disabled]="!buttonDisabled$ | async">Click me!</button>
+   ·                     ────────────────────────
+   ╰────
+  help: Use non-negated value
+
+  ⚠ angular-template(no-negated-async): Async pipe results should not be negated.
+   ╭─[no_negated_async.html:1:6]
+ 1 │ @if (!(a$ | async)) { x }
+   ·      ─────────────
+   ╰────
+  help: Use `(observable | async) === false`, `(observable | async) === null`, or `(observable | async) === undefined` to check its value instead
+
+  ⚠ angular-template(no-negated-async): Async pipe results should not be negated.
+   ╭─[no_negated_async.html:1:14]
+ 1 │ @defer (when !(loaded$ | async)) { <x-cmp/> }
+   ·              ──────────────────
+   ╰────
+  help: Use `(observable | async) === false`, `(observable | async) === null`, or `(observable | async) === undefined` to check its value instead

@@ -1,0 +1,46 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(require-switch-default): Switch should have a default block. Add `@default { ... }`, or `@default never` to enforce a compile-time exhaustive switch.
+   ╭─[require_switch_default.html:2:11]
+ 1 │ 
+ 2 │           @switch (value) {
+   ·           ────────
+ 3 │             @case (1) {
+   ╰────
+
+  ⚠ angular-template(require-switch-default): Switch should have a default block. Add `@default { ... }`, or `@default never` to enforce a compile-time exhaustive switch.
+   ╭─[require_switch_default.html:2:11]
+ 1 │ 
+ 2 │           @switch (value) {
+   ·           ────────
+ 3 │             @case (1) {
+   ╰────
+
+  ⚠ angular-template(require-switch-default): Switch should have a default block. Add `@default { ... }`, or `@default never` to enforce a compile-time exhaustive switch.
+   ╭─[require_switch_default.html:4:15]
+ 3 │             @default {
+ 4 │               @switch (inner) {
+   ·               ────────
+ 5 │                 @case (1) {
+   ╰────
+
+  ⚠ angular-template(require-switch-default): Switch should have a default block. Add `@default { ... }`, or `@default never` to enforce a compile-time exhaustive switch.
+   ╭─[require_switch_default.html:1:16]
+ 1 │ <div *ngIf="x">@switch (value) { @case (1) { one } }</div>
+   ·                ────────
+   ╰────
+
+  ⚠ angular-template(require-switch-default): Switch should have a default block. Add `@default { ... }`, or `@default never` to enforce a compile-time exhaustive switch.
+   ╭─[require_switch_default.html:1:14]
+ 1 │ <ng-template>@switch (value) { @case (1) { one } }</ng-template>
+   ·              ────────
+   ╰────
+
+  ⚠ angular-template(require-switch-default): Switch should have a default block. Add `@default { ... }`, or `@default never` to enforce a compile-time exhaustive switch.
+   ╭─[require_switch_default.html:1:23]
+ 1 │ @defer (when ready) { @switch (value) { @case (1) { one } } } @placeholder { x }
+   ·                       ────────
+   ╰────

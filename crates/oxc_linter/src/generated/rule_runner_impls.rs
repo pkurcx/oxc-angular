@@ -5554,7 +5554,224 @@ impl RuleRunner for crate::rules::vue::valid_next_tick::ValidNextTick {
     const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::Run;
 }
 
+impl RuleRunner for crate::rules::angular_template::alt_text::AltText {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::attributes_order::AttributesOrder {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::banana_in_box::BananaInBox {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::button_has_type::ButtonHasType {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner
+    for crate::rules::angular_template::click_events_have_key_events::ClickEventsHaveKeyEvents
+{
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::conditional_complexity::ConditionalComplexity {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::cyclomatic_complexity::CyclomaticComplexity {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::elements_content::ElementsContent {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::eqeqeq::Eqeqeq {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::i18n::I18n {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner
+    for crate::rules::angular_template::interactive_supports_focus::InteractiveSupportsFocus
+{
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner
+    for crate::rules::angular_template::label_has_associated_control::LabelHasAssociatedControl
+{
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner
+    for crate::rules::angular_template::mouse_events_have_key_events::MouseEventsHaveKeyEvents
+{
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
 impl RuleRunner for crate::rules::angular_template::no_any::NoAny {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::no_autofocus::NoAutofocus {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::no_call_expression::NoCallExpression {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::no_distracting_elements::NoDistractingElements {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::no_duplicate_attributes::NoDuplicateAttributes {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::no_empty_control_flow::NoEmptyControlFlow {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::no_inline_styles::NoInlineStyles {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner
+    for crate::rules::angular_template::no_interpolation_in_attributes::NoInterpolationInAttributes
+{
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::no_negated_async::NoNegatedAsync {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::no_nested_tags::NoNestedTags {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::no_non_null_assertion::NoNonNullAssertion {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::no_outerhtml::NoOuterhtml {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::no_positive_tabindex::NoPositiveTabindex {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::prefer_at_else::PreferAtElse {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::prefer_at_empty::PreferAtEmpty {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::prefer_built_in_pipes::PreferBuiltInPipes {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::prefer_class_binding::PreferClassBinding {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::prefer_contextual_for_variables::PreferContextualForVariables {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::prefer_control_flow::PreferControlFlow {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::prefer_ngsrc::PreferNgsrc {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner
+    for crate::rules::angular_template::prefer_self_closing_tags::PreferSelfClosingTags
+{
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::prefer_static_string_properties::PreferStaticStringProperties {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::prefer_style_binding::PreferStyleBinding {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::prefer_template_literal::PreferTemplateLiteral {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::require_switch_default::RequireSwitchDefault {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::role_has_required_aria::RoleHasRequiredAria {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::table_scope::TableScope {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::use_track_by_function::UseTrackByFunction {
+    const NODE_TYPES: Option<&AstTypesBitset> = None;
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
+}
+
+impl RuleRunner for crate::rules::angular_template::valid_aria::ValidAria {
     const NODE_TYPES: Option<&AstTypesBitset> = None;
     const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
 }

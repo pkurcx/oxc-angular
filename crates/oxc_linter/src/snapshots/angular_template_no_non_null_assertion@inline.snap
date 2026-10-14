@@ -1,0 +1,10 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-non-null-assertion): Avoid using the non-null assertion operator (!) in templates. This bypasses type safety and can lead to runtime errors.
+   ╭─[no_non_null_assertion.ts:1:71]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: '{{ user!.name }}' }) class A {}
+   ·                                                                       ─────
+   ╰────

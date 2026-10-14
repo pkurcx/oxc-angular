@@ -1,0 +1,51 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-interpolation-in-attributes): Use property binding [attribute]="value" instead of interpolation {{ value }} for an attribute.
+   ╭─[no_interpolation_in_attributes.html:1:26]
+ 1 │ <input type="text" name="{{ foo }}">
+   ·                          ─────────
+   ╰────
+  help: Replace `name="{{ foo }}"` with `[name]="foo"`.
+
+  ⚠ angular-template(no-interpolation-in-attributes): Use property binding [attribute]="value" instead of interpolation {{ value }} for an attribute.
+   ╭─[no_interpolation_in_attributes.html:1:26]
+ 1 │ <input type="text" name="{{ foo }}bar">
+   ·                          ────────────
+   ╰────
+
+  ⚠ angular-template(no-interpolation-in-attributes): Use property binding [attribute]="value" instead of interpolation {{ value }} for an attribute.
+   ╭─[no_interpolation_in_attributes.html:1:41]
+ 1 │ <input type="text" attr.data-myExample="{{ foo }}">
+   ·                                         ─────────
+   ╰────
+  help: Replace `attr.data-myExample="{{ foo }}"` with `[attr.data-myExample]="foo"`.
+
+  ⚠ angular-template(no-interpolation-in-attributes): Use property binding [attribute]="value" instead of interpolation {{ value }} for an attribute.
+   ╭─[no_interpolation_in_attributes.html:1:11]
+ 1 │ <img alt="{{username}} is online" src="{{src}}">
+   ·           ──────────────────────
+   ╰────
+
+  ⚠ angular-template(no-interpolation-in-attributes): Use property binding [attribute]="value" instead of interpolation {{ value }} for an attribute.
+   ╭─[no_interpolation_in_attributes.html:1:40]
+ 1 │ <img alt="{{username}} is online" src="{{src}}">
+   ·                                        ───────
+   ╰────
+  help: Replace `src="{{src}}"` with `[src]="src"`.
+
+  ⚠ angular-template(no-interpolation-in-attributes): Use property binding [attribute]="value" instead of interpolation {{ value }} for an attribute.
+   ╭─[no_interpolation_in_attributes.html:1:40]
+ 1 │ <img alt="{{username}} is online" src="{{src}}">
+   ·                                        ───────
+   ╰────
+  help: Replace `src="{{src}}"` with `[src]="src"`.
+
+  ⚠ angular-template(no-interpolation-in-attributes): Use property binding [attribute]="value" instead of interpolation {{ value }} for an attribute.
+   ╭─[no_interpolation_in_attributes.html:1:21]
+ 1 │ <img *ngIf="x" src="{{ url }}">
+   ·                     ─────────
+   ╰────
+  help: Replace `src="{{ url }}"` with `[src]="url"`.

@@ -1,0 +1,13 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-at-empty): Prefer using `@for (...) {...} @empty {...}`.
+   ╭─[prefer_at_empty.ts:3:3]
+ 2 │   @for (x of xs; track x) {}
+ 3 │   @if (!xs.length) { None }
+   ·   ────
+ 4 │ ` }) class A {}
+   ╰────
+  help: Move the content into an `@empty` block

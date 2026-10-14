@@ -1,0 +1,80 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(use-track-by-function): Missing trackBy function in ngFor directive
+   ╭─[use_track_by_function.html:3:21]
+ 2 │               <ul>
+ 3 │                 <li *ngFor="let item of [1, 2, 3];">
+   ·                     ───────────────────────────────
+ 4 │                   {{ item }}
+   ╰────
+
+  ⚠ angular-template(use-track-by-function): Missing trackBy function in ngFor directive
+   ╭─[use_track_by_function.html:3:21]
+ 2 │               <ul>
+ 3 │                 <li *ngFor="let item of [1, 2, 3];">
+   ·                     ───────────────────────────────
+ 4 │                   {{ item }}
+   ╰────
+
+  ⚠ angular-template(use-track-by-function): Missing trackBy function in ngFor directive
+   ╭─[use_track_by_function.html:2:43]
+ 1 │ 
+ 2 │               <ng-template ngFor let-item [ngForOf]="[1, 2, 3]" let-i="index">
+   ·                                           ─────────────────────
+ 3 │                 {{ item }}
+   ╰────
+
+  ⚠ angular-template(use-track-by-function): Missing trackBy function in ngFor directive
+   ╭─[use_track_by_function.html:2:43]
+ 1 │ 
+ 2 │               <ng-template ngFor let-item [ngForOf]="[1, 2, 3]" let-i="index">
+   ·                                           ─────────────────────
+ 3 │                 {{ item }}
+   ╰────
+
+  ⚠ angular-template(use-track-by-function): Missing trackBy function in ngFor directive
+   ╭─[use_track_by_function.html:6:21]
+ 5 │               <ul>
+ 6 │                 <li *ngFor="let item of [1, 2, 3];">
+   ·                     ───────────────────────────────
+ 7 │                   {{ item }}
+   ╰────
+
+  ⚠ angular-template(use-track-by-function): Missing trackBy function in ngFor directive
+   ╭─[use_track_by_function.html:2:20]
+ 1 │ 
+ 2 │               <div *ngFor="let item of [1, 2, 3];">
+   ·                    ───────────────────────────────
+ 3 │                 {{ item }}
+   ╰────
+
+  ⚠ angular-template(use-track-by-function): Missing trackBy function in ngFor directive
+   ╭─[use_track_by_function.html:5:43]
+ 4 │               </div>
+ 5 │               <ng-template ngFor let-item [ngForOf]="[1, 2, 3]" let-i="index">
+   ·                                           ─────────────────────
+ 6 │                 {{ item }}
+   ╰────
+
+  ⚠ angular-template(use-track-by-function): Missing trackBy function in ngFor directive
+    ╭─[use_track_by_function.html:9:21]
+  8 │               <ul>
+  9 │                 <li *ngFor="let item of [1, 2, 3];">
+    ·                     ───────────────────────────────
+ 10 │                   {{ item }}
+    ╰────
+
+  ⚠ angular-template(use-track-by-function): Missing trackBy function in ngFor directive
+   ╭─[use_track_by_function.html:1:18]
+ 1 │ <li *ngIf="show" [ngForOf]="xs"></li>
+   ·                  ──────────────
+   ╰────
+
+  ⚠ angular-template(use-track-by-function): Missing trackBy function in ngFor directive
+   ╭─[use_track_by_function.html:1:23]
+ 1 │ <div *ngIf="show"><li *ngFor="let x of xs"></li></div>
+   ·                       ────────────────────
+   ╰────

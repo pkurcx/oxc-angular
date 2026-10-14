@@ -1,10 +1,11 @@
 //! Angular templates (`.html` files and inline `@Component({ template })`), parsed with
 //! `oxc_angular_compiler` into the R3 AST that `@angular-eslint/template` rules inspect.
 
+use cow_utils::CowUtils;
 use oxc_allocator::Allocator;
 use oxc_angular_compiler::{
     ast::{
-        expression::{AbsoluteSourceSpan, AngularExpression},
+        expression::{AbsoluteSourceSpan, AngularExpression, LiteralValue},
         r3::{
             R3BoundAttribute, R3BoundEvent, R3BoundText, R3DeferredBlock, R3Element,
             R3ForLoopBlock, R3IfBlockBranch, R3LetDeclaration, R3Node, R3SwitchBlock,
@@ -23,7 +24,7 @@ use oxc_span::Span;
 
 use crate::{
     AllowWarnDeny,
-    context::{ContextHost, imports_angular},
+    context::{ContextHost, LintContext, imports_angular},
     disable_directives::{
         DisableDirectives, DisableDirectivesBuilder, create_unused_directives_diagnostics,
     },
@@ -385,4 +386,305 @@ impl<'a> R3Visitor<'a> for ExpressionVisitor<'_, '_, 'a> {
             self.visit_deferred_block_error(error);
         }
     }
+}
+
+/// Native elements as `@angular-eslint` lists them: `aria-query` 5.3.2's `dom` keys and the
+/// elements it adds.
+pub const ANGULAR_DOM_ELEMENTS: phf::Set<&'static str> = phf::phf_set![
+    ":math:math",
+    ":svg:svg",
+    "a",
+    "abbr",
+    "acronym",
+    "address",
+    "applet",
+    "area",
+    "article",
+    "aside",
+    "audio",
+    "b",
+    "base",
+    "bdi",
+    "bdo",
+    "big",
+    "blink",
+    "blockquote",
+    "body",
+    "br",
+    "button",
+    "canvas",
+    "caption",
+    "center",
+    "cite",
+    "code",
+    "col",
+    "colgroup",
+    "content",
+    "data",
+    "datalist",
+    "dd",
+    "del",
+    "details",
+    "dfn",
+    "dialog",
+    "dir",
+    "div",
+    "dl",
+    "dt",
+    "em",
+    "embed",
+    "fieldset",
+    "figcaption",
+    "figure",
+    "font",
+    "footer",
+    "form",
+    "frame",
+    "frameset",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "head",
+    "header",
+    "hgroup",
+    "hr",
+    "html",
+    "i",
+    "iframe",
+    "img",
+    "input",
+    "ins",
+    "kbd",
+    "keygen",
+    "label",
+    "legend",
+    "li",
+    "link",
+    "main",
+    "map",
+    "mark",
+    "marquee",
+    "menu",
+    "menuitem",
+    "meta",
+    "meter",
+    "nav",
+    "noembed",
+    "noscript",
+    "object",
+    "ol",
+    "optgroup",
+    "option",
+    "output",
+    "p",
+    "param",
+    "picture",
+    "pre",
+    "progress",
+    "q",
+    "rb",
+    "rp",
+    "rt",
+    "rtc",
+    "ruby",
+    "s",
+    "samp",
+    "script",
+    "section",
+    "select",
+    "selectedcontent",
+    "slot",
+    "small",
+    "source",
+    "spacer",
+    "span",
+    "strike",
+    "strong",
+    "style",
+    "sub",
+    "summary",
+    "sup",
+    "table",
+    "tbody",
+    "td",
+    "template",
+    "textarea",
+    "tfoot",
+    "th",
+    "thead",
+    "time",
+    "title",
+    "tr",
+    "track",
+    "tt",
+    "u",
+    "ul",
+    "var",
+    "video",
+    "wbr",
+    "xmp",
+];
+
+/// Whether `name` is a native element, as `@angular-eslint` matches them: lower case, or also
+/// upper case where a rule allows it.
+pub fn is_angular_dom_element(name: &str, allow_upper_case: bool) -> bool {
+    ANGULAR_DOM_ELEMENTS.contains(name)
+        || (allow_upper_case
+            && name.bytes().all(|b| !b.is_ascii_lowercase())
+            && ANGULAR_DOM_ELEMENTS.contains(name.cow_to_ascii_lowercase().as_ref()))
+}
+
+/// The value of an element's attribute or input, as `@angular-eslint`'s `getAttributeValue`
+/// reads it.
+pub enum AngularAttributeValue<'e, 'a> {
+    Text(&'a str),
+    Literal(&'e LiteralValue<'a>),
+    /// Any other bound expression.
+    Other,
+}
+
+impl AngularAttributeValue<'_, '_> {
+    /// The value as JavaScript's `String(value)` would print it, for the primitive cases.
+    pub fn as_string(&self) -> Option<String> {
+        match self {
+            Self::Text(text) => Some((*text).to_string()),
+            Self::Literal(LiteralValue::String(value)) => Some(value.to_string()),
+            Self::Literal(LiteralValue::Boolean(value)) => Some(value.to_string()),
+            Self::Literal(LiteralValue::Number(value)) => Some(value.to_string()),
+            Self::Literal(LiteralValue::Null) => Some("null".to_string()),
+            Self::Literal(LiteralValue::Undefined) => Some("undefined".to_string()),
+            _ => None,
+        }
+    }
+
+    /// The value if it is a string, as in `typeof value === 'string'`.
+    pub fn as_str(&self) -> Option<&str> {
+        match self {
+            Self::Text(text) => Some(text),
+            Self::Literal(LiteralValue::String(value)) => Some(value.as_str()),
+            _ => None,
+        }
+    }
+}
+
+/// The name an attribute or input is written with: `aria-label` for `[attr.aria-label]`,
+/// `style.display` for `[style.display]`.
+pub fn angular_original_attribute_name<'a>(
+    ctx: &LintContext<'a>,
+    template: &AngularTemplate,
+    key_span: Span,
+) -> &'a str {
+    let name = angular_binding_name(ctx, template, key_span);
+    name.strip_prefix("attr.").unwrap_or(name)
+}
+
+/// The key of a binding without its syntax: `attr.x` for `[attr.x]`, `click` for `(click)`.
+pub fn angular_binding_name<'a>(
+    ctx: &LintContext<'a>,
+    template: &AngularTemplate,
+    key_span: Span,
+) -> &'a str {
+    let key = ctx.source_range(template.span(key_span));
+    let key = key.trim_start_matches(['[', '(', '#', '*']).trim_end_matches([']', ')']);
+    ["bindon-", "bind-", "on-", "ref-"]
+        .iter()
+        .find_map(|prefix| key.strip_prefix(prefix))
+        .unwrap_or(key)
+}
+
+pub fn angular_attribute_value<'e, 'a>(
+    ctx: &LintContext<'a>,
+    template: &AngularTemplate,
+    element: &'e R3Element<'a>,
+    name: &str,
+) -> Option<AngularAttributeValue<'e, 'a>> {
+    if let Some(attr) = element.attributes.iter().find(|attr| attr.name == name) {
+        return Some(AngularAttributeValue::Text(attr.value.as_str()));
+    }
+    let input = element
+        .inputs
+        .iter()
+        .find(|input| angular_original_attribute_name(ctx, template, input.key_span) == name)?;
+    Some(match &input.value {
+        AngularExpression::LiteralPrimitive(literal) => {
+            AngularAttributeValue::Literal(&literal.value)
+        }
+        _ => AngularAttributeValue::Other,
+    })
+}
+
+/// Whether an element's content is hidden from screen readers by its own attributes or styles;
+/// callers also check its ancestors.
+pub fn is_angular_element_hidden<'a>(
+    ctx: &LintContext<'a>,
+    template: &AngularTemplate,
+    element: &R3Element<'a>,
+) -> bool {
+    let value = |name: &str| angular_attribute_value(ctx, template, element, name);
+    let string = |name: &str| value(name).and_then(|v| v.as_string());
+    let is_html_truthy = |name: &str| string(name).is_some_and(|v| v.is_empty() || v == "true");
+    let hidden_style =
+        value("style").as_ref().and_then(AngularAttributeValue::as_str).is_some_and(|style| {
+            let style: String =
+                style.chars().filter(|c| !c.is_whitespace() && *c != '\'' && *c != '"').collect();
+            style.contains("display:none") || style.contains("visibility:hidden")
+        });
+    let literal_str = |name: &str| value(name).and_then(|v| v.as_str().map(str::to_string));
+    hidden_style
+        || literal_str("style.display").as_deref() == Some("none")
+        || string("style.display.none").as_deref() == Some("true")
+        || literal_str("style.visibility").as_deref() == Some("hidden")
+        || string("style.visibility.hidden").as_deref() == Some("true")
+        || is_html_truthy("aria-hidden")
+        || is_html_truthy("hidden")
+        || (element.name.eq_ignore_ascii_case("input")
+            && literal_str("type").is_some_and(|t| t.eq_ignore_ascii_case("hidden")))
+}
+
+/// Every element of a template, parents first.
+pub fn angular_elements<'a>(nodes: &'a [R3Node<'a>]) -> Vec<&'a R3Element<'a>> {
+    fn collect<'a>(nodes: &'a [R3Node<'a>], out: &mut Vec<&'a R3Element<'a>>) {
+        for node in nodes {
+            match node {
+                R3Node::Element(element) => {
+                    out.push(element);
+                    collect(&element.children, out);
+                }
+                R3Node::Template(template) => collect(&template.children, out),
+                R3Node::Content(content) => collect(&content.children, out),
+                R3Node::Component(component) => collect(&component.children, out),
+                R3Node::IfBlock(block) => {
+                    block.branches.iter().for_each(|branch| collect(&branch.children, out));
+                }
+                R3Node::IfBlockBranch(branch) => collect(&branch.children, out),
+                R3Node::ForLoopBlock(block) => {
+                    collect(&block.children, out);
+                    if let Some(empty) = &block.empty {
+                        collect(&empty.children, out);
+                    }
+                }
+                R3Node::ForLoopBlockEmpty(empty) => collect(&empty.children, out),
+                R3Node::SwitchBlock(block) => {
+                    block.groups.iter().for_each(|group| collect(&group.children, out));
+                }
+                R3Node::SwitchBlockCaseGroup(group) => collect(&group.children, out),
+                R3Node::DeferredBlock(block) => {
+                    collect(&block.children, out);
+                    block.placeholder.iter().for_each(|b| collect(&b.children, out));
+                    block.loading.iter().for_each(|b| collect(&b.children, out));
+                    block.error.iter().for_each(|b| collect(&b.children, out));
+                }
+                R3Node::DeferredBlockPlaceholder(b) => collect(&b.children, out),
+                R3Node::DeferredBlockLoading(b) => collect(&b.children, out),
+                R3Node::DeferredBlockError(b) => collect(&b.children, out),
+                _ => {}
+            }
+        }
+    }
+    let mut out = vec![];
+    collect(nodes, &mut out);
+    out
 }

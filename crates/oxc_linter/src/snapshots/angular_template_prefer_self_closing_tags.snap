@@ -1,0 +1,63 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-self-closing-tags): Use self-closing tags for elements with a closing tag but no content.
+   ╭─[prefer_self_closing_tags.html:1:11]
+ 1 │ <app-root></app-root>
+   ·           ───────────
+   ╰────
+  help: Replace `></app-root>` with ` />`.
+
+  ⚠ angular-template(prefer-self-closing-tags): Use self-closing tags for elements with a closing tag but no content.
+   ╭─[prefer_self_closing_tags.html:3:1]
+ 2 │   
+ 3 │ </app-root>
+   · ───────────
+   ╰────
+  help: Replace `>
+        
+        </app-root>` with ` />`.
+
+  ⚠ angular-template(prefer-self-closing-tags): Use self-closing tags for elements with a closing tag but no content.
+   ╭─[prefer_self_closing_tags.html:1:29]
+ 1 │ <app-root [a]="b" (c)="d()"></app-root>
+   ·                             ───────────
+   ╰────
+  help: Replace `></app-root>` with ` />`.
+
+  ⚠ angular-template(prefer-self-closing-tags): Use self-closing tags for elements with a closing tag but no content.
+   ╭─[prefer_self_closing_tags.html:1:13]
+ 1 │ <ng-content></ng-content>
+   ·             ─────────────
+   ╰────
+  help: Replace `></ng-content>` with ` />`.
+
+  ⚠ angular-template(prefer-self-closing-tags): Use self-closing tags for elements with a closing tag but no content.
+   ╭─[prefer_self_closing_tags.html:1:24]
+ 1 │ <ng-content select="x"></ng-content>
+   ·                        ─────────────
+   ╰────
+  help: Replace `></ng-content>` with ` />`.
+
+  ⚠ angular-template(prefer-self-closing-tags): Use self-closing tags for elements with a closing tag but no content.
+   ╭─[prefer_self_closing_tags.html:1:14]
+ 1 │ <ng-template></ng-template>
+   ·              ──────────────
+   ╰────
+  help: Replace `></ng-template>` with ` />`.
+
+  ⚠ angular-template(prefer-self-closing-tags): Use self-closing tags for elements with a closing tag but no content.
+   ╭─[prefer_self_closing_tags.html:1:21]
+ 1 │ <app-item *ngIf="x"></app-item>
+   ·                     ───────────
+   ╰────
+  help: Replace `></app-item>` with ` />`.
+
+  ⚠ angular-template(prefer-self-closing-tags): Use self-closing tags for elements with a closing tag but no content.
+   ╭─[prefer_self_closing_tags.html:1:9]
+ 1 │ <search></search>
+   ·         ─────────
+   ╰────
+  help: Replace `></search>` with ` />`.

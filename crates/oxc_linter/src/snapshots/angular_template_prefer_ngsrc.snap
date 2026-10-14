@@ -1,0 +1,229 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img src="http://localhost">
+   ·      ──────────────────────
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img src="http://src.com">
+   ·      ────────────────────
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img [src]="'http://localhost'">
+   ·      ──────────────────────────
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img [src]="value">
+   ·      ─────────────
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img [attr.src]="value">
+   ·      ──────────────────
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img [attr.src]="'http://localhost'">
+   ·      ───────────────────────────────
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img [src]="'http://' + value">
+   ·      ─────────────────────────
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <IMG [src]="value">
+   ·      ─────────────
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:1:31]
+ 1 │ <img ngSrc="http://localhost" src="http://localhost">
+   ·                               ──────────────────────
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:1:29]
+ 1 │ <img ngSrc="http://src.com" src="http://src.com">
+   ·                             ────────────────────
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:1:31]
+ 1 │ <img ngSrc="http://localhost" [src]="'http://localhost'">
+   ·                               ──────────────────────────
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:1:31]
+ 1 │ <img ngSrc="http://localhost" [src]="value">
+   ·                               ─────────────
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:1:27]
+ 1 │ <img [ngSrc]="otherValue" src="http://localhost">
+   ·                           ──────────────────────
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:1:27]
+ 1 │ <img [ngSrc]="otherValue" [src]="'http://localhost'">
+   ·                           ──────────────────────────
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:1:27]
+ 1 │ <img [ngSrc]="otherValue" [src]="value">
+   ·                           ─────────────
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img [src]="otherValue" [ngSrc]="value">
+   ·      ──────────────────
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img src="data:image/png;base64" [ngSrc]="otherValue">
+   ·      ───────────────────────────
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img [attr.src]="'data:image/png;base64'" [ngSrc]="otherValue">
+   ·      ────────────────────────────────────
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img [src]="'data:image/png;base64'" [ngSrc]="otherValue">
+   ·      ───────────────────────────────
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img [src]="'data:' + value" [ngSrc]="otherValue">
+   ·      ───────────────────────
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:2:3]
+ 1 │ <img
+ 2 │   src="http://localhost">
+   ·   ──────────────────────
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:2:3]
+ 1 │ <img
+ 2 │   [src]="value"
+   ·   ─────────────
+ 3 │   alt="test">
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:2:3]
+ 1 │ <img
+ 2 │   [attr.src]="value"
+   ·   ──────────────────
+ 3 │   width="100">
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:3:3]
+ 2 │   ngSrc="http://localhost"
+ 3 │   src="http://localhost">
+   ·   ──────────────────────
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): Only [ngSrc] should exist on an img element. Delete the [src] attribute.
+   ╭─[prefer_ngsrc.html:3:3]
+ 2 │   [ngSrc]="otherValue"
+ 3 │   [src]="value"
+   ·   ─────────────
+ 4 │   alt="test">
+   ╰────
+  help: Remove the [src] attribute
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:2:3]
+ 1 │ <img alt="test"
+ 2 │   [src]="value"
+   ·   ─────────────
+ 3 │ >
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:1:19]
+ 1 │ <img *ngIf="show" src="http://localhost">
+   ·                   ──────────────────────
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:1:19]
+ 1 │ <ng-template><img [src]="value"></ng-template>
+   ·                   ─────────────
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img bind-src="value">
+   ·      ────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img [src]="('data:x')">
+   ·      ──────────────────
+   ╰────
+  help: Replace [src] with [ngSrc]
+
+  ⚠ angular-template(prefer-ngsrc): The attribute [ngSrc] should be used for img elements instead of [src].
+   ╭─[prefer_ngsrc.html:1:6]
+ 1 │ <img [@src]="value">
+   ·      ──────────────
+   ╰────

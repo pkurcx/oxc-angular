@@ -1,0 +1,10 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.ts:1:68]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: '<div (click)="a()"></div>' }) class A {}
+   ·                                                                    ─────────────────────────
+   ╰────

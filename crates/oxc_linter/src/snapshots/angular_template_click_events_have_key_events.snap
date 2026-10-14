@@ -1,0 +1,141 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div (click)="onClick()"></div>
+   · ───────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div (click)="onClick()" (handleSomething)="handleSomething()"></div>
+   · ─────────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <header (click)="onClick()"></header>
+   · ─────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <a (click)="onClick()"></a>
+   · ───────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <A (click)="onClick()"></A>
+   · ───────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div (click)="onClick()" aria-hidden="false"></div>
+   · ───────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div (click)="onClick()" [attr.aria-hidden]="'false'"></div>
+   · ────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div (click)="onClick()" role="header"></div>
+   · ─────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div (click)="onClick()" role="aside"></div>
+   · ────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div (click)="onClick()" [attr.role]="'header'"></div>
+   · ──────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div (click)="onClick()" [attr.aria-hidden]="ariaHidden"></div>
+   · ───────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div (click)="onClick()" [attr.hidden]="hidden"></div>
+   · ──────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div myDirective (click)="onClick()"></div>
+   · ───────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div myDirective (click)="onClick()"></div>
+   · ───────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by a keyup, keydown or keypress event that specifies a key (e.g. `(keydown.enter)`) for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div (click)="onClick()" (keydown)="onKeydown()"></div>
+   · ───────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div (click)="onClick()"></div>
+   · ───────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by a keyup, keydown or keypress event for one of the allowed keys (enter, arrowleft, arrowright) for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div (click)="onClick()" (keydown.space)="onKeydown()"></div>
+   · ─────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by a keyup, keydown or keypress event for one of the allowed keys (enter) for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div (click)="onClick()" (keydown)="onKeydown()"></div>
+   · ───────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <Div (click)="onClick()"></Div>
+   · ───────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <A routerLink="x" (click)="onClick()"></A>
+   · ──────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:1]
+ 1 │ <div *ngIf="show" (click)="onClick()"></div>
+   · ────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:14]
+ 1 │ <ng-template><span (click)="onClick()"></span></ng-template>
+   ·              ─────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(click-events-have-key-events): click must be accompanied by either keyup, keydown or keypress event for accessibility.
+   ╭─[click_events_have_key_events.html:1:10]
+ 1 │ @defer { <span (click)="onClick()"></span> }
+   ·          ─────────────────────────────────
+   ╰────

@@ -1,0 +1,40 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(cyclomatic-complexity): The cyclomatic complexity 3 exceeds the defined limit 2
+   ╭─[cyclomatic_complexity.html:1:47]
+ 1 │ <div *ngIf="a"><p *ngFor="let x of xs"><span *ngIf="x"></span></p></div>
+   ·                                               ───────
+   ╰────
+
+  ⚠ angular-template(cyclomatic-complexity): The cyclomatic complexity 3 exceeds the defined limit 2
+   ╭─[cyclomatic_complexity.html:1:75]
+ 1 │ <div [ngSwitch]="m"><p *ngSwitchCase="1"></p><p *ngSwitchCase="2"></p><p *ngSwitchDefault></p></div>
+   ·                                                                           ───────────────
+   ╰────
+
+  ⚠ angular-template(cyclomatic-complexity): The cyclomatic complexity 3 exceeds the defined limit 2
+   ╭─[cyclomatic_complexity.html:1:47]
+ 1 │ @switch (m) { @case (1) { a } @case (2) { b } @default { c } }
+   ·                                               ──────────────
+   ╰────
+
+  ⚠ angular-template(cyclomatic-complexity): The cyclomatic complexity 2 exceeds the defined limit 1
+   ╭─[cyclomatic_complexity.html:1:28]
+ 1 │ <div [ngSwitch]="m"></div> @switch (m) { @case (1) { a } }
+   ·                            ───────────────────────────────
+   ╰────
+
+  ⚠ angular-template(cyclomatic-complexity): The cyclomatic complexity 2 exceeds the defined limit 1
+   ╭─[cyclomatic_complexity.html:1:11]
+ 1 │ @if (a) { @for (x of xs; track x) { @if (x) { y } } @empty { } }
+   ·           ────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(cyclomatic-complexity): The cyclomatic complexity 3 exceeds the defined limit 1
+   ╭─[cyclomatic_complexity.html:1:37]
+ 1 │ @if (a) { @for (x of xs; track x) { @if (x) { y } } @empty { } }
+   ·                                     ─────────────
+   ╰────

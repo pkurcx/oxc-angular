@@ -1,0 +1,301 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a) {}
+ 2 │ @if (!a) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (!a) {}
+ 2 │ @if (a) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a > b) {}
+ 2 │ @if (a <= b) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a <= b) {}
+ 2 │ @if (a > b) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a >= b) {}
+ 2 │ @if (a < b) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a < b) {}
+ 2 │ @if (a >= b) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a === b) {}
+ 2 │ @if (a !== b) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a !== b) {}
+ 2 │ @if (a === b) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a == b) {}
+ 2 │ @if (a != b) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a != b) {}
+ 2 │ @if (a == b) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a.length > 0) {}
+ 2 │ @if (a.length === 0) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a.length === 0) {}
+ 2 │ @if (a.length > 0) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (0 < a.length) {}
+ 2 │ @if (a.length === 0) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a.length === 0) {}
+ 2 │ @if (0 < a.length) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (0 < a.length) {}
+ 2 │ @if (0 === a.length) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (0 === a.length) {}
+ 2 │ @if (0 < a.length) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a.length > 0) {}
+ 2 │ @if (0 === a.length) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (0 === a.length) {}
+ 2 │ @if (a.length > 0) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a.length > 0) {}
+ 2 │ @if (a.length == 0) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:2:1]
+ 1 │ @if (a.length == 0) {}
+ 2 │ @if (a.length > 0) {}
+   · ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:7:11]
+ 6 │           }
+ 7 │           @if (!a) {
+   ·           ────
+ 8 │             3
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:5:11]
+ 4 │           }
+ 5 │           @if (!a) {
+   ·           ────
+ 6 │             2
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:7:11]
+ 6 │           }
+ 7 │           @if (!a) {
+   ·           ────
+ 8 │             3
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:8:13]
+ 7 │             }
+ 8 │             @if (!a) {
+   ·             ────
+ 9 │               <button>3</button>
+   ╰────
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:6:13]
+ 5 │             }
+ 6 │             @if (!a) {
+   ·             ────
+ 7 │               <button>2</button>
+   ╰────
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:5:11]
+ 4 │           }
+ 5 │           @if (!a) {
+   ·           ────
+ 6 │             <button>2</button>
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:4:11]
+ 3 │ 
+ 4 │           @if (!a) {}
+   ·           ────
+ 5 │         
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:4:11]
+ 3 │           &nbsp;
+ 4 │           @if (!a) {}
+   ·           ────
+ 5 │         
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:4:11]
+ 3 │           <!-- comment -->
+ 4 │           @if (!a) {}
+   ·           ────
+ 5 │         
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:3:11]
+ 2 │           @if (a; as alias) {}
+ 3 │           @if (!a) {}
+   ·           ────
+ 4 │         
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:3:11]
+ 2 │           @if (a) {}
+ 3 │           @if (!a; as alias) {}
+   ·           ────
+ 4 │         
+   ╰────
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:1:27]
+ 1 │ <div *ngIf="x">@if (a) {} @if (!a) {}</div>
+   ·                           ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:1:25]
+ 1 │ <ng-template>@if (a) {} @if (!a) {}</ng-template>
+   ·                         ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:1:38]
+ 1 │ @for (x of xs; track x) { @if (a) {} @if (!a) {} } @empty { @if (b) {} @if (!b) {} }
+   ·                                      ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:1:72]
+ 1 │ @for (x of xs; track x) { @if (a) {} @if (!a) {} } @empty { @if (b) {} @if (!b) {} }
+   ·                                                                        ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:1:12]
+ 1 │ @if (a) {} @if (!a) {} @if (a) {}
+   ·            ────
+   ╰────
+  help: Replace the `@if` with `@else`
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.html:1:24]
+ 1 │ @if (a) {} @if (!a) {} @if (a) {}
+   ·                        ────
+   ╰────

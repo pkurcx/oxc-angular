@@ -1,0 +1,63 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular-template(no-positive-tabindex): The `tabindex` attribute should not be positive
+   ╭─[no_positive_tabindex.html:1:16]
+ 1 │ <div tabindex="5"></div>
+   ·                ─
+   ╰────
+
+  ⚠ angular-template(no-positive-tabindex): The `tabindex` attribute should not be positive
+   ╭─[no_positive_tabindex.html:1:16]
+ 1 │ <DIV tabindex="5"></DIV>
+   ·                ─
+   ╰────
+
+  ⚠ angular-template(no-positive-tabindex): The `tabindex` attribute should not be positive
+   ╭─[no_positive_tabindex.html:1:23]
+ 1 │ <div [attr.tabindex]="21"></div>
+   ·                       ──
+   ╰────
+
+  ⚠ angular-template(no-positive-tabindex): The `tabindex` attribute should not be positive
+   ╭─[no_positive_tabindex.html:1:18]
+ 1 │ <div [tabindex]="'2'"></div>
+   ·                  ───
+   ╰────
+
+  ⚠ angular-template(no-positive-tabindex): The `tabindex` attribute should not be positive
+   ╭─[no_positive_tabindex.html:1:18]
+ 1 │ <div [tabindex]="true"></div>
+   ·                  ────
+   ╰────
+
+  ⚠ angular-template(no-positive-tabindex): The `tabindex` attribute should not be positive
+   ╭─[no_positive_tabindex.html:1:17]
+ 1 │ <span tabindex=" 0x10 "></span>
+   ·                 ──────
+   ╰────
+
+  ⚠ angular-template(no-positive-tabindex): The `tabindex` attribute should not be positive
+   ╭─[no_positive_tabindex.html:1:21]
+ 1 │ <app-test tabindex="1"></app-test>
+   ·                     ─
+   ╰────
+
+  ⚠ angular-template(no-positive-tabindex): The `tabindex` attribute should not be positive
+   ╭─[no_positive_tabindex.html:1:29]
+ 1 │ <div *ngIf="show" tabindex="1"></div>
+   ·                             ─
+   ╰────
+
+  ⚠ angular-template(no-positive-tabindex): The `tabindex` attribute should not be positive
+   ╭─[no_positive_tabindex.html:1:36]
+ 1 │ <div *ngIf="show" [attr.tabindex]="1"></div>
+   ·                                    ─
+   ╰────
+
+  ⚠ angular-template(no-positive-tabindex): The `tabindex` attribute should not be positive
+   ╭─[no_positive_tabindex.html:1:30]
+ 1 │ <ng-template><span tabindex="1"></span></ng-template>
+   ·                              ─
+   ╰────

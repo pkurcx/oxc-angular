@@ -10,7 +10,48 @@
 )]
 #[cfg(feature = "ruledocs")]
 use crate::rule::RuleInfo;
+pub use crate::rules::angular_template::alt_text::AltText as AngularTemplateAltText;
+pub use crate::rules::angular_template::attributes_order::AttributesOrder as AngularTemplateAttributesOrder;
+pub use crate::rules::angular_template::banana_in_box::BananaInBox as AngularTemplateBananaInBox;
+pub use crate::rules::angular_template::button_has_type::ButtonHasType as AngularTemplateButtonHasType;
+pub use crate::rules::angular_template::click_events_have_key_events::ClickEventsHaveKeyEvents as AngularTemplateClickEventsHaveKeyEvents;
+pub use crate::rules::angular_template::conditional_complexity::ConditionalComplexity as AngularTemplateConditionalComplexity;
+pub use crate::rules::angular_template::cyclomatic_complexity::CyclomaticComplexity as AngularTemplateCyclomaticComplexity;
+pub use crate::rules::angular_template::elements_content::ElementsContent as AngularTemplateElementsContent;
+pub use crate::rules::angular_template::eqeqeq::Eqeqeq as AngularTemplateEqeqeq;
+pub use crate::rules::angular_template::i18n::I18n as AngularTemplateI18N;
+pub use crate::rules::angular_template::interactive_supports_focus::InteractiveSupportsFocus as AngularTemplateInteractiveSupportsFocus;
+pub use crate::rules::angular_template::label_has_associated_control::LabelHasAssociatedControl as AngularTemplateLabelHasAssociatedControl;
+pub use crate::rules::angular_template::mouse_events_have_key_events::MouseEventsHaveKeyEvents as AngularTemplateMouseEventsHaveKeyEvents;
 pub use crate::rules::angular_template::no_any::NoAny as AngularTemplateNoAny;
+pub use crate::rules::angular_template::no_autofocus::NoAutofocus as AngularTemplateNoAutofocus;
+pub use crate::rules::angular_template::no_call_expression::NoCallExpression as AngularTemplateNoCallExpression;
+pub use crate::rules::angular_template::no_distracting_elements::NoDistractingElements as AngularTemplateNoDistractingElements;
+pub use crate::rules::angular_template::no_duplicate_attributes::NoDuplicateAttributes as AngularTemplateNoDuplicateAttributes;
+pub use crate::rules::angular_template::no_empty_control_flow::NoEmptyControlFlow as AngularTemplateNoEmptyControlFlow;
+pub use crate::rules::angular_template::no_inline_styles::NoInlineStyles as AngularTemplateNoInlineStyles;
+pub use crate::rules::angular_template::no_interpolation_in_attributes::NoInterpolationInAttributes as AngularTemplateNoInterpolationInAttributes;
+pub use crate::rules::angular_template::no_negated_async::NoNegatedAsync as AngularTemplateNoNegatedAsync;
+pub use crate::rules::angular_template::no_nested_tags::NoNestedTags as AngularTemplateNoNestedTags;
+pub use crate::rules::angular_template::no_non_null_assertion::NoNonNullAssertion as AngularTemplateNoNonNullAssertion;
+pub use crate::rules::angular_template::no_outerhtml::NoOuterhtml as AngularTemplateNoOuterhtml;
+pub use crate::rules::angular_template::no_positive_tabindex::NoPositiveTabindex as AngularTemplateNoPositiveTabindex;
+pub use crate::rules::angular_template::prefer_at_else::PreferAtElse as AngularTemplatePreferAtElse;
+pub use crate::rules::angular_template::prefer_at_empty::PreferAtEmpty as AngularTemplatePreferAtEmpty;
+pub use crate::rules::angular_template::prefer_built_in_pipes::PreferBuiltInPipes as AngularTemplatePreferBuiltInPipes;
+pub use crate::rules::angular_template::prefer_class_binding::PreferClassBinding as AngularTemplatePreferClassBinding;
+pub use crate::rules::angular_template::prefer_contextual_for_variables::PreferContextualForVariables as AngularTemplatePreferContextualForVariables;
+pub use crate::rules::angular_template::prefer_control_flow::PreferControlFlow as AngularTemplatePreferControlFlow;
+pub use crate::rules::angular_template::prefer_ngsrc::PreferNgsrc as AngularTemplatePreferNgsrc;
+pub use crate::rules::angular_template::prefer_self_closing_tags::PreferSelfClosingTags as AngularTemplatePreferSelfClosingTags;
+pub use crate::rules::angular_template::prefer_static_string_properties::PreferStaticStringProperties as AngularTemplatePreferStaticStringProperties;
+pub use crate::rules::angular_template::prefer_style_binding::PreferStyleBinding as AngularTemplatePreferStyleBinding;
+pub use crate::rules::angular_template::prefer_template_literal::PreferTemplateLiteral as AngularTemplatePreferTemplateLiteral;
+pub use crate::rules::angular_template::require_switch_default::RequireSwitchDefault as AngularTemplateRequireSwitchDefault;
+pub use crate::rules::angular_template::role_has_required_aria::RoleHasRequiredAria as AngularTemplateRoleHasRequiredAria;
+pub use crate::rules::angular_template::table_scope::TableScope as AngularTemplateTableScope;
+pub use crate::rules::angular_template::use_track_by_function::UseTrackByFunction as AngularTemplateUseTrackByFunction;
+pub use crate::rules::angular_template::valid_aria::ValidAria as AngularTemplateValidAria;
 pub use crate::rules::eslint::accessor_pairs::AccessorPairs as EslintAccessorPairs;
 pub use crate::rules::eslint::array_callback_return::ArrayCallbackReturn as EslintArrayCallbackReturn;
 pub use crate::rules::eslint::arrow_body_style::ArrowBodyStyle as EslintArrowBodyStyle;
@@ -1771,7 +1812,48 @@ pub enum RuleEnum {
     VueValidDefineOptions(VueValidDefineOptions),
     VueValidDefineProps(VueValidDefineProps),
     VueValidNextTick(VueValidNextTick),
+    AngularTemplateAltText(AngularTemplateAltText),
+    AngularTemplateAttributesOrder(AngularTemplateAttributesOrder),
+    AngularTemplateBananaInBox(AngularTemplateBananaInBox),
+    AngularTemplateButtonHasType(AngularTemplateButtonHasType),
+    AngularTemplateClickEventsHaveKeyEvents(AngularTemplateClickEventsHaveKeyEvents),
+    AngularTemplateConditionalComplexity(AngularTemplateConditionalComplexity),
+    AngularTemplateCyclomaticComplexity(AngularTemplateCyclomaticComplexity),
+    AngularTemplateElementsContent(AngularTemplateElementsContent),
+    AngularTemplateEqeqeq(AngularTemplateEqeqeq),
+    AngularTemplateI18N(AngularTemplateI18N),
+    AngularTemplateInteractiveSupportsFocus(AngularTemplateInteractiveSupportsFocus),
+    AngularTemplateLabelHasAssociatedControl(AngularTemplateLabelHasAssociatedControl),
+    AngularTemplateMouseEventsHaveKeyEvents(AngularTemplateMouseEventsHaveKeyEvents),
     AngularTemplateNoAny(AngularTemplateNoAny),
+    AngularTemplateNoAutofocus(AngularTemplateNoAutofocus),
+    AngularTemplateNoCallExpression(AngularTemplateNoCallExpression),
+    AngularTemplateNoDistractingElements(AngularTemplateNoDistractingElements),
+    AngularTemplateNoDuplicateAttributes(AngularTemplateNoDuplicateAttributes),
+    AngularTemplateNoEmptyControlFlow(AngularTemplateNoEmptyControlFlow),
+    AngularTemplateNoInlineStyles(AngularTemplateNoInlineStyles),
+    AngularTemplateNoInterpolationInAttributes(AngularTemplateNoInterpolationInAttributes),
+    AngularTemplateNoNegatedAsync(AngularTemplateNoNegatedAsync),
+    AngularTemplateNoNestedTags(AngularTemplateNoNestedTags),
+    AngularTemplateNoNonNullAssertion(AngularTemplateNoNonNullAssertion),
+    AngularTemplateNoOuterhtml(AngularTemplateNoOuterhtml),
+    AngularTemplateNoPositiveTabindex(AngularTemplateNoPositiveTabindex),
+    AngularTemplatePreferAtElse(AngularTemplatePreferAtElse),
+    AngularTemplatePreferAtEmpty(AngularTemplatePreferAtEmpty),
+    AngularTemplatePreferBuiltInPipes(AngularTemplatePreferBuiltInPipes),
+    AngularTemplatePreferClassBinding(AngularTemplatePreferClassBinding),
+    AngularTemplatePreferContextualForVariables(AngularTemplatePreferContextualForVariables),
+    AngularTemplatePreferControlFlow(AngularTemplatePreferControlFlow),
+    AngularTemplatePreferNgsrc(AngularTemplatePreferNgsrc),
+    AngularTemplatePreferSelfClosingTags(AngularTemplatePreferSelfClosingTags),
+    AngularTemplatePreferStaticStringProperties(AngularTemplatePreferStaticStringProperties),
+    AngularTemplatePreferStyleBinding(AngularTemplatePreferStyleBinding),
+    AngularTemplatePreferTemplateLiteral(AngularTemplatePreferTemplateLiteral),
+    AngularTemplateRequireSwitchDefault(AngularTemplateRequireSwitchDefault),
+    AngularTemplateRoleHasRequiredAria(AngularTemplateRoleHasRequiredAria),
+    AngularTemplateTableScope(AngularTemplateTableScope),
+    AngularTemplateUseTrackByFunction(AngularTemplateUseTrackByFunction),
+    AngularTemplateValidAria(AngularTemplateValidAria),
 }
 const IMPORT_CONSISTENT_TYPE_SPECIFIER_STYLE_ID: usize = 0usize;
 const IMPORT_DEFAULT_ID: usize = 1usize;
@@ -2644,8 +2726,49 @@ const VUE_VALID_DEFINE_EMITS_ID: usize = 867usize;
 const VUE_VALID_DEFINE_OPTIONS_ID: usize = 868usize;
 const VUE_VALID_DEFINE_PROPS_ID: usize = 869usize;
 const VUE_VALID_NEXT_TICK_ID: usize = 870usize;
-const ANGULAR_TEMPLATE_NO_ANY_ID: usize = 871usize;
-static RULE_NAMES: [&str; 872usize] = [
+const ANGULAR_TEMPLATE_ALT_TEXT_ID: usize = 871usize;
+const ANGULAR_TEMPLATE_ATTRIBUTES_ORDER_ID: usize = 872usize;
+const ANGULAR_TEMPLATE_BANANA_IN_BOX_ID: usize = 873usize;
+const ANGULAR_TEMPLATE_BUTTON_HAS_TYPE_ID: usize = 874usize;
+const ANGULAR_TEMPLATE_CLICK_EVENTS_HAVE_KEY_EVENTS_ID: usize = 875usize;
+const ANGULAR_TEMPLATE_CONDITIONAL_COMPLEXITY_ID: usize = 876usize;
+const ANGULAR_TEMPLATE_CYCLOMATIC_COMPLEXITY_ID: usize = 877usize;
+const ANGULAR_TEMPLATE_ELEMENTS_CONTENT_ID: usize = 878usize;
+const ANGULAR_TEMPLATE_EQEQEQ_ID: usize = 879usize;
+const ANGULAR_TEMPLATE_I_18_N_ID: usize = 880usize;
+const ANGULAR_TEMPLATE_INTERACTIVE_SUPPORTS_FOCUS_ID: usize = 881usize;
+const ANGULAR_TEMPLATE_LABEL_HAS_ASSOCIATED_CONTROL_ID: usize = 882usize;
+const ANGULAR_TEMPLATE_MOUSE_EVENTS_HAVE_KEY_EVENTS_ID: usize = 883usize;
+const ANGULAR_TEMPLATE_NO_ANY_ID: usize = 884usize;
+const ANGULAR_TEMPLATE_NO_AUTOFOCUS_ID: usize = 885usize;
+const ANGULAR_TEMPLATE_NO_CALL_EXPRESSION_ID: usize = 886usize;
+const ANGULAR_TEMPLATE_NO_DISTRACTING_ELEMENTS_ID: usize = 887usize;
+const ANGULAR_TEMPLATE_NO_DUPLICATE_ATTRIBUTES_ID: usize = 888usize;
+const ANGULAR_TEMPLATE_NO_EMPTY_CONTROL_FLOW_ID: usize = 889usize;
+const ANGULAR_TEMPLATE_NO_INLINE_STYLES_ID: usize = 890usize;
+const ANGULAR_TEMPLATE_NO_INTERPOLATION_IN_ATTRIBUTES_ID: usize = 891usize;
+const ANGULAR_TEMPLATE_NO_NEGATED_ASYNC_ID: usize = 892usize;
+const ANGULAR_TEMPLATE_NO_NESTED_TAGS_ID: usize = 893usize;
+const ANGULAR_TEMPLATE_NO_NON_NULL_ASSERTION_ID: usize = 894usize;
+const ANGULAR_TEMPLATE_NO_OUTERHTML_ID: usize = 895usize;
+const ANGULAR_TEMPLATE_NO_POSITIVE_TABINDEX_ID: usize = 896usize;
+const ANGULAR_TEMPLATE_PREFER_AT_ELSE_ID: usize = 897usize;
+const ANGULAR_TEMPLATE_PREFER_AT_EMPTY_ID: usize = 898usize;
+const ANGULAR_TEMPLATE_PREFER_BUILT_IN_PIPES_ID: usize = 899usize;
+const ANGULAR_TEMPLATE_PREFER_CLASS_BINDING_ID: usize = 900usize;
+const ANGULAR_TEMPLATE_PREFER_CONTEXTUAL_FOR_VARIABLES_ID: usize = 901usize;
+const ANGULAR_TEMPLATE_PREFER_CONTROL_FLOW_ID: usize = 902usize;
+const ANGULAR_TEMPLATE_PREFER_NGSRC_ID: usize = 903usize;
+const ANGULAR_TEMPLATE_PREFER_SELF_CLOSING_TAGS_ID: usize = 904usize;
+const ANGULAR_TEMPLATE_PREFER_STATIC_STRING_PROPERTIES_ID: usize = 905usize;
+const ANGULAR_TEMPLATE_PREFER_STYLE_BINDING_ID: usize = 906usize;
+const ANGULAR_TEMPLATE_PREFER_TEMPLATE_LITERAL_ID: usize = 907usize;
+const ANGULAR_TEMPLATE_REQUIRE_SWITCH_DEFAULT_ID: usize = 908usize;
+const ANGULAR_TEMPLATE_ROLE_HAS_REQUIRED_ARIA_ID: usize = 909usize;
+const ANGULAR_TEMPLATE_TABLE_SCOPE_ID: usize = 910usize;
+const ANGULAR_TEMPLATE_USE_TRACK_BY_FUNCTION_ID: usize = 911usize;
+const ANGULAR_TEMPLATE_VALID_ARIA_ID: usize = 912usize;
+static RULE_NAMES: [&str; 913usize] = [
     ImportConsistentTypeSpecifierStyle::NAME,
     ImportDefault::NAME,
     ImportExport::NAME,
@@ -3517,7 +3640,48 @@ static RULE_NAMES: [&str; 872usize] = [
     VueValidDefineOptions::NAME,
     VueValidDefineProps::NAME,
     VueValidNextTick::NAME,
+    AngularTemplateAltText::NAME,
+    AngularTemplateAttributesOrder::NAME,
+    AngularTemplateBananaInBox::NAME,
+    AngularTemplateButtonHasType::NAME,
+    AngularTemplateClickEventsHaveKeyEvents::NAME,
+    AngularTemplateConditionalComplexity::NAME,
+    AngularTemplateCyclomaticComplexity::NAME,
+    AngularTemplateElementsContent::NAME,
+    AngularTemplateEqeqeq::NAME,
+    AngularTemplateI18N::NAME,
+    AngularTemplateInteractiveSupportsFocus::NAME,
+    AngularTemplateLabelHasAssociatedControl::NAME,
+    AngularTemplateMouseEventsHaveKeyEvents::NAME,
     AngularTemplateNoAny::NAME,
+    AngularTemplateNoAutofocus::NAME,
+    AngularTemplateNoCallExpression::NAME,
+    AngularTemplateNoDistractingElements::NAME,
+    AngularTemplateNoDuplicateAttributes::NAME,
+    AngularTemplateNoEmptyControlFlow::NAME,
+    AngularTemplateNoInlineStyles::NAME,
+    AngularTemplateNoInterpolationInAttributes::NAME,
+    AngularTemplateNoNegatedAsync::NAME,
+    AngularTemplateNoNestedTags::NAME,
+    AngularTemplateNoNonNullAssertion::NAME,
+    AngularTemplateNoOuterhtml::NAME,
+    AngularTemplateNoPositiveTabindex::NAME,
+    AngularTemplatePreferAtElse::NAME,
+    AngularTemplatePreferAtEmpty::NAME,
+    AngularTemplatePreferBuiltInPipes::NAME,
+    AngularTemplatePreferClassBinding::NAME,
+    AngularTemplatePreferContextualForVariables::NAME,
+    AngularTemplatePreferControlFlow::NAME,
+    AngularTemplatePreferNgsrc::NAME,
+    AngularTemplatePreferSelfClosingTags::NAME,
+    AngularTemplatePreferStaticStringProperties::NAME,
+    AngularTemplatePreferStyleBinding::NAME,
+    AngularTemplatePreferTemplateLiteral::NAME,
+    AngularTemplateRequireSwitchDefault::NAME,
+    AngularTemplateRoleHasRequiredAria::NAME,
+    AngularTemplateTableScope::NAME,
+    AngularTemplateUseTrackByFunction::NAME,
+    AngularTemplateValidAria::NAME,
 ];
 impl RuleEnum {
     pub fn id(&self) -> usize {
@@ -4525,7 +4689,78 @@ impl RuleEnum {
             Self::VueValidDefineOptions(_) => VUE_VALID_DEFINE_OPTIONS_ID,
             Self::VueValidDefineProps(_) => VUE_VALID_DEFINE_PROPS_ID,
             Self::VueValidNextTick(_) => VUE_VALID_NEXT_TICK_ID,
+            Self::AngularTemplateAltText(_) => ANGULAR_TEMPLATE_ALT_TEXT_ID,
+            Self::AngularTemplateAttributesOrder(_) => ANGULAR_TEMPLATE_ATTRIBUTES_ORDER_ID,
+            Self::AngularTemplateBananaInBox(_) => ANGULAR_TEMPLATE_BANANA_IN_BOX_ID,
+            Self::AngularTemplateButtonHasType(_) => ANGULAR_TEMPLATE_BUTTON_HAS_TYPE_ID,
+            Self::AngularTemplateClickEventsHaveKeyEvents(_) => {
+                ANGULAR_TEMPLATE_CLICK_EVENTS_HAVE_KEY_EVENTS_ID
+            }
+            Self::AngularTemplateConditionalComplexity(_) => {
+                ANGULAR_TEMPLATE_CONDITIONAL_COMPLEXITY_ID
+            }
+            Self::AngularTemplateCyclomaticComplexity(_) => {
+                ANGULAR_TEMPLATE_CYCLOMATIC_COMPLEXITY_ID
+            }
+            Self::AngularTemplateElementsContent(_) => ANGULAR_TEMPLATE_ELEMENTS_CONTENT_ID,
+            Self::AngularTemplateEqeqeq(_) => ANGULAR_TEMPLATE_EQEQEQ_ID,
+            Self::AngularTemplateI18N(_) => ANGULAR_TEMPLATE_I_18_N_ID,
+            Self::AngularTemplateInteractiveSupportsFocus(_) => {
+                ANGULAR_TEMPLATE_INTERACTIVE_SUPPORTS_FOCUS_ID
+            }
+            Self::AngularTemplateLabelHasAssociatedControl(_) => {
+                ANGULAR_TEMPLATE_LABEL_HAS_ASSOCIATED_CONTROL_ID
+            }
+            Self::AngularTemplateMouseEventsHaveKeyEvents(_) => {
+                ANGULAR_TEMPLATE_MOUSE_EVENTS_HAVE_KEY_EVENTS_ID
+            }
             Self::AngularTemplateNoAny(_) => ANGULAR_TEMPLATE_NO_ANY_ID,
+            Self::AngularTemplateNoAutofocus(_) => ANGULAR_TEMPLATE_NO_AUTOFOCUS_ID,
+            Self::AngularTemplateNoCallExpression(_) => ANGULAR_TEMPLATE_NO_CALL_EXPRESSION_ID,
+            Self::AngularTemplateNoDistractingElements(_) => {
+                ANGULAR_TEMPLATE_NO_DISTRACTING_ELEMENTS_ID
+            }
+            Self::AngularTemplateNoDuplicateAttributes(_) => {
+                ANGULAR_TEMPLATE_NO_DUPLICATE_ATTRIBUTES_ID
+            }
+            Self::AngularTemplateNoEmptyControlFlow(_) => ANGULAR_TEMPLATE_NO_EMPTY_CONTROL_FLOW_ID,
+            Self::AngularTemplateNoInlineStyles(_) => ANGULAR_TEMPLATE_NO_INLINE_STYLES_ID,
+            Self::AngularTemplateNoInterpolationInAttributes(_) => {
+                ANGULAR_TEMPLATE_NO_INTERPOLATION_IN_ATTRIBUTES_ID
+            }
+            Self::AngularTemplateNoNegatedAsync(_) => ANGULAR_TEMPLATE_NO_NEGATED_ASYNC_ID,
+            Self::AngularTemplateNoNestedTags(_) => ANGULAR_TEMPLATE_NO_NESTED_TAGS_ID,
+            Self::AngularTemplateNoNonNullAssertion(_) => ANGULAR_TEMPLATE_NO_NON_NULL_ASSERTION_ID,
+            Self::AngularTemplateNoOuterhtml(_) => ANGULAR_TEMPLATE_NO_OUTERHTML_ID,
+            Self::AngularTemplateNoPositiveTabindex(_) => ANGULAR_TEMPLATE_NO_POSITIVE_TABINDEX_ID,
+            Self::AngularTemplatePreferAtElse(_) => ANGULAR_TEMPLATE_PREFER_AT_ELSE_ID,
+            Self::AngularTemplatePreferAtEmpty(_) => ANGULAR_TEMPLATE_PREFER_AT_EMPTY_ID,
+            Self::AngularTemplatePreferBuiltInPipes(_) => ANGULAR_TEMPLATE_PREFER_BUILT_IN_PIPES_ID,
+            Self::AngularTemplatePreferClassBinding(_) => ANGULAR_TEMPLATE_PREFER_CLASS_BINDING_ID,
+            Self::AngularTemplatePreferContextualForVariables(_) => {
+                ANGULAR_TEMPLATE_PREFER_CONTEXTUAL_FOR_VARIABLES_ID
+            }
+            Self::AngularTemplatePreferControlFlow(_) => ANGULAR_TEMPLATE_PREFER_CONTROL_FLOW_ID,
+            Self::AngularTemplatePreferNgsrc(_) => ANGULAR_TEMPLATE_PREFER_NGSRC_ID,
+            Self::AngularTemplatePreferSelfClosingTags(_) => {
+                ANGULAR_TEMPLATE_PREFER_SELF_CLOSING_TAGS_ID
+            }
+            Self::AngularTemplatePreferStaticStringProperties(_) => {
+                ANGULAR_TEMPLATE_PREFER_STATIC_STRING_PROPERTIES_ID
+            }
+            Self::AngularTemplatePreferStyleBinding(_) => ANGULAR_TEMPLATE_PREFER_STYLE_BINDING_ID,
+            Self::AngularTemplatePreferTemplateLiteral(_) => {
+                ANGULAR_TEMPLATE_PREFER_TEMPLATE_LITERAL_ID
+            }
+            Self::AngularTemplateRequireSwitchDefault(_) => {
+                ANGULAR_TEMPLATE_REQUIRE_SWITCH_DEFAULT_ID
+            }
+            Self::AngularTemplateRoleHasRequiredAria(_) => {
+                ANGULAR_TEMPLATE_ROLE_HAS_REQUIRED_ARIA_ID
+            }
+            Self::AngularTemplateTableScope(_) => ANGULAR_TEMPLATE_TABLE_SCOPE_ID,
+            Self::AngularTemplateUseTrackByFunction(_) => ANGULAR_TEMPLATE_USE_TRACK_BY_FUNCTION_ID,
+            Self::AngularTemplateValidAria(_) => ANGULAR_TEMPLATE_VALID_ARIA_ID,
         }
     }
     pub fn name(&self) -> &'static str {
@@ -5580,7 +5815,92 @@ impl RuleEnum {
             Self::VueValidDefineOptions(_) => VueValidDefineOptions::CATEGORY,
             Self::VueValidDefineProps(_) => VueValidDefineProps::CATEGORY,
             Self::VueValidNextTick(_) => VueValidNextTick::CATEGORY,
+            Self::AngularTemplateAltText(_) => AngularTemplateAltText::CATEGORY,
+            Self::AngularTemplateAttributesOrder(_) => AngularTemplateAttributesOrder::CATEGORY,
+            Self::AngularTemplateBananaInBox(_) => AngularTemplateBananaInBox::CATEGORY,
+            Self::AngularTemplateButtonHasType(_) => AngularTemplateButtonHasType::CATEGORY,
+            Self::AngularTemplateClickEventsHaveKeyEvents(_) => {
+                AngularTemplateClickEventsHaveKeyEvents::CATEGORY
+            }
+            Self::AngularTemplateConditionalComplexity(_) => {
+                AngularTemplateConditionalComplexity::CATEGORY
+            }
+            Self::AngularTemplateCyclomaticComplexity(_) => {
+                AngularTemplateCyclomaticComplexity::CATEGORY
+            }
+            Self::AngularTemplateElementsContent(_) => AngularTemplateElementsContent::CATEGORY,
+            Self::AngularTemplateEqeqeq(_) => AngularTemplateEqeqeq::CATEGORY,
+            Self::AngularTemplateI18N(_) => AngularTemplateI18N::CATEGORY,
+            Self::AngularTemplateInteractiveSupportsFocus(_) => {
+                AngularTemplateInteractiveSupportsFocus::CATEGORY
+            }
+            Self::AngularTemplateLabelHasAssociatedControl(_) => {
+                AngularTemplateLabelHasAssociatedControl::CATEGORY
+            }
+            Self::AngularTemplateMouseEventsHaveKeyEvents(_) => {
+                AngularTemplateMouseEventsHaveKeyEvents::CATEGORY
+            }
             Self::AngularTemplateNoAny(_) => AngularTemplateNoAny::CATEGORY,
+            Self::AngularTemplateNoAutofocus(_) => AngularTemplateNoAutofocus::CATEGORY,
+            Self::AngularTemplateNoCallExpression(_) => AngularTemplateNoCallExpression::CATEGORY,
+            Self::AngularTemplateNoDistractingElements(_) => {
+                AngularTemplateNoDistractingElements::CATEGORY
+            }
+            Self::AngularTemplateNoDuplicateAttributes(_) => {
+                AngularTemplateNoDuplicateAttributes::CATEGORY
+            }
+            Self::AngularTemplateNoEmptyControlFlow(_) => {
+                AngularTemplateNoEmptyControlFlow::CATEGORY
+            }
+            Self::AngularTemplateNoInlineStyles(_) => AngularTemplateNoInlineStyles::CATEGORY,
+            Self::AngularTemplateNoInterpolationInAttributes(_) => {
+                AngularTemplateNoInterpolationInAttributes::CATEGORY
+            }
+            Self::AngularTemplateNoNegatedAsync(_) => AngularTemplateNoNegatedAsync::CATEGORY,
+            Self::AngularTemplateNoNestedTags(_) => AngularTemplateNoNestedTags::CATEGORY,
+            Self::AngularTemplateNoNonNullAssertion(_) => {
+                AngularTemplateNoNonNullAssertion::CATEGORY
+            }
+            Self::AngularTemplateNoOuterhtml(_) => AngularTemplateNoOuterhtml::CATEGORY,
+            Self::AngularTemplateNoPositiveTabindex(_) => {
+                AngularTemplateNoPositiveTabindex::CATEGORY
+            }
+            Self::AngularTemplatePreferAtElse(_) => AngularTemplatePreferAtElse::CATEGORY,
+            Self::AngularTemplatePreferAtEmpty(_) => AngularTemplatePreferAtEmpty::CATEGORY,
+            Self::AngularTemplatePreferBuiltInPipes(_) => {
+                AngularTemplatePreferBuiltInPipes::CATEGORY
+            }
+            Self::AngularTemplatePreferClassBinding(_) => {
+                AngularTemplatePreferClassBinding::CATEGORY
+            }
+            Self::AngularTemplatePreferContextualForVariables(_) => {
+                AngularTemplatePreferContextualForVariables::CATEGORY
+            }
+            Self::AngularTemplatePreferControlFlow(_) => AngularTemplatePreferControlFlow::CATEGORY,
+            Self::AngularTemplatePreferNgsrc(_) => AngularTemplatePreferNgsrc::CATEGORY,
+            Self::AngularTemplatePreferSelfClosingTags(_) => {
+                AngularTemplatePreferSelfClosingTags::CATEGORY
+            }
+            Self::AngularTemplatePreferStaticStringProperties(_) => {
+                AngularTemplatePreferStaticStringProperties::CATEGORY
+            }
+            Self::AngularTemplatePreferStyleBinding(_) => {
+                AngularTemplatePreferStyleBinding::CATEGORY
+            }
+            Self::AngularTemplatePreferTemplateLiteral(_) => {
+                AngularTemplatePreferTemplateLiteral::CATEGORY
+            }
+            Self::AngularTemplateRequireSwitchDefault(_) => {
+                AngularTemplateRequireSwitchDefault::CATEGORY
+            }
+            Self::AngularTemplateRoleHasRequiredAria(_) => {
+                AngularTemplateRoleHasRequiredAria::CATEGORY
+            }
+            Self::AngularTemplateTableScope(_) => AngularTemplateTableScope::CATEGORY,
+            Self::AngularTemplateUseTrackByFunction(_) => {
+                AngularTemplateUseTrackByFunction::CATEGORY
+            }
+            Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::CATEGORY,
         }
     }
     #[doc = r" This [`Rule`]'s auto-fix capabilities."]
@@ -6573,7 +6893,76 @@ impl RuleEnum {
             Self::VueValidDefineOptions(_) => VueValidDefineOptions::FIX,
             Self::VueValidDefineProps(_) => VueValidDefineProps::FIX,
             Self::VueValidNextTick(_) => VueValidNextTick::FIX,
+            Self::AngularTemplateAltText(_) => AngularTemplateAltText::FIX,
+            Self::AngularTemplateAttributesOrder(_) => AngularTemplateAttributesOrder::FIX,
+            Self::AngularTemplateBananaInBox(_) => AngularTemplateBananaInBox::FIX,
+            Self::AngularTemplateButtonHasType(_) => AngularTemplateButtonHasType::FIX,
+            Self::AngularTemplateClickEventsHaveKeyEvents(_) => {
+                AngularTemplateClickEventsHaveKeyEvents::FIX
+            }
+            Self::AngularTemplateConditionalComplexity(_) => {
+                AngularTemplateConditionalComplexity::FIX
+            }
+            Self::AngularTemplateCyclomaticComplexity(_) => {
+                AngularTemplateCyclomaticComplexity::FIX
+            }
+            Self::AngularTemplateElementsContent(_) => AngularTemplateElementsContent::FIX,
+            Self::AngularTemplateEqeqeq(_) => AngularTemplateEqeqeq::FIX,
+            Self::AngularTemplateI18N(_) => AngularTemplateI18N::FIX,
+            Self::AngularTemplateInteractiveSupportsFocus(_) => {
+                AngularTemplateInteractiveSupportsFocus::FIX
+            }
+            Self::AngularTemplateLabelHasAssociatedControl(_) => {
+                AngularTemplateLabelHasAssociatedControl::FIX
+            }
+            Self::AngularTemplateMouseEventsHaveKeyEvents(_) => {
+                AngularTemplateMouseEventsHaveKeyEvents::FIX
+            }
             Self::AngularTemplateNoAny(_) => AngularTemplateNoAny::FIX,
+            Self::AngularTemplateNoAutofocus(_) => AngularTemplateNoAutofocus::FIX,
+            Self::AngularTemplateNoCallExpression(_) => AngularTemplateNoCallExpression::FIX,
+            Self::AngularTemplateNoDistractingElements(_) => {
+                AngularTemplateNoDistractingElements::FIX
+            }
+            Self::AngularTemplateNoDuplicateAttributes(_) => {
+                AngularTemplateNoDuplicateAttributes::FIX
+            }
+            Self::AngularTemplateNoEmptyControlFlow(_) => AngularTemplateNoEmptyControlFlow::FIX,
+            Self::AngularTemplateNoInlineStyles(_) => AngularTemplateNoInlineStyles::FIX,
+            Self::AngularTemplateNoInterpolationInAttributes(_) => {
+                AngularTemplateNoInterpolationInAttributes::FIX
+            }
+            Self::AngularTemplateNoNegatedAsync(_) => AngularTemplateNoNegatedAsync::FIX,
+            Self::AngularTemplateNoNestedTags(_) => AngularTemplateNoNestedTags::FIX,
+            Self::AngularTemplateNoNonNullAssertion(_) => AngularTemplateNoNonNullAssertion::FIX,
+            Self::AngularTemplateNoOuterhtml(_) => AngularTemplateNoOuterhtml::FIX,
+            Self::AngularTemplateNoPositiveTabindex(_) => AngularTemplateNoPositiveTabindex::FIX,
+            Self::AngularTemplatePreferAtElse(_) => AngularTemplatePreferAtElse::FIX,
+            Self::AngularTemplatePreferAtEmpty(_) => AngularTemplatePreferAtEmpty::FIX,
+            Self::AngularTemplatePreferBuiltInPipes(_) => AngularTemplatePreferBuiltInPipes::FIX,
+            Self::AngularTemplatePreferClassBinding(_) => AngularTemplatePreferClassBinding::FIX,
+            Self::AngularTemplatePreferContextualForVariables(_) => {
+                AngularTemplatePreferContextualForVariables::FIX
+            }
+            Self::AngularTemplatePreferControlFlow(_) => AngularTemplatePreferControlFlow::FIX,
+            Self::AngularTemplatePreferNgsrc(_) => AngularTemplatePreferNgsrc::FIX,
+            Self::AngularTemplatePreferSelfClosingTags(_) => {
+                AngularTemplatePreferSelfClosingTags::FIX
+            }
+            Self::AngularTemplatePreferStaticStringProperties(_) => {
+                AngularTemplatePreferStaticStringProperties::FIX
+            }
+            Self::AngularTemplatePreferStyleBinding(_) => AngularTemplatePreferStyleBinding::FIX,
+            Self::AngularTemplatePreferTemplateLiteral(_) => {
+                AngularTemplatePreferTemplateLiteral::FIX
+            }
+            Self::AngularTemplateRequireSwitchDefault(_) => {
+                AngularTemplateRequireSwitchDefault::FIX
+            }
+            Self::AngularTemplateRoleHasRequiredAria(_) => AngularTemplateRoleHasRequiredAria::FIX,
+            Self::AngularTemplateTableScope(_) => AngularTemplateTableScope::FIX,
+            Self::AngularTemplateUseTrackByFunction(_) => AngularTemplateUseTrackByFunction::FIX,
+            Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::FIX,
         }
     }
     #[cfg(feature = "ruledocs")]
@@ -7840,7 +8229,104 @@ impl RuleEnum {
             Self::VueValidDefineOptions(_) => VueValidDefineOptions::documentation(),
             Self::VueValidDefineProps(_) => VueValidDefineProps::documentation(),
             Self::VueValidNextTick(_) => VueValidNextTick::documentation(),
+            Self::AngularTemplateAltText(_) => AngularTemplateAltText::documentation(),
+            Self::AngularTemplateAttributesOrder(_) => {
+                AngularTemplateAttributesOrder::documentation()
+            }
+            Self::AngularTemplateBananaInBox(_) => AngularTemplateBananaInBox::documentation(),
+            Self::AngularTemplateButtonHasType(_) => AngularTemplateButtonHasType::documentation(),
+            Self::AngularTemplateClickEventsHaveKeyEvents(_) => {
+                AngularTemplateClickEventsHaveKeyEvents::documentation()
+            }
+            Self::AngularTemplateConditionalComplexity(_) => {
+                AngularTemplateConditionalComplexity::documentation()
+            }
+            Self::AngularTemplateCyclomaticComplexity(_) => {
+                AngularTemplateCyclomaticComplexity::documentation()
+            }
+            Self::AngularTemplateElementsContent(_) => {
+                AngularTemplateElementsContent::documentation()
+            }
+            Self::AngularTemplateEqeqeq(_) => AngularTemplateEqeqeq::documentation(),
+            Self::AngularTemplateI18N(_) => AngularTemplateI18N::documentation(),
+            Self::AngularTemplateInteractiveSupportsFocus(_) => {
+                AngularTemplateInteractiveSupportsFocus::documentation()
+            }
+            Self::AngularTemplateLabelHasAssociatedControl(_) => {
+                AngularTemplateLabelHasAssociatedControl::documentation()
+            }
+            Self::AngularTemplateMouseEventsHaveKeyEvents(_) => {
+                AngularTemplateMouseEventsHaveKeyEvents::documentation()
+            }
             Self::AngularTemplateNoAny(_) => AngularTemplateNoAny::documentation(),
+            Self::AngularTemplateNoAutofocus(_) => AngularTemplateNoAutofocus::documentation(),
+            Self::AngularTemplateNoCallExpression(_) => {
+                AngularTemplateNoCallExpression::documentation()
+            }
+            Self::AngularTemplateNoDistractingElements(_) => {
+                AngularTemplateNoDistractingElements::documentation()
+            }
+            Self::AngularTemplateNoDuplicateAttributes(_) => {
+                AngularTemplateNoDuplicateAttributes::documentation()
+            }
+            Self::AngularTemplateNoEmptyControlFlow(_) => {
+                AngularTemplateNoEmptyControlFlow::documentation()
+            }
+            Self::AngularTemplateNoInlineStyles(_) => {
+                AngularTemplateNoInlineStyles::documentation()
+            }
+            Self::AngularTemplateNoInterpolationInAttributes(_) => {
+                AngularTemplateNoInterpolationInAttributes::documentation()
+            }
+            Self::AngularTemplateNoNegatedAsync(_) => {
+                AngularTemplateNoNegatedAsync::documentation()
+            }
+            Self::AngularTemplateNoNestedTags(_) => AngularTemplateNoNestedTags::documentation(),
+            Self::AngularTemplateNoNonNullAssertion(_) => {
+                AngularTemplateNoNonNullAssertion::documentation()
+            }
+            Self::AngularTemplateNoOuterhtml(_) => AngularTemplateNoOuterhtml::documentation(),
+            Self::AngularTemplateNoPositiveTabindex(_) => {
+                AngularTemplateNoPositiveTabindex::documentation()
+            }
+            Self::AngularTemplatePreferAtElse(_) => AngularTemplatePreferAtElse::documentation(),
+            Self::AngularTemplatePreferAtEmpty(_) => AngularTemplatePreferAtEmpty::documentation(),
+            Self::AngularTemplatePreferBuiltInPipes(_) => {
+                AngularTemplatePreferBuiltInPipes::documentation()
+            }
+            Self::AngularTemplatePreferClassBinding(_) => {
+                AngularTemplatePreferClassBinding::documentation()
+            }
+            Self::AngularTemplatePreferContextualForVariables(_) => {
+                AngularTemplatePreferContextualForVariables::documentation()
+            }
+            Self::AngularTemplatePreferControlFlow(_) => {
+                AngularTemplatePreferControlFlow::documentation()
+            }
+            Self::AngularTemplatePreferNgsrc(_) => AngularTemplatePreferNgsrc::documentation(),
+            Self::AngularTemplatePreferSelfClosingTags(_) => {
+                AngularTemplatePreferSelfClosingTags::documentation()
+            }
+            Self::AngularTemplatePreferStaticStringProperties(_) => {
+                AngularTemplatePreferStaticStringProperties::documentation()
+            }
+            Self::AngularTemplatePreferStyleBinding(_) => {
+                AngularTemplatePreferStyleBinding::documentation()
+            }
+            Self::AngularTemplatePreferTemplateLiteral(_) => {
+                AngularTemplatePreferTemplateLiteral::documentation()
+            }
+            Self::AngularTemplateRequireSwitchDefault(_) => {
+                AngularTemplateRequireSwitchDefault::documentation()
+            }
+            Self::AngularTemplateRoleHasRequiredAria(_) => {
+                AngularTemplateRoleHasRequiredAria::documentation()
+            }
+            Self::AngularTemplateTableScope(_) => AngularTemplateTableScope::documentation(),
+            Self::AngularTemplateUseTrackByFunction(_) => {
+                AngularTemplateUseTrackByFunction::documentation()
+            }
+            Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::documentation(),
         }
     }
     #[cfg(feature = "ruledocs")]
@@ -10344,8 +10830,164 @@ impl RuleEnum {
                 .or_else(|| VueValidDefineProps::schema(generator)),
             Self::VueValidNextTick(_) => VueValidNextTick::config_schema(generator)
                 .or_else(|| VueValidNextTick::schema(generator)),
+            Self::AngularTemplateAltText(_) => AngularTemplateAltText::config_schema(generator)
+                .or_else(|| AngularTemplateAltText::schema(generator)),
+            Self::AngularTemplateAttributesOrder(_) => {
+                AngularTemplateAttributesOrder::config_schema(generator)
+                    .or_else(|| AngularTemplateAttributesOrder::schema(generator))
+            }
+            Self::AngularTemplateBananaInBox(_) => {
+                AngularTemplateBananaInBox::config_schema(generator)
+                    .or_else(|| AngularTemplateBananaInBox::schema(generator))
+            }
+            Self::AngularTemplateButtonHasType(_) => {
+                AngularTemplateButtonHasType::config_schema(generator)
+                    .or_else(|| AngularTemplateButtonHasType::schema(generator))
+            }
+            Self::AngularTemplateClickEventsHaveKeyEvents(_) => {
+                AngularTemplateClickEventsHaveKeyEvents::config_schema(generator)
+                    .or_else(|| AngularTemplateClickEventsHaveKeyEvents::schema(generator))
+            }
+            Self::AngularTemplateConditionalComplexity(_) => {
+                AngularTemplateConditionalComplexity::config_schema(generator)
+                    .or_else(|| AngularTemplateConditionalComplexity::schema(generator))
+            }
+            Self::AngularTemplateCyclomaticComplexity(_) => {
+                AngularTemplateCyclomaticComplexity::config_schema(generator)
+                    .or_else(|| AngularTemplateCyclomaticComplexity::schema(generator))
+            }
+            Self::AngularTemplateElementsContent(_) => {
+                AngularTemplateElementsContent::config_schema(generator)
+                    .or_else(|| AngularTemplateElementsContent::schema(generator))
+            }
+            Self::AngularTemplateEqeqeq(_) => AngularTemplateEqeqeq::config_schema(generator)
+                .or_else(|| AngularTemplateEqeqeq::schema(generator)),
+            Self::AngularTemplateI18N(_) => AngularTemplateI18N::config_schema(generator)
+                .or_else(|| AngularTemplateI18N::schema(generator)),
+            Self::AngularTemplateInteractiveSupportsFocus(_) => {
+                AngularTemplateInteractiveSupportsFocus::config_schema(generator)
+                    .or_else(|| AngularTemplateInteractiveSupportsFocus::schema(generator))
+            }
+            Self::AngularTemplateLabelHasAssociatedControl(_) => {
+                AngularTemplateLabelHasAssociatedControl::config_schema(generator)
+                    .or_else(|| AngularTemplateLabelHasAssociatedControl::schema(generator))
+            }
+            Self::AngularTemplateMouseEventsHaveKeyEvents(_) => {
+                AngularTemplateMouseEventsHaveKeyEvents::config_schema(generator)
+                    .or_else(|| AngularTemplateMouseEventsHaveKeyEvents::schema(generator))
+            }
             Self::AngularTemplateNoAny(_) => AngularTemplateNoAny::config_schema(generator)
                 .or_else(|| AngularTemplateNoAny::schema(generator)),
+            Self::AngularTemplateNoAutofocus(_) => {
+                AngularTemplateNoAutofocus::config_schema(generator)
+                    .or_else(|| AngularTemplateNoAutofocus::schema(generator))
+            }
+            Self::AngularTemplateNoCallExpression(_) => {
+                AngularTemplateNoCallExpression::config_schema(generator)
+                    .or_else(|| AngularTemplateNoCallExpression::schema(generator))
+            }
+            Self::AngularTemplateNoDistractingElements(_) => {
+                AngularTemplateNoDistractingElements::config_schema(generator)
+                    .or_else(|| AngularTemplateNoDistractingElements::schema(generator))
+            }
+            Self::AngularTemplateNoDuplicateAttributes(_) => {
+                AngularTemplateNoDuplicateAttributes::config_schema(generator)
+                    .or_else(|| AngularTemplateNoDuplicateAttributes::schema(generator))
+            }
+            Self::AngularTemplateNoEmptyControlFlow(_) => {
+                AngularTemplateNoEmptyControlFlow::config_schema(generator)
+                    .or_else(|| AngularTemplateNoEmptyControlFlow::schema(generator))
+            }
+            Self::AngularTemplateNoInlineStyles(_) => {
+                AngularTemplateNoInlineStyles::config_schema(generator)
+                    .or_else(|| AngularTemplateNoInlineStyles::schema(generator))
+            }
+            Self::AngularTemplateNoInterpolationInAttributes(_) => {
+                AngularTemplateNoInterpolationInAttributes::config_schema(generator)
+                    .or_else(|| AngularTemplateNoInterpolationInAttributes::schema(generator))
+            }
+            Self::AngularTemplateNoNegatedAsync(_) => {
+                AngularTemplateNoNegatedAsync::config_schema(generator)
+                    .or_else(|| AngularTemplateNoNegatedAsync::schema(generator))
+            }
+            Self::AngularTemplateNoNestedTags(_) => {
+                AngularTemplateNoNestedTags::config_schema(generator)
+                    .or_else(|| AngularTemplateNoNestedTags::schema(generator))
+            }
+            Self::AngularTemplateNoNonNullAssertion(_) => {
+                AngularTemplateNoNonNullAssertion::config_schema(generator)
+                    .or_else(|| AngularTemplateNoNonNullAssertion::schema(generator))
+            }
+            Self::AngularTemplateNoOuterhtml(_) => {
+                AngularTemplateNoOuterhtml::config_schema(generator)
+                    .or_else(|| AngularTemplateNoOuterhtml::schema(generator))
+            }
+            Self::AngularTemplateNoPositiveTabindex(_) => {
+                AngularTemplateNoPositiveTabindex::config_schema(generator)
+                    .or_else(|| AngularTemplateNoPositiveTabindex::schema(generator))
+            }
+            Self::AngularTemplatePreferAtElse(_) => {
+                AngularTemplatePreferAtElse::config_schema(generator)
+                    .or_else(|| AngularTemplatePreferAtElse::schema(generator))
+            }
+            Self::AngularTemplatePreferAtEmpty(_) => {
+                AngularTemplatePreferAtEmpty::config_schema(generator)
+                    .or_else(|| AngularTemplatePreferAtEmpty::schema(generator))
+            }
+            Self::AngularTemplatePreferBuiltInPipes(_) => {
+                AngularTemplatePreferBuiltInPipes::config_schema(generator)
+                    .or_else(|| AngularTemplatePreferBuiltInPipes::schema(generator))
+            }
+            Self::AngularTemplatePreferClassBinding(_) => {
+                AngularTemplatePreferClassBinding::config_schema(generator)
+                    .or_else(|| AngularTemplatePreferClassBinding::schema(generator))
+            }
+            Self::AngularTemplatePreferContextualForVariables(_) => {
+                AngularTemplatePreferContextualForVariables::config_schema(generator)
+                    .or_else(|| AngularTemplatePreferContextualForVariables::schema(generator))
+            }
+            Self::AngularTemplatePreferControlFlow(_) => {
+                AngularTemplatePreferControlFlow::config_schema(generator)
+                    .or_else(|| AngularTemplatePreferControlFlow::schema(generator))
+            }
+            Self::AngularTemplatePreferNgsrc(_) => {
+                AngularTemplatePreferNgsrc::config_schema(generator)
+                    .or_else(|| AngularTemplatePreferNgsrc::schema(generator))
+            }
+            Self::AngularTemplatePreferSelfClosingTags(_) => {
+                AngularTemplatePreferSelfClosingTags::config_schema(generator)
+                    .or_else(|| AngularTemplatePreferSelfClosingTags::schema(generator))
+            }
+            Self::AngularTemplatePreferStaticStringProperties(_) => {
+                AngularTemplatePreferStaticStringProperties::config_schema(generator)
+                    .or_else(|| AngularTemplatePreferStaticStringProperties::schema(generator))
+            }
+            Self::AngularTemplatePreferStyleBinding(_) => {
+                AngularTemplatePreferStyleBinding::config_schema(generator)
+                    .or_else(|| AngularTemplatePreferStyleBinding::schema(generator))
+            }
+            Self::AngularTemplatePreferTemplateLiteral(_) => {
+                AngularTemplatePreferTemplateLiteral::config_schema(generator)
+                    .or_else(|| AngularTemplatePreferTemplateLiteral::schema(generator))
+            }
+            Self::AngularTemplateRequireSwitchDefault(_) => {
+                AngularTemplateRequireSwitchDefault::config_schema(generator)
+                    .or_else(|| AngularTemplateRequireSwitchDefault::schema(generator))
+            }
+            Self::AngularTemplateRoleHasRequiredAria(_) => {
+                AngularTemplateRoleHasRequiredAria::config_schema(generator)
+                    .or_else(|| AngularTemplateRoleHasRequiredAria::schema(generator))
+            }
+            Self::AngularTemplateTableScope(_) => {
+                AngularTemplateTableScope::config_schema(generator)
+                    .or_else(|| AngularTemplateTableScope::schema(generator))
+            }
+            Self::AngularTemplateUseTrackByFunction(_) => {
+                AngularTemplateUseTrackByFunction::config_schema(generator)
+                    .or_else(|| AngularTemplateUseTrackByFunction::schema(generator))
+            }
+            Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::config_schema(generator)
+                .or_else(|| AngularTemplateValidAria::schema(generator)),
         }
     }
     pub fn plugin_name(&self) -> &'static str {
@@ -11221,7 +11863,48 @@ impl RuleEnum {
             Self::VueValidDefineOptions(_) => "vue",
             Self::VueValidDefineProps(_) => "vue",
             Self::VueValidNextTick(_) => "vue",
+            Self::AngularTemplateAltText(_) => "angular_template",
+            Self::AngularTemplateAttributesOrder(_) => "angular_template",
+            Self::AngularTemplateBananaInBox(_) => "angular_template",
+            Self::AngularTemplateButtonHasType(_) => "angular_template",
+            Self::AngularTemplateClickEventsHaveKeyEvents(_) => "angular_template",
+            Self::AngularTemplateConditionalComplexity(_) => "angular_template",
+            Self::AngularTemplateCyclomaticComplexity(_) => "angular_template",
+            Self::AngularTemplateElementsContent(_) => "angular_template",
+            Self::AngularTemplateEqeqeq(_) => "angular_template",
+            Self::AngularTemplateI18N(_) => "angular_template",
+            Self::AngularTemplateInteractiveSupportsFocus(_) => "angular_template",
+            Self::AngularTemplateLabelHasAssociatedControl(_) => "angular_template",
+            Self::AngularTemplateMouseEventsHaveKeyEvents(_) => "angular_template",
             Self::AngularTemplateNoAny(_) => "angular_template",
+            Self::AngularTemplateNoAutofocus(_) => "angular_template",
+            Self::AngularTemplateNoCallExpression(_) => "angular_template",
+            Self::AngularTemplateNoDistractingElements(_) => "angular_template",
+            Self::AngularTemplateNoDuplicateAttributes(_) => "angular_template",
+            Self::AngularTemplateNoEmptyControlFlow(_) => "angular_template",
+            Self::AngularTemplateNoInlineStyles(_) => "angular_template",
+            Self::AngularTemplateNoInterpolationInAttributes(_) => "angular_template",
+            Self::AngularTemplateNoNegatedAsync(_) => "angular_template",
+            Self::AngularTemplateNoNestedTags(_) => "angular_template",
+            Self::AngularTemplateNoNonNullAssertion(_) => "angular_template",
+            Self::AngularTemplateNoOuterhtml(_) => "angular_template",
+            Self::AngularTemplateNoPositiveTabindex(_) => "angular_template",
+            Self::AngularTemplatePreferAtElse(_) => "angular_template",
+            Self::AngularTemplatePreferAtEmpty(_) => "angular_template",
+            Self::AngularTemplatePreferBuiltInPipes(_) => "angular_template",
+            Self::AngularTemplatePreferClassBinding(_) => "angular_template",
+            Self::AngularTemplatePreferContextualForVariables(_) => "angular_template",
+            Self::AngularTemplatePreferControlFlow(_) => "angular_template",
+            Self::AngularTemplatePreferNgsrc(_) => "angular_template",
+            Self::AngularTemplatePreferSelfClosingTags(_) => "angular_template",
+            Self::AngularTemplatePreferStaticStringProperties(_) => "angular_template",
+            Self::AngularTemplatePreferStyleBinding(_) => "angular_template",
+            Self::AngularTemplatePreferTemplateLiteral(_) => "angular_template",
+            Self::AngularTemplateRequireSwitchDefault(_) => "angular_template",
+            Self::AngularTemplateRoleHasRequiredAria(_) => "angular_template",
+            Self::AngularTemplateTableScope(_) => "angular_template",
+            Self::AngularTemplateUseTrackByFunction(_) => "angular_template",
+            Self::AngularTemplateValidAria(_) => "angular_template",
         }
     }
     pub fn from_configuration(
@@ -12319,6 +13002,82 @@ impl RuleEnum {
             Self::VueReturnInComputedProperty(_) => Ok(Self::VueReturnInComputedProperty(
                 VueReturnInComputedProperty::from_configuration(value)?,
             )),
+            Self::AngularTemplateAttributesOrder(_) => Ok(Self::AngularTemplateAttributesOrder(
+                AngularTemplateAttributesOrder::from_configuration(value)?,
+            )),
+            Self::AngularTemplateButtonHasType(_) => Ok(Self::AngularTemplateButtonHasType(
+                AngularTemplateButtonHasType::from_configuration(value)?,
+            )),
+            Self::AngularTemplateClickEventsHaveKeyEvents(_) => {
+                Ok(Self::AngularTemplateClickEventsHaveKeyEvents(
+                    AngularTemplateClickEventsHaveKeyEvents::from_configuration(value)?,
+                ))
+            }
+            Self::AngularTemplateConditionalComplexity(_) => {
+                Ok(Self::AngularTemplateConditionalComplexity(
+                    AngularTemplateConditionalComplexity::from_configuration(value)?,
+                ))
+            }
+            Self::AngularTemplateCyclomaticComplexity(_) => {
+                Ok(Self::AngularTemplateCyclomaticComplexity(
+                    AngularTemplateCyclomaticComplexity::from_configuration(value)?,
+                ))
+            }
+            Self::AngularTemplateElementsContent(_) => Ok(Self::AngularTemplateElementsContent(
+                AngularTemplateElementsContent::from_configuration(value)?,
+            )),
+            Self::AngularTemplateEqeqeq(_) => {
+                Ok(Self::AngularTemplateEqeqeq(AngularTemplateEqeqeq::from_configuration(value)?))
+            }
+            Self::AngularTemplateI18N(_) => {
+                Ok(Self::AngularTemplateI18N(AngularTemplateI18N::from_configuration(value)?))
+            }
+            Self::AngularTemplateInteractiveSupportsFocus(_) => {
+                Ok(Self::AngularTemplateInteractiveSupportsFocus(
+                    AngularTemplateInteractiveSupportsFocus::from_configuration(value)?,
+                ))
+            }
+            Self::AngularTemplateLabelHasAssociatedControl(_) => {
+                Ok(Self::AngularTemplateLabelHasAssociatedControl(
+                    AngularTemplateLabelHasAssociatedControl::from_configuration(value)?,
+                ))
+            }
+            Self::AngularTemplateNoCallExpression(_) => Ok(Self::AngularTemplateNoCallExpression(
+                AngularTemplateNoCallExpression::from_configuration(value)?,
+            )),
+            Self::AngularTemplateNoDuplicateAttributes(_) => {
+                Ok(Self::AngularTemplateNoDuplicateAttributes(
+                    AngularTemplateNoDuplicateAttributes::from_configuration(value)?,
+                ))
+            }
+            Self::AngularTemplateNoInlineStyles(_) => Ok(Self::AngularTemplateNoInlineStyles(
+                AngularTemplateNoInlineStyles::from_configuration(value)?,
+            )),
+            Self::AngularTemplateNoInterpolationInAttributes(_) => {
+                Ok(Self::AngularTemplateNoInterpolationInAttributes(
+                    AngularTemplateNoInterpolationInAttributes::from_configuration(value)?,
+                ))
+            }
+            Self::AngularTemplatePreferBuiltInPipes(_) => {
+                Ok(Self::AngularTemplatePreferBuiltInPipes(
+                    AngularTemplatePreferBuiltInPipes::from_configuration(value)?,
+                ))
+            }
+            Self::AngularTemplatePreferContextualForVariables(_) => {
+                Ok(Self::AngularTemplatePreferContextualForVariables(
+                    AngularTemplatePreferContextualForVariables::from_configuration(value)?,
+                ))
+            }
+            Self::AngularTemplatePreferStaticStringProperties(_) => {
+                Ok(Self::AngularTemplatePreferStaticStringProperties(
+                    AngularTemplatePreferStaticStringProperties::from_configuration(value)?,
+                ))
+            }
+            Self::AngularTemplateUseTrackByFunction(_) => {
+                Ok(Self::AngularTemplateUseTrackByFunction(
+                    AngularTemplateUseTrackByFunction::from_configuration(value)?,
+                ))
+            }
             _ => Ok(RULES[self.id()].clone()),
         }
     }
@@ -13234,7 +13993,48 @@ impl RuleEnum {
             Self::VueValidDefineOptions(rule) => rule.run(node, ctx),
             Self::VueValidDefineProps(rule) => rule.run(node, ctx),
             Self::VueValidNextTick(rule) => rule.run(node, ctx),
+            Self::AngularTemplateAltText(rule) => rule.run(node, ctx),
+            Self::AngularTemplateAttributesOrder(rule) => rule.run(node, ctx),
+            Self::AngularTemplateBananaInBox(rule) => rule.run(node, ctx),
+            Self::AngularTemplateButtonHasType(rule) => rule.run(node, ctx),
+            Self::AngularTemplateClickEventsHaveKeyEvents(rule) => rule.run(node, ctx),
+            Self::AngularTemplateConditionalComplexity(rule) => rule.run(node, ctx),
+            Self::AngularTemplateCyclomaticComplexity(rule) => rule.run(node, ctx),
+            Self::AngularTemplateElementsContent(rule) => rule.run(node, ctx),
+            Self::AngularTemplateEqeqeq(rule) => rule.run(node, ctx),
+            Self::AngularTemplateI18N(rule) => rule.run(node, ctx),
+            Self::AngularTemplateInteractiveSupportsFocus(rule) => rule.run(node, ctx),
+            Self::AngularTemplateLabelHasAssociatedControl(rule) => rule.run(node, ctx),
+            Self::AngularTemplateMouseEventsHaveKeyEvents(rule) => rule.run(node, ctx),
             Self::AngularTemplateNoAny(rule) => rule.run(node, ctx),
+            Self::AngularTemplateNoAutofocus(rule) => rule.run(node, ctx),
+            Self::AngularTemplateNoCallExpression(rule) => rule.run(node, ctx),
+            Self::AngularTemplateNoDistractingElements(rule) => rule.run(node, ctx),
+            Self::AngularTemplateNoDuplicateAttributes(rule) => rule.run(node, ctx),
+            Self::AngularTemplateNoEmptyControlFlow(rule) => rule.run(node, ctx),
+            Self::AngularTemplateNoInlineStyles(rule) => rule.run(node, ctx),
+            Self::AngularTemplateNoInterpolationInAttributes(rule) => rule.run(node, ctx),
+            Self::AngularTemplateNoNegatedAsync(rule) => rule.run(node, ctx),
+            Self::AngularTemplateNoNestedTags(rule) => rule.run(node, ctx),
+            Self::AngularTemplateNoNonNullAssertion(rule) => rule.run(node, ctx),
+            Self::AngularTemplateNoOuterhtml(rule) => rule.run(node, ctx),
+            Self::AngularTemplateNoPositiveTabindex(rule) => rule.run(node, ctx),
+            Self::AngularTemplatePreferAtElse(rule) => rule.run(node, ctx),
+            Self::AngularTemplatePreferAtEmpty(rule) => rule.run(node, ctx),
+            Self::AngularTemplatePreferBuiltInPipes(rule) => rule.run(node, ctx),
+            Self::AngularTemplatePreferClassBinding(rule) => rule.run(node, ctx),
+            Self::AngularTemplatePreferContextualForVariables(rule) => rule.run(node, ctx),
+            Self::AngularTemplatePreferControlFlow(rule) => rule.run(node, ctx),
+            Self::AngularTemplatePreferNgsrc(rule) => rule.run(node, ctx),
+            Self::AngularTemplatePreferSelfClosingTags(rule) => rule.run(node, ctx),
+            Self::AngularTemplatePreferStaticStringProperties(rule) => rule.run(node, ctx),
+            Self::AngularTemplatePreferStyleBinding(rule) => rule.run(node, ctx),
+            Self::AngularTemplatePreferTemplateLiteral(rule) => rule.run(node, ctx),
+            Self::AngularTemplateRequireSwitchDefault(rule) => rule.run(node, ctx),
+            Self::AngularTemplateRoleHasRequiredAria(rule) => rule.run(node, ctx),
+            Self::AngularTemplateTableScope(rule) => rule.run(node, ctx),
+            Self::AngularTemplateUseTrackByFunction(rule) => rule.run(node, ctx),
+            Self::AngularTemplateValidAria(rule) => rule.run(node, ctx),
         }
     }
     pub(crate) fn run<'a, const TIMINGS: bool>(
@@ -14123,7 +14923,48 @@ impl RuleEnum {
             Self::VueValidDefineOptions(rule) => rule.run_once(ctx),
             Self::VueValidDefineProps(rule) => rule.run_once(ctx),
             Self::VueValidNextTick(rule) => rule.run_once(ctx),
+            Self::AngularTemplateAltText(rule) => rule.run_once(ctx),
+            Self::AngularTemplateAttributesOrder(rule) => rule.run_once(ctx),
+            Self::AngularTemplateBananaInBox(rule) => rule.run_once(ctx),
+            Self::AngularTemplateButtonHasType(rule) => rule.run_once(ctx),
+            Self::AngularTemplateClickEventsHaveKeyEvents(rule) => rule.run_once(ctx),
+            Self::AngularTemplateConditionalComplexity(rule) => rule.run_once(ctx),
+            Self::AngularTemplateCyclomaticComplexity(rule) => rule.run_once(ctx),
+            Self::AngularTemplateElementsContent(rule) => rule.run_once(ctx),
+            Self::AngularTemplateEqeqeq(rule) => rule.run_once(ctx),
+            Self::AngularTemplateI18N(rule) => rule.run_once(ctx),
+            Self::AngularTemplateInteractiveSupportsFocus(rule) => rule.run_once(ctx),
+            Self::AngularTemplateLabelHasAssociatedControl(rule) => rule.run_once(ctx),
+            Self::AngularTemplateMouseEventsHaveKeyEvents(rule) => rule.run_once(ctx),
             Self::AngularTemplateNoAny(rule) => rule.run_once(ctx),
+            Self::AngularTemplateNoAutofocus(rule) => rule.run_once(ctx),
+            Self::AngularTemplateNoCallExpression(rule) => rule.run_once(ctx),
+            Self::AngularTemplateNoDistractingElements(rule) => rule.run_once(ctx),
+            Self::AngularTemplateNoDuplicateAttributes(rule) => rule.run_once(ctx),
+            Self::AngularTemplateNoEmptyControlFlow(rule) => rule.run_once(ctx),
+            Self::AngularTemplateNoInlineStyles(rule) => rule.run_once(ctx),
+            Self::AngularTemplateNoInterpolationInAttributes(rule) => rule.run_once(ctx),
+            Self::AngularTemplateNoNegatedAsync(rule) => rule.run_once(ctx),
+            Self::AngularTemplateNoNestedTags(rule) => rule.run_once(ctx),
+            Self::AngularTemplateNoNonNullAssertion(rule) => rule.run_once(ctx),
+            Self::AngularTemplateNoOuterhtml(rule) => rule.run_once(ctx),
+            Self::AngularTemplateNoPositiveTabindex(rule) => rule.run_once(ctx),
+            Self::AngularTemplatePreferAtElse(rule) => rule.run_once(ctx),
+            Self::AngularTemplatePreferAtEmpty(rule) => rule.run_once(ctx),
+            Self::AngularTemplatePreferBuiltInPipes(rule) => rule.run_once(ctx),
+            Self::AngularTemplatePreferClassBinding(rule) => rule.run_once(ctx),
+            Self::AngularTemplatePreferContextualForVariables(rule) => rule.run_once(ctx),
+            Self::AngularTemplatePreferControlFlow(rule) => rule.run_once(ctx),
+            Self::AngularTemplatePreferNgsrc(rule) => rule.run_once(ctx),
+            Self::AngularTemplatePreferSelfClosingTags(rule) => rule.run_once(ctx),
+            Self::AngularTemplatePreferStaticStringProperties(rule) => rule.run_once(ctx),
+            Self::AngularTemplatePreferStyleBinding(rule) => rule.run_once(ctx),
+            Self::AngularTemplatePreferTemplateLiteral(rule) => rule.run_once(ctx),
+            Self::AngularTemplateRequireSwitchDefault(rule) => rule.run_once(ctx),
+            Self::AngularTemplateRoleHasRequiredAria(rule) => rule.run_once(ctx),
+            Self::AngularTemplateTableScope(rule) => rule.run_once(ctx),
+            Self::AngularTemplateUseTrackByFunction(rule) => rule.run_once(ctx),
+            Self::AngularTemplateValidAria(rule) => rule.run_once(ctx),
         }
     }
     pub(crate) fn run_once<const TIMINGS: bool>(
@@ -15131,7 +15972,76 @@ impl RuleEnum {
             Self::VueValidDefineOptions(rule) => rule.run_on_jest_node(jest_node, ctx),
             Self::VueValidDefineProps(rule) => rule.run_on_jest_node(jest_node, ctx),
             Self::VueValidNextTick(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateAltText(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateAttributesOrder(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateBananaInBox(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateButtonHasType(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateClickEventsHaveKeyEvents(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
+            Self::AngularTemplateConditionalComplexity(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
+            Self::AngularTemplateCyclomaticComplexity(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
+            Self::AngularTemplateElementsContent(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateEqeqeq(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateI18N(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateInteractiveSupportsFocus(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
+            Self::AngularTemplateLabelHasAssociatedControl(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
+            Self::AngularTemplateMouseEventsHaveKeyEvents(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
             Self::AngularTemplateNoAny(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateNoAutofocus(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateNoCallExpression(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateNoDistractingElements(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
+            Self::AngularTemplateNoDuplicateAttributes(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
+            Self::AngularTemplateNoEmptyControlFlow(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateNoInlineStyles(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateNoInterpolationInAttributes(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
+            Self::AngularTemplateNoNegatedAsync(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateNoNestedTags(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateNoNonNullAssertion(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateNoOuterhtml(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateNoPositiveTabindex(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplatePreferAtElse(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplatePreferAtEmpty(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplatePreferBuiltInPipes(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplatePreferClassBinding(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplatePreferContextualForVariables(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
+            Self::AngularTemplatePreferControlFlow(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplatePreferNgsrc(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplatePreferSelfClosingTags(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
+            Self::AngularTemplatePreferStaticStringProperties(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
+            Self::AngularTemplatePreferStyleBinding(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplatePreferTemplateLiteral(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
+            Self::AngularTemplateRequireSwitchDefault(rule) => {
+                rule.run_on_jest_node(jest_node, ctx)
+            }
+            Self::AngularTemplateRoleHasRequiredAria(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateTableScope(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateUseTrackByFunction(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularTemplateValidAria(rule) => rule.run_on_jest_node(jest_node, ctx),
         }
     }
     pub(crate) fn run_on_jest_node<'a, 'c, const TIMINGS: bool>(
@@ -16021,7 +16931,48 @@ impl RuleEnum {
             Self::VueValidDefineOptions(rule) => rule.should_run(ctx),
             Self::VueValidDefineProps(rule) => rule.should_run(ctx),
             Self::VueValidNextTick(rule) => rule.should_run(ctx),
+            Self::AngularTemplateAltText(rule) => rule.should_run(ctx),
+            Self::AngularTemplateAttributesOrder(rule) => rule.should_run(ctx),
+            Self::AngularTemplateBananaInBox(rule) => rule.should_run(ctx),
+            Self::AngularTemplateButtonHasType(rule) => rule.should_run(ctx),
+            Self::AngularTemplateClickEventsHaveKeyEvents(rule) => rule.should_run(ctx),
+            Self::AngularTemplateConditionalComplexity(rule) => rule.should_run(ctx),
+            Self::AngularTemplateCyclomaticComplexity(rule) => rule.should_run(ctx),
+            Self::AngularTemplateElementsContent(rule) => rule.should_run(ctx),
+            Self::AngularTemplateEqeqeq(rule) => rule.should_run(ctx),
+            Self::AngularTemplateI18N(rule) => rule.should_run(ctx),
+            Self::AngularTemplateInteractiveSupportsFocus(rule) => rule.should_run(ctx),
+            Self::AngularTemplateLabelHasAssociatedControl(rule) => rule.should_run(ctx),
+            Self::AngularTemplateMouseEventsHaveKeyEvents(rule) => rule.should_run(ctx),
             Self::AngularTemplateNoAny(rule) => rule.should_run(ctx),
+            Self::AngularTemplateNoAutofocus(rule) => rule.should_run(ctx),
+            Self::AngularTemplateNoCallExpression(rule) => rule.should_run(ctx),
+            Self::AngularTemplateNoDistractingElements(rule) => rule.should_run(ctx),
+            Self::AngularTemplateNoDuplicateAttributes(rule) => rule.should_run(ctx),
+            Self::AngularTemplateNoEmptyControlFlow(rule) => rule.should_run(ctx),
+            Self::AngularTemplateNoInlineStyles(rule) => rule.should_run(ctx),
+            Self::AngularTemplateNoInterpolationInAttributes(rule) => rule.should_run(ctx),
+            Self::AngularTemplateNoNegatedAsync(rule) => rule.should_run(ctx),
+            Self::AngularTemplateNoNestedTags(rule) => rule.should_run(ctx),
+            Self::AngularTemplateNoNonNullAssertion(rule) => rule.should_run(ctx),
+            Self::AngularTemplateNoOuterhtml(rule) => rule.should_run(ctx),
+            Self::AngularTemplateNoPositiveTabindex(rule) => rule.should_run(ctx),
+            Self::AngularTemplatePreferAtElse(rule) => rule.should_run(ctx),
+            Self::AngularTemplatePreferAtEmpty(rule) => rule.should_run(ctx),
+            Self::AngularTemplatePreferBuiltInPipes(rule) => rule.should_run(ctx),
+            Self::AngularTemplatePreferClassBinding(rule) => rule.should_run(ctx),
+            Self::AngularTemplatePreferContextualForVariables(rule) => rule.should_run(ctx),
+            Self::AngularTemplatePreferControlFlow(rule) => rule.should_run(ctx),
+            Self::AngularTemplatePreferNgsrc(rule) => rule.should_run(ctx),
+            Self::AngularTemplatePreferSelfClosingTags(rule) => rule.should_run(ctx),
+            Self::AngularTemplatePreferStaticStringProperties(rule) => rule.should_run(ctx),
+            Self::AngularTemplatePreferStyleBinding(rule) => rule.should_run(ctx),
+            Self::AngularTemplatePreferTemplateLiteral(rule) => rule.should_run(ctx),
+            Self::AngularTemplateRequireSwitchDefault(rule) => rule.should_run(ctx),
+            Self::AngularTemplateRoleHasRequiredAria(rule) => rule.should_run(ctx),
+            Self::AngularTemplateTableScope(rule) => rule.should_run(ctx),
+            Self::AngularTemplateUseTrackByFunction(rule) => rule.should_run(ctx),
+            Self::AngularTemplateValidAria(rule) => rule.should_run(ctx),
         }
     }
     pub fn is_tsgolint_rule(&self) -> bool {
@@ -17287,7 +18238,104 @@ impl RuleEnum {
             Self::VueValidDefineOptions(_) => VueValidDefineOptions::IS_TSGOLINT_RULE,
             Self::VueValidDefineProps(_) => VueValidDefineProps::IS_TSGOLINT_RULE,
             Self::VueValidNextTick(_) => VueValidNextTick::IS_TSGOLINT_RULE,
+            Self::AngularTemplateAltText(_) => AngularTemplateAltText::IS_TSGOLINT_RULE,
+            Self::AngularTemplateAttributesOrder(_) => {
+                AngularTemplateAttributesOrder::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateBananaInBox(_) => AngularTemplateBananaInBox::IS_TSGOLINT_RULE,
+            Self::AngularTemplateButtonHasType(_) => AngularTemplateButtonHasType::IS_TSGOLINT_RULE,
+            Self::AngularTemplateClickEventsHaveKeyEvents(_) => {
+                AngularTemplateClickEventsHaveKeyEvents::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateConditionalComplexity(_) => {
+                AngularTemplateConditionalComplexity::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateCyclomaticComplexity(_) => {
+                AngularTemplateCyclomaticComplexity::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateElementsContent(_) => {
+                AngularTemplateElementsContent::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateEqeqeq(_) => AngularTemplateEqeqeq::IS_TSGOLINT_RULE,
+            Self::AngularTemplateI18N(_) => AngularTemplateI18N::IS_TSGOLINT_RULE,
+            Self::AngularTemplateInteractiveSupportsFocus(_) => {
+                AngularTemplateInteractiveSupportsFocus::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateLabelHasAssociatedControl(_) => {
+                AngularTemplateLabelHasAssociatedControl::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateMouseEventsHaveKeyEvents(_) => {
+                AngularTemplateMouseEventsHaveKeyEvents::IS_TSGOLINT_RULE
+            }
             Self::AngularTemplateNoAny(_) => AngularTemplateNoAny::IS_TSGOLINT_RULE,
+            Self::AngularTemplateNoAutofocus(_) => AngularTemplateNoAutofocus::IS_TSGOLINT_RULE,
+            Self::AngularTemplateNoCallExpression(_) => {
+                AngularTemplateNoCallExpression::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateNoDistractingElements(_) => {
+                AngularTemplateNoDistractingElements::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateNoDuplicateAttributes(_) => {
+                AngularTemplateNoDuplicateAttributes::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateNoEmptyControlFlow(_) => {
+                AngularTemplateNoEmptyControlFlow::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateNoInlineStyles(_) => {
+                AngularTemplateNoInlineStyles::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateNoInterpolationInAttributes(_) => {
+                AngularTemplateNoInterpolationInAttributes::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateNoNegatedAsync(_) => {
+                AngularTemplateNoNegatedAsync::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateNoNestedTags(_) => AngularTemplateNoNestedTags::IS_TSGOLINT_RULE,
+            Self::AngularTemplateNoNonNullAssertion(_) => {
+                AngularTemplateNoNonNullAssertion::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateNoOuterhtml(_) => AngularTemplateNoOuterhtml::IS_TSGOLINT_RULE,
+            Self::AngularTemplateNoPositiveTabindex(_) => {
+                AngularTemplateNoPositiveTabindex::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplatePreferAtElse(_) => AngularTemplatePreferAtElse::IS_TSGOLINT_RULE,
+            Self::AngularTemplatePreferAtEmpty(_) => AngularTemplatePreferAtEmpty::IS_TSGOLINT_RULE,
+            Self::AngularTemplatePreferBuiltInPipes(_) => {
+                AngularTemplatePreferBuiltInPipes::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplatePreferClassBinding(_) => {
+                AngularTemplatePreferClassBinding::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplatePreferContextualForVariables(_) => {
+                AngularTemplatePreferContextualForVariables::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplatePreferControlFlow(_) => {
+                AngularTemplatePreferControlFlow::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplatePreferNgsrc(_) => AngularTemplatePreferNgsrc::IS_TSGOLINT_RULE,
+            Self::AngularTemplatePreferSelfClosingTags(_) => {
+                AngularTemplatePreferSelfClosingTags::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplatePreferStaticStringProperties(_) => {
+                AngularTemplatePreferStaticStringProperties::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplatePreferStyleBinding(_) => {
+                AngularTemplatePreferStyleBinding::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplatePreferTemplateLiteral(_) => {
+                AngularTemplatePreferTemplateLiteral::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateRequireSwitchDefault(_) => {
+                AngularTemplateRequireSwitchDefault::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateRoleHasRequiredAria(_) => {
+                AngularTemplateRoleHasRequiredAria::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateTableScope(_) => AngularTemplateTableScope::IS_TSGOLINT_RULE,
+            Self::AngularTemplateUseTrackByFunction(_) => {
+                AngularTemplateUseTrackByFunction::IS_TSGOLINT_RULE
+            }
+            Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::IS_TSGOLINT_RULE,
         }
     }
     #[doc = r" The version of oxlint in which this rule was first available."]
@@ -18341,7 +19389,92 @@ impl RuleEnum {
             Self::VueValidDefineOptions(_) => VueValidDefineOptions::VERSION,
             Self::VueValidDefineProps(_) => VueValidDefineProps::VERSION,
             Self::VueValidNextTick(_) => VueValidNextTick::VERSION,
+            Self::AngularTemplateAltText(_) => AngularTemplateAltText::VERSION,
+            Self::AngularTemplateAttributesOrder(_) => AngularTemplateAttributesOrder::VERSION,
+            Self::AngularTemplateBananaInBox(_) => AngularTemplateBananaInBox::VERSION,
+            Self::AngularTemplateButtonHasType(_) => AngularTemplateButtonHasType::VERSION,
+            Self::AngularTemplateClickEventsHaveKeyEvents(_) => {
+                AngularTemplateClickEventsHaveKeyEvents::VERSION
+            }
+            Self::AngularTemplateConditionalComplexity(_) => {
+                AngularTemplateConditionalComplexity::VERSION
+            }
+            Self::AngularTemplateCyclomaticComplexity(_) => {
+                AngularTemplateCyclomaticComplexity::VERSION
+            }
+            Self::AngularTemplateElementsContent(_) => AngularTemplateElementsContent::VERSION,
+            Self::AngularTemplateEqeqeq(_) => AngularTemplateEqeqeq::VERSION,
+            Self::AngularTemplateI18N(_) => AngularTemplateI18N::VERSION,
+            Self::AngularTemplateInteractiveSupportsFocus(_) => {
+                AngularTemplateInteractiveSupportsFocus::VERSION
+            }
+            Self::AngularTemplateLabelHasAssociatedControl(_) => {
+                AngularTemplateLabelHasAssociatedControl::VERSION
+            }
+            Self::AngularTemplateMouseEventsHaveKeyEvents(_) => {
+                AngularTemplateMouseEventsHaveKeyEvents::VERSION
+            }
             Self::AngularTemplateNoAny(_) => AngularTemplateNoAny::VERSION,
+            Self::AngularTemplateNoAutofocus(_) => AngularTemplateNoAutofocus::VERSION,
+            Self::AngularTemplateNoCallExpression(_) => AngularTemplateNoCallExpression::VERSION,
+            Self::AngularTemplateNoDistractingElements(_) => {
+                AngularTemplateNoDistractingElements::VERSION
+            }
+            Self::AngularTemplateNoDuplicateAttributes(_) => {
+                AngularTemplateNoDuplicateAttributes::VERSION
+            }
+            Self::AngularTemplateNoEmptyControlFlow(_) => {
+                AngularTemplateNoEmptyControlFlow::VERSION
+            }
+            Self::AngularTemplateNoInlineStyles(_) => AngularTemplateNoInlineStyles::VERSION,
+            Self::AngularTemplateNoInterpolationInAttributes(_) => {
+                AngularTemplateNoInterpolationInAttributes::VERSION
+            }
+            Self::AngularTemplateNoNegatedAsync(_) => AngularTemplateNoNegatedAsync::VERSION,
+            Self::AngularTemplateNoNestedTags(_) => AngularTemplateNoNestedTags::VERSION,
+            Self::AngularTemplateNoNonNullAssertion(_) => {
+                AngularTemplateNoNonNullAssertion::VERSION
+            }
+            Self::AngularTemplateNoOuterhtml(_) => AngularTemplateNoOuterhtml::VERSION,
+            Self::AngularTemplateNoPositiveTabindex(_) => {
+                AngularTemplateNoPositiveTabindex::VERSION
+            }
+            Self::AngularTemplatePreferAtElse(_) => AngularTemplatePreferAtElse::VERSION,
+            Self::AngularTemplatePreferAtEmpty(_) => AngularTemplatePreferAtEmpty::VERSION,
+            Self::AngularTemplatePreferBuiltInPipes(_) => {
+                AngularTemplatePreferBuiltInPipes::VERSION
+            }
+            Self::AngularTemplatePreferClassBinding(_) => {
+                AngularTemplatePreferClassBinding::VERSION
+            }
+            Self::AngularTemplatePreferContextualForVariables(_) => {
+                AngularTemplatePreferContextualForVariables::VERSION
+            }
+            Self::AngularTemplatePreferControlFlow(_) => AngularTemplatePreferControlFlow::VERSION,
+            Self::AngularTemplatePreferNgsrc(_) => AngularTemplatePreferNgsrc::VERSION,
+            Self::AngularTemplatePreferSelfClosingTags(_) => {
+                AngularTemplatePreferSelfClosingTags::VERSION
+            }
+            Self::AngularTemplatePreferStaticStringProperties(_) => {
+                AngularTemplatePreferStaticStringProperties::VERSION
+            }
+            Self::AngularTemplatePreferStyleBinding(_) => {
+                AngularTemplatePreferStyleBinding::VERSION
+            }
+            Self::AngularTemplatePreferTemplateLiteral(_) => {
+                AngularTemplatePreferTemplateLiteral::VERSION
+            }
+            Self::AngularTemplateRequireSwitchDefault(_) => {
+                AngularTemplateRequireSwitchDefault::VERSION
+            }
+            Self::AngularTemplateRoleHasRequiredAria(_) => {
+                AngularTemplateRoleHasRequiredAria::VERSION
+            }
+            Self::AngularTemplateTableScope(_) => AngularTemplateTableScope::VERSION,
+            Self::AngularTemplateUseTrackByFunction(_) => {
+                AngularTemplateUseTrackByFunction::VERSION
+            }
+            Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::VERSION,
         }
     }
     #[doc = r" Whether this rule declares a configuration type."]
@@ -19434,7 +20567,94 @@ impl RuleEnum {
             Self::VueValidDefineOptions(_) => VueValidDefineOptions::HAS_CONFIG,
             Self::VueValidDefineProps(_) => VueValidDefineProps::HAS_CONFIG,
             Self::VueValidNextTick(_) => VueValidNextTick::HAS_CONFIG,
+            Self::AngularTemplateAltText(_) => AngularTemplateAltText::HAS_CONFIG,
+            Self::AngularTemplateAttributesOrder(_) => AngularTemplateAttributesOrder::HAS_CONFIG,
+            Self::AngularTemplateBananaInBox(_) => AngularTemplateBananaInBox::HAS_CONFIG,
+            Self::AngularTemplateButtonHasType(_) => AngularTemplateButtonHasType::HAS_CONFIG,
+            Self::AngularTemplateClickEventsHaveKeyEvents(_) => {
+                AngularTemplateClickEventsHaveKeyEvents::HAS_CONFIG
+            }
+            Self::AngularTemplateConditionalComplexity(_) => {
+                AngularTemplateConditionalComplexity::HAS_CONFIG
+            }
+            Self::AngularTemplateCyclomaticComplexity(_) => {
+                AngularTemplateCyclomaticComplexity::HAS_CONFIG
+            }
+            Self::AngularTemplateElementsContent(_) => AngularTemplateElementsContent::HAS_CONFIG,
+            Self::AngularTemplateEqeqeq(_) => AngularTemplateEqeqeq::HAS_CONFIG,
+            Self::AngularTemplateI18N(_) => AngularTemplateI18N::HAS_CONFIG,
+            Self::AngularTemplateInteractiveSupportsFocus(_) => {
+                AngularTemplateInteractiveSupportsFocus::HAS_CONFIG
+            }
+            Self::AngularTemplateLabelHasAssociatedControl(_) => {
+                AngularTemplateLabelHasAssociatedControl::HAS_CONFIG
+            }
+            Self::AngularTemplateMouseEventsHaveKeyEvents(_) => {
+                AngularTemplateMouseEventsHaveKeyEvents::HAS_CONFIG
+            }
             Self::AngularTemplateNoAny(_) => AngularTemplateNoAny::HAS_CONFIG,
+            Self::AngularTemplateNoAutofocus(_) => AngularTemplateNoAutofocus::HAS_CONFIG,
+            Self::AngularTemplateNoCallExpression(_) => AngularTemplateNoCallExpression::HAS_CONFIG,
+            Self::AngularTemplateNoDistractingElements(_) => {
+                AngularTemplateNoDistractingElements::HAS_CONFIG
+            }
+            Self::AngularTemplateNoDuplicateAttributes(_) => {
+                AngularTemplateNoDuplicateAttributes::HAS_CONFIG
+            }
+            Self::AngularTemplateNoEmptyControlFlow(_) => {
+                AngularTemplateNoEmptyControlFlow::HAS_CONFIG
+            }
+            Self::AngularTemplateNoInlineStyles(_) => AngularTemplateNoInlineStyles::HAS_CONFIG,
+            Self::AngularTemplateNoInterpolationInAttributes(_) => {
+                AngularTemplateNoInterpolationInAttributes::HAS_CONFIG
+            }
+            Self::AngularTemplateNoNegatedAsync(_) => AngularTemplateNoNegatedAsync::HAS_CONFIG,
+            Self::AngularTemplateNoNestedTags(_) => AngularTemplateNoNestedTags::HAS_CONFIG,
+            Self::AngularTemplateNoNonNullAssertion(_) => {
+                AngularTemplateNoNonNullAssertion::HAS_CONFIG
+            }
+            Self::AngularTemplateNoOuterhtml(_) => AngularTemplateNoOuterhtml::HAS_CONFIG,
+            Self::AngularTemplateNoPositiveTabindex(_) => {
+                AngularTemplateNoPositiveTabindex::HAS_CONFIG
+            }
+            Self::AngularTemplatePreferAtElse(_) => AngularTemplatePreferAtElse::HAS_CONFIG,
+            Self::AngularTemplatePreferAtEmpty(_) => AngularTemplatePreferAtEmpty::HAS_CONFIG,
+            Self::AngularTemplatePreferBuiltInPipes(_) => {
+                AngularTemplatePreferBuiltInPipes::HAS_CONFIG
+            }
+            Self::AngularTemplatePreferClassBinding(_) => {
+                AngularTemplatePreferClassBinding::HAS_CONFIG
+            }
+            Self::AngularTemplatePreferContextualForVariables(_) => {
+                AngularTemplatePreferContextualForVariables::HAS_CONFIG
+            }
+            Self::AngularTemplatePreferControlFlow(_) => {
+                AngularTemplatePreferControlFlow::HAS_CONFIG
+            }
+            Self::AngularTemplatePreferNgsrc(_) => AngularTemplatePreferNgsrc::HAS_CONFIG,
+            Self::AngularTemplatePreferSelfClosingTags(_) => {
+                AngularTemplatePreferSelfClosingTags::HAS_CONFIG
+            }
+            Self::AngularTemplatePreferStaticStringProperties(_) => {
+                AngularTemplatePreferStaticStringProperties::HAS_CONFIG
+            }
+            Self::AngularTemplatePreferStyleBinding(_) => {
+                AngularTemplatePreferStyleBinding::HAS_CONFIG
+            }
+            Self::AngularTemplatePreferTemplateLiteral(_) => {
+                AngularTemplatePreferTemplateLiteral::HAS_CONFIG
+            }
+            Self::AngularTemplateRequireSwitchDefault(_) => {
+                AngularTemplateRequireSwitchDefault::HAS_CONFIG
+            }
+            Self::AngularTemplateRoleHasRequiredAria(_) => {
+                AngularTemplateRoleHasRequiredAria::HAS_CONFIG
+            }
+            Self::AngularTemplateTableScope(_) => AngularTemplateTableScope::HAS_CONFIG,
+            Self::AngularTemplateUseTrackByFunction(_) => {
+                AngularTemplateUseTrackByFunction::HAS_CONFIG
+            }
+            Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::HAS_CONFIG,
         }
     }
     #[doc = r" Additional information about this rule."]
@@ -20428,7 +21648,76 @@ impl RuleEnum {
             Self::VueValidDefineOptions(_) => VueValidDefineOptions::INFO,
             Self::VueValidDefineProps(_) => VueValidDefineProps::INFO,
             Self::VueValidNextTick(_) => VueValidNextTick::INFO,
+            Self::AngularTemplateAltText(_) => AngularTemplateAltText::INFO,
+            Self::AngularTemplateAttributesOrder(_) => AngularTemplateAttributesOrder::INFO,
+            Self::AngularTemplateBananaInBox(_) => AngularTemplateBananaInBox::INFO,
+            Self::AngularTemplateButtonHasType(_) => AngularTemplateButtonHasType::INFO,
+            Self::AngularTemplateClickEventsHaveKeyEvents(_) => {
+                AngularTemplateClickEventsHaveKeyEvents::INFO
+            }
+            Self::AngularTemplateConditionalComplexity(_) => {
+                AngularTemplateConditionalComplexity::INFO
+            }
+            Self::AngularTemplateCyclomaticComplexity(_) => {
+                AngularTemplateCyclomaticComplexity::INFO
+            }
+            Self::AngularTemplateElementsContent(_) => AngularTemplateElementsContent::INFO,
+            Self::AngularTemplateEqeqeq(_) => AngularTemplateEqeqeq::INFO,
+            Self::AngularTemplateI18N(_) => AngularTemplateI18N::INFO,
+            Self::AngularTemplateInteractiveSupportsFocus(_) => {
+                AngularTemplateInteractiveSupportsFocus::INFO
+            }
+            Self::AngularTemplateLabelHasAssociatedControl(_) => {
+                AngularTemplateLabelHasAssociatedControl::INFO
+            }
+            Self::AngularTemplateMouseEventsHaveKeyEvents(_) => {
+                AngularTemplateMouseEventsHaveKeyEvents::INFO
+            }
             Self::AngularTemplateNoAny(_) => AngularTemplateNoAny::INFO,
+            Self::AngularTemplateNoAutofocus(_) => AngularTemplateNoAutofocus::INFO,
+            Self::AngularTemplateNoCallExpression(_) => AngularTemplateNoCallExpression::INFO,
+            Self::AngularTemplateNoDistractingElements(_) => {
+                AngularTemplateNoDistractingElements::INFO
+            }
+            Self::AngularTemplateNoDuplicateAttributes(_) => {
+                AngularTemplateNoDuplicateAttributes::INFO
+            }
+            Self::AngularTemplateNoEmptyControlFlow(_) => AngularTemplateNoEmptyControlFlow::INFO,
+            Self::AngularTemplateNoInlineStyles(_) => AngularTemplateNoInlineStyles::INFO,
+            Self::AngularTemplateNoInterpolationInAttributes(_) => {
+                AngularTemplateNoInterpolationInAttributes::INFO
+            }
+            Self::AngularTemplateNoNegatedAsync(_) => AngularTemplateNoNegatedAsync::INFO,
+            Self::AngularTemplateNoNestedTags(_) => AngularTemplateNoNestedTags::INFO,
+            Self::AngularTemplateNoNonNullAssertion(_) => AngularTemplateNoNonNullAssertion::INFO,
+            Self::AngularTemplateNoOuterhtml(_) => AngularTemplateNoOuterhtml::INFO,
+            Self::AngularTemplateNoPositiveTabindex(_) => AngularTemplateNoPositiveTabindex::INFO,
+            Self::AngularTemplatePreferAtElse(_) => AngularTemplatePreferAtElse::INFO,
+            Self::AngularTemplatePreferAtEmpty(_) => AngularTemplatePreferAtEmpty::INFO,
+            Self::AngularTemplatePreferBuiltInPipes(_) => AngularTemplatePreferBuiltInPipes::INFO,
+            Self::AngularTemplatePreferClassBinding(_) => AngularTemplatePreferClassBinding::INFO,
+            Self::AngularTemplatePreferContextualForVariables(_) => {
+                AngularTemplatePreferContextualForVariables::INFO
+            }
+            Self::AngularTemplatePreferControlFlow(_) => AngularTemplatePreferControlFlow::INFO,
+            Self::AngularTemplatePreferNgsrc(_) => AngularTemplatePreferNgsrc::INFO,
+            Self::AngularTemplatePreferSelfClosingTags(_) => {
+                AngularTemplatePreferSelfClosingTags::INFO
+            }
+            Self::AngularTemplatePreferStaticStringProperties(_) => {
+                AngularTemplatePreferStaticStringProperties::INFO
+            }
+            Self::AngularTemplatePreferStyleBinding(_) => AngularTemplatePreferStyleBinding::INFO,
+            Self::AngularTemplatePreferTemplateLiteral(_) => {
+                AngularTemplatePreferTemplateLiteral::INFO
+            }
+            Self::AngularTemplateRequireSwitchDefault(_) => {
+                AngularTemplateRequireSwitchDefault::INFO
+            }
+            Self::AngularTemplateRoleHasRequiredAria(_) => AngularTemplateRoleHasRequiredAria::INFO,
+            Self::AngularTemplateTableScope(_) => AngularTemplateTableScope::INFO,
+            Self::AngularTemplateUseTrackByFunction(_) => AngularTemplateUseTrackByFunction::INFO,
+            Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::INFO,
         }
     }
     #[doc = r" A short, one-line summary of what this rule does."]
@@ -21309,7 +22598,48 @@ impl RuleEnum {
             Self::VueValidDefineOptions(rule) => rule.types_info(),
             Self::VueValidDefineProps(rule) => rule.types_info(),
             Self::VueValidNextTick(rule) => rule.types_info(),
+            Self::AngularTemplateAltText(rule) => rule.types_info(),
+            Self::AngularTemplateAttributesOrder(rule) => rule.types_info(),
+            Self::AngularTemplateBananaInBox(rule) => rule.types_info(),
+            Self::AngularTemplateButtonHasType(rule) => rule.types_info(),
+            Self::AngularTemplateClickEventsHaveKeyEvents(rule) => rule.types_info(),
+            Self::AngularTemplateConditionalComplexity(rule) => rule.types_info(),
+            Self::AngularTemplateCyclomaticComplexity(rule) => rule.types_info(),
+            Self::AngularTemplateElementsContent(rule) => rule.types_info(),
+            Self::AngularTemplateEqeqeq(rule) => rule.types_info(),
+            Self::AngularTemplateI18N(rule) => rule.types_info(),
+            Self::AngularTemplateInteractiveSupportsFocus(rule) => rule.types_info(),
+            Self::AngularTemplateLabelHasAssociatedControl(rule) => rule.types_info(),
+            Self::AngularTemplateMouseEventsHaveKeyEvents(rule) => rule.types_info(),
             Self::AngularTemplateNoAny(rule) => rule.types_info(),
+            Self::AngularTemplateNoAutofocus(rule) => rule.types_info(),
+            Self::AngularTemplateNoCallExpression(rule) => rule.types_info(),
+            Self::AngularTemplateNoDistractingElements(rule) => rule.types_info(),
+            Self::AngularTemplateNoDuplicateAttributes(rule) => rule.types_info(),
+            Self::AngularTemplateNoEmptyControlFlow(rule) => rule.types_info(),
+            Self::AngularTemplateNoInlineStyles(rule) => rule.types_info(),
+            Self::AngularTemplateNoInterpolationInAttributes(rule) => rule.types_info(),
+            Self::AngularTemplateNoNegatedAsync(rule) => rule.types_info(),
+            Self::AngularTemplateNoNestedTags(rule) => rule.types_info(),
+            Self::AngularTemplateNoNonNullAssertion(rule) => rule.types_info(),
+            Self::AngularTemplateNoOuterhtml(rule) => rule.types_info(),
+            Self::AngularTemplateNoPositiveTabindex(rule) => rule.types_info(),
+            Self::AngularTemplatePreferAtElse(rule) => rule.types_info(),
+            Self::AngularTemplatePreferAtEmpty(rule) => rule.types_info(),
+            Self::AngularTemplatePreferBuiltInPipes(rule) => rule.types_info(),
+            Self::AngularTemplatePreferClassBinding(rule) => rule.types_info(),
+            Self::AngularTemplatePreferContextualForVariables(rule) => rule.types_info(),
+            Self::AngularTemplatePreferControlFlow(rule) => rule.types_info(),
+            Self::AngularTemplatePreferNgsrc(rule) => rule.types_info(),
+            Self::AngularTemplatePreferSelfClosingTags(rule) => rule.types_info(),
+            Self::AngularTemplatePreferStaticStringProperties(rule) => rule.types_info(),
+            Self::AngularTemplatePreferStyleBinding(rule) => rule.types_info(),
+            Self::AngularTemplatePreferTemplateLiteral(rule) => rule.types_info(),
+            Self::AngularTemplateRequireSwitchDefault(rule) => rule.types_info(),
+            Self::AngularTemplateRoleHasRequiredAria(rule) => rule.types_info(),
+            Self::AngularTemplateTableScope(rule) => rule.types_info(),
+            Self::AngularTemplateUseTrackByFunction(rule) => rule.types_info(),
+            Self::AngularTemplateValidAria(rule) => rule.types_info(),
         }
     }
     pub fn run_info(&self) -> RuleRunFunctionsImplemented {
@@ -22185,7 +23515,48 @@ impl RuleEnum {
             Self::VueValidDefineOptions(rule) => rule.run_info(),
             Self::VueValidDefineProps(rule) => rule.run_info(),
             Self::VueValidNextTick(rule) => rule.run_info(),
+            Self::AngularTemplateAltText(rule) => rule.run_info(),
+            Self::AngularTemplateAttributesOrder(rule) => rule.run_info(),
+            Self::AngularTemplateBananaInBox(rule) => rule.run_info(),
+            Self::AngularTemplateButtonHasType(rule) => rule.run_info(),
+            Self::AngularTemplateClickEventsHaveKeyEvents(rule) => rule.run_info(),
+            Self::AngularTemplateConditionalComplexity(rule) => rule.run_info(),
+            Self::AngularTemplateCyclomaticComplexity(rule) => rule.run_info(),
+            Self::AngularTemplateElementsContent(rule) => rule.run_info(),
+            Self::AngularTemplateEqeqeq(rule) => rule.run_info(),
+            Self::AngularTemplateI18N(rule) => rule.run_info(),
+            Self::AngularTemplateInteractiveSupportsFocus(rule) => rule.run_info(),
+            Self::AngularTemplateLabelHasAssociatedControl(rule) => rule.run_info(),
+            Self::AngularTemplateMouseEventsHaveKeyEvents(rule) => rule.run_info(),
             Self::AngularTemplateNoAny(rule) => rule.run_info(),
+            Self::AngularTemplateNoAutofocus(rule) => rule.run_info(),
+            Self::AngularTemplateNoCallExpression(rule) => rule.run_info(),
+            Self::AngularTemplateNoDistractingElements(rule) => rule.run_info(),
+            Self::AngularTemplateNoDuplicateAttributes(rule) => rule.run_info(),
+            Self::AngularTemplateNoEmptyControlFlow(rule) => rule.run_info(),
+            Self::AngularTemplateNoInlineStyles(rule) => rule.run_info(),
+            Self::AngularTemplateNoInterpolationInAttributes(rule) => rule.run_info(),
+            Self::AngularTemplateNoNegatedAsync(rule) => rule.run_info(),
+            Self::AngularTemplateNoNestedTags(rule) => rule.run_info(),
+            Self::AngularTemplateNoNonNullAssertion(rule) => rule.run_info(),
+            Self::AngularTemplateNoOuterhtml(rule) => rule.run_info(),
+            Self::AngularTemplateNoPositiveTabindex(rule) => rule.run_info(),
+            Self::AngularTemplatePreferAtElse(rule) => rule.run_info(),
+            Self::AngularTemplatePreferAtEmpty(rule) => rule.run_info(),
+            Self::AngularTemplatePreferBuiltInPipes(rule) => rule.run_info(),
+            Self::AngularTemplatePreferClassBinding(rule) => rule.run_info(),
+            Self::AngularTemplatePreferContextualForVariables(rule) => rule.run_info(),
+            Self::AngularTemplatePreferControlFlow(rule) => rule.run_info(),
+            Self::AngularTemplatePreferNgsrc(rule) => rule.run_info(),
+            Self::AngularTemplatePreferSelfClosingTags(rule) => rule.run_info(),
+            Self::AngularTemplatePreferStaticStringProperties(rule) => rule.run_info(),
+            Self::AngularTemplatePreferStyleBinding(rule) => rule.run_info(),
+            Self::AngularTemplatePreferTemplateLiteral(rule) => rule.run_info(),
+            Self::AngularTemplateRequireSwitchDefault(rule) => rule.run_info(),
+            Self::AngularTemplateRoleHasRequiredAria(rule) => rule.run_info(),
+            Self::AngularTemplateTableScope(rule) => rule.run_info(),
+            Self::AngularTemplateUseTrackByFunction(rule) => rule.run_info(),
+            Self::AngularTemplateValidAria(rule) => rule.run_info(),
         }
     }
 }
@@ -23199,6 +24570,75 @@ pub static RULES: std::sync::LazyLock<Vec<RuleEnum>> = std::sync::LazyLock::new(
         RuleEnum::VueValidDefineOptions(VueValidDefineOptions::default()),
         RuleEnum::VueValidDefineProps(VueValidDefineProps::default()),
         RuleEnum::VueValidNextTick(VueValidNextTick::default()),
+        RuleEnum::AngularTemplateAltText(AngularTemplateAltText::default()),
+        RuleEnum::AngularTemplateAttributesOrder(AngularTemplateAttributesOrder::default()),
+        RuleEnum::AngularTemplateBananaInBox(AngularTemplateBananaInBox::default()),
+        RuleEnum::AngularTemplateButtonHasType(AngularTemplateButtonHasType::default()),
+        RuleEnum::AngularTemplateClickEventsHaveKeyEvents(
+            AngularTemplateClickEventsHaveKeyEvents::default(),
+        ),
+        RuleEnum::AngularTemplateConditionalComplexity(
+            AngularTemplateConditionalComplexity::default(),
+        ),
+        RuleEnum::AngularTemplateCyclomaticComplexity(
+            AngularTemplateCyclomaticComplexity::default(),
+        ),
+        RuleEnum::AngularTemplateElementsContent(AngularTemplateElementsContent::default()),
+        RuleEnum::AngularTemplateEqeqeq(AngularTemplateEqeqeq::default()),
+        RuleEnum::AngularTemplateI18N(AngularTemplateI18N::default()),
+        RuleEnum::AngularTemplateInteractiveSupportsFocus(
+            AngularTemplateInteractiveSupportsFocus::default(),
+        ),
+        RuleEnum::AngularTemplateLabelHasAssociatedControl(
+            AngularTemplateLabelHasAssociatedControl::default(),
+        ),
+        RuleEnum::AngularTemplateMouseEventsHaveKeyEvents(
+            AngularTemplateMouseEventsHaveKeyEvents::default(),
+        ),
         RuleEnum::AngularTemplateNoAny(AngularTemplateNoAny::default()),
+        RuleEnum::AngularTemplateNoAutofocus(AngularTemplateNoAutofocus::default()),
+        RuleEnum::AngularTemplateNoCallExpression(AngularTemplateNoCallExpression::default()),
+        RuleEnum::AngularTemplateNoDistractingElements(
+            AngularTemplateNoDistractingElements::default(),
+        ),
+        RuleEnum::AngularTemplateNoDuplicateAttributes(
+            AngularTemplateNoDuplicateAttributes::default(),
+        ),
+        RuleEnum::AngularTemplateNoEmptyControlFlow(AngularTemplateNoEmptyControlFlow::default()),
+        RuleEnum::AngularTemplateNoInlineStyles(AngularTemplateNoInlineStyles::default()),
+        RuleEnum::AngularTemplateNoInterpolationInAttributes(
+            AngularTemplateNoInterpolationInAttributes::default(),
+        ),
+        RuleEnum::AngularTemplateNoNegatedAsync(AngularTemplateNoNegatedAsync::default()),
+        RuleEnum::AngularTemplateNoNestedTags(AngularTemplateNoNestedTags::default()),
+        RuleEnum::AngularTemplateNoNonNullAssertion(AngularTemplateNoNonNullAssertion::default()),
+        RuleEnum::AngularTemplateNoOuterhtml(AngularTemplateNoOuterhtml::default()),
+        RuleEnum::AngularTemplateNoPositiveTabindex(AngularTemplateNoPositiveTabindex::default()),
+        RuleEnum::AngularTemplatePreferAtElse(AngularTemplatePreferAtElse::default()),
+        RuleEnum::AngularTemplatePreferAtEmpty(AngularTemplatePreferAtEmpty::default()),
+        RuleEnum::AngularTemplatePreferBuiltInPipes(AngularTemplatePreferBuiltInPipes::default()),
+        RuleEnum::AngularTemplatePreferClassBinding(AngularTemplatePreferClassBinding::default()),
+        RuleEnum::AngularTemplatePreferContextualForVariables(
+            AngularTemplatePreferContextualForVariables::default(),
+        ),
+        RuleEnum::AngularTemplatePreferControlFlow(AngularTemplatePreferControlFlow::default()),
+        RuleEnum::AngularTemplatePreferNgsrc(AngularTemplatePreferNgsrc::default()),
+        RuleEnum::AngularTemplatePreferSelfClosingTags(
+            AngularTemplatePreferSelfClosingTags::default(),
+        ),
+        RuleEnum::AngularTemplatePreferStaticStringProperties(
+            AngularTemplatePreferStaticStringProperties::default(),
+        ),
+        RuleEnum::AngularTemplatePreferStyleBinding(AngularTemplatePreferStyleBinding::default()),
+        RuleEnum::AngularTemplatePreferTemplateLiteral(
+            AngularTemplatePreferTemplateLiteral::default(),
+        ),
+        RuleEnum::AngularTemplateRequireSwitchDefault(
+            AngularTemplateRequireSwitchDefault::default(),
+        ),
+        RuleEnum::AngularTemplateRoleHasRequiredAria(AngularTemplateRoleHasRequiredAria::default()),
+        RuleEnum::AngularTemplateTableScope(AngularTemplateTableScope::default()),
+        RuleEnum::AngularTemplateUseTrackByFunction(AngularTemplateUseTrackByFunction::default()),
+        RuleEnum::AngularTemplateValidAria(AngularTemplateValidAria::default()),
     ]
 });

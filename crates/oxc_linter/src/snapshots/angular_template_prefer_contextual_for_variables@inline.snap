@@ -1,0 +1,13 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-contextual-for-variables): Use the '$index' contextual variable instead of aliasing it.
+   ╭─[prefer_contextual_for_variables.ts:2:31]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: `
+ 2 │   @for (x of xs; track x; let i = $index) { {{ i }} }
+   ·                               ──────────
+ 3 │ ` }) class A {}
+   ╰────
+  help: Use `$index` instead of the alias

@@ -1,0 +1,168 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-inline-styles): <img/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:4:13]
+ 3 │           <div>
+ 4 │             <img style="position: relative;">
+   ·             ─────────────────────────────────
+ 5 │           </div>
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <object/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <object style="padding: 30px;"></object>
+   · ────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <area/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <area style="padding: 30px;" />
+   · ───────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <input/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <input style="color: red;">
+   · ───────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <input/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <input [attr.style]="'padding: 10px;'">
+   · ───────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <input/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <input [style.background-color]="'#fff'">
+   · ─────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <input/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <input [style]="'border: 1px solid black;'" [ngStyle]="{ 'padding': '10px' }" [style.background-color]="'#fff'">
+   · ────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <input/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <input [ngStyle]="'background-color: #fff'">
+   · ────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <input/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <input [style]="'border: 1px solid black;'">
+   · ────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <input/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <input [attr.style]="'padding: 10px;'">
+   · ───────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <input/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <input [ngStyle]="{ 'padding': '10px' }" [style]="'border: 1px solid black;'">
+   · ──────────────────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div [style.color]="'red'"></div>
+   · ─────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div [style.width.px]="100"></div>
+   · ──────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div [style]="'color: red'"></div>
+   · ──────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div [style]="{ color: 'red', 'background-color': '#fff' }"></div>
+   · ──────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div [style.width]="10 + 'px'"></div>
+   · ─────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div [style.color]="true ? 'red' : 'blue'"></div>
+   · ─────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div [style.width]="`100px`"></div>
+   · ───────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div style="color: {{ 'red' }}"></div>
+   · ──────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div [attr.style]="styles"></div>
+   · ─────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div [ngStyle]="{ color: 'red' }"></div>
+   · ────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div [ngStyle]="'color: red'"></div>
+   · ────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div [ngStyle]="{ color: 'red' }" [style.width.px]="column.width"></div>
+   · ────────────────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div [ngStyle]="{ color: 'red' }" [style.color]="'blue'"></div>
+   · ───────────────────────────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div *ngIf="x" style="color: red"></div>
+   · ────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:1]
+ 1 │ <div *ngIf="x" [style.color]="'red'"></div>
+   · ───────────────────────────────────────────
+   ╰────
+
+  ⚠ angular-template(no-inline-styles): <p/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.html:1:11]
+ 1 │ @if (x) { <p [style.color]="c"></p> }
+   ·           ─────────────────────────
+   ╰────

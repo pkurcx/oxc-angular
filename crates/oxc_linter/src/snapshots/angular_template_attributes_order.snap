@@ -1,0 +1,88 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(attributes-order): The element's attributes/bindings did not match the expected order: expected `#box`, `[(ngModel)]` instead of `[(ngModel)]`, `#box`
+   ╭─[attributes_order.html:1:8]
+ 1 │ <input bindon-ngModel="v" #box>
+   ·        ───────────────────────
+   ╰────
+  help: Replace `bindon-ngModel="v" #box` with `#box bindon-ngModel="v"`.
+
+  ⚠ angular-template(attributes-order): The element's attributes/bindings did not match the expected order: expected `#t`, `[(x)]` instead of `[(x)]`, `#t`
+   ╭─[attributes_order.html:1:14]
+ 1 │ <ng-template [(x)]="y" #t></ng-template>
+   ·              ────────────
+   ╰────
+  help: Replace `[(x)]="y" #t` with `#t [(x)]="y"`.
+
+  ⚠ angular-template(attributes-order): The element's attributes/bindings did not match the expected order: expected `href`, `let-a`, `let-b` instead of `let-b`, `href`, `let-a`
+   ╭─[attributes_order.html:1:14]
+ 1 │ <ng-template let-b href="x" let-a></ng-template>
+   ·              ────────────────────
+   ╰────
+  help: Replace `let-b href="x" let-a` with `href="x" let-a let-b`.
+
+  ⚠ angular-template(attributes-order): The element's attributes/bindings did not match the expected order: expected `#box`, `class`, `[value]`, `(input)` instead of `(input)`, `[value]`, `class`, `#box`
+   ╭─[attributes_order.html:1:8]
+ 1 │ <input (input)="search()" [value]="query" class="search" #box>
+   ·        ──────────────────────────────────────────────────────
+   ╰────
+  help: Replace `(input)="search()" [value]="query" class="search" #box` with `#box class="search" [value]="query" (input)="search()"`.
+
+  ⚠ angular-template(attributes-order): The element's attributes/bindings did not match the expected order: expected `*ngIf`, `class` instead of `class`, `*ngIf`
+   ╭─[attributes_order.html:1:6]
+ 1 │ <div class="a" *ngIf="x"></div>
+   ·      ───────────────────
+   ╰────
+  help: Replace `class="a" *ngIf="x"` with `*ngIf="x" class="a"`.
+
+  ⚠ angular-template(attributes-order): The element's attributes/bindings did not match the expected order: expected `*ngFor`, `class`, `[b]` instead of `[b]`, `*ngFor`, `class`
+   ╭─[attributes_order.html:1:6]
+ 1 │ <div [b]="c" *ngFor="let x of xs" class="a"></div>
+   ·      ──────────────────────────────────────
+   ╰────
+  help: Replace `[b]="c" *ngFor="let x of xs" class="a"` with `*ngFor="let x of xs" class="a" [b]="c"`.
+
+  ⚠ angular-template(attributes-order): The element's attributes/bindings did not match the expected order: expected `[(ngModel)]`, `(click)` instead of `(click)`, `[(ngModel)]`
+   ╭─[attributes_order.html:1:6]
+ 1 │ <div (click)="x()" [(ngModel)]="m"></div>
+   ·      ─────────────────────────────
+   ╰────
+  help: Replace `(click)="x()" [(ngModel)]="m"` with `[(ngModel)]="m" (click)="x()"`.
+
+  ⚠ angular-template(attributes-order): The element's attributes/bindings did not match the expected order: expected `title`, `alt` instead of `alt`, `title`
+   ╭─[attributes_order.html:1:6]
+ 1 │ <img alt="a" title="{{ t }}">
+   ·      ───────────────────────
+   ╰────
+  help: Replace `alt="a" title="{{ t }}"` with `title="{{ t }}" alt="a"`.
+
+  ⚠ angular-template(attributes-order): The element's attributes/bindings did not match the expected order: expected `class`, `href` instead of `href`, `class`
+   ╭─[attributes_order.html:1:4]
+ 1 │ <a href="x" class="y"></a>
+   ·    ──────────────────
+   ╰────
+  help: Replace `href="x" class="y"` with `class="y" href="x"`.
+
+  ⚠ angular-template(attributes-order): The element's attributes/bindings did not match the expected order: expected `alpha`, `i18n-alpha`, `[beta]`, `i18n-beta`, `[gamma]` instead of `[beta]`, `alpha`, `[gamma]`, `i18n-alpha`, `i18n-beta`
+   ╭─[attributes_order.html:1:6]
+ 1 │ <div [beta]="'b'" alpha="a" [gamma]="g" i18n-alpha="a18" i18n-beta="b18"></div>
+   ·      ───────────────────────────────────────────────────────────────────
+   ╰────
+  help: Replace `[beta]="'b'" alpha="a" [gamma]="g" i18n-alpha="a18" i18n-beta="b18"` with `alpha="a" i18n-alpha="a18" [beta]="'b'" i18n-beta="b18" [gamma]="g"`.
+
+  ⚠ angular-template(attributes-order): The element's attributes/bindings did not match the expected order: expected `#template`, `i18n`, `let-foo` instead of `i18n`, `let-foo`, `#template`
+   ╭─[attributes_order.html:1:14]
+ 1 │ <ng-template i18n="@@a:b" let-foo #template>The value is {{ foo }}.</ng-template>
+   ·              ──────────────────────────────
+   ╰────
+  help: Replace `i18n="@@a:b" let-foo #template` with `#template i18n="@@a:b" let-foo`.
+
+  ⚠ angular-template(attributes-order): The element's attributes/bindings did not match the expected order: expected `(d)`, `[b]` instead of `[b]`, `(d)`
+   ╭─[attributes_order.html:1:6]
+ 1 │ <div [b]="c" (d)="e()" class="a"></div>
+   ·      ─────────────────
+   ╰────
+  help: Replace `[b]="c" (d)="e()"` with `(d)="e()" [b]="c"`.

@@ -1,0 +1,10 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.ts:1:71]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: '{{ getInfo() }}' }) class A {}
+   ·                                                                       ─────────
+   ╰────

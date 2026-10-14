@@ -1,0 +1,13 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-at-else): Prefer using `@else` instead of a second `@if` clause.
+   ╭─[prefer_at_else.ts:3:3]
+ 2 │   @if (a) {}
+ 3 │   @if (!a) {}
+   ·   ────
+ 4 │ ` }) class A {}
+   ╰────
+  help: Replace the `@if` with `@else`

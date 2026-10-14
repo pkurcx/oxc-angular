@@ -1,6 +1,5 @@
 ---
 source: apps/oxlint/src/tester.rs
-assertion_line: 163
 ---
 ########## 
 arguments: -c .oxlintrc.json --report-unused-disable-directives
@@ -42,7 +41,7 @@ working directory: fixtures/cli/angular_template_directives
   help: Consider removing this declaration.
 
 Found 3 warnings and 1 error.
-Finished in <variable>ms on 2 files with 70 rules using 1 threads.
+Finished in <variable>ms on 2 files with 85 rules using 1 threads.
 ----------
 CLI result: LintFoundErrors
 ----------

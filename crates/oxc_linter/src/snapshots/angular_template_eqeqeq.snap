@@ -1,0 +1,81 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(eqeqeq): Expected `===` but received `==`
+   ╭─[eqeqeq.html:1:4]
+ 1 │ {{ a == 1 }}
+   ·    ──────
+   ╰────
+  help: Replace `==` with `===`
+
+  ⚠ angular-template(eqeqeq): Expected `!==` but received `!=`
+   ╭─[eqeqeq.html:1:13]
+ 1 │ <div *ngIf="a != b"></div>
+   ·             ──────
+   ╰────
+  help: Replace `!=` with `!==`
+
+  ⚠ angular-template(eqeqeq): Expected `===` but received `==`
+   ╭─[eqeqeq.html:1:17]
+ 1 │ <div [class.x]="(a | async) == 'x'"></div>
+   ·                 ──────────────────
+   ╰────
+  help: Replace `==` with `===`
+
+  ⚠ angular-template(eqeqeq): Expected `===` but received `==`
+   ╭─[eqeqeq.html:1:6]
+ 1 │ @if (a == null) { x }
+   ·      ─────────
+   ╰────
+  help: Replace `==` with `===`
+
+  ⚠ angular-template(eqeqeq): Expected `===` but received `==`
+   ╭─[eqeqeq.html:1:30]
+ 1 │ @for (x of xs; track x) { {{ x.y == 2 }} }
+   ·                              ────────
+   ╰────
+  help: Replace `==` with `===`
+
+  ⚠ angular-template(eqeqeq): Expected `===` but received `==`
+   ╭─[eqeqeq.html:1:10]
+ 1 │ @switch (a == b) { @case (true) { x } }
+   ·          ──────
+   ╰────
+  help: Replace `==` with `===`
+
+  ⚠ angular-template(eqeqeq): Expected `===` but received `==`
+   ╭─[eqeqeq.html:1:14]
+ 1 │ @defer (when ready == true) { <x-cmp/> }
+   ·              ─────────────
+   ╰────
+  help: Replace `==` with `===`
+
+  ⚠ angular-template(eqeqeq): Expected `!==` but received `!=`
+   ╭─[eqeqeq.html:1:10]
+ 1 │ @let v = a != b;
+   ·          ──────
+   ╰────
+  help: Replace `!=` with `!==`
+
+  ⚠ angular-template(eqeqeq): Expected `===` but received `==`
+   ╭─[eqeqeq.html:1:27]
+ 1 │ <div *ngIf="x" [class.a]="a == b"></div>
+   ·                           ──────
+   ╰────
+  help: Replace `==` with `===`
+
+  ⚠ angular-template(eqeqeq): Expected `===` but received `==`
+   ╭─[eqeqeq.html:1:23]
+ 1 │ <button (click)="ok = a == 'b'"></button>
+   ·                       ────────
+   ╰────
+  help: Replace `==` with `===`
+
+  ⚠ angular-template(eqeqeq): Expected `===` but received `==`
+   ╭─[eqeqeq.html:1:4]
+ 1 │ {{ a == b }}
+   ·    ──────
+   ╰────
+  help: Replace `==` with `===`

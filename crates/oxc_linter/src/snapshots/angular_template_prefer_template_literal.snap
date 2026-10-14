@@ -1,0 +1,192 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:2:1]
+ 1 │     {{
+ 2 │ ╭─▶ 'a'
+ 3 │ │    + 
+ 4 │ ╰─▶ 'b'
+ 5 │     }}
+   ╰────
+  help: Replace `'a'
+         +
+        'b'` with `'ab'`.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:4]
+ 1 │ {{ 'pre"fix-' + '-suf\'fix' }}
+   ·    ────────────────────────
+   ╰────
+  help: Replace `'pre"fix-' + '-suf\'fix'` with `'pre"fix--suf\'fix'`.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:4]
+ 1 │ {{ "pre'fix-" + "-suf\"fix" }}
+   ·    ────────────────────────
+   ╰────
+  help: Replace `"pre'fix-" + "-suf\"fix"` with `"pre'fix--suf\"fix"`.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:4]
+ 1 │ {{ `prefix-${value}-suffix` + `-prefix2-${value2}-suffix2` }}
+   ·    ───────────────────────────────────────────────────────
+   ╰────
+  help: Replace ``prefix-${value}-suffix` + `-prefix2-${value2}-suffix2`` with ``prefix-${value}-suffix-prefix2-${value2}-suffix2``.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:19]
+ 1 │ {{ `prefix-${a}-${b + '-special\'"\`-char'}-${d}-suffix` }}
+   ·                   ────────────────────────
+   ╰────
+  help: Replace `${b + '-special\'"\`-char'}` with `${b}-special'"\`-char`.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:19]
+ 1 │ {{ `prefix-${a}-${b + `-inside-${c}`}-${d}-suffix` }}
+   ·                   ──────────────────
+   ╰────
+  help: Replace `${b + `-inside-${c}`}` with `${b}-inside-${c}`.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:19]
+ 1 │ {{ `prefix-${a}-${'b' + 'c'}-${d}-suffix` }}
+   ·                   ─────────
+   ╰────
+  help: Replace `${'b' + 'c'}` with `bc`.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:4]
+ 1 │ {{ 'pre"fix-' + "-suf'fix" }}
+   ·    ───────────────────────
+   ╰────
+  help: Replace `'pre"fix-' + "-suf'fix"` with `'pre"fix--suf\'fix'`.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:4]
+ 1 │ {{ 'pre`fix-' + `'pre\`fix"-${value}-"suf\`fix'` }}
+   ·    ─────────────────────────────────────────────
+   ╰────
+  help: Replace `'pre`fix-' + `'pre\`fix"-${value}-"suf\`fix'`` with ``pre\`fix-'pre\`fix"-${value}-"suf\`fix'``.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:4]
+ 1 │ {{ "pre'fix-" + '-suf"fix' }}
+   ·    ───────────────────────
+   ╰────
+  help: Replace `"pre'fix-" + '-suf"fix'` with `"pre'fix--suf\"fix"`.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:4]
+ 1 │ {{ "pre`fix-" + `'pre\`fix"-${value}-"suf\`fix'` }}
+   ·    ─────────────────────────────────────────────
+   ╰────
+  help: Replace `"pre`fix-" + `'pre\`fix"-${value}-"suf\`fix'`` with ``pre\`fix-'pre\`fix"-${value}-"suf\`fix'``.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:24]
+ 1 │ <my-component [class]="'prefix-' + myClass | pipe"></my-component>
+   ·                        ───────────────────
+   ╰────
+  help: Replace `'prefix-' + myClass` with ``prefix-${myClass}``.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:6]
+ 1 │ @if (value() + "-suffix" | pipe) {}
+   ·      ───────────────────
+   ╰────
+  help: Replace `value() + "-suffix"` with ``${value()}-suffix``.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:14]
+ 1 │ @defer (when value() + '-suffix' | pipe) {}
+   ·              ───────────────────
+   ╰────
+  help: Replace `value() + '-suffix'` with ``${value()}-suffix``.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:17]
+ 1 │ @let letValue = value() + '-suffix';
+   ·                 ───────────────────
+   ╰────
+  help: Replace `value() + '-suffix'` with ``${value()}-suffix``.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:3:15]
+ 2 │     context: {
+ 3 │         name: 'test-' + item.id,
+   ·               ─────────────────
+ 4 │         value: 42
+   ╰────
+  help: Replace `'test-' + item.id` with ``test-${item.id}``.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:2:12]
+ 1 │ <div [ngStyle]="{
+ 2 │     width: 10 + 'px'
+   ·            ─────────
+ 3 │ }"></div>
+   ╰────
+  help: Replace `10 + 'px'` with `'10px'`.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:2:15]
+ 1 │ <div [ngStyle]="
+ 2 │      { width: 10 + 'px' }
+   ·               ─────────
+ 3 │ "></div>
+   ╰────
+  help: Replace `10 + 'px'` with `'10px'`.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:2:6]
+ 1 │ <div [class]="
+ 2 │      'a' + 'b'
+   ·      ─────────
+ 3 │ "></div>
+   ╰────
+  help: Replace `'a' + 'b'` with `'ab'`.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:4]
+ 1 │ {{ x.type + '' + $any(x).label + '' + $any(x).to }}
+   ·    ─────────────────────────────────────────────
+   ╰────
+  help: Replace `x.type + '' + $any(x).label + '' + $any(x).to` with ``${x.type}${$any(x).label}${$any(x).to}``.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:13]
+ 1 │ <div *ngIf="'a' + b" [title]="'c' + d"></div>
+   ·             ───────
+   ╰────
+  help: Replace `'a' + b` with ``a${b}``.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:31]
+ 1 │ <div *ngIf="'a' + b" [title]="'c' + d"></div>
+   ·                               ───────
+   ╰────
+  help: Replace `'c' + d` with ``c${d}``.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:22]
+ 1 │ <ng-template [ngIf]="'a' + b"><p>x</p></ng-template>
+   ·                      ───────
+   ╰────
+  help: Replace `'a' + b` with ``a${b}``.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:4]
+ 1 │ {{ ('a' + b) + c }}
+   ·    ─────────────
+   ╰────
+  help: Replace `('a' + b) + c` with ``a${b}${c}``.
+
+  ⚠ angular-template(prefer-template-literal): Prefer using template literal instead of concatenating strings or expressions
+   ╭─[prefer_template_literal.html:1:5]
+ 1 │ {{ ('a' + b) + c }}
+   ·     ───────
+   ╰────
+  help: Replace `'a' + b` with ``a${b}``.

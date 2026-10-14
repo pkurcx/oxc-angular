@@ -1,0 +1,12 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(require-switch-default): Switch should have a default block. Add `@default { ... }`, or `@default never` to enforce a compile-time exhaustive switch.
+   ╭─[require_switch_default.ts:2:3]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: `
+ 2 │   @switch (a) { @case (1) { x } }
+   ·   ────────
+ 3 │ ` }) class A {}
+   ╰────

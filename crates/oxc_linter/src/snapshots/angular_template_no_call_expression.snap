@@ -1,0 +1,346 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:9]
+ 1 │ <div>{{ getInfo() }}</div>
+   ·         ─────────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:13]
+ 1 │ <a href="{{ getUrls().user }}"></a>
+   ·             ─────────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:12]
+ 1 │ <p [test]="test?.getInfo()"></p>
+   ·            ───────────────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:2:26]
+ 1 │ 
+ 2 │         <a [href]="id && createUrl() && test($any)">info</a>
+   ·                          ───────────
+ 3 │         {{ id || obj?.nested1() }}
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:2:41]
+ 1 │ 
+ 2 │         <a [href]="id && createUrl() && test($any)">info</a>
+   ·                                         ──────────
+ 3 │         {{ id || obj?.nested1() }}
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:3:18]
+ 2 │         <a [href]="id && createUrl() && test($any)">info</a>
+ 3 │         {{ id || obj?.nested1() }}
+   ·                  ──────────────
+ 4 │       
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:2:25]
+ 1 │ 
+ 2 │         <a [href]="id ? a?.createUrl() : editUrl(3)">info</a>
+   ·                         ──────────────
+ 3 │         {{ 1 === 2 ? 3 : obj?.nested1() }}
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:2:42]
+ 1 │ 
+ 2 │         <a [href]="id ? a?.createUrl() : editUrl(3)">info</a>
+   ·                                          ──────────
+ 3 │         {{ 1 === 2 ? 3 : obj?.nested1() }}
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:3:26]
+ 2 │         <a [href]="id ? a?.createUrl() : editUrl(3)">info</a>
+ 3 │         {{ 1 === 2 ? 3 : obj?.nested1() }}
+   ·                          ──────────────
+ 4 │       
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:2:12]
+ 1 │ 
+ 2 │         {{ obj?.nested1() }} {{ obj!.nested1() }}
+   ·            ──────────────
+ 3 │         <button [type]="obj!.$any(b)!.getType()">info</button>
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:2:33]
+ 1 │ 
+ 2 │         {{ obj?.nested1() }} {{ obj!.nested1() }}
+   ·                                 ──────────────
+ 3 │         <button [type]="obj!.$any(b)!.getType()">info</button>
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:3:25]
+ 2 │         {{ obj?.nested1() }} {{ obj!.nested1() }}
+ 3 │         <button [type]="obj!.$any(b)!.getType()">info</button>
+   ·                         ───────────────────────
+ 4 │         <a [href]="obj.propertyA?.href()">info</a>
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:4:20]
+ 3 │         <button [type]="obj!.$any(b)!.getType()">info</button>
+ 4 │         <a [href]="obj.propertyA?.href()">info</a>
+   ·                    ─────────────────────
+ 5 │       
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:2:10]
+ 1 │ 
+ 2 │     @if (foo()) {
+   ·          ─────
+ 3 │       <div [id]="foo()"></div>
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:3:18]
+ 2 │     @if (foo()) {
+ 3 │       <div [id]="foo()"></div>
+   ·                  ─────
+ 4 │     } @else if (foo()) {
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:4:17]
+ 3 │       <div [id]="foo()"></div>
+ 4 │     } @else if (foo()) {
+   ·                 ─────
+ 5 │       <div [id]="foo()"></div>
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:5:18]
+ 4 │     } @else if (foo()) {
+ 5 │       <div [id]="foo()"></div>
+   ·                  ─────
+ 6 │     } @else {
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:7:18]
+ 6 │     } @else {
+ 7 │       <div [id]="foo()"></div>
+   ·                  ─────
+ 8 │     }
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:2:14]
+ 1 │ 
+ 2 │     @switch (foo()) {
+   ·              ─────
+ 3 │       @case(foo()) {
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:3:13]
+ 2 │     @switch (foo()) {
+ 3 │       @case(foo()) {
+   ·             ─────
+ 4 │         <div [id]="foo()"></div>
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:4:20]
+ 3 │       @case(foo()) {
+ 4 │         <div [id]="foo()"></div>
+   ·                    ─────
+ 5 │       }
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:7:20]
+ 6 │       @default {
+ 7 │         <div [id]="foo()"></div>
+   ·                    ─────
+ 8 │       }
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:2:19]
+ 1 │ 
+ 2 │     @for (item of getFooList(); track item.getId()) {
+   ·                   ────────────
+ 3 │       <div [id]="foo()"></div>
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:2:39]
+ 1 │ 
+ 2 │     @for (item of getFooList(); track item.getId()) {
+   ·                                       ────────────
+ 3 │       <div [id]="foo()"></div>
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:3:18]
+ 2 │     @for (item of getFooList(); track item.getId()) {
+ 3 │       <div [id]="foo()"></div>
+   ·                  ─────
+ 4 │     } @empty {
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:5:18]
+ 4 │     } @empty {
+ 5 │       <div [id]="foo()"></div>
+   ·                  ─────
+ 6 │     }
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:2:18]
+ 1 │ 
+ 2 │     @defer (when foo(); prefetch when foo()) {
+   ·                  ─────
+ 3 │       <div [id]="foo()"></div>
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:2:39]
+ 1 │ 
+ 2 │     @defer (when foo(); prefetch when foo()) {
+   ·                                       ─────
+ 3 │       <div [id]="foo()"></div>
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:3:18]
+ 2 │     @defer (when foo(); prefetch when foo()) {
+ 3 │       <div [id]="foo()"></div>
+   ·                  ─────
+ 4 │     } @error {
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+    ╭─[no_call_expression.html:9:18]
+  8 │     } @placeholder {
+  9 │       <div [id]="foo()"></div>
+    ·                  ─────
+ 10 │     }
+    ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:7:18]
+ 6 │     } @loading {
+ 7 │       <div [id]="foo()"></div>
+   ·                  ─────
+ 8 │     } @placeholder {
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:5:18]
+ 4 │     } @error {
+ 5 │       <div [id]="foo()"></div>
+   ·                  ─────
+ 6 │     } @loading {
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:2:35]
+ 1 │ 
+ 2 │     @defer (on idle; hydrate when foo()) {
+   ·                                   ─────
+ 3 │       <div></div>
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:4]
+ 1 │ {{ foo(bar(), baz()) }}
+   ·    ─────────────────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:8]
+ 1 │ {{ foo(bar(), baz()) }}
+   ·        ─────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:15]
+ 1 │ {{ foo(bar(), baz()) }}
+   ·               ─────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:4]
+ 1 │ {{ foo()() }}
+   ·    ───────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:4]
+ 1 │ {{ foo()() }}
+   ·    ─────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:4]
+ 1 │ {{ foo().bar() }}
+   ·    ───────────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:4]
+ 1 │ {{ foo().bar() }}
+   ·    ─────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:4]
+ 1 │ {{ notOk().ok() }}
+   ·    ───────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:4]
+ 1 │ {{ foo() }}
+   ·    ─────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:13]
+ 1 │ <div *ngIf="isVisible()" [title]="getTitle()"></div>
+   ·             ───────────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:35]
+ 1 │ <div *ngIf="isVisible()" [title]="getTitle()"></div>
+   ·                                   ──────────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:22]
+ 1 │ <ng-template [ngIf]="isVisible()"><p>x</p></ng-template>
+   ·                      ───────────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:21]
+ 1 │ <button [disabled]="isBusy()" (click)="save()"></button>
+   ·                     ────────
+   ╰────
+
+  ⚠ angular-template(no-call-expression): Avoid calling expressions in templates
+   ╭─[no_call_expression.html:1:14]
+ 1 │ @let total = sum(items);
+   ·              ──────────
+   ╰────

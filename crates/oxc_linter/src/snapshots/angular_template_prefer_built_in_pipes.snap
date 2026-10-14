@@ -1,0 +1,76 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(prefer-built-in-pipes): Avoid using method "toLowerCase" in templates. Prefer the Angular built-in pipes instead (e.g. lowercase, uppercase, titlecase).
+   ╭─[prefer_built_in_pipes.html:1:4]
+ 1 │ {{ name.toLowerCase() }}
+   ·    ────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-built-in-pipes): Avoid using method "toUpperCase" in templates. Prefer the Angular built-in pipes instead (e.g. lowercase, uppercase, titlecase).
+   ╭─[prefer_built_in_pipes.html:1:4]
+ 1 │ {{ title.toUpperCase() }}
+   ·    ─────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-built-in-pipes): Avoid using method "toLocaleLowerCase" in templates. Prefer the Angular built-in pipes instead (e.g. lowercase, uppercase, titlecase).
+   ╭─[prefer_built_in_pipes.html:1:4]
+ 1 │ {{ text.toLocaleLowerCase() }}
+   ·    ──────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-built-in-pipes): Avoid using method "toLocaleUpperCase" in templates. Prefer the Angular built-in pipes instead (e.g. lowercase, uppercase, titlecase).
+   ╭─[prefer_built_in_pipes.html:1:4]
+ 1 │ {{ text.toLocaleUpperCase() }}
+   ·    ──────────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-built-in-pipes): Avoid using method "toLowerCase" in templates. Prefer the Angular built-in pipes instead (e.g. lowercase, uppercase, titlecase).
+   ╭─[prefer_built_in_pipes.html:1:15]
+ 1 │ <div [title]="name.toLowerCase()">Content</div>
+   ·               ────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-built-in-pipes): Avoid using method "toUpperCase" in templates. Prefer the Angular built-in pipes instead (e.g. lowercase, uppercase, titlecase).
+   ╭─[prefer_built_in_pipes.html:1:16]
+ 1 │ <div title="{{ name.toUpperCase() }}">Content</div>
+   ·                ────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-built-in-pipes): Avoid using method "toLowerCase" in templates. Prefer the Angular built-in pipes instead (e.g. lowercase, uppercase, titlecase).
+   ╭─[prefer_built_in_pipes.html:1:30]
+ 1 │ <button (click)="handleClick(name.toLowerCase())">Click</button>
+   ·                              ────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-built-in-pipes): Avoid using method "toUpperCase" in templates. Prefer the Angular built-in pipes instead (e.g. lowercase, uppercase, titlecase).
+   ╭─[prefer_built_in_pipes.html:1:4]
+ 1 │ {{ name.toUpperCase() }}
+   ·    ────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-built-in-pipes): Avoid using method "getFullYear" in templates. Prefer the Angular built-in pipes instead (e.g. lowercase, uppercase, titlecase).
+   ╭─[prefer_built_in_pipes.html:1:4]
+ 1 │ {{ date.getFullYear() }}
+   ·    ────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-built-in-pipes): Avoid using method "toLowerCase" in templates. Prefer the Angular built-in pipes instead (e.g. lowercase, uppercase, titlecase).
+   ╭─[prefer_built_in_pipes.html:1:28]
+ 1 │ <div *ngIf="show" [title]="name.toLowerCase()"></div>
+   ·                            ────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-built-in-pipes): Avoid using method "toLowerCase" in templates. Prefer the Angular built-in pipes instead (e.g. lowercase, uppercase, titlecase).
+   ╭─[prefer_built_in_pipes.html:1:22]
+ 1 │ <ng-template [ngIf]="name.toLowerCase()"><p>x</p></ng-template>
+   ·                      ────────────────
+   ╰────
+
+  ⚠ angular-template(prefer-built-in-pipes): Avoid using method "toUpperCase" in templates. Prefer the Angular built-in pipes instead (e.g. lowercase, uppercase, titlecase).
+   ╭─[prefer_built_in_pipes.html:1:6]
+ 1 │ @if (a.toUpperCase()) { x }
+   ·      ─────────────
+   ╰────

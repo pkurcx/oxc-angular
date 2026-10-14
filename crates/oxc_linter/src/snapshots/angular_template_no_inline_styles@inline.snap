@@ -1,0 +1,10 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 522
+---
+
+  ⚠ angular-template(no-inline-styles): <div/> element should not have inline styles via style attribute. Please use classes instead.
+   ╭─[no_inline_styles.ts:1:68]
+ 1 │ import { Component } from '@angular/core'; @Component({ template: '<div style="color: red"></div>' }) class A {}
+   ·                                                                    ──────────────────────────────
+   ╰────
