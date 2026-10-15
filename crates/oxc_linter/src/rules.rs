@@ -1031,7 +1031,9 @@ pub(crate) mod angular_template {
 }
 
 /// <https://github.com/angular-eslint/angular-eslint/tree/main/packages/eslint-plugin>
-pub(crate) mod angular {}
+pub(crate) mod angular {
+    pub mod sorted_component_imports;
+}
 
 pub(crate) mod shared;
 

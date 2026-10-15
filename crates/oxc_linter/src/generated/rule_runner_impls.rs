@@ -5775,3 +5775,9 @@ impl RuleRunner for crate::rules::angular_template::valid_aria::ValidAria {
     const NODE_TYPES: Option<&AstTypesBitset> = None;
     const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::RunOnce;
 }
+
+impl RuleRunner for crate::rules::angular::sorted_component_imports::SortedComponentImports {
+    const NODE_TYPES: Option<&AstTypesBitset> =
+        Some(&AstTypesBitset::from_types(&[AstType::Decorator]));
+    const RUN_FUNCTIONS: RuleRunFunctionsImplemented = RuleRunFunctionsImplemented::Run;
+}

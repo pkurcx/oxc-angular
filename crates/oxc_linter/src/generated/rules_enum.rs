@@ -10,6 +10,7 @@
 )]
 #[cfg(feature = "ruledocs")]
 use crate::rule::RuleInfo;
+pub use crate::rules::angular::sorted_component_imports::SortedComponentImports as AngularSortedComponentImports;
 pub use crate::rules::angular_template::alt_text::AltText as AngularTemplateAltText;
 pub use crate::rules::angular_template::attributes_order::AttributesOrder as AngularTemplateAttributesOrder;
 pub use crate::rules::angular_template::banana_in_box::BananaInBox as AngularTemplateBananaInBox;
@@ -1854,6 +1855,7 @@ pub enum RuleEnum {
     AngularTemplateTableScope(AngularTemplateTableScope),
     AngularTemplateUseTrackByFunction(AngularTemplateUseTrackByFunction),
     AngularTemplateValidAria(AngularTemplateValidAria),
+    AngularSortedComponentImports(AngularSortedComponentImports),
 }
 const IMPORT_CONSISTENT_TYPE_SPECIFIER_STYLE_ID: usize = 0usize;
 const IMPORT_DEFAULT_ID: usize = 1usize;
@@ -2768,7 +2770,8 @@ const ANGULAR_TEMPLATE_ROLE_HAS_REQUIRED_ARIA_ID: usize = 909usize;
 const ANGULAR_TEMPLATE_TABLE_SCOPE_ID: usize = 910usize;
 const ANGULAR_TEMPLATE_USE_TRACK_BY_FUNCTION_ID: usize = 911usize;
 const ANGULAR_TEMPLATE_VALID_ARIA_ID: usize = 912usize;
-static RULE_NAMES: [&str; 913usize] = [
+const ANGULAR_SORTED_COMPONENT_IMPORTS_ID: usize = 913usize;
+static RULE_NAMES: [&str; 914usize] = [
     ImportConsistentTypeSpecifierStyle::NAME,
     ImportDefault::NAME,
     ImportExport::NAME,
@@ -3682,6 +3685,7 @@ static RULE_NAMES: [&str; 913usize] = [
     AngularTemplateTableScope::NAME,
     AngularTemplateUseTrackByFunction::NAME,
     AngularTemplateValidAria::NAME,
+    AngularSortedComponentImports::NAME,
 ];
 impl RuleEnum {
     pub fn id(&self) -> usize {
@@ -4761,6 +4765,7 @@ impl RuleEnum {
             Self::AngularTemplateTableScope(_) => ANGULAR_TEMPLATE_TABLE_SCOPE_ID,
             Self::AngularTemplateUseTrackByFunction(_) => ANGULAR_TEMPLATE_USE_TRACK_BY_FUNCTION_ID,
             Self::AngularTemplateValidAria(_) => ANGULAR_TEMPLATE_VALID_ARIA_ID,
+            Self::AngularSortedComponentImports(_) => ANGULAR_SORTED_COMPONENT_IMPORTS_ID,
         }
     }
     pub fn name(&self) -> &'static str {
@@ -5901,6 +5906,7 @@ impl RuleEnum {
                 AngularTemplateUseTrackByFunction::CATEGORY
             }
             Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::CATEGORY,
+            Self::AngularSortedComponentImports(_) => AngularSortedComponentImports::CATEGORY,
         }
     }
     #[doc = r" This [`Rule`]'s auto-fix capabilities."]
@@ -6963,6 +6969,7 @@ impl RuleEnum {
             Self::AngularTemplateTableScope(_) => AngularTemplateTableScope::FIX,
             Self::AngularTemplateUseTrackByFunction(_) => AngularTemplateUseTrackByFunction::FIX,
             Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::FIX,
+            Self::AngularSortedComponentImports(_) => AngularSortedComponentImports::FIX,
         }
     }
     #[cfg(feature = "ruledocs")]
@@ -8327,6 +8334,9 @@ impl RuleEnum {
                 AngularTemplateUseTrackByFunction::documentation()
             }
             Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::documentation(),
+            Self::AngularSortedComponentImports(_) => {
+                AngularSortedComponentImports::documentation()
+            }
         }
     }
     #[cfg(feature = "ruledocs")]
@@ -10988,6 +10998,10 @@ impl RuleEnum {
             }
             Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::config_schema(generator)
                 .or_else(|| AngularTemplateValidAria::schema(generator)),
+            Self::AngularSortedComponentImports(_) => {
+                AngularSortedComponentImports::config_schema(generator)
+                    .or_else(|| AngularSortedComponentImports::schema(generator))
+            }
         }
     }
     pub fn plugin_name(&self) -> &'static str {
@@ -11905,6 +11919,7 @@ impl RuleEnum {
             Self::AngularTemplateTableScope(_) => "angular_template",
             Self::AngularTemplateUseTrackByFunction(_) => "angular_template",
             Self::AngularTemplateValidAria(_) => "angular_template",
+            Self::AngularSortedComponentImports(_) => "angular",
         }
     }
     pub fn from_configuration(
@@ -14035,6 +14050,7 @@ impl RuleEnum {
             Self::AngularTemplateTableScope(rule) => rule.run(node, ctx),
             Self::AngularTemplateUseTrackByFunction(rule) => rule.run(node, ctx),
             Self::AngularTemplateValidAria(rule) => rule.run(node, ctx),
+            Self::AngularSortedComponentImports(rule) => rule.run(node, ctx),
         }
     }
     pub(crate) fn run<'a, const TIMINGS: bool>(
@@ -14965,6 +14981,7 @@ impl RuleEnum {
             Self::AngularTemplateTableScope(rule) => rule.run_once(ctx),
             Self::AngularTemplateUseTrackByFunction(rule) => rule.run_once(ctx),
             Self::AngularTemplateValidAria(rule) => rule.run_once(ctx),
+            Self::AngularSortedComponentImports(rule) => rule.run_once(ctx),
         }
     }
     pub(crate) fn run_once<const TIMINGS: bool>(
@@ -16042,6 +16059,7 @@ impl RuleEnum {
             Self::AngularTemplateTableScope(rule) => rule.run_on_jest_node(jest_node, ctx),
             Self::AngularTemplateUseTrackByFunction(rule) => rule.run_on_jest_node(jest_node, ctx),
             Self::AngularTemplateValidAria(rule) => rule.run_on_jest_node(jest_node, ctx),
+            Self::AngularSortedComponentImports(rule) => rule.run_on_jest_node(jest_node, ctx),
         }
     }
     pub(crate) fn run_on_jest_node<'a, 'c, const TIMINGS: bool>(
@@ -16973,6 +16991,7 @@ impl RuleEnum {
             Self::AngularTemplateTableScope(rule) => rule.should_run(ctx),
             Self::AngularTemplateUseTrackByFunction(rule) => rule.should_run(ctx),
             Self::AngularTemplateValidAria(rule) => rule.should_run(ctx),
+            Self::AngularSortedComponentImports(rule) => rule.should_run(ctx),
         }
     }
     pub fn is_tsgolint_rule(&self) -> bool {
@@ -18336,6 +18355,9 @@ impl RuleEnum {
                 AngularTemplateUseTrackByFunction::IS_TSGOLINT_RULE
             }
             Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::IS_TSGOLINT_RULE,
+            Self::AngularSortedComponentImports(_) => {
+                AngularSortedComponentImports::IS_TSGOLINT_RULE
+            }
         }
     }
     #[doc = r" The version of oxlint in which this rule was first available."]
@@ -19475,6 +19497,7 @@ impl RuleEnum {
                 AngularTemplateUseTrackByFunction::VERSION
             }
             Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::VERSION,
+            Self::AngularSortedComponentImports(_) => AngularSortedComponentImports::VERSION,
         }
     }
     #[doc = r" Whether this rule declares a configuration type."]
@@ -20655,6 +20678,7 @@ impl RuleEnum {
                 AngularTemplateUseTrackByFunction::HAS_CONFIG
             }
             Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::HAS_CONFIG,
+            Self::AngularSortedComponentImports(_) => AngularSortedComponentImports::HAS_CONFIG,
         }
     }
     #[doc = r" Additional information about this rule."]
@@ -21718,6 +21742,7 @@ impl RuleEnum {
             Self::AngularTemplateTableScope(_) => AngularTemplateTableScope::INFO,
             Self::AngularTemplateUseTrackByFunction(_) => AngularTemplateUseTrackByFunction::INFO,
             Self::AngularTemplateValidAria(_) => AngularTemplateValidAria::INFO,
+            Self::AngularSortedComponentImports(_) => AngularSortedComponentImports::INFO,
         }
     }
     #[doc = r" A short, one-line summary of what this rule does."]
@@ -22640,6 +22665,7 @@ impl RuleEnum {
             Self::AngularTemplateTableScope(rule) => rule.types_info(),
             Self::AngularTemplateUseTrackByFunction(rule) => rule.types_info(),
             Self::AngularTemplateValidAria(rule) => rule.types_info(),
+            Self::AngularSortedComponentImports(rule) => rule.types_info(),
         }
     }
     pub fn run_info(&self) -> RuleRunFunctionsImplemented {
@@ -23557,6 +23583,7 @@ impl RuleEnum {
             Self::AngularTemplateTableScope(rule) => rule.run_info(),
             Self::AngularTemplateUseTrackByFunction(rule) => rule.run_info(),
             Self::AngularTemplateValidAria(rule) => rule.run_info(),
+            Self::AngularSortedComponentImports(rule) => rule.run_info(),
         }
     }
 }
@@ -24640,5 +24667,6 @@ pub static RULES: std::sync::LazyLock<Vec<RuleEnum>> = std::sync::LazyLock::new(
         RuleEnum::AngularTemplateTableScope(AngularTemplateTableScope::default()),
         RuleEnum::AngularTemplateUseTrackByFunction(AngularTemplateUseTrackByFunction::default()),
         RuleEnum::AngularTemplateValidAria(AngularTemplateValidAria::default()),
+        RuleEnum::AngularSortedComponentImports(AngularSortedComponentImports::default()),
     ]
 });

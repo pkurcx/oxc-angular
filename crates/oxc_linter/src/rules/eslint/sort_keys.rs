@@ -448,7 +448,7 @@ fn build_property_text<'a>(
 /// so each key is compared up to its first NUL.
 ///
 /// Case-insensitive mode lowercases ASCII only, where ESLint lowercases with `toLowerCase`.
-fn natural_compare(a: &str, b: &str, case_sensitive: bool) -> Ordering {
+pub fn natural_compare(a: &str, b: &str, case_sensitive: bool) -> Ordering {
     compare_natural(
         a.encode_utf16().take_while(|&unit| unit != 0).map(u32::from),
         b.encode_utf16().take_while(|&unit| unit != 0).map(u32::from),

@@ -953,6 +953,7 @@ export interface DummyRuleMap {
   "angular-template/table-scope"?: RuleNoConfig;
   "angular-template/use-track-by-function"?: RuleNoConfig | [AllowWarnDeny, UseTrackByFunctionConfig];
   "angular-template/valid-aria"?: RuleNoConfig;
+  "angular/sorted-component-imports"?: RuleNoConfig;
   "array-callback-return"?: RuleNoConfig | [AllowWarnDeny, ArrayCallbackReturn];
   "arrow-body-style"?: RuleNoConfig | [AllowWarnDeny, Mode2] | [AllowWarnDeny, Mode2, ArrowBodyStyleConfig];
   "block-scoped-var"?: RuleNoConfig;

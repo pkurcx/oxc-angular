@@ -2930,6 +2930,9 @@
         "angular-template/valid-aria": {
           "$ref": "#/definitions/RuleNoConfig"
         },
+        "angular/sorted-component-imports": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
         "array-callback-return": {
           "anyOf": [
             {

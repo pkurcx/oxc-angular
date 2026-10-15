@@ -1,5 +1,6 @@
 Rule                                                       |  Calls
 -----------------------------------------------------------+-------
+angular/sorted-component-imports                           |     75
 angular_template/alt-text                                  |      7
 angular_template/attributes-order                          |      7
 angular_template/banana-in-box                             |      7

@@ -1,0 +1,75 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(sorted-component-imports): Member 'B' of the imports array should be sorted alphabetically.
+   ╭─[sorted_component_imports.ts:1:24]
+ 1 │ @Component({ imports: [B, A, C] }) class X {}
+   ·                        ─
+   ╰────
+  help: Sort the `imports` array of `@Component`, with spread elements last.
+
+  ⚠ angular(sorted-component-imports): Member 'Z' of the imports array should be sorted alphabetically.
+   ╭─[sorted_component_imports.ts:1:24]
+ 1 │ @Component({ imports: [Z, ...extra, A] }) class X {}
+   ·                        ─
+   ╰────
+  help: Sort the `imports` array of `@Component`, with spread elements last.
+
+  ⚠ angular(sorted-component-imports): Member 'C' of the imports array should be sorted alphabetically.
+   ╭─[sorted_component_imports.ts:3:5]
+ 2 │   imports: [
+ 3 │     C,
+   ·     ─
+ 4 │     A,
+   ╰────
+  help: Sort the `imports` array of `@Component`, with spread elements last.
+
+  ⚠ angular(sorted-component-imports): Member 'RouterModule.forRoot({})' of the imports array should be sorted alphabetically.
+   ╭─[sorted_component_imports.ts:1:24]
+ 1 │ @Component({ imports: [RouterModule.forRoot({}), A, Z] }) class X {}
+   ·                        ────────────────────────
+   ╰────
+  help: Sort the `imports` array of `@Component`, with spread elements last.
+
+  ⚠ angular(sorted-component-imports): Member '...provideBeta()' of the imports array should be sorted alphabetically.
+   ╭─[sorted_component_imports.ts:1:37]
+ 1 │ @Component({ imports: [AlphaModule, ...provideBeta(), GammaModule] }) class X {}
+   ·                                     ────────────────
+   ╰────
+  help: Sort the `imports` array of `@Component`, with spread elements last.
+
+  ⚠ angular(sorted-component-imports): Member 'Z' of the imports array should be sorted alphabetically.
+   ╭─[sorted_component_imports.ts:1:24]
+ 1 │ @Component({ imports: [Z, ...provideFoo(), A] }) class X {}
+   ·                        ─
+   ╰────
+  help: Sort the `imports` array of `@Component`, with spread elements last.
+
+  ⚠ angular(sorted-component-imports): Member 'Feature10Module' of the imports array should be sorted alphabetically.
+   ╭─[sorted_component_imports.ts:1:24]
+ 1 │ @Component({ imports: [Feature10Module, Feature2Module] }) class X {}
+   ·                        ───────────────
+   ╰────
+  help: Sort the `imports` array of `@Component`, with spread elements last.
+
+  ⚠ angular(sorted-component-imports): Member 'AModule' of the imports array should be sorted alphabetically.
+   ╭─[sorted_component_imports.ts:1:24]
+ 1 │ @Component({ imports: [AModule, aModule] }) class X {}
+   ·                        ───────
+   ╰────
+  help: Sort the `imports` array of `@Component`, with spread elements last.
+
+  ⚠ angular(sorted-component-imports): Member 'B' of the imports array should be sorted alphabetically.
+   ╭─[sorted_component_imports.ts:1:26]
+ 1 │ @Component({ 'imports': [B, A] }) class X {}
+   ·                          ─
+   ╰────
+  help: Sort the `imports` array of `@Component`, with spread elements last.
+
+  ⚠ angular(sorted-component-imports): Member 'B' of the imports array should be sorted alphabetically.
+   ╭─[sorted_component_imports.ts:1:24]
+ 1 │ @Component({ imports: [B, /* keep */ A] }) class X {}
+   ·                        ─
+   ╰────
+  help: Sort the `imports` array of `@Component`, with spread elements last.
