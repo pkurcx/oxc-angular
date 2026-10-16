@@ -1,0 +1,137 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(prefer-on-push-component-change-detection): Components should not opt out of the default `ChangeDetectionStrategy.OnPush` change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:2:55]
+ 1 │ import { ChangeDetectionStrategy } from '@angular/core';
+ 2 │ @Component({ changeDetection: ChangeDetectionStrategy.Eager })
+   ·                                                       ─────
+ 3 │ 
+   ╰────
+  help: Remove `changeDetection` and make sure the component works with OnPush.
+
+  ⚠ angular(prefer-on-push-component-change-detection): Components should not opt out of the default `ChangeDetectionStrategy.OnPush` change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:2:55]
+ 1 │ import { ChangeDetectionStrategy } from '@angular/core';
+ 2 │ @Component({ changeDetection: ChangeDetectionStrategy.Default })
+   ·                                                       ───────
+ 3 │ 
+   ╰────
+  help: Remove `changeDetection` and make sure the component works with OnPush.
+
+  ⚠ angular(prefer-on-push-component-change-detection): Components should not opt out of the default `ChangeDetectionStrategy.OnPush` change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:2:57]
+ 1 │ import { ChangeDetectionStrategy } from '@angular/core';
+ 2 │ @Component({ 'changeDetection': ChangeDetectionStrategy.Eager })
+   ·                                                         ─────
+ 3 │ 
+   ╰────
+  help: Remove `changeDetection` and make sure the component works with OnPush.
+
+  ⚠ angular(prefer-on-push-component-change-detection): Components should not opt out of the default `ChangeDetectionStrategy.OnPush` change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:2:59]
+ 1 │ import { ChangeDetectionStrategy } from '@angular/core';
+ 2 │ @Component({ ['changeDetection']: ChangeDetectionStrategy.Eager })
+   ·                                                           ─────
+ 3 │ 
+   ╰────
+  help: Remove `changeDetection` and make sure the component works with OnPush.
+
+  ⚠ angular(prefer-on-push-component-change-detection): Components should not opt out of the default `ChangeDetectionStrategy.OnPush` change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:2:59]
+ 1 │ import { ChangeDetectionStrategy } from '@angular/core';
+ 2 │ @Component({ [`changeDetection`]: ChangeDetectionStrategy.Eager })
+   ·                                                           ─────
+ 3 │ 
+   ╰────
+  help: Remove `changeDetection` and make sure the component works with OnPush.
+
+  ⚠ angular(prefer-on-push-component-change-detection): Components should not opt out of the default `ChangeDetectionStrategy.OnPush` change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:2:55]
+ 1 │ import { ChangeDetectionStrategy } from '@angular/core';
+ 2 │ @Component({ changeDetection: ChangeDetectionStrategy.Eager, selector: 'app-test' })
+   ·                                                       ─────
+ 3 │ 
+   ╰────
+  help: Remove `changeDetection` and make sure the component works with OnPush.
+
+  ⚠ angular(prefer-on-push-component-change-detection): Components should not opt out of the default `ChangeDetectionStrategy.OnPush` change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:2:77]
+ 1 │ import { ChangeDetectionStrategy } from '@angular/core';
+ 2 │ @Component({ selector: 'app-test', changeDetection: ChangeDetectionStrategy.Eager })
+   ·                                                                             ─────
+ 3 │ 
+   ╰────
+  help: Remove `changeDetection` and make sure the component works with OnPush.
+
+  ⚠ angular(prefer-on-push-component-change-detection): Components should not opt out of the default `ChangeDetectionStrategy.OnPush` change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:2:55]
+ 1 │ import { ChangeDetectionStrategy } from '@angular/core';
+ 2 │ @Component({ changeDetection: ChangeDetectionStrategy.Eager })
+   ·                                                       ─────
+ 3 │ 
+   ╰────
+  help: Remove `changeDetection` and make sure the component works with OnPush.
+
+  ⚠ angular(prefer-on-push-component-change-detection): `changeDetection: ChangeDetectionStrategy.OnPush` is redundant because `ChangeDetectionStrategy.OnPush` is the default change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:2:55]
+ 1 │ import { ChangeDetectionStrategy } from '@angular/core';
+ 2 │ @Component({ changeDetection: ChangeDetectionStrategy.OnPush })
+   ·                                                       ──────
+ 3 │ 
+   ╰────
+  help: Remove `changeDetection`.
+
+  ⚠ angular(prefer-on-push-component-change-detection): `changeDetection: ChangeDetectionStrategy.OnPush` is redundant because `ChangeDetectionStrategy.OnPush` is the default change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:2:57]
+ 1 │ import { ChangeDetectionStrategy } from '@angular/core';
+ 2 │ @Component({ 'changeDetection': ChangeDetectionStrategy.OnPush })
+   ·                                                         ──────
+ 3 │ 
+   ╰────
+  help: Remove `changeDetection`.
+
+  ⚠ angular(prefer-on-push-component-change-detection): `changeDetection: ChangeDetectionStrategy.OnPush` is redundant because `ChangeDetectionStrategy.OnPush` is the default change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:2:59]
+ 1 │ import { ChangeDetectionStrategy } from '@angular/core';
+ 2 │ @Component({ [`changeDetection`]: ChangeDetectionStrategy.OnPush })
+   ·                                                           ──────
+ 3 │ 
+   ╰────
+  help: Remove `changeDetection`.
+
+  ⚠ angular(prefer-on-push-component-change-detection): `changeDetection: ChangeDetectionStrategy.OnPush` is redundant because `ChangeDetectionStrategy.OnPush` is the default change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:2:55]
+ 1 │ import { ChangeDetectionStrategy } from '@angular/core';
+ 2 │ @Component({ changeDetection: ChangeDetectionStrategy.OnPush, selector: 'app-test' })
+   ·                                                       ──────
+ 3 │ 
+   ╰────
+  help: Remove `changeDetection`.
+
+  ⚠ angular(prefer-on-push-component-change-detection): `changeDetection: ChangeDetectionStrategy.OnPush` is redundant because `ChangeDetectionStrategy.OnPush` is the default change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:2:77]
+ 1 │ import { ChangeDetectionStrategy } from '@angular/core';
+ 2 │ @Component({ selector: 'app-test', changeDetection: ChangeDetectionStrategy.OnPush })
+   ·                                                                             ──────
+ 3 │ 
+   ╰────
+  help: Remove `changeDetection`.
+
+  ⚠ angular(prefer-on-push-component-change-detection): `changeDetection: ChangeDetectionStrategy.OnPush` is redundant because `ChangeDetectionStrategy.OnPush` is the default change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:1:55]
+ 1 │ @Component({ changeDetection: ChangeDetectionStrategy.OnPush })
+   ·                                                       ──────
+ 2 │ 
+   ╰────
+  help: Remove `changeDetection`.
+
+  ⚠ angular(prefer-on-push-component-change-detection): `changeDetection: ChangeDetectionStrategy.OnPush` is redundant because `ChangeDetectionStrategy.OnPush` is the default change detection strategy
+   ╭─[prefer_on_push_component_change_detection.ts:3:44]
+ 2 │ @Component({
+ 3 │   changeDetection: ChangeDetectionStrategy.OnPush,
+   ·                                            ──────
+ 4 │ 
+   ╰────
+  help: Remove `changeDetection`.

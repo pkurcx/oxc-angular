@@ -1,0 +1,27 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(component-class-suffix): Component class names should end with one of these suffixes: "Component"
+   ╭─[component_class_suffix.ts:1:46]
+ 1 │ @Component({ selector: 'sg-foo-bar' }) class Test {}
+   ·                                              ────
+   ╰────
+
+  ⚠ angular(component-class-suffix): Component class names should end with one of these suffixes: "Component" or "View"
+   ╭─[component_class_suffix.ts:1:44]
+ 1 │ @Component({ selector: 'sgBarFoo' }) class TestPage {}
+   ·                                            ────────
+   ╰────
+
+  ⚠ angular(component-class-suffix): Component class names should end with one of these suffixes: "Component"
+   ╭─[component_class_suffix.ts:1:44]
+ 1 │ @Component({ selector: 'sgBarFoo' }) class TestPage {}
+   ·                                            ────────
+   ╰────
+
+  ⚠ angular(component-class-suffix): Component class names should end with one of these suffixes: "Page"
+   ╭─[component_class_suffix.ts:1:44]
+ 1 │ @Component({ selector: 'sgBarFoo' }) class TestDirective {}
+   ·                                            ─────────────
+   ╰────

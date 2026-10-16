@@ -1,0 +1,152 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(component-selector): The selector should start with one of these prefixes: "sg"
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: 'foo-bar' }) class Test {}
+   ·                        ─────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should start with one of these prefixes: "sg"
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: 'app-foo-bar' }) class Test {}
+   ·                        ─────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should start with one of these prefixes: "cd" or "ng"
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: '[app-foo-bar]' }) class Test {}
+   ·                        ───────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should start with one of these prefixes: "foo", "cd" or "ng"
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: 'app-foo-bar[baz].app' }) class Test {}
+   ·                        ──────────────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should be camelCase
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: '[ng-bar-foo]' }) class Test {}
+   ·                        ──────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should be kebab-case and start with one of these prefixes: "app"
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: 'appFooBar' }) class Test {}
+   ·                        ───────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): There should be a selector after the "app" prefix
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: 'app' }) class Test {}
+   ·                        ─────
+   ╰────
+
+  ⚠ angular(component-selector): There should be a selector after the "app" prefix
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: 'app' }) class Test {}
+   ·                        ─────
+   ╰────
+
+  ⚠ angular(component-selector): The selector should be used as an element
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: '[appFooBar]' }) class Test {}
+   ·                        ─────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should be used as an attribute
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: `app-foo-bar` }) class Test {}
+   ·                        ─────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should be used as an attribute
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: 'appFooBar' }) class Test {}
+   ·                        ───────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector of a ShadowDom-encapsulated component should be `kebab-case`
+   ╭─[component_selector.ts:3:25]
+ 2 │               encapsulation: ViewEncapsulation.ShadowDom,
+ 3 │               selector: 'appFooBar'
+   ·                         ───────────
+ 4 │             })
+   ╰────
+  help: Custom element names must contain a hyphen.
+
+  ⚠ angular(component-selector): The selector of a ShadowDom-encapsulated component should be `kebab-case`
+   ╭─[component_selector.ts:3:25]
+ 2 │               encapsulation: ViewEncapsulation.ShadowDom,
+ 3 │               selector: 'appselector'
+   ·                         ─────────────
+ 4 │             })
+   ╰────
+  help: Custom element names must contain a hyphen.
+
+  ⚠ angular(component-selector): The selector should start with one of these prefixes: "app" or "toh"
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: 'root' }) class Test {}
+   ·                        ──────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should start with one of these prefixes: "sg"
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: 'sgggg-bar' }) class Test {}
+   ·                        ───────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should be kebab-case and start with one of these prefixes: "app"
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: 'appFooBar' }) class Test {}
+   ·                        ───────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should be camelCase
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: '[app-foo-bar]' }) class Test {}
+   ·                        ───────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should be kebab-case and start with one of these prefixes: "app"
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: 'appFooBar' }) class Test {}
+   ·                        ───────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should be camelCase
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: '[app-foo-bar]' }) class Test {}
+   ·                        ───────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should start with one of these prefixes: "app"
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: 'lib-foo-bar' }) class Test {}
+   ·                        ─────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors
+
+  ⚠ angular(component-selector): The selector should start with one of these prefixes: "app"
+   ╭─[component_selector.ts:1:24]
+ 1 │ @Component({ selector: '[libFooBar]' }) class Test {}
+   ·                        ─────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-component-selectors

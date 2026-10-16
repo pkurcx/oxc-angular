@@ -1,0 +1,30 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-forward-ref): Avoid using `forwardRef`
+   ╭─[no_forward_ref.ts:7:35]
+ 6 │             export class Test {
+ 7 │               constructor(@Inject(forwardRef(() => TestService)) testService) {}
+   ·                                   ─────────────────────────────
+ 8 │             }
+   ╰────
+  help: Restructure the code to remove the circular dependency that `forwardRef` works around.
+
+  ⚠ angular(no-forward-ref): Avoid using `forwardRef`
+   ╭─[no_forward_ref.ts:7:32]
+ 6 │                   provide: NG_VALUE_ACCESSOR,
+ 7 │                   useExisting: forwardRef(() => TagsValueAccessor)
+   ·                                ───────────────────────────────────
+ 8 │                 }
+   ╰────
+  help: Restructure the code to remove the circular dependency that `forwardRef` works around.
+
+  ⚠ angular(no-forward-ref): Avoid using `forwardRef`
+   ╭─[no_forward_ref.ts:5:28]
+ 4 │               provide: NG_VALUE_ACCESSOR,
+ 5 │               useExisting: forwardRef(() => TagsValueAccessor)
+   ·                            ───────────────────────────────────
+ 6 │             };
+   ╰────
+  help: Restructure the code to remove the circular dependency that `forwardRef` works around.

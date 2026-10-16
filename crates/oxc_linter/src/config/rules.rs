@@ -1034,6 +1034,10 @@ mod test {
             super::normalize_rule_name("@angular-eslint/template/eqeqeq"),
             "angular-template/eqeqeq"
         );
+        assert_eq!(
+            super::normalize_rule_name("@angular-eslint/component-selector"),
+            "angular/component-selector"
+        );
     }
 
     #[test]

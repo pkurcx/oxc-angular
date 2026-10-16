@@ -1,0 +1,31 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(use-component-selector): The selector of the component is mandatory
+   ╭─[use_component_selector.ts:1:1]
+ 1 │ @Component() class Test {}
+   · ────────────
+   ╰────
+  help: Add a `selector` to the `@Component` metadata.
+
+  ⚠ angular(use-component-selector): The selector of the component is mandatory
+   ╭─[use_component_selector.ts:1:1]
+ 1 │ @Component({ selector: '' }) class Test {}
+   · ────────────────────────────
+   ╰────
+  help: Add a `selector` to the `@Component` metadata.
+
+  ⚠ angular(use-component-selector): The selector of the component is mandatory
+   ╭─[use_component_selector.ts:1:1]
+ 1 │ @Component({ selector: 0 }) class Test {}
+   · ───────────────────────────
+   ╰────
+  help: Add a `selector` to the `@Component` metadata.
+
+  ⚠ angular(use-component-selector): The selector of the component is mandatory
+   ╭─[use_component_selector.ts:1:1]
+ 1 │ @Component({ selector: null }) class Test {}
+   · ──────────────────────────────
+   ╰────
+  help: Add a `selector` to the `@Component` metadata.

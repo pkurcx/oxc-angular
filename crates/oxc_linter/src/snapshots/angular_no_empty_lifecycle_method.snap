@@ -1,0 +1,102 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-empty-lifecycle-method): Lifecycle methods should not be empty.
+   ╭─[no_empty_lifecycle_method.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngAfterContentChecked() {}
+   ·         ──────────────────────────
+ 5 │       }
+   ╰────
+  help: Remove the lifecycle method.
+
+  ⚠ angular(no-empty-lifecycle-method): Lifecycle methods should not be empty.
+   ╭─[no_empty_lifecycle_method.ts:4:9]
+ 3 │       class Test extends BaseDirective {
+ 4 │         ngAfterContentInit() {}
+   ·         ───────────────────────
+ 5 │       }
+   ╰────
+  help: Remove the lifecycle method.
+
+  ⚠ angular(no-empty-lifecycle-method): Lifecycle methods should not be empty.
+   ╭─[no_empty_lifecycle_method.ts:4:9]
+ 3 │       class Test extends BaseTest implements AfterViewChecked, OnDestroy {
+ 4 │         'ngAfterViewChecked'() {}
+   ·         ─────────────────────────
+ 5 │       }
+   ╰────
+  help: Remove the lifecycle method.
+
+  ⚠ angular(no-empty-lifecycle-method): Lifecycle methods should not be empty.
+   ╭─[no_empty_lifecycle_method.ts:4:9]
+ 3 │       class Test {
+ 4 │         ['ngAfterViewInit']() {}
+   ·         ────────────────────────
+ 5 │       }
+   ╰────
+  help: Remove the lifecycle method.
+
+  ⚠ angular(no-empty-lifecycle-method): Lifecycle methods should not be empty.
+    ╭─[no_empty_lifecycle_method.ts:9:9]
+  8 │       class Test {
+  9 │         [`ngDoBootstrap`]() {}
+    ·         ──────────────────────
+ 10 │       }
+    ╰────
+  help: Remove the lifecycle method.
+
+  ⚠ angular(no-empty-lifecycle-method): Lifecycle methods should not be empty.
+    ╭─[no_empty_lifecycle_method.ts:12:9]
+ 11 │                       DoCheck {
+ 12 │         ngDoCheck() {}
+    ·         ──────────────
+ 13 │       }
+    ╰────
+  help: Remove the lifecycle method.
+
+  ⚠ angular(no-empty-lifecycle-method): Lifecycle methods should not be empty.
+   ╭─[no_empty_lifecycle_method.ts:5:9]
+ 4 │       class Test implements OnChanges, AfterContentInit {
+ 5 │         ngOnChanges() {}
+   ·         ────────────────
+ 6 │       }
+   ╰────
+  help: Remove the lifecycle method.
+
+  ⚠ angular(no-empty-lifecycle-method): Lifecycle methods should not be empty.
+   ╭─[no_empty_lifecycle_method.ts:5:9]
+ 4 │       class Test implements ng.OnDestroy {
+ 5 │         ngOnDestroy() {}
+   ·         ────────────────
+ 6 │       }
+   ╰────
+  help: Remove the lifecycle method.
+
+  ⚠ angular(no-empty-lifecycle-method): Lifecycle methods should not be empty.
+    ╭─[no_empty_lifecycle_method.ts:12:9]
+ 11 │       class Test2 implements OnInit, DoBootstrap {
+ 12 │         ngOnInit() {}
+    ·         ─────────────
+ 13 │       }
+    ╰────
+  help: Remove the lifecycle method.
+
+  ⚠ angular(no-empty-lifecycle-method): Lifecycle methods should not be empty.
+   ╭─[no_empty_lifecycle_method.ts:4:9]
+ 3 │       class Test extends BaseComponent<unknown> implements OnInit {
+ 4 │         ngOnInit() {}
+   ·         ─────────────
+ 5 │       }
+   ╰────
+  help: Remove the lifecycle method.
+
+  ⚠ angular(no-empty-lifecycle-method): Lifecycle methods should not be empty.
+   ╭─[no_empty_lifecycle_method.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngOnDestroy() {}
+   ·         ────────────────
+ 5 │       }
+   ╰────
+  help: Remove the lifecycle method.

@@ -1,0 +1,69 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(computed-must-return): computed() is missing a return value
+   ╭─[computed_must_return.ts:1:1]
+ 1 │ computed(() => {});
+   · ──────────────────
+   ╰────
+  help: Return the derived value from the `computed()` callback.
+
+  ⚠ angular(computed-must-return): computed() is missing a return value
+   ╭─[computed_must_return.ts:1:1]
+ 1 │ ╭─▶ computed(() => {
+ 2 │ │     y();
+ 3 │ ╰─▶ });
+   ╰────
+  help: Return the derived value from the `computed()` callback.
+
+  ⚠ angular(computed-must-return): computed() is missing a return value
+   ╭─[computed_must_return.ts:1:1]
+ 1 │ ╭─▶ computed(function() {
+ 2 │ │     y();
+ 3 │ ╰─▶ });
+   ╰────
+  help: Return the derived value from the `computed()` callback.
+
+  ⚠ angular(computed-must-return): computed() is missing a return value
+   ╭─[computed_must_return.ts:1:1]
+ 1 │ ╭─▶ computed(() => {
+ 2 │ │     return;
+ 3 │ ╰─▶ });
+   ╰────
+  help: Return the derived value from the `computed()` callback.
+
+  ⚠ angular(computed-must-return): computed() is missing a return value
+   ╭─[computed_must_return.ts:1:1]
+ 1 │ ╭─▶ computed(function() {
+ 2 │ │     return;
+ 3 │ ╰─▶ });
+   ╰────
+  help: Return the derived value from the `computed()` callback.
+
+  ⚠ angular(computed-must-return): computed() is missing a return value
+   ╭─[computed_must_return.ts:2:7]
+ 1 │     class Test {
+ 2 │ ╭─▶   x = computed(() => {
+ 3 │ │       y();
+ 4 │ ╰─▶   });
+ 5 │     }
+   ╰────
+  help: Return the derived value from the `computed()` callback.
+
+  ⚠ angular(computed-must-return): computed() is missing a return value
+   ╭─[computed_must_return.ts:1:1]
+ 1 │ computed(() => {}, { equal: (a, b) => {} });
+   · ───────────────────────────────────────────
+   ╰────
+  help: Return the derived value from the `computed()` callback.
+
+  ⚠ angular(computed-must-return): computed() is missing a return value
+   ╭─[computed_must_return.ts:1:1]
+ 1 │ ╭─▶ computed(() => {
+ 2 │ │     const nested = () => {
+ 3 │ │       return 2;
+ 4 │ │     }
+ 5 │ ╰─▶ });
+   ╰────
+  help: Return the derived value from the `computed()` callback.

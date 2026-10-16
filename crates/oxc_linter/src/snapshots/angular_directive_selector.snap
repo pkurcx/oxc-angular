@@ -1,0 +1,106 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(directive-selector): The selector should start with one of these prefixes: "bar"
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: 'app-foo-bar' }) class Test {}
+   ·                        ─────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-directive-selectors
+
+  ⚠ angular(directive-selector): The selector should start with one of these prefixes: "cd" or "ng"
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: '[app-foo-bar]' }) class Test {}
+   ·                        ───────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-directive-selectors
+
+  ⚠ angular(directive-selector): The selector should start with one of these prefixes: "foo", "cd" or "ng"
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: 'app-foo-bar[baz].app' }) class Test {}
+   ·                        ──────────────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-directive-selectors
+
+  ⚠ angular(directive-selector): The selector should be camelCase
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: '[app-bar-foo]' }) class Test {}
+   ·                        ───────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-directive-selectors
+
+  ⚠ angular(directive-selector): The selector should be kebab-case
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: 'appFooBar' }) class Test {}
+   ·                        ───────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-directive-selectors
+
+  ⚠ angular(directive-selector): There should be a selector after the "app" prefix
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: 'app' }) class Test {}
+   ·                        ─────
+   ╰────
+
+  ⚠ angular(directive-selector): There should be a selector after the "app" prefix
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: 'app' }) class Test {}
+   ·                        ─────
+   ╰────
+
+  ⚠ angular(directive-selector): The selector should be used as an attribute
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: `app-foo-bar` }) class Test {}
+   ·                        ─────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-directive-selectors
+
+  ⚠ angular(directive-selector): The selector should be used as an element
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: '[appFooBar]' }) class Test {}
+   ·                        ─────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-directive-selectors
+
+  ⚠ angular(directive-selector): The selector should be kebab-case
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: 'appFooBar' }) class Test {}
+   ·                        ───────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-directive-selectors
+
+  ⚠ angular(directive-selector): The selector should be camelCase
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: '[app-foo-bar]' }) class Test {}
+   ·                        ───────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-directive-selectors
+
+  ⚠ angular(directive-selector): The selector should be kebab-case
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: 'appFooBar' }) class Test {}
+   ·                        ───────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-directive-selectors
+
+  ⚠ angular(directive-selector): The selector should be camelCase
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: '[app-foo-bar]' }) class Test {}
+   ·                        ───────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-directive-selectors
+
+  ⚠ angular(directive-selector): The selector should start with one of these prefixes: "app"
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: 'lib-foo-bar' }) class Test {}
+   ·                        ─────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-directive-selectors
+
+  ⚠ angular(directive-selector): The selector should start with one of these prefixes: "app"
+   ╭─[directive_selector.ts:1:24]
+ 1 │ @Directive({ selector: '[libFooBar]' }) class Test {}
+   ·                        ─────────────
+   ╰────
+  help: See https://angular.dev/style-guide#choosing-directive-selectors

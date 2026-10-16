@@ -1,0 +1,192 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:43]
+ 2 │       @NgModule({
+ 3 │         providers: [ProviderA, ProviderB, ProviderA, ProviderB]
+   ·                                           ─────────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:54]
+ 2 │       @NgModule({
+ 3 │         providers: [ProviderA, ProviderB, ProviderA, ProviderB]
+   ·                                                      ─────────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:52]
+ 2 │       @NgModule({
+ 3 │         declarations: [DeclarationA, DeclarationB, DeclarationA, DeclarationB],
+   ·                                                    ────────────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:66]
+ 2 │       @NgModule({
+ 3 │         declarations: [DeclarationA, DeclarationB, DeclarationA, DeclarationB],
+   ·                                                                  ────────────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:37]
+ 2 │       @NgModule({
+ 3 │         imports: [ImportA, ImportB, ImportA, ImportB]
+   ·                                     ───────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:46]
+ 2 │       @NgModule({
+ 3 │         imports: [ImportA, ImportB, ImportA, ImportB]
+   ·                                              ───────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:37]
+ 2 │       @NgModule({
+ 3 │         exports: [ExportA, ExportB, ExportA, ExportB]
+   ·                                     ───────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:46]
+ 2 │       @NgModule({
+ 3 │         exports: [ExportA, ExportB, ExportA, ExportB]
+   ·                                              ───────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:37]
+ 2 │       @Component({
+ 3 │         imports: [ImportA, ImportB, ImportA, ImportB]
+   ·                                     ───────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:46]
+ 2 │       @Component({
+ 3 │         imports: [ImportA, ImportB, ImportA, ImportB]
+   ·                                              ───────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:43]
+ 2 │       @Component({
+ 3 │         providers: [ProviderA, ProviderB, ProviderA, ProviderB]
+   ·                                           ─────────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:54]
+ 2 │       @Component({
+ 3 │         providers: [ProviderA, ProviderB, ProviderA, ProviderB]
+   ·                                                      ─────────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:55]
+ 2 │       @Component({
+ 3 │         viewProviders: [ViewProviderA, ViewProviderB, ViewProviderA, ViewProviderB]
+   ·                                                       ─────────────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:70]
+ 2 │       @Component({
+ 3 │         viewProviders: [ViewProviderA, ViewProviderB, ViewProviderA, ViewProviderB]
+   ·                                                                      ─────────────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:39]
+ 2 │       @Component({
+ 3 │         styleUrls: ['a.css', 'b.css', 'a.css', 'b.css']
+   ·                                       ───────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:48]
+ 2 │       @Component({
+ 3 │         styleUrls: ['a.css', 'b.css', 'a.css', 'b.css']
+   ·                                                ───────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:43]
+ 2 │       @Directive({
+ 3 │         providers: [ProviderA, ProviderB, ProviderA, ProviderB]
+   ·                                           ─────────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:3:54]
+ 2 │       @Directive({
+ 3 │         providers: [ProviderA, ProviderB, ProviderA, ProviderB]
+   ·                                                      ─────────
+ 4 │       })
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:6:11]
+ 5 │           ImportB,
+ 6 │           ImportA,
+   ·           ───────
+ 7 │           ImportB,
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:7:11]
+ 6 │           ImportA,
+ 7 │           ImportB,
+   ·           ───────
+ 8 │           ImportA
+   ╰────
+  help: Remove the duplicate entry.
+
+  ⚠ angular(no-duplicates-in-metadata-arrays): Entry is duplicated in metadata array
+   ╭─[no_duplicates_in_metadata_arrays.ts:8:11]
+ 7 │           ImportB,
+ 8 │           ImportA
+   ·           ───────
+ 9 │         ]
+   ╰────
+  help: Remove the duplicate entry.

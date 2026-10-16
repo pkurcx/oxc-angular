@@ -1,0 +1,336 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Injectable()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @Input()
+   ·           ────────
+ 7 │           get label(): string {
+   ╰────
+  help: Angular does not process this decorator in a `@Injectable` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Injectable()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @Input()
+   ·           ────────
+ 7 │           set label(value: string) {
+   ╰────
+  help: Angular does not process this decorator in a `@Injectable` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Injectable()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @ViewChild(Pane)
+   ·           ────────────────
+ 7 │           set label(value: Pane) {
+   ╰────
+  help: Angular does not process this decorator in a `@Injectable` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Injectable()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @HostListener('mouseover')
+   ·           ──────────────────────────
+ 7 │           mouseOver() {
+   ╰────
+  help: Angular does not process this decorator in a `@Injectable` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Injectable()"
+   ╭─[contextual_decorator.ts:7:13]
+ 6 │           constructor(
+ 7 │             @Attribute('test') private readonly test: string
+   ·             ──────────────────
+ 8 │           ) {}
+   ╰────
+  help: Angular does not process this decorator in a `@Injectable` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Injectable()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @ContentChild(Pane) pane: Pane;
+   ·           ───────────────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@Injectable` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Injectable()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @ContentChildren(Pane, { descendants: true }) arbitraryNestedPanes: QueryList<Pane>;
+   ·           ─────────────────────────────────────────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@Injectable` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Injectable()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @HostBinding('class.card-outline') private isCardOutline: boolean;
+   ·           ──────────────────────────────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@Injectable` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@NgModule()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @Input() label: string;
+   ·           ────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@NgModule` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@NgModule()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @Output() emitter = new EventEmitter<void>();
+   ·           ─────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@NgModule` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@NgModule()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @ViewChild(Pane) pane: Pane;
+   ·           ────────────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@NgModule` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@NgModule()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @ViewChildren(Pane) panes: QueryList<Pane>;
+   ·           ───────────────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@NgModule` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@NgModule()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @ContentChild(Pane) pane: Pane;
+   ·           ───────────────────
+ 7 │   
+   ╰────
+  help: Angular does not process this decorator in a `@NgModule` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@NgModule()"
+   ╭─[contextual_decorator.ts:8:11]
+ 7 │   
+ 8 │           @Input()
+   ·           ────────
+ 9 │           get label(): string {
+   ╰────
+  help: Angular does not process this decorator in a `@NgModule` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@NgModule()"
+    ╭─[contextual_decorator.ts:17:11]
+ 16 │   
+ 17 │           @ViewChild(Pane)
+    ·           ────────────────
+ 18 │           set label(value: Pane) {
+    ╰────
+  help: Angular does not process this decorator in a `@NgModule` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@NgModule()"
+    ╭─[contextual_decorator.ts:33:13]
+ 32 │           constructor(
+ 33 │             @Attribute('test') private readonly test: string,
+    ·             ──────────────────
+ 34 │             @Inject(LOCALE_ID) localeId: string
+    ╰────
+  help: Angular does not process this decorator in a `@NgModule` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@NgModule()"
+    ╭─[contextual_decorator.ts:37:11]
+ 36 │   
+ 37 │           @HostListener('mouseover')
+    ·           ──────────────────────────
+ 38 │           mouseOver() {
+    ╰────
+  help: Angular does not process this decorator in a `@NgModule` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @Input()
+   ·           ────────
+ 7 │           get label(): string {
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @Input()
+   ·           ────────
+ 7 │           set label(value: string) {
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @ViewChild(Pane)
+   ·           ────────────────
+ 7 │           set label(value: Pane) {
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @HostListener('mouseover')
+   ·           ──────────────────────────
+ 7 │           mouseOver() {
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:7:13]
+ 6 │           constructor(
+ 7 │             @Attribute('test') private readonly test: string
+   ·             ──────────────────
+ 8 │           ) {}
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @ContentChild(Pane) pane: Pane;
+   ·           ───────────────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @ContentChildren(Pane, { descendants: true }) arbitraryNestedPanes: QueryList<Pane>;
+   ·           ─────────────────────────────────────────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @HostBinding('class.card-outline') private isCardOutline: boolean;
+   ·           ──────────────────────────────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @Input() label: string;
+   ·           ────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @Output() emitter = new EventEmitter<void>();
+   ·           ─────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @ViewChild(Pane) pane: Pane;
+   ·           ────────────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @ViewChildren(Pane) panes: QueryList<Pane>;
+   ·           ───────────────────
+ 7 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:6:11]
+ 5 │         class Test {
+ 6 │           @ContentChild(Pane) pane: Pane;
+   ·           ───────────────────
+ 7 │   
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+   ╭─[contextual_decorator.ts:8:11]
+ 7 │   
+ 8 │           @Input()
+   ·           ────────
+ 9 │           get label(): string {
+   ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+    ╭─[contextual_decorator.ts:17:11]
+ 16 │   
+ 17 │           @ViewChild(Pane)
+    ·           ────────────────
+ 18 │           set label(value: Pane) {
+    ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+    ╭─[contextual_decorator.ts:33:13]
+ 32 │           constructor(
+ 33 │             @Attribute('test') private readonly test: string,
+    ·             ──────────────────
+ 34 │             @Inject(LOCALE_ID) localeId: string
+    ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+    ╭─[contextual_decorator.ts:37:11]
+ 36 │   
+ 37 │           @HostListener('mouseover')
+    ·           ──────────────────────────
+ 38 │           mouseOver() {
+    ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Service()"
+   ╭─[contextual_decorator.ts:4:11]
+ 3 │         class Test {
+ 4 │           @Input() label: string;
+   ·           ────────
+ 5 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@Service` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Service()"
+   ╭─[contextual_decorator.ts:4:11]
+ 3 │         class Test {
+ 4 │           @Output() emitter = new EventEmitter<void>();
+   ·           ─────────
+ 5 │         }
+   ╰────
+  help: Angular does not process this decorator in a `@Service` class.
+
+  ⚠ angular(contextual-decorator): Decorator out of context for "@Pipe()"
+    ╭─[contextual_decorator.ts:13:11]
+ 12 │         class Test {
+ 13 │           @Input() label: string;
+    ·           ────────
+ 14 │         }
+    ╰────
+  help: Angular does not process this decorator in a `@Pipe` class.

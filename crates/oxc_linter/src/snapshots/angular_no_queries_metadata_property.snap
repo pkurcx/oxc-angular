@@ -1,0 +1,29 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-queries-metadata-property): Use query decorators rather than the `queries` metadata property
+   ╭─[no_queries_metadata_property.ts:3:11]
+ 2 │             @Component({
+ 3 │ ╭─▶           queries: {
+ 4 │ │               contentChild: new ContentChild(ChildDirective),
+ 5 │ │               contentChildren: new ContentChildren(ChildDirective),
+ 6 │ │               viewChild: new ViewChild(ChildDirective),
+ 7 │ │               viewChildren: new ViewChildren(ChildDirective)
+ 8 │ ╰─▶           },
+ 9 │               selector: 'app-test'
+   ╰────
+  help: Declare the query with `@ViewChild`, `@ViewChildren`, `@ContentChild` or `@ContentChildren` on the class member.
+
+  ⚠ angular(no-queries-metadata-property): Use query decorators rather than the `queries` metadata property
+   ╭─[no_queries_metadata_property.ts:3:11]
+ 2 │             @Directive({
+ 3 │ ╭─▶           queries: {
+ 4 │ │               contentChild: new ContentChild(ChildDirective),
+ 5 │ │               contentChildren: new ContentChildren(ChildDirective),
+ 6 │ │               viewChild: new ViewChild(ChildDirective),
+ 7 │ │               viewChildren: new ViewChildren(ChildDirective)
+ 8 │ ╰─▶           },
+ 9 │               selector: 'app-test'
+   ╰────
+  help: Declare the query with `@ViewChild`, `@ViewChildren`, `@ContentChild` or `@ContentChildren` on the class member.

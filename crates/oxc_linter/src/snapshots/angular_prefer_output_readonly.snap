@@ -1,0 +1,57 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(prefer-output-readonly): Prefer to declare `@Output` as `readonly` since they are not supposed to be reassigned
+   ╭─[prefer_output_readonly.ts:3:21]
+ 2 │         class Test {
+ 3 │           @Output() testEmitter = new EventEmitter<string>();
+   ·                     ───────────
+ 4 │         }
+   ╰────
+  help: Add the `readonly` modifier.
+
+  ⚠ angular(prefer-output-readonly): Prefer to declare `OutputEmitterRef` as `readonly` since they are not supposed to be reassigned
+   ╭─[prefer_output_readonly.ts:3:11]
+ 2 │         class Test {
+ 3 │           testEmitter: OutputEmitterRef<string>;
+   ·           ───────────
+ 4 │         }
+   ╰────
+  help: Add the `readonly` modifier.
+
+  ⚠ angular(prefer-output-readonly): Prefer to declare `OutputEmitterRef` as `readonly` since they are not supposed to be reassigned
+   ╭─[prefer_output_readonly.ts:3:11]
+ 2 │         class Test {
+ 3 │           testEmitter = output();
+   ·           ───────────
+ 4 │         }
+   ╰────
+  help: Add the `readonly` modifier.
+
+  ⚠ angular(prefer-output-readonly): Prefer to declare `OutputEmitterRef` as `readonly` since they are not supposed to be reassigned
+   ╭─[prefer_output_readonly.ts:3:11]
+ 2 │         class Test {
+ 3 │           testEmitter = output<string>();
+   ·           ───────────
+ 4 │         }
+   ╰────
+  help: Add the `readonly` modifier.
+
+  ⚠ angular(prefer-output-readonly): Prefer to declare `OutputRef` as `readonly` since they are not supposed to be reassigned
+   ╭─[prefer_output_readonly.ts:3:11]
+ 2 │         class Test {
+ 3 │           testEmitter: OutputRef<string>;
+   ·           ───────────
+ 4 │         }
+   ╰────
+  help: Add the `readonly` modifier.
+
+  ⚠ angular(prefer-output-readonly): Prefer to declare `OutputRef` as `readonly` since they are not supposed to be reassigned
+   ╭─[prefer_output_readonly.ts:3:11]
+ 2 │         class Test {
+ 3 │           testEmitter = outputFromObservable(testObservable);
+   ·           ───────────
+ 4 │         }
+   ╰────
+  help: Add the `readonly` modifier.

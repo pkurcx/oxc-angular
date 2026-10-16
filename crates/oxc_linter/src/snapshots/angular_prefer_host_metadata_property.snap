@@ -1,0 +1,19 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(prefer-host-metadata-property): Prefer using the `host` metadata property in the `@Component` decorator for host bindings instead of the `@HostBinding` decorator.
+   ╭─[prefer_host_metadata_property.ts:3:9]
+ 2 │       class Test {
+ 3 │         @HostBinding('class')
+   ·         ─────────────────────
+ 4 │         readonly cssClass = 'my-class';
+   ╰────
+
+  ⚠ angular(prefer-host-metadata-property): Prefer using the `host` metadata property in the `@Component` decorator for host listeners instead of the `@HostListener` decorator.
+   ╭─[prefer_host_metadata_property.ts:3:9]
+ 2 │       class Test {
+ 3 │         @HostListener('click')
+   ·         ──────────────────────
+ 4 │         bar() {}
+   ╰────

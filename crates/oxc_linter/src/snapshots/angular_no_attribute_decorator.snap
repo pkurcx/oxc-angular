@@ -1,0 +1,30 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-attribute-decorator): `@Attribute` can only obtain a single value and is rarely what is required.
+   ╭─[no_attribute_decorator.ts:3:27]
+ 2 │             class Test {
+ 3 │               constructor(@Attribute() foo: string) {}
+   ·                           ────────────
+ 4 │             }
+   ╰────
+  help: Use `@Input` instead to retrieve a stream of values.
+
+  ⚠ angular(no-attribute-decorator): `@Attribute` can only obtain a single value and is rarely what is required.
+   ╭─[no_attribute_decorator.ts:6:17]
+ 5 │                 randomNumber: number,
+ 6 │                 @Attribute() foo: string,
+   ·                 ────────────
+ 7 │                 @Attribute('baz') bar: string
+   ╰────
+  help: Use `@Input` instead to retrieve a stream of values.
+
+  ⚠ angular(no-attribute-decorator): `@Attribute` can only obtain a single value and is rarely what is required.
+   ╭─[no_attribute_decorator.ts:7:17]
+ 6 │                 @Attribute() foo: string,
+ 7 │                 @Attribute('baz') bar: string
+   ·                 ─────────────────
+ 8 │               ) {}
+   ╰────
+  help: Use `@Input` instead to retrieve a stream of values.

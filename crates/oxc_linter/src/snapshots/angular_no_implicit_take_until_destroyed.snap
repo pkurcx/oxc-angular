@@ -1,0 +1,120 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-implicit-take-until-destroyed): `takeUntilDestroyed()` must be called with an explicit `DestroyRef` parameter when used outside of an injection context.
+   ╭─[no_implicit_take_until_destroyed.ts:4:21]
+ 3 │   ngOnInit() {
+ 4 │     this.data$.pipe(takeUntilDestroyed()).subscribe();
+   ·                     ────────────────────
+ 5 │   }
+   ╰────
+  help: Inject `DestroyRef` with `inject(DestroyRef)` and pass it: `takeUntilDestroyed(this.destroyRef)`. See https://angular.dev/guide/di/dependency-injection-context and https://angular.dev/ecosystem/rxjs-interop/take-until-destroyed
+
+  ⚠ angular(no-implicit-take-until-destroyed): `takeUntilDestroyed()` must be called with an explicit `DestroyRef` parameter when used outside of an injection context.
+   ╭─[no_implicit_take_until_destroyed.ts:4:21]
+ 3 │   ngAfterViewInit() {
+ 4 │     this.data$.pipe(takeUntilDestroyed()).subscribe();
+   ·                     ────────────────────
+ 5 │   }
+   ╰────
+  help: Inject `DestroyRef` with `inject(DestroyRef)` and pass it: `takeUntilDestroyed(this.destroyRef)`. See https://angular.dev/guide/di/dependency-injection-context and https://angular.dev/ecosystem/rxjs-interop/take-until-destroyed
+
+  ⚠ angular(no-implicit-take-until-destroyed): `takeUntilDestroyed()` must be called with an explicit `DestroyRef` parameter when used outside of an injection context.
+   ╭─[no_implicit_take_until_destroyed.ts:4:21]
+ 3 │   anyMethod() {
+ 4 │     this.data$.pipe(takeUntilDestroyed()).subscribe();
+   ·                     ────────────────────
+ 5 │   }
+   ╰────
+  help: Inject `DestroyRef` with `inject(DestroyRef)` and pass it: `takeUntilDestroyed(this.destroyRef)`. See https://angular.dev/guide/di/dependency-injection-context and https://angular.dev/ecosystem/rxjs-interop/take-until-destroyed
+
+  ⚠ angular(no-implicit-take-until-destroyed): `takeUntilDestroyed()` must be called with an explicit `DestroyRef` parameter when used outside of an injection context.
+   ╭─[no_implicit_take_until_destroyed.ts:4:21]
+ 3 │   anyMethod() {
+ 4 │     this.data$.pipe(takeUntilDestroyed()).subscribe();
+   ·                     ────────────────────
+ 5 │   }
+   ╰────
+  help: Inject `DestroyRef` with `inject(DestroyRef)` and pass it: `takeUntilDestroyed(this.destroyRef)`. See https://angular.dev/guide/di/dependency-injection-context and https://angular.dev/ecosystem/rxjs-interop/take-until-destroyed
+
+  ⚠ angular(no-implicit-take-until-destroyed): `takeUntilDestroyed()` must be called with an explicit `DestroyRef` parameter when used outside of an injection context.
+   ╭─[no_implicit_take_until_destroyed.ts:4:21]
+ 3 │   ngOnDestroy() {
+ 4 │     this.data$.pipe(takeUntilDestroyed()).subscribe();
+   ·                     ────────────────────
+ 5 │   }
+   ╰────
+  help: Inject `DestroyRef` with `inject(DestroyRef)` and pass it: `takeUntilDestroyed(this.destroyRef)`. See https://angular.dev/guide/di/dependency-injection-context and https://angular.dev/ecosystem/rxjs-interop/take-until-destroyed
+
+  ⚠ angular(no-implicit-take-until-destroyed): `takeUntilDestroyed()` must be called with an explicit `DestroyRef` parameter when used outside of an injection context.
+   ╭─[no_implicit_take_until_destroyed.ts:4:21]
+ 3 │   loadData() {
+ 4 │     this.data$.pipe(takeUntilDestroyed()).subscribe();
+   ·                     ────────────────────
+ 5 │   }
+   ╰────
+  help: Inject `DestroyRef` with `inject(DestroyRef)` and pass it: `takeUntilDestroyed(this.destroyRef)`. See https://angular.dev/guide/di/dependency-injection-context and https://angular.dev/ecosystem/rxjs-interop/take-until-destroyed
+
+  ⚠ angular(no-implicit-take-until-destroyed): `takeUntilDestroyed()` must be called with an explicit `DestroyRef` parameter when used outside of an injection context.
+   ╭─[no_implicit_take_until_destroyed.ts:3:21]
+ 2 │   constructor() {
+ 3 │     this.data$.pipe(takeUntilDestroyed()).subscribe();
+   ·                     ────────────────────
+ 4 │   }
+   ╰────
+  help: Inject `DestroyRef` with `inject(DestroyRef)` and pass it: `takeUntilDestroyed(this.destroyRef)`. See https://angular.dev/guide/di/dependency-injection-context and https://angular.dev/ecosystem/rxjs-interop/take-until-destroyed
+
+  ⚠ angular(no-implicit-take-until-destroyed): `takeUntilDestroyed()` must be called with an explicit `DestroyRef` parameter when used outside of an injection context.
+   ╭─[no_implicit_take_until_destroyed.ts:4:21]
+ 3 │   constructor() {
+ 4 │     this.data$.pipe(takeUntilDestroyed()).subscribe();
+   ·                     ────────────────────
+ 5 │   }
+   ╰────
+  help: Inject `DestroyRef` with `inject(DestroyRef)` and pass it: `takeUntilDestroyed(this.destroyRef)`. See https://angular.dev/guide/di/dependency-injection-context and https://angular.dev/ecosystem/rxjs-interop/take-until-destroyed
+
+  ⚠ angular(no-implicit-take-until-destroyed): `takeUntilDestroyed()` must be called with an explicit `DestroyRef` parameter when used outside of an injection context.
+   ╭─[no_implicit_take_until_destroyed.ts:3:45]
+ 2 │ class AppModule {
+ 3 │   private data = this.http.get('/api').pipe(takeUntilDestroyed());
+   ·                                             ────────────────────
+ 4 │ }
+   ╰────
+  help: Inject `DestroyRef` with `inject(DestroyRef)` and pass it: `takeUntilDestroyed(this.destroyRef)`. See https://angular.dev/guide/di/dependency-injection-context and https://angular.dev/ecosystem/rxjs-interop/take-until-destroyed
+
+  ⚠ angular(no-implicit-take-until-destroyed): `takeUntilDestroyed()` must be called with an explicit `DestroyRef` parameter when used outside of an injection context.
+    ╭─[no_implicit_take_until_destroyed.ts:10:21]
+  9 │   loadData() {
+ 10 │     this.data$.pipe(takeUntilDestroyed()).subscribe();
+    ·                     ────────────────────
+ 11 │   }
+    ╰────
+  help: Inject `DestroyRef` with `inject(DestroyRef)` and pass it: `takeUntilDestroyed(this.destroyRef)`. See https://angular.dev/guide/di/dependency-injection-context and https://angular.dev/ecosystem/rxjs-interop/take-until-destroyed
+
+  ⚠ angular(no-implicit-take-until-destroyed): `takeUntilDestroyed()` must be called with an explicit `DestroyRef` parameter when used outside of an injection context.
+    ╭─[no_implicit_take_until_destroyed.ts:12:21]
+ 11 │   loadData() {
+ 12 │     this.data$.pipe(takeUntilDestroyed()).subscribe();
+    ·                     ────────────────────
+ 13 │   }
+    ╰────
+  help: Inject `DestroyRef` with `inject(DestroyRef)` and pass it: `takeUntilDestroyed(this.destroyRef)`. See https://angular.dev/guide/di/dependency-injection-context and https://angular.dev/ecosystem/rxjs-interop/take-until-destroyed
+
+  ⚠ angular(no-implicit-take-until-destroyed): `takeUntilDestroyed()` must be called with an explicit `DestroyRef` parameter when used outside of an injection context.
+    ╭─[no_implicit_take_until_destroyed.ts:10:28]
+  9 │   private loadData() {
+ 10 │     return this.data$.pipe(takeUntilDestroyed());
+    ·                            ────────────────────
+ 11 │   }
+    ╰────
+  help: Inject `DestroyRef` with `inject(DestroyRef)` and pass it: `takeUntilDestroyed(this.destroyRef)`. See https://angular.dev/guide/di/dependency-injection-context and https://angular.dev/ecosystem/rxjs-interop/take-until-destroyed
+
+  ⚠ angular(no-implicit-take-until-destroyed): `takeUntilDestroyed()` must be called with an explicit `DestroyRef` parameter when used outside of an injection context.
+    ╭─[no_implicit_take_until_destroyed.ts:12:21]
+ 11 │   #subscribe() {
+ 12 │     this.data$.pipe(takeUntilDestroyed()).subscribe();
+    ·                     ────────────────────
+ 13 │   }
+    ╰────
+  help: Inject `DestroyRef` with `inject(DestroyRef)` and pass it: `takeUntilDestroyed(this.destroyRef)`. See https://angular.dev/guide/di/dependency-injection-context and https://angular.dev/ecosystem/rxjs-interop/take-until-destroyed

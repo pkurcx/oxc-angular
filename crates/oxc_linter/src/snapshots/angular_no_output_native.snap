@@ -1,0 +1,165 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:3:23]
+ 2 │         @Component({
+ 3 │           'outputs': ['pagehide']
+   ·                       ──────────
+ 4 │         })
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:35]
+ 3 │           inputs: ['abort'],
+ 4 │           ['outputs']: [boundary, `test: copy`],
+   ·                                   ────────────
+ 5 │         })
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:35]
+ 3 │           inputs: ['abort'],
+ 4 │           [`outputs`]: [boundary, `test: copy`],
+   ·                                   ────────────
+ 5 │         })
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:3:21]
+ 2 │         @Directive({
+ 3 │           outputs: ['orientationchange: orientation'],
+   ·                     ────────────────────────────────
+ 4 │         })
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:21]
+ 3 │         class Test {
+ 4 │           @Output() change: EventEmitter<any> = new EventEmitter<{}>();
+   ·                     ──────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:11]
+ 3 │         class Test {
+ 4 │           change = output();
+   ·           ──────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:39]
+ 3 │         class Test {
+ 4 │           @Output() @Custom('change') 'change' = new EventEmitter<void>();
+   ·                                       ────────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:11]
+ 3 │         class Test {
+ 4 │           'change' = output();
+   ·           ────────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:29]
+ 3 │         class Test {
+ 4 │           @Custom() @Output(`change`) _change = getOutput();
+   ·                             ────────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:37]
+ 3 │         class Test {
+ 4 │           _change = output({ alias: `change` });
+   ·                                     ────────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:19]
+ 3 │         class Test {
+ 4 │           @Output('change') _change = (this.subject$ as Subject<{blur: boolean}>).pipe();
+   ·                   ────────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:37]
+ 3 │         class Test {
+ 4 │           _change = output({ alias: 'change' });
+   ·                                     ────────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:33]
+ 3 │         class Test {
+ 4 │           @Output('getter') get 'cut'() {}
+   ·                                 ─────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:19]
+ 3 │         class Test {
+ 4 │           @Output(`devicemotion`) get getter() {}
+   ·                   ──────────────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:19]
+ 3 │         class Test {
+ 4 │           @Output('click') blur = this.getOutput();
+   ·                   ───────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:28]
+ 3 │         class Test {
+ 4 │           @Output('click') blur = this.getOutput();
+   ·                            ────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:11]
+ 3 │         class Test {
+ 4 │           blur = output({ alias: 'click' });
+   ·           ────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.
+
+  ⚠ angular(no-output-native): Output bindings, including aliases, should not be named as standard DOM events
+   ╭─[no_output_native.ts:4:34]
+ 3 │         class Test {
+ 4 │           blur = output({ alias: 'click' });
+   ·                                  ───────
+ 5 │         }
+   ╰────
+  help: Use a name that describes the component event, such as `itemSelected`.

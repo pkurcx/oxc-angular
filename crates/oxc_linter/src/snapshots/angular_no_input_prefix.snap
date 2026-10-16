@@ -1,0 +1,147 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:3:18]
+ 2 │       @Component({
+ 3 │         inputs: ['on']
+   ·                  ────
+ 4 │       })
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:4:29]
+ 3 │         outputs: [onCredit],
+ 4 │         'inputs': [onLevel, `test: on`, onFunction()],
+   ·                             ──────────
+ 5 │       })
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:3:24]
+ 2 │         @Component({
+ 3 │           ['inputs']: ['onTest: test', ...onArray],
+   ·                        ──────────────
+ 4 │         })
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:3:24]
+ 2 │         @Directive({
+ 3 │           [`inputs`]: ['onTest: test', ...onArray],
+   ·                        ──────────────
+ 4 │         })
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:4:20]
+ 3 │         class Test {
+ 4 │           @Input() on: EventEmitter<any> = new EventEmitter<{}>();
+   ·                    ──
+ 5 │         }
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:4:34]
+ 3 │         class Test {
+ 4 │           @Input() @Custom('on') 'onPrefix' = new EventEmitter<void>();
+   ·                                  ──────────
+ 5 │         }
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:4:28]
+ 3 │         class Test {
+ 4 │           @Custom() @Input(`on`) _on = getInput();
+   ·                            ────
+ 5 │         }
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:4:53]
+ 3 │         class Test {
+ 4 │           @Custom() @Input({ required: true, alias: `on` }) _on = getInput();
+   ·                                                     ────
+ 5 │         }
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:4:18]
+ 3 │         class Test {
+ 4 │           @Input('onPrefix') _on = (this.subject$ as Subject<{on: boolean}>).pipe();
+   ·                  ──────────
+ 5 │         }
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:4:27]
+ 3 │         class Test {
+ 4 │           @Input({ alias: 'onPrefix', required: true }) _on = (this.subject$ as Subject<{on: boolean}>).pipe();
+   ·                           ──────────
+ 5 │         }
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:4:32]
+ 3 │         class Test {
+ 4 │           @Input('setter') set 'on-setter'(value) {}
+   ·                                ───────────
+ 5 │         }
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:4:18]
+ 3 │         class Test {
+ 4 │           @Input(`onSetter`) set setter(value) {}
+   ·                  ──────────
+ 5 │         }
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on", "is" or "should"
+   ╭─[no_input_prefix.ts:4:24]
+ 3 │         class Test {
+ 4 │           @Input('on') isPrefix = this.getInput();
+   ·                        ────────
+ 5 │         }
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on", "is" or "should"
+   ╭─[no_input_prefix.ts:4:18]
+ 3 │         class Test {
+ 4 │           @Input('on') isPrefix = this.getInput();
+   ·                  ────
+ 5 │         }
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:4:18]
+ 3 │       class Test {
+ 4 │         @Input() on: string = 'on';
+   ·                  ──
+ 5 │       }
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.
+
+  ⚠ angular(no-input-prefix): Input bindings, including aliases, should not be named, nor prefixed by "on"
+   ╭─[no_input_prefix.ts:4:18]
+ 3 │         class Test {
+ 4 │           @Input('on') isPrefix = `on`;
+   ·                  ────
+ 5 │         }
+   ╰────
+  help: Name inputs like HTML attributes, e.g. `disabled` rather than `isDisabled`.

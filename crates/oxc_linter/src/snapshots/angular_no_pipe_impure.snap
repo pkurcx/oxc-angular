@@ -1,0 +1,39 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-pipe-impure): Impure pipes should be avoided because they are invoked on each change-detection cycle
+   ╭─[no_pipe_impure.ts:2:3]
+ 1 │ @Pipe({
+ 2 │   pure: false
+   ·   ───────────
+ 3 │ })
+   ╰────
+  help: Remove `pure: false` and keep the pipe pure.
+
+  ⚠ angular(no-pipe-impure): Impure pipes should be avoided because they are invoked on each change-detection cycle
+   ╭─[no_pipe_impure.ts:3:3]
+ 2 │   name: 'test',
+ 3 │   'pure': false,
+   ·   ─────────────
+ 4 │ })
+   ╰────
+  help: Remove `pure: false` and keep the pipe pure.
+
+  ⚠ angular(no-pipe-impure): Impure pipes should be avoided because they are invoked on each change-detection cycle
+   ╭─[no_pipe_impure.ts:3:3]
+ 2 │   name: 'test',
+ 3 │   ['pure']: !true
+   ·   ───────────────
+ 4 │ })
+   ╰────
+  help: Remove `pure: false` and keep the pipe pure.
+
+  ⚠ angular(no-pipe-impure): Impure pipes should be avoided because they are invoked on each change-detection cycle
+   ╭─[no_pipe_impure.ts:3:3]
+ 2 │   name: 'test',
+ 3 │   [`pure`]: false
+   ·   ───────────────
+ 4 │ })
+   ╰────
+  help: Remove `pure: false` and keep the pipe pure.

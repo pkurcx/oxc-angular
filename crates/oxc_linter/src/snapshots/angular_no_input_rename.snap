@@ -1,0 +1,318 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:3:18]
+ 2 │       @Component({
+ 3 │         inputs: ['a: b']
+   ·                  ──────
+ 4 │       })
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:4:30]
+ 3 │         outputs: ['abort'],
+ 4 │         'inputs': [boundary, `test: copy`, 'check: check'],
+   ·                              ────────────
+ 5 │       })
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:3:22]
+ 2 │       @Component({
+ 3 │         ['inputs']: ['orientation: orientation'],
+   ·                      ──────────────────────────
+ 4 │       })
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:3:22]
+ 2 │       @Directive({
+ 3 │         [`inputs`]: ['orientation: orientation'],
+   ·                      ──────────────────────────
+ 4 │       })
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:4:26]
+ 3 │       class Test {
+ 4 │         @Custom() @Input(`change`) _change = getInput();
+   ·                          ────────
+ 5 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:4:37]
+ 3 │       class Test {
+ 4 │         _change = input(1, { alias: `change` });
+   ·                                     ────────
+ 5 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:4:51]
+ 3 │       class Test {
+ 4 │         _change = input.required<number>({ alias: `change` });
+   ·                                                   ────────
+ 5 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:4:16]
+ 3 │       class Test {
+ 4 │         @Input('change') change = (this.subject$ as Subject<{blur: boolean}>).pipe();
+   ·                ────────
+ 5 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:4:36]
+ 3 │       class Test {
+ 4 │         change = input(1, { alias: 'change' });
+   ·                                    ────────
+ 5 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:4:50]
+ 3 │       class Test {
+ 4 │         change = input.required<number>({ alias: 'change' });
+   ·                                                  ────────
+ 5 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:4:25]
+ 3 │       class Test {
+ 4 │         @Input({ alias: 'change' }) change = (this.subject$ as Subject<{blur: boolean}>).pipe();
+   ·                         ────────
+ 5 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:4:16]
+ 3 │       class Test {
+ 4 │         @Input(`devicechange`) set setter(setter: string) {}
+   ·                ──────────────
+ 5 │ 
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:16]
+ 5 │       class Test {
+ 6 │         @Input('aria-invalid') ariaBusy: string;
+   ·                ──────────────
+ 7 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:38]
+ 5 │       class Test {
+ 6 │         ariaBusy = input(1, { alias: 'aria-invalid' });
+   ·                                      ──────────────
+ 7 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:52]
+ 5 │       class Test {
+ 6 │         ariaBusy = input.required<number>({ alias: 'aria-invalid' });
+   ·                                                    ──────────────
+ 7 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:16]
+ 5 │       class Test {
+ 6 │         @Input('fooColor') colors: string;
+   ·                ──────────
+ 7 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:36]
+ 5 │       class Test {
+ 6 │         colors = input(1, { alias: 'fooColor' });
+   ·                                    ──────────
+ 7 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:50]
+ 5 │       class Test {
+ 6 │         colors = input.required<number>({ alias: 'fooColor' });
+   ·                                                  ──────────
+ 7 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:16]
+ 5 │       class Test {
+ 6 │         @Input('foocolor') color: string;
+   ·                ──────────
+ 7 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:35]
+ 5 │       class Test {
+ 6 │         color = input(1, { alias: 'foocolor' });
+   ·                                   ──────────
+ 7 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:49]
+ 5 │       class Test {
+ 6 │         color = input.required<number>({ alias: 'foocolor' });
+   ·                                                 ──────────
+ 7 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+    ╭─[no_input_rename.ts:9:16]
+  8 │       class Test {
+  9 │         @Input('click') blur = this.getInput();
+    ·                ───────
+ 10 │       }
+    ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+    ╭─[no_input_rename.ts:9:34]
+  8 │       class Test {
+  9 │         blur = input(1, { alias: 'click' });
+    ·                                  ───────
+ 10 │       }
+    ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+    ╭─[no_input_rename.ts:9:48]
+  8 │       class Test {
+  9 │         blur = input.required<number>({ alias: 'click' });
+    ·                                                ───────
+ 10 │       }
+    ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:16]
+ 5 │       class Test {
+ 6 │         @Input('notFooDirective') foo: Foo;
+   ·                ─────────────────
+ 7 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:30]
+ 5 │       class Test {
+ 6 │         foo = input({ alias: 'notFooDirective' });
+   ·                              ─────────────────
+ 7 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:47]
+ 5 │       class Test {
+ 6 │         foo = input.required<number>({ alias: 'notFooDirective' });
+   ·                                               ─────────────────
+ 7 │       }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:37]
+ 5 │         class Test {
+ 6 │           color = input(1, { alias: 'test', after: 'it' });
+   ·                                     ──────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:51]
+ 5 │         class Test {
+ 6 │           color = input.required<number>({ alias: 'test', after: 'it' });
+   ·                                                   ──────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:51]
+ 5 │         class Test {
+ 6 │           color = input(1, { before: 'it', alias: 'test', });
+   ·                                                   ──────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:65]
+ 5 │         class Test {
+ 6 │           color = input.required<number>({ before: 'it', alias: 'test', });
+   ·                                                                 ──────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:51]
+ 5 │         class Test {
+ 6 │           color = input(1, { before: 'it', alias: 'test' });
+   ·                                                   ──────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:65]
+ 5 │         class Test {
+ 6 │           color = input.required<number>({ before: 'it', alias: 'test' });
+   ·                                                                 ──────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:51]
+ 5 │         class Test {
+ 6 │           color = input(1, { before: 'it', alias: 'test', after: 'it' });
+   ·                                                   ──────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names
+
+  ⚠ angular(no-input-rename): Input bindings should not be aliased
+   ╭─[no_input_rename.ts:6:65]
+ 5 │         class Test {
+ 6 │           color = input.required<number>({ before: 'it', alias: 'test', after: 'it' });
+   ·                                                                 ──────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/inputs#choosing-input-names

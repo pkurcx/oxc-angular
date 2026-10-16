@@ -1,0 +1,255 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngDoBootstrap` lifecycle method within `@Component()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngDoBootstrap() {}
+   ·           ─────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngDoBootstrap` lifecycle method within `@Directive()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngDoBootstrap() {}
+   ·           ─────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngAfterContentChecked` lifecycle method within `@Injectable()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngAfterContentChecked() { console.log('AfterContentChecked'); }
+   ·           ─────────────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngAfterContentInit` lifecycle method within `@Injectable()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngAfterContentInit() { console.log('ngAfterContentInit'); }
+   ·           ──────────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngAfterViewInit` lifecycle method within `@Injectable()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngAfterViewInit() { console.log('ngAfterViewInit'); }
+   ·           ───────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngDoBootstrap` lifecycle method within `@Injectable()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngDoBootstrap() {}
+   ·           ─────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngDoCheck` lifecycle method within `@Injectable()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngDoCheck() { console.log('ngDoCheck'); }
+   ·           ─────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngOnChanges` lifecycle method within `@Injectable()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngOnChanges() { console.log('ngOnChanges'); }
+   ·           ───────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngOnInit` lifecycle method within `@Injectable()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngOnInit() { console.log('ngOnInit'); }
+   ·           ────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngAfterContentChecked` lifecycle method within `@NgModule()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngAfterContentChecked() { console.log('ngAfterContentChecked'); }
+   ·           ─────────────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngAfterContentInit` lifecycle method within `@NgModule()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngAfterContentInit() { console.log('ngAfterContentInit'); }
+   ·           ──────────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngAfterViewChecked` lifecycle method within `@NgModule()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngAfterViewChecked() { console.log('ngAfterViewChecked'); }
+   ·           ──────────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngAfterViewInit` lifecycle method within `@NgModule()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngAfterViewInit() { console.log('ngAfterViewInit'); }
+   ·           ───────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngDoCheck` lifecycle method within `@NgModule()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngDoCheck() { console.log('ngDoCheck'); }
+   ·           ─────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngOnChanges` lifecycle method within `@NgModule()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngOnChanges() { console.log('ngOnChanges'); }
+   ·           ───────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngOnInit` lifecycle method within `@NgModule()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngOnInit() { console.log('ngOnInit'); }
+   ·           ────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngOnDestroy` lifecycle method within `@NgModule()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngOnDestroy() { console.log('ngOnDestroy'); }
+   ·           ───────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngAfterContentChecked` lifecycle method within `@Pipe()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngAfterContentChecked() { console.log('ngAfterContentChecked'); }
+   ·           ─────────────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngAfterContentInit` lifecycle method within `@Pipe()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngAfterContentInit() { console.log('ngAfterContentInit'); }
+   ·           ──────────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngAfterViewChecked` lifecycle method within `@Pipe()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngAfterViewChecked() { console.log('ngAfterViewChecked'); }
+   ·           ──────────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngAfterViewInit` lifecycle method within `@Pipe()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngAfterViewInit() { console.log('ngAfterViewInit'); }
+   ·           ───────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngDoBootstrap` lifecycle method within `@Pipe()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngDoBootstrap() {}
+   ·           ─────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngDoCheck` lifecycle method within `@Pipe()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngDoCheck() { console.log('ngDoCheck'); }
+   ·           ─────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngOnChanges` lifecycle method within `@Pipe()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngOnChanges() { console.log('ngOnChanges'); }
+   ·           ───────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngOnInit` lifecycle method within `@Pipe()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngOnInit() { console.log('ngOnInit'); }
+   ·           ────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngOnInit` lifecycle method within `@Service()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngOnInit() { console.log('ngOnInit'); }
+   ·           ────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngAfterViewInit` lifecycle method within `@Service()` classes.
+   ╭─[contextual_lifecycle.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngAfterViewInit() { console.log('ngAfterViewInit'); }
+   ·           ───────────────
+ 5 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.
+
+  ⚠ angular(contextual-lifecycle): Angular will not invoke the `ngDoCheck` lifecycle method within `@Pipe()` classes.
+   ╭─[contextual_lifecycle.ts:6:11]
+ 5 │           
+ 6 │           ngDoCheck() {}
+   ·           ─────────
+ 7 │         }
+   ╰────
+  help: Remove the method, or move it to a class type whose lifecycle includes it.

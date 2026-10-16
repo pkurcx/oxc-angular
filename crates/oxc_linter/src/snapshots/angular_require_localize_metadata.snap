@@ -1,0 +1,116 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a description.
+   ╭─[require_localize_metadata.ts:1:32]
+ 1 │ const localizedText = $localize`Hello i18n!`;
+   ·                                ─────────────
+   ╰────
+  help: Add a description, as in `:description:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a description.
+   ╭─[require_localize_metadata.ts:4:37]
+ 3 │ };
+ 4 │ localizedTexts.helloI18n = $localize`Hello i18n!`;
+   ·                                     ─────────────
+   ╰────
+  help: Add a description, as in `:description:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a description.
+   ╭─[require_localize_metadata.ts:1:17]
+ 1 │ return $localize`Hello i18n!`;
+   ·                 ─────────────
+   ╰────
+  help: Add a description, as in `:description:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a description.
+   ╭─[require_localize_metadata.ts:1:23]
+ 1 │ someFunction($localize`Hello i18n!`);
+   ·                       ─────────────
+   ╰────
+  help: Add a description, as in `:description:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a description.
+   ╭─[require_localize_metadata.ts:1:32]
+ 1 │ const localizedText = $localize`:site header|:Hello i18n!`;
+   ·                                ───────────────────────────
+   ╰────
+  help: Add a description, as in `:description:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a description.
+   ╭─[require_localize_metadata.ts:1:32]
+ 1 │ const localizedText = $localize`:@@custom_id:Hello i18n!`;
+   ·                                ──────────────────────────
+   ╰────
+  help: Add a description, as in `:description:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a description.
+   ╭─[require_localize_metadata.ts:1:32]
+ 1 │ const localizedText = $localize`:site header|@@custom_id:Hello i18n!`;
+   ·                                ──────────────────────────────────────
+   ╰────
+  help: Add a description, as in `:description:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a meaning.
+   ╭─[require_localize_metadata.ts:1:32]
+ 1 │ const localizedText = $localize`Hello i18n!`;
+   ·                                ─────────────
+   ╰────
+  help: Add a meaning, as in `:meaning|description:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a meaning.
+   ╭─[require_localize_metadata.ts:1:32]
+ 1 │ const localizedText = $localize`:An introduction header for this sample:Hello i18n!`;
+   ·                                ─────────────────────────────────────────────────────
+   ╰────
+  help: Add a meaning, as in `:meaning|description:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a meaning.
+   ╭─[require_localize_metadata.ts:1:32]
+ 1 │ const localizedText = $localize`:|An introduction header for this sample:Hello i18n!`;
+   ·                                ──────────────────────────────────────────────────────
+   ╰────
+  help: Add a meaning, as in `:meaning|description:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a description.
+   ╭─[require_localize_metadata.ts:1:32]
+ 1 │ const localizedText = $localize`:Hello i18n!`;
+   ·                                ──────────────
+   ╰────
+  help: Add a description, as in `:description:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a meaning.
+   ╭─[require_localize_metadata.ts:1:32]
+ 1 │ const localizedText = $localize`:Hello i18n!`;
+   ·                                ──────────────
+   ╰────
+  help: Add a meaning, as in `:meaning|description:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a custom id.
+   ╭─[require_localize_metadata.ts:1:32]
+ 1 │ const localizedText = $localize`Hello i18n!`;
+   ·                                ─────────────
+   ╰────
+  help: Add a custom id, as in `:@@custom-id:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a custom id.
+   ╭─[require_localize_metadata.ts:1:32]
+ 1 │ const localizedText = $localize`:@some.custom.id:Hello i18n!`;
+   ·                                ──────────────────────────────
+   ╰────
+  help: Add a custom id, as in `:@@custom-id:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a custom id.
+   ╭─[require_localize_metadata.ts:1:32]
+ 1 │ const localizedText = $localize`:meaning|description:Hello i18n!`;
+   ·                                ──────────────────────────────────
+   ╰────
+  help: Add a custom id, as in `:@@custom-id:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation
+
+  ⚠ angular(require-localize-metadata): $localize tagged messages should contain a custom id matching the pattern /^some.wrong.pattern$/ on 'some.custom.id'.
+   ╭─[require_localize_metadata.ts:1:32]
+ 1 │ const localizedText = $localize`:@@some.custom.id:Hello i18n!`;
+   ·                                ───────────────────────────────
+   ╰────
+  help: Add a custom id, as in `:@@custom-id:text`. See https://angular.dev/guide/i18n/prepare#i18n-metadata-for-translation

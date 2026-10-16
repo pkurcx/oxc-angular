@@ -80,6 +80,17 @@ export type CyclomaticComplexityVariant = "classic" | "modified";
  */
 export type AllowOption = boolean | AllowMode;
 export type AllowMode = "dynamic";
+/**
+ * Options of `component-selector` and `directive-selector`: one config (whose `prefix`
+ * defaults to `"app"`), or an array of 1-2 configs with distinct `type`s and no default prefix.
+ */
+export type SelectorOptions = SingleSelectorConfig | SelectorConfigItem[];
+export type OneOrManyFor_String = string | string[];
+export type SelectorStyle = "camelCase" | "kebab-case";
+export type OneOrManyFor_SelectorType = SelectorType | SelectorType[];
+export type SelectorType = "element" | "attribute";
+export type StylesMode = "string" | "array";
+export type RequireCustomId = boolean | string;
 export type Mode2 = "as-needed" | "always" | "never";
 export type AlwaysNever = "always" | "never";
 export type OptionsJsonEnum =
@@ -442,7 +453,7 @@ export type TagNamePreference =
       [k: string]: unknown | undefined;
     }
   | boolean;
-export type OneOrManyFor_String = string | string[];
+export type OneOrManyFor_String2 = string | string[];
 export type CustomComponent =
   | string
   | {
@@ -953,7 +964,53 @@ export interface DummyRuleMap {
   "angular-template/table-scope"?: RuleNoConfig;
   "angular-template/use-track-by-function"?: RuleNoConfig | [AllowWarnDeny, UseTrackByFunctionConfig];
   "angular-template/valid-aria"?: RuleNoConfig;
+  "angular/component-class-suffix"?: RuleNoConfig | [AllowWarnDeny, ComponentClassSuffixConfig];
+  "angular/component-max-inline-declarations"?: RuleNoConfig | [AllowWarnDeny, ComponentMaxInlineDeclarationsConfig];
+  "angular/component-selector"?: RuleNoConfig | [AllowWarnDeny, SelectorOptions];
+  "angular/computed-must-return"?: RuleNoConfig;
+  "angular/consistent-component-styles"?: RuleNoConfig | [AllowWarnDeny, StylesMode];
+  "angular/contextual-decorator"?: RuleNoConfig;
+  "angular/contextual-lifecycle"?: RuleNoConfig;
+  "angular/directive-class-suffix"?: RuleNoConfig | [AllowWarnDeny, DirectiveClassSuffixConfig];
+  "angular/directive-selector"?: RuleNoConfig | [AllowWarnDeny, SelectorOptions];
+  "angular/inject-at-top"?: RuleNoConfig | [AllowWarnDeny, InjectAtTopConfig];
+  "angular/no-async-lifecycle-method"?: RuleNoConfig;
+  "angular/no-attribute-decorator"?: RuleNoConfig;
+  "angular/no-duplicates-in-metadata-arrays"?: RuleNoConfig;
+  "angular/no-empty-lifecycle-method"?: RuleNoConfig;
+  "angular/no-forward-ref"?: RuleNoConfig;
+  "angular/no-implicit-take-until-destroyed"?: RuleNoConfig;
+  "angular/no-input-prefix"?: RuleNoConfig | [AllowWarnDeny, NoInputPrefixConfig];
+  "angular/no-input-rename"?: RuleNoConfig | [AllowWarnDeny, NoInputRenameConfig];
+  "angular/no-inputs-metadata-property"?: RuleNoConfig;
+  "angular/no-lifecycle-call"?: RuleNoConfig;
+  "angular/no-output-native"?: RuleNoConfig;
+  "angular/no-output-on-prefix"?: RuleNoConfig;
+  "angular/no-output-rename"?: RuleNoConfig;
+  "angular/no-outputs-metadata-property"?: RuleNoConfig;
+  "angular/no-pipe-impure"?: RuleNoConfig;
+  "angular/no-queries-metadata-property"?: RuleNoConfig;
+  "angular/pipe-prefix"?: RuleNoConfig | [AllowWarnDeny, PipePrefixConfig];
+  "angular/prefer-host-metadata-property"?: RuleNoConfig;
+  "angular/prefer-inject"?: RuleNoConfig;
+  "angular/prefer-on-push-component-change-detection"?:
+    RuleNoConfig | [AllowWarnDeny, PreferOnPushComponentChangeDetectionConfig];
+  "angular/prefer-output-emitter-ref"?: RuleNoConfig;
+  "angular/prefer-output-readonly"?: RuleNoConfig;
+  "angular/prefer-service-decorator"?: RuleNoConfig;
+  "angular/prefer-standalone"?: RuleNoConfig | [AllowWarnDeny, PreferStandaloneConfig];
+  "angular/relative-url-prefix"?: RuleNoConfig;
+  "angular/require-lifecycle-on-prototype"?: RuleNoConfig;
+  "angular/require-localize-metadata"?: RuleNoConfig | [AllowWarnDeny, RequireLocalizeMetadataConfig];
+  "angular/runtime-localize"?: RuleNoConfig;
+  "angular/sort-keys-in-type-decorator"?: RuleNoConfig | [AllowWarnDeny, SortKeysInTypeDecoratorConfig];
+  "angular/sort-lifecycle-methods"?: RuleNoConfig;
   "angular/sorted-component-imports"?: RuleNoConfig;
+  "angular/use-component-selector"?: RuleNoConfig;
+  "angular/use-component-view-encapsulation"?: RuleNoConfig;
+  "angular/use-injectable-provided-in"?: RuleNoConfig | [AllowWarnDeny, UseInjectableProvidedInConfig];
+  "angular/use-lifecycle-interface"?: RuleNoConfig;
+  "angular/use-pipe-transform-interface"?: RuleNoConfig;
   "array-callback-return"?: RuleNoConfig | [AllowWarnDeny, ArrayCallbackReturn];
   "arrow-body-style"?: RuleNoConfig | [AllowWarnDeny, Mode2] | [AllowWarnDeny, Mode2, ArrowBodyStyleConfig];
   "block-scoped-var"?: RuleNoConfig;
@@ -1887,6 +1944,20 @@ export interface DummyRuleMap {
     | [AllowWarnDeny, PreferContextualForVariablesConfig]
     | [AllowWarnDeny, PreferStaticStringPropertiesConfig]
     | [AllowWarnDeny, UseTrackByFunctionConfig]
+    | [AllowWarnDeny, ComponentClassSuffixConfig]
+    | [AllowWarnDeny, ComponentMaxInlineDeclarationsConfig]
+    | [AllowWarnDeny, SelectorOptions]
+    | [AllowWarnDeny, StylesMode]
+    | [AllowWarnDeny, DirectiveClassSuffixConfig]
+    | [AllowWarnDeny, InjectAtTopConfig]
+    | [AllowWarnDeny, NoInputPrefixConfig]
+    | [AllowWarnDeny, NoInputRenameConfig]
+    | [AllowWarnDeny, PipePrefixConfig]
+    | [AllowWarnDeny, PreferOnPushComponentChangeDetectionConfig]
+    | [AllowWarnDeny, PreferStandaloneConfig]
+    | [AllowWarnDeny, RequireLocalizeMetadataConfig]
+    | [AllowWarnDeny, SortKeysInTypeDecoratorConfig]
+    | [AllowWarnDeny, UseInjectableProvidedInConfig]
     | [AllowWarnDeny, ArrayCallbackReturn]
     | [AllowWarnDeny, Mode2]
     | [AllowWarnDeny, Mode2, ArrowBodyStyleConfig]
@@ -2492,6 +2563,136 @@ export interface UseTrackByFunctionConfig {
    * directive that adds a `trackById` key to `*ngFor`.
    */
   alias?: string[];
+}
+export interface ComponentClassSuffixConfig {
+  /**
+   * Suffixes a `@Component` class name may end with.
+   */
+  suffixes?: string[];
+}
+export interface ComponentMaxInlineDeclarationsConfig {
+  /**
+   * Maximum number of lines in an inline `animations` array, brackets excluded.
+   */
+  animations?: number;
+  /**
+   * Maximum number of lines in inline `styles`, summed over all entries.
+   */
+  styles?: number;
+  /**
+   * Maximum number of lines in an inline `template`.
+   */
+  template?: number;
+}
+export interface SingleSelectorConfig {
+  prefix?: OneOrManyFor_String;
+  style: SelectorStyle;
+  type: OneOrManyFor_SelectorType;
+}
+export interface SelectorConfigItem {
+  prefix?: OneOrManyFor_String;
+  style: SelectorStyle;
+  type: SelectorType;
+}
+export interface DirectiveClassSuffixConfig {
+  /**
+   * Suffixes a `@Directive` class name may end with. `Validator` is also accepted when the
+   * class implements an interface whose name ends with `Validator`.
+   */
+  suffixes?: string[];
+}
+export interface InjectAtTopConfig {
+  /**
+   * Additional functions that perform injection, such as your own `injectTranslations()`
+   * helper. Each entry is a regular expression that must match the whole function name, so
+   * plain names such as `injectTranslations` work as well as patterns such as `inject[A-Z].*`.
+   */
+  additionalInjectFunctions?: string[];
+}
+export interface NoInputPrefixConfig {
+  /**
+   * Prefixes that input names and aliases must not use, such as `on` or `is`.
+   */
+  prefixes?: string[];
+}
+export interface NoInputRenameConfig {
+  /**
+   * Aliases that are always allowed.
+   */
+  allowedNames?: string[];
+}
+export interface PipePrefixConfig {
+  /**
+   * Prefixes a pipe `name` may start with, followed by a non-lowercase character. The rule
+   * does nothing while the list is empty.
+   */
+  prefixes?: string[];
+}
+export interface PreferOnPushComponentChangeDetectionConfig {
+  /**
+   * Whether to allow a component to set `changeDetection: ChangeDetectionStrategy.OnPush`
+   * explicitly even though it is now the default.
+   */
+  allowExplicitOnPush?: boolean;
+}
+export interface PreferStandaloneConfig {
+  /**
+   * Whether to allow a Component, Directive or Pipe to set `standalone: true` explicitly even
+   * though it is now the default.
+   */
+  allowExplicitStandalone?: boolean;
+}
+export interface RequireLocalizeMetadataConfig {
+  /**
+   * Require a custom id, as in `` $localize`:@@custom-id:text` ``. A string also requires the
+   * id to match it as a regular expression.
+   */
+  requireCustomId?: RequireCustomId;
+  /**
+   * Require a description, as in `` $localize`:description:text` ``.
+   */
+  requireDescription?: boolean;
+  /**
+   * Require a meaning, as in `` $localize`:meaning|description:text` ``.
+   */
+  requireMeaning?: boolean;
+}
+export interface SortKeysInTypeDecoratorConfig {
+  /**
+   * Key order for `@Component`.
+   */
+  Component?: string[];
+  /**
+   * Key order for `@Directive`.
+   */
+  Directive?: string[];
+  /**
+   * Key order for `@Injectable`.
+   */
+  Injectable?: string[];
+  /**
+   * Key order for `@NgModule`.
+   */
+  NgModule?: string[];
+  /**
+   * Key order for `@Pipe`.
+   */
+  Pipe?: string[];
+  /**
+   * When `false`, keys missing from the configured order are reported.
+   */
+  allowUnconfiguredProperties?: boolean;
+}
+export interface UseInjectableProvidedInConfig {
+  /**
+   * Accept `providedIn: null`, which Angular treats like a missing `providedIn`.
+   */
+  allowProvidedInNull?: boolean;
+  /**
+   * Class names to skip. `/.../` is a regular expression (for example `/Effects$/`); any other
+   * string must match the class name exactly.
+   */
+  ignoreClassNamePattern?: string;
 }
 export interface ArrayCallbackReturn {
   /**
@@ -7720,7 +7921,7 @@ export interface NextPluginSettings {
    * }
    * ```
    */
-  rootDir?: OneOrManyFor_String;
+  rootDir?: OneOrManyFor_String2;
   [k: string]: unknown | undefined;
 }
 /**

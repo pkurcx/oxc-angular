@@ -1,0 +1,174 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:3:21]
+ 2 │         @Component({
+ 3 │           outputs: ['a: b']
+   ·                     ──────
+ 4 │         })
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:4:33]
+ 3 │           inputs: ['abort'],
+ 4 │           'outputs': [boundary, `test: copy`],
+   ·                                 ────────────
+ 5 │         })
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:3:25]
+ 2 │         @Component({
+ 3 │           ['outputs']: ['orientation: orientation'],
+   ·                         ──────────────────────────
+ 4 │         })
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:3:25]
+ 2 │         @Directive({
+ 3 │           [`outputs`]: ['orientation: orientation'],
+   ·                         ──────────────────────────
+ 4 │         })
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:4:29]
+ 3 │         class Test {
+ 4 │           @Custom() @Output(`change`) _change = getOutput();
+   ·                             ────────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:4:37]
+ 3 │         class Test {
+ 4 │           _change = output({ alias: `change` });
+   ·                                     ────────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:4:19]
+ 3 │         class Test {
+ 4 │           @Output('change') change = (this.subject$ as Subject<{blur: boolean}>).pipe();
+   ·                   ────────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:4:36]
+ 3 │         class Test {
+ 4 │           change = output({ alias: 'change' });
+   ·                                    ────────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:4:19]
+ 3 │         class Test {
+ 4 │           @Output(`devicechange`) get getter() {}
+   ·                   ──────────────
+ 5 │ 
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:6:19]
+ 5 │         class Test {
+ 6 │           @Output('fooColor') colors: string;
+   ·                   ──────────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:6:36]
+ 5 │         class Test {
+ 6 │           colors = output({ alias: 'fooColor' });
+   ·                                    ──────────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:6:19]
+ 5 │         class Test {
+ 6 │           @Output('foocolor') color: string;
+   ·                   ──────────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:6:35]
+ 5 │         class Test {
+ 6 │           color = output({ alias: 'foocolor' });
+   ·                                   ──────────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+    ╭─[no_output_rename.ts:9:19]
+  8 │         class Test {
+  9 │           @Output('kebab-case') blur = this.getOutput();
+    ·                   ────────────
+ 10 │         }
+    ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+    ╭─[no_output_rename.ts:9:34]
+  8 │         class Test {
+  9 │           blur = output({ alias: 'kebab-case' });
+    ·                                  ────────────
+ 10 │         }
+    ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:6:35]
+ 5 │         class Test {
+ 6 │           color = output({ alias: 'test', after: 'it' });
+   ·                                   ──────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:6:49]
+ 5 │         class Test {
+ 6 │           color = output({ before: 'it', alias: 'test', });
+   ·                                                 ──────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:6:49]
+ 5 │         class Test {
+ 6 │           color = output({ before: 'it', alias: 'test' });
+   ·                                                 ──────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-rename): Output bindings should not be aliased
+   ╭─[no_output_rename.ts:6:49]
+ 5 │         class Test {
+ 6 │           color = output({ before: 'it', alias: 'test', after: 'it' });
+   ·                                                 ──────
+ 7 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names

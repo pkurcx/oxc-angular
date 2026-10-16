@@ -1,0 +1,165 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:3:21]
+ 2 │         @Component({
+ 3 │           outputs: ['on']
+   ·                     ────
+ 4 │         })
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:32]
+ 3 │           inputs: [onCredit],
+ 4 │           'outputs': [onLevel, `test: on`, onFunction()],
+   ·                                ──────────
+ 5 │         })
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:3:25]
+ 2 │         @Component({
+ 3 │           ['outputs']: ['onTest: test', ...onArray],
+   ·                         ──────────────
+ 4 │         })
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:3:25]
+ 2 │         @Directive({
+ 3 │           [`outputs`]: ['onTest: test', ...onArray],
+   ·                         ──────────────
+ 4 │         })
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:21]
+ 3 │         class Test {
+ 4 │           @Output() on: EventEmitter<any> = new EventEmitter<{}>();
+   ·                     ──
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:11]
+ 3 │         class Test {
+ 4 │           on = output();
+   ·           ──
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:35]
+ 3 │         class Test {
+ 4 │           @Output() @Custom('on') 'onPrefix' = new EventEmitter<void>();
+   ·                                   ──────────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:11]
+ 3 │         class Test {
+ 4 │           'onPrefix' = output();
+   ·           ──────────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:29]
+ 3 │         class Test {
+ 4 │           @Custom() @Output(`on`) _on = getOutput();
+   ·                             ────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:33]
+ 3 │         class Test {
+ 4 │           _on = output({ alias: `on` });
+   ·                                 ────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:19]
+ 3 │         class Test {
+ 4 │           @Output('onPrefix') _on = (this.subject$ as Subject<{on: boolean}>).pipe();
+   ·                   ──────────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:33]
+ 3 │         class Test {
+ 4 │           _on = output({ alias: 'onPrefix' });
+   ·                                 ──────────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:33]
+ 3 │         class Test {
+ 4 │           @Output('getter') get 'on-getter'() {}
+   ·                                 ───────────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:19]
+ 3 │         class Test {
+ 4 │           @Output(`onGetter`) get getter() {}
+   ·                   ──────────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:19]
+ 3 │         class Test {
+ 4 │           @Output('on') onPrefix = this.getOutput();
+   ·                   ────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:25]
+ 3 │         class Test {
+ 4 │           @Output('on') onPrefix = this.getOutput();
+   ·                         ────────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:11]
+ 3 │         class Test {
+ 4 │           onPrefix = output({ alias: 'on' });
+   ·           ────────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names
+
+  ⚠ angular(no-output-on-prefix): Output bindings, including aliases, should not be named "on", nor prefixed with it
+   ╭─[no_output_on_prefix.ts:4:38]
+ 3 │         class Test {
+ 4 │           onPrefix = output({ alias: 'on' });
+   ·                                      ────
+ 5 │         }
+   ╰────
+  help: See https://angular.dev/guide/components/outputs#choosing-event-names

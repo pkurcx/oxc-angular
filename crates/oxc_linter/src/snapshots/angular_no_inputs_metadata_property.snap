@@ -1,0 +1,68 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-inputs-metadata-property): Use `@Input` rather than the `inputs` metadata property
+   ╭─[no_inputs_metadata_property.ts:3:9]
+ 2 │           @Component({
+ 3 │ ╭─▶         inputs: [
+ 4 │ │             'id: foo'
+ 5 │ ╰─▶         ],
+ 6 │             selector: 'app-test'
+   ╰────
+  help: Declare the input on the class member with `input()` or `@Input()`.
+
+  ⚠ angular(no-inputs-metadata-property): Use `@Input` rather than the `inputs` metadata property
+   ╭─[no_inputs_metadata_property.ts:3:9]
+ 2 │           @Directive({
+ 3 │ ╭─▶         inputs: [
+ 4 │ │             'id: foo'
+ 5 │ ╰─▶         ],
+ 6 │             selector: 'app-test'
+   ╰────
+  help: Declare the input on the class member with `input()` or `@Input()`.
+
+  ⚠ angular(no-inputs-metadata-property): Use `@Input` rather than the `inputs` metadata property
+   ╭─[no_inputs_metadata_property.ts:3:9]
+ 2 │       @Component({
+ 3 │         inputs,
+   ·         ──────
+ 4 │       })
+   ╰────
+  help: Declare the input on the class member with `input()` or `@Input()`.
+
+  ⚠ angular(no-inputs-metadata-property): Use `@Input` rather than the `inputs` metadata property
+   ╭─[no_inputs_metadata_property.ts:3:9]
+ 2 │       @Directive({
+ 3 │         inputs: [],
+   ·         ──────────
+ 4 │       })
+   ╰────
+  help: Declare the input on the class member with `input()` or `@Input()`.
+
+  ⚠ angular(no-inputs-metadata-property): Use `@Input` rather than the `inputs` metadata property
+   ╭─[no_inputs_metadata_property.ts:4:9]
+ 3 │       @Component({
+ 4 │         'inputs': test,
+   ·         ──────────────
+ 5 │       })
+   ╰────
+  help: Declare the input on the class member with `input()` or `@Input()`.
+
+  ⚠ angular(no-inputs-metadata-property): Use `@Input` rather than the `inputs` metadata property
+   ╭─[no_inputs_metadata_property.ts:3:9]
+ 2 │       @Directive({
+ 3 │         ['inputs']: undefined,
+   ·         ─────────────────────
+ 4 │       })
+   ╰────
+  help: Declare the input on the class member with `input()` or `@Input()`.
+
+  ⚠ angular(no-inputs-metadata-property): Use `@Input` rather than the `inputs` metadata property
+   ╭─[no_inputs_metadata_property.ts:7:9]
+ 6 │       @Component({
+ 7 │         [`inputs`]: inputs(),
+   ·         ────────────────────
+ 8 │       })
+   ╰────
+  help: Declare the input on the class member with `input()` or `@Input()`.

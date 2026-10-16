@@ -1,0 +1,11 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(prefer-output-emitter-ref): Use `OutputEmitterRef` via `output()` for Component and Directive outputs rather than the legacy `@Output()` decorator
+   ╭─[prefer_output_emitter_ref.ts:3:9]
+ 2 │       class Test {
+ 3 │         @Output()
+   ·         ─────────
+ 4 │         readonly change: EventEmitter<number>;
+   ╰────

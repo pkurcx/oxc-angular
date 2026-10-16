@@ -1734,6 +1734,53 @@
         }
       ]
     },
+    "ComponentClassSuffixConfig": {
+      "type": "object",
+      "properties": {
+        "suffixes": {
+          "description": "Suffixes a `@Component` class name may end with.",
+          "default": [
+            "Component"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Suffixes a `@Component` class name may end with."
+        }
+      },
+      "additionalProperties": false
+    },
+    "ComponentMaxInlineDeclarationsConfig": {
+      "type": "object",
+      "properties": {
+        "animations": {
+          "description": "Maximum number of lines in an inline `animations` array, brackets excluded.",
+          "default": 15,
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0.0,
+          "markdownDescription": "Maximum number of lines in an inline `animations` array, brackets excluded."
+        },
+        "styles": {
+          "description": "Maximum number of lines in inline `styles`, summed over all entries.",
+          "default": 3,
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0.0,
+          "markdownDescription": "Maximum number of lines in inline `styles`, summed over all entries."
+        },
+        "template": {
+          "description": "Maximum number of lines in an inline `template`.",
+          "default": 3,
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0.0,
+          "markdownDescription": "Maximum number of lines in an inline `template`."
+        }
+      },
+      "additionalProperties": false
+    },
     "ConditionalComplexity": {
       "type": "object",
       "properties": {
@@ -2383,6 +2430,23 @@
         }
       ]
     },
+    "DirectiveClassSuffixConfig": {
+      "type": "object",
+      "properties": {
+        "suffixes": {
+          "description": "Suffixes a `@Directive` class name may end with. `Validator` is also accepted when the\nclass implements an interface whose name ends with `Validator`.",
+          "default": [
+            "Directive"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Suffixes a `@Directive` class name may end with. `Validator` is also accepted when the\nclass implements an interface whose name ends with `Validator`."
+        }
+      },
+      "additionalProperties": false
+    },
     "DirectiveConfigSchema": {
       "anyOf": [
         {
@@ -2930,7 +2994,397 @@
         "angular-template/valid-aria": {
           "$ref": "#/definitions/RuleNoConfig"
         },
+        "angular/component-class-suffix": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/ComponentClassSuffixConfig"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/component-max-inline-declarations": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/ComponentMaxInlineDeclarationsConfig"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/component-selector": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/SelectorOptions"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/computed-must-return": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/consistent-component-styles": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/StylesMode"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/contextual-decorator": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/contextual-lifecycle": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/directive-class-suffix": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/DirectiveClassSuffixConfig"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/directive-selector": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/SelectorOptions"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/inject-at-top": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/InjectAtTopConfig"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/no-async-lifecycle-method": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/no-attribute-decorator": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/no-duplicates-in-metadata-arrays": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/no-empty-lifecycle-method": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/no-forward-ref": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/no-implicit-take-until-destroyed": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/no-input-prefix": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/NoInputPrefixConfig"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/no-input-rename": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/NoInputRenameConfig"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/no-inputs-metadata-property": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/no-lifecycle-call": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/no-output-native": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/no-output-on-prefix": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/no-output-rename": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/no-outputs-metadata-property": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/no-pipe-impure": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/no-queries-metadata-property": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/pipe-prefix": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/PipePrefixConfig"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/prefer-host-metadata-property": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/prefer-inject": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/prefer-on-push-component-change-detection": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/PreferOnPushComponentChangeDetectionConfig"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/prefer-output-emitter-ref": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/prefer-output-readonly": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/prefer-service-decorator": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/prefer-standalone": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/PreferStandaloneConfig"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/relative-url-prefix": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/require-lifecycle-on-prototype": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/require-localize-metadata": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/RequireLocalizeMetadataConfig"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/runtime-localize": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/sort-keys-in-type-decorator": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/SortKeysInTypeDecoratorConfig"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/sort-lifecycle-methods": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
         "angular/sorted-component-imports": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/use-component-selector": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/use-component-view-encapsulation": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/use-injectable-provided-in": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuleNoConfig"
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/AllowWarnDeny"
+                },
+                {
+                  "$ref": "#/definitions/UseInjectableProvidedInConfig"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2
+            }
+          ]
+        },
+        "angular/use-lifecycle-interface": {
+          "$ref": "#/definitions/RuleNoConfig"
+        },
+        "angular/use-pipe-transform-interface": {
           "$ref": "#/definitions/RuleNoConfig"
         },
         "array-callback-return": {
@@ -12923,6 +13377,20 @@
       },
       "additionalProperties": false
     },
+    "InjectAtTopConfig": {
+      "type": "object",
+      "properties": {
+        "additionalInjectFunctions": {
+          "description": "Additional functions that perform injection, such as your own `injectTranslations()`\nhelper. Each entry is a regular expression that must match the whole function name, so\nplain names such as `injectTranslations` work as well as patterns such as `inject[A-Z].*`.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Additional functions that perform injection, such as your own `injectTranslations()`\nhelper. Each entry is a regular expression that must match the whole function name, so\nplain names such as `injectTranslations` work as well as patterns such as `inject[A-Z].*`."
+        }
+      },
+      "additionalProperties": false
+    },
     "InteractiveSupportsFocus": {
       "$ref": "#/definitions/AngularTemplateInteractiveSupportsFocusConfig"
     },
@@ -14484,7 +14952,7 @@
           "default": [],
           "allOf": [
             {
-              "$ref": "#/definitions/OneOrMany_for_String"
+              "$ref": "#/definitions/OneOrMany_for_String2"
             }
           ],
           "markdownDescription": "The root directory of the Next.js project.\n\nThis is particularly useful when you have a monorepo and your Next.js\nproject is in a subfolder.\n\nExample:\n\n```json\n{\n\"settings\": {\n\"next\": {\n\"rootDir\": \"apps/dashboard/\"\n}\n}\n}\n```"
@@ -15566,6 +16034,36 @@
             }
           ],
           "markdownDescription": "Controls whether declarations directly inside TypeScript namespace or module bodies are allowed."
+        }
+      },
+      "additionalProperties": false
+    },
+    "NoInputPrefixConfig": {
+      "type": "object",
+      "properties": {
+        "prefixes": {
+          "description": "Prefixes that input names and aliases must not use, such as `on` or `is`.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Prefixes that input names and aliases must not use, such as `on` or `is`."
+        }
+      },
+      "additionalProperties": false
+    },
+    "NoInputRenameConfig": {
+      "type": "object",
+      "properties": {
+        "allowedNames": {
+          "description": "Aliases that are always allowed.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Aliases that are always allowed."
         }
       },
       "additionalProperties": false
@@ -17750,7 +18248,33 @@
       "maxItems": 2,
       "minItems": 2
     },
+    "OneOrMany_for_SelectorType": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/SelectorType"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SelectorType"
+          }
+        }
+      ]
+    },
     "OneOrMany_for_String": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "OneOrMany_for_String2": {
       "anyOf": [
         {
           "type": "string"
@@ -18525,6 +19049,21 @@
         }
       ]
     },
+    "PipePrefixConfig": {
+      "type": "object",
+      "properties": {
+        "prefixes": {
+          "description": "Prefixes a pipe `name` may start with, followed by a non-lowercase character. The rule\ndoes nothing while the list is empty.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Prefixes a pipe `name` may start with, followed by a non-lowercase character. The rule\ndoes nothing while the list is empty."
+        }
+      },
+      "additionalProperties": false
+    },
     "PossiblePaths": {
       "anyOf": [
         {
@@ -19040,6 +19579,18 @@
       },
       "additionalProperties": false
     },
+    "PreferOnPushComponentChangeDetectionConfig": {
+      "type": "object",
+      "properties": {
+        "allowExplicitOnPush": {
+          "description": "Whether to allow a component to set `changeDetection: ChangeDetectionStrategy.OnPush`\nexplicitly even though it is now the default.",
+          "default": true,
+          "type": "boolean",
+          "markdownDescription": "Whether to allow a component to set `changeDetection: ChangeDetectionStrategy.OnPush`\nexplicitly even though it is now the default."
+        }
+      },
+      "additionalProperties": false
+    },
     "PreferOptionalChainConfig": {
       "type": "object",
       "properties": {
@@ -19222,6 +19773,18 @@
             "type": "string"
           },
           "markdownDescription": "Methods to ignore."
+        }
+      },
+      "additionalProperties": false
+    },
+    "PreferStandaloneConfig": {
+      "type": "object",
+      "properties": {
+        "allowExplicitStandalone": {
+          "description": "Whether to allow a Component, Directive or Pipe to set `standalone: true` explicitly even\nthough it is now the default.",
+          "default": true,
+          "type": "boolean",
+          "markdownDescription": "Whether to allow a Component, Directive or Pipe to set `standalone: true` explicitly even\nthough it is now the default."
         }
       },
       "additionalProperties": false
@@ -19575,6 +20138,16 @@
       },
       "additionalProperties": false
     },
+    "RequireCustomId": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
     "RequireDescription": {
       "type": "string",
       "enum": [
@@ -19611,6 +20184,33 @@
             "type": "string"
           },
           "markdownDescription": "An array of function names that are allowed to be called outside of hooks."
+        }
+      },
+      "additionalProperties": false
+    },
+    "RequireLocalizeMetadataConfig": {
+      "type": "object",
+      "properties": {
+        "requireCustomId": {
+          "description": "Require a custom id, as in `` $localize`:@@custom-id:text` ``. A string also requires the\nid to match it as a regular expression.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RequireCustomId"
+            }
+          ],
+          "markdownDescription": "Require a custom id, as in `` $localize`:@@custom-id:text` ``. A string also requires the\nid to match it as a regular expression."
+        },
+        "requireDescription": {
+          "description": "Require a description, as in `` $localize`:description:text` ``.",
+          "default": false,
+          "type": "boolean",
+          "markdownDescription": "Require a description, as in `` $localize`:description:text` ``."
+        },
+        "requireMeaning": {
+          "description": "Require a meaning, as in `` $localize`:meaning|description:text` ``.",
+          "default": false,
+          "type": "boolean",
+          "markdownDescription": "Require a meaning, as in `` $localize`:meaning|description:text` ``."
         }
       },
       "additionalProperties": false
@@ -20149,6 +20749,54 @@
         }
       ]
     },
+    "SelectorConfigItem": {
+      "type": "object",
+      "required": [
+        "style",
+        "type"
+      ],
+      "properties": {
+        "prefix": {
+          "$ref": "#/definitions/OneOrMany_for_String"
+        },
+        "style": {
+          "$ref": "#/definitions/SelectorStyle"
+        },
+        "type": {
+          "$ref": "#/definitions/SelectorType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SelectorOptions": {
+      "description": "Options of `component-selector` and `directive-selector`: one config (whose `prefix`\ndefaults to `\"app\"`), or an array of 1-2 configs with distinct `type`s and no default prefix.",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/SingleSelectorConfig"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SelectorConfigItem"
+          }
+        }
+      ],
+      "markdownDescription": "Options of `component-selector` and `directive-selector`: one config (whose `prefix`\ndefaults to `\"app\"`), or an array of 1-2 configs with distinct `type`s and no default prefix."
+    },
+    "SelectorStyle": {
+      "type": "string",
+      "enum": [
+        "camelCase",
+        "kebab-case"
+      ]
+    },
+    "SelectorType": {
+      "type": "string",
+      "enum": [
+        "element",
+        "attribute"
+      ]
+    },
     "SelfClosingComp": {
       "type": "object",
       "properties": {
@@ -20177,6 +20825,25 @@
         "consistent-as-needed",
         "never"
       ]
+    },
+    "SingleSelectorConfig": {
+      "type": "object",
+      "required": [
+        "style",
+        "type"
+      ],
+      "properties": {
+        "prefix": {
+          "$ref": "#/definitions/OneOrMany_for_String"
+        },
+        "style": {
+          "$ref": "#/definitions/SelectorStyle"
+        },
+        "type": {
+          "$ref": "#/definitions/OneOrMany_for_SelectorType"
+        }
+      },
+      "additionalProperties": false
     },
     "SnapshotHintMode": {
       "oneOf": [
@@ -20254,6 +20921,119 @@
       ],
       "maxItems": 2,
       "minItems": 2
+    },
+    "SortKeysInTypeDecoratorConfig": {
+      "type": "object",
+      "properties": {
+        "Component": {
+          "description": "Key order for `@Component`.",
+          "default": [
+            "selector",
+            "imports",
+            "standalone",
+            "templateUrl",
+            "template",
+            "styleUrl",
+            "styleUrls",
+            "styles",
+            "providers",
+            "changeDetection",
+            "encapsulation",
+            "viewProviders",
+            "host",
+            "hostDirectives",
+            "inputs",
+            "outputs",
+            "animations",
+            "schemas",
+            "exportAs",
+            "queries",
+            "preserveWhitespaces",
+            "jit",
+            "moduleId",
+            "interpolation"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Key order for `@Component`."
+        },
+        "Directive": {
+          "description": "Key order for `@Directive`.",
+          "default": [
+            "selector",
+            "standalone",
+            "providers",
+            "host",
+            "hostDirectives",
+            "inputs",
+            "outputs",
+            "exportAs",
+            "queries",
+            "jit"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Key order for `@Directive`."
+        },
+        "Injectable": {
+          "description": "Key order for `@Injectable`.",
+          "default": [
+            "providedIn",
+            "useClass",
+            "useExisting",
+            "useFactory",
+            "useValue",
+            "deps"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Key order for `@Injectable`."
+        },
+        "NgModule": {
+          "description": "Key order for `@NgModule`.",
+          "default": [
+            "id",
+            "imports",
+            "declarations",
+            "providers",
+            "exports",
+            "bootstrap",
+            "schemas",
+            "jit"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Key order for `@NgModule`."
+        },
+        "Pipe": {
+          "description": "Key order for `@Pipe`.",
+          "default": [
+            "name",
+            "standalone",
+            "pure"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "markdownDescription": "Key order for `@Pipe`."
+        },
+        "allowUnconfiguredProperties": {
+          "description": "When `false`, keys missing from the configured order are reported.",
+          "default": true,
+          "type": "boolean",
+          "markdownDescription": "When `false`, keys missing from the configured order are reported."
+        }
+      },
+      "additionalProperties": false
     },
     "SortKeysOptions": {
       "type": "object",
@@ -20411,6 +21191,26 @@
         }
       },
       "additionalProperties": false
+    },
+    "StylesMode": {
+      "oneOf": [
+        {
+          "description": "A single stylesheet is a plain string: `styles: '...'` and `styleUrl: '...'`.",
+          "type": "string",
+          "enum": [
+            "string"
+          ],
+          "markdownDescription": "A single stylesheet is a plain string: `styles: '...'` and `styleUrl: '...'`."
+        },
+        {
+          "description": "Styles are always arrays: `styles: ['...']` and `styleUrls: ['...']`.",
+          "type": "string",
+          "enum": [
+            "array"
+          ],
+          "markdownDescription": "Styles are always arrays: `styles: ['...']` and `styleUrls: ['...']`."
+        }
+      ]
     },
     "SwitchCaseBracesConfig": {
       "oneOf": [
@@ -20706,6 +21506,23 @@
           }
         }
       ]
+    },
+    "UseInjectableProvidedInConfig": {
+      "type": "object",
+      "properties": {
+        "allowProvidedInNull": {
+          "description": "Accept `providedIn: null`, which Angular treats like a missing `providedIn`.",
+          "default": false,
+          "type": "boolean",
+          "markdownDescription": "Accept `providedIn: null`, which Angular treats like a missing `providedIn`."
+        },
+        "ignoreClassNamePattern": {
+          "description": "Class names to skip. `/.../` is a regular expression (for example `/Effects$/`); any other\nstring must match the class name exactly.",
+          "type": "string",
+          "markdownDescription": "Class names to skip. `/.../` is a regular expression (for example `/Effects$/`); any other\nstring must match the class name exactly."
+        }
+      },
+      "additionalProperties": false
     },
     "UseIsnan": {
       "type": "object",

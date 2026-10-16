@@ -1,0 +1,21 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(relative-url-prefix): The ./ and ../ prefix is standard syntax for relative URLs.
+   ╭─[relative_url_prefix.ts:3:36]
+ 2 │         @Component({
+ 3 │           styleUrls: ['./foo.css', 'bar.css', '../baz.scss', '../../test.css']
+   ·                                    ─────────
+ 4 │ 
+   ╰────
+  help: Prefix the URL with `./` or `../`.
+
+  ⚠ angular(relative-url-prefix): The ./ and ../ prefix is standard syntax for relative URLs.
+   ╭─[relative_url_prefix.ts:3:24]
+ 2 │         @Component({
+ 3 │           templateUrl: 'foobar.html'
+   ·                        ─────────────
+ 4 │ 
+   ╰────
+  help: Prefix the URL with `./` or `../`.

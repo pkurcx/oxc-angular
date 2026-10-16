@@ -1,0 +1,120 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(prefer-inject): Prefer using the `inject()` function over constructor parameter injection.
+   ╭─[prefer_inject.ts:4:27]
+ 3 │             class UserService {
+ 4 │               constructor(private http: HttpClient) {}
+   ·                           ────────────────────────
+ 5 │             }
+   ╰────
+  help: Use Angular's migration schematic to refactor automatically: `ng generate @angular/core:inject`.
+
+  ⚠ angular(prefer-inject): Prefer using the `inject()` function over constructor parameter injection.
+   ╭─[prefer_inject.ts:4:27]
+ 3 │             class UserService {
+ 4 │               constructor(private http: HttpClient) {}
+   ·                           ────────────────────────
+ 5 │             }
+   ╰────
+  help: Use Angular's migration schematic to refactor automatically: `ng generate @angular/core:inject`.
+
+  ⚠ angular(prefer-inject): Prefer using the `inject()` function over constructor parameter injection.
+   ╭─[prefer_inject.ts:5:17]
+ 4 │               constructor(
+ 5 │                 private userService: UserService,
+   ·                 ────────────────────────────────
+ 6 │                 private http: HttpClient
+   ╰────
+  help: Use Angular's migration schematic to refactor automatically: `ng generate @angular/core:inject`.
+
+  ⚠ angular(prefer-inject): Prefer using the `inject()` function over constructor parameter injection.
+   ╭─[prefer_inject.ts:6:17]
+ 5 │                 private userService: UserService,
+ 6 │                 private http: HttpClient
+   ·                 ────────────────────────
+ 7 │               ) {}
+   ╰────
+  help: Use Angular's migration schematic to refactor automatically: `ng generate @angular/core:inject`.
+
+  ⚠ angular(prefer-inject): Prefer using the `inject()` function over constructor parameter injection.
+   ╭─[prefer_inject.ts:5:17]
+ 4 │               constructor(
+ 5 │                 @Inject(CONFIG_TOKEN) private config: AppConfig,
+   ·                 ───────────────────────────────────────────────
+ 6 │               ) {}
+   ╰────
+  help: Use Angular's migration schematic to refactor automatically: `ng generate @angular/core:inject`.
+
+  ⚠ angular(prefer-inject): Prefer using the `inject()` function over constructor parameter injection.
+   ╭─[prefer_inject.ts:5:17]
+ 4 │               constructor(
+ 5 │                 @Optional() private logger?: LoggerService,
+   ·                 ──────────────────────────────────────────
+ 6 │               ) {}
+   ╰────
+  help: Use Angular's migration schematic to refactor automatically: `ng generate @angular/core:inject`.
+
+  ⚠ angular(prefer-inject): Prefer using the `inject()` function over constructor parameter injection.
+   ╭─[prefer_inject.ts:5:17]
+ 4 │               constructor(
+ 5 │                 @Self() private control: NgControl,
+   ·                 ──────────────────────────────────
+ 6 │               ) {}
+   ╰────
+  help: Use Angular's migration schematic to refactor automatically: `ng generate @angular/core:inject`.
+
+  ⚠ angular(prefer-inject): Prefer using the `inject()` function over constructor parameter injection.
+   ╭─[prefer_inject.ts:5:17]
+ 4 │               constructor(
+ 5 │                 @SkipSelf() private skipSelfService: SkipSelfService,
+   ·                 ────────────────────────────────────────────────────
+ 6 │               ) {}
+   ╰────
+  help: Use Angular's migration schematic to refactor automatically: `ng generate @angular/core:inject`.
+
+  ⚠ angular(prefer-inject): Prefer using the `inject()` function over constructor parameter injection.
+   ╭─[prefer_inject.ts:5:17]
+ 4 │               constructor(
+ 5 │                 @Host() private hostService: HostService,
+   ·                 ────────────────────────────────────────
+ 6 │               ) {}
+   ╰────
+  help: Use Angular's migration schematic to refactor automatically: `ng generate @angular/core:inject`.
+
+  ⚠ angular(prefer-inject): Prefer using the `inject()` function over constructor parameter injection.
+   ╭─[prefer_inject.ts:5:17]
+ 4 │               constructor(
+ 5 │                 @Inject(CONFIG_TOKEN) private config: AppConfig,
+   ·                 ───────────────────────────────────────────────
+ 6 │                 @Optional() @Self() private logger?: LoggerService,
+   ╰────
+  help: Use Angular's migration schematic to refactor automatically: `ng generate @angular/core:inject`.
+
+  ⚠ angular(prefer-inject): Prefer using the `inject()` function over constructor parameter injection.
+   ╭─[prefer_inject.ts:6:17]
+ 5 │                 @Inject(CONFIG_TOKEN) private config: AppConfig,
+ 6 │                 @Optional() @Self() private logger?: LoggerService,
+   ·                 ──────────────────────────────────────────────────
+ 7 │               ) {}
+   ╰────
+  help: Use Angular's migration schematic to refactor automatically: `ng generate @angular/core:inject`.
+
+  ⚠ angular(prefer-inject): Prefer using the `inject()` function over constructor parameter injection.
+   ╭─[prefer_inject.ts:5:17]
+ 4 │               constructor(
+ 5 │                 private service: MyService,
+   ·                 ──────────────────────────
+ 6 │               ) {
+   ╰────
+  help: Use Angular's migration schematic to refactor automatically: `ng generate @angular/core:inject`.
+
+  ⚠ angular(prefer-inject): Prefer using the `inject()` function over constructor parameter injection.
+   ╭─[prefer_inject.ts:4:27]
+ 3 │             class MyComponent {
+ 4 │               constructor(elementRef: ElementRef) {}
+   ·                           ──────────────────────
+ 5 │             }
+   ╰────
+  help: Use Angular's migration schematic to refactor automatically: `ng generate @angular/core:inject`.

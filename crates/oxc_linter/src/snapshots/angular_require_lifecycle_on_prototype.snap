@@ -1,0 +1,219 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnChanges lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngOnChanges = func;
+   ·         ───────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnInit lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngOnInit = func;
+   ·         ────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngDoCheck lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngDoCheck = func;
+   ·         ─────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngAfterContentInit lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngAfterContentInit = func;
+   ·         ──────────────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngAfterContentChecked lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngAfterContentChecked = func;
+   ·         ─────────────────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngAfterViewInit lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngAfterViewInit = func;
+   ·         ───────────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngAfterViewChecked lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngAfterViewChecked = func;
+   ·         ──────────────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnDestroy lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngOnDestroy = func;
+   ·         ───────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnChanges lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngOnChanges = func;
+   ·         ───────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnInit lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngOnInit = func;
+   ·         ────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngDoCheck lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngDoCheck = func;
+   ·         ─────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngAfterContentInit lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngAfterContentInit = func;
+   ·         ──────────────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngAfterContentChecked lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngAfterContentChecked = func;
+   ·         ─────────────────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngAfterViewInit lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngAfterViewInit = func;
+   ·         ───────────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngAfterViewChecked lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngAfterViewChecked = func;
+   ·         ──────────────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnDestroy lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngOnDestroy = func;
+   ·         ───────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnDestroy lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngOnDestroy = func;
+   ·         ───────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnDestroy lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:9]
+ 3 │       class Test {
+ 4 │         ngOnDestroy = func;
+   ·         ───────────
+ 5 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnDestroy lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:16]
+ 3 │         constructor() {
+ 4 │           this.ngOnDestroy = func;
+   ·                ───────────
+ 5 │         }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnDestroy lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:16]
+ 3 │         constructor() {
+ 4 │           this['ngOnDestroy'] = func;
+   ·                ─────────────
+ 5 │         }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnDestroy lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:4:16]
+ 3 │         run() {
+ 4 │           this.ngOnDestroy = func;
+   ·                ───────────
+ 5 │         }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnDestroy lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:3:19]
+ 2 │       function hook(component) {
+ 3 │         component.ngOnDestroy = func;
+   ·                   ───────────
+ 4 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnDestroy lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:3:28]
+ 2 │       function hook(component) {
+ 3 │         (component as any).ngOnDestroy = func;
+   ·                            ───────────
+ 4 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241
+
+  ⚠ angular(require-lifecycle-on-prototype): The ngOnDestroy lifecycle method should be defined on the object's prototype.
+   ╭─[require_lifecycle_on_prototype.ts:3:10]
+ 2 │       class Test {
+ 3 │         ['ngOnDestroy'] = func;
+   ·          ─────────────
+ 4 │       }
+   ╰────
+  help: Declare it as a class method. See https://github.com/angular/angular/issues/38241

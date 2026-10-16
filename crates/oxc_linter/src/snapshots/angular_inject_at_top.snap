@@ -1,0 +1,228 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+    ╭─[inject_at_top.ts:10:15]
+  9 │ 
+ 10 │               private readonly userService = inject(UserService);
+    ·               ───────────────────────────────────────────────────
+ 11 │             }
+    ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly http = inject(HttpClient);
+   ·               ───────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:6:15]
+ 5 │ 
+ 6 │               private readonly myService = inject(MyService);
+   ·               ───────────────────────────────────────────────
+ 7 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:6:15]
+ 5 │ 
+ 6 │               private readonly myService = inject(MyService);
+   ·               ───────────────────────────────────────────────
+ 7 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:6:15]
+ 5 │               private count = 0;
+ 6 │               private readonly router = inject(Router);
+   ·               ─────────────────────────────────────────
+ 7 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+    ╭─[inject_at_top.ts:10:15]
+  9 │ 
+ 10 │               private readonly userService = inject(UserService);
+    ·               ───────────────────────────────────────────────────
+ 11 │               private readonly router = inject(Router);
+    ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+    ╭─[inject_at_top.ts:11:15]
+ 10 │               private readonly userService = inject(UserService);
+ 11 │               private readonly router = inject(Router);
+    ·               ─────────────────────────────────────────
+ 12 │             }
+    ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly strategy = cond ? inject(PrimaryStrategy) : inject(FallbackStrategy);
+   ·               ──────────────────────────────────────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly logger = inject(LoggerService, { optional: true }) ?? noopLogger;
+   ·               ──────────────────────────────────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly config = inject(AppConfig, { optional: true })!;
+   ·               ─────────────────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly featureFlags = inject(FlagsService) as FeatureFlags;
+   ·               ─────────────────────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly tracedHttp = withTracing(inject(HttpClient));
+   ·               ──────────────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly apiClient = new ApiClient(inject(HttpClient));
+   ·               ───────────────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly handlers = [inject(HandlerA), inject(HandlerB)];
+   ·               ─────────────────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly deps = { users: inject(UserService) };
+   ·               ───────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly userService = (audit(), inject(UserService));
+   ·               ──────────────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly currentUserId = `${inject(UserService).id}`;
+   ·               ─────────────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly client = (() => inject(ApiClient))();
+   ·               ──────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly services = collectServices([inject(UserService), { router: inject(Router) }]);
+   ·               ───────────────────────────────────────────────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly legacyClient = (function () { return inject(ApiClient); })();
+   ·               ──────────────────────────────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly tracedClient = (() => withTracing(inject(ApiClient)))();
+   ·               ─────────────────────────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this inject() to the top of the class.
+   ╭─[inject_at_top.ts:8:15]
+ 7 │ 
+ 8 │               private readonly http = inject(HttpClient);
+   ·               ───────────────────────────────────────────
+ 9 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this injectTranslations() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly t = injectTranslations();
+   ·               ──────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this injectFeatureFlags() to the top of the class.
+   ╭─[inject_at_top.ts:6:15]
+ 5 │               private count = 0;
+ 6 │               private readonly flags = injectFeatureFlags();
+   ·               ──────────────────────────────────────────────
+ 7 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.
+
+  ⚠ angular(inject-at-top): Move this injectTranslations() to the top of the class.
+   ╭─[inject_at_top.ts:5:15]
+ 4 │               private count = 0;
+ 5 │               private readonly t = withScope(injectTranslations());
+   ·               ─────────────────────────────────────────────────────
+ 6 │             }
+   ╰────
+  help: Class fields are initialized in the order they are written, so anything declared above this line cannot safely use the service yet.

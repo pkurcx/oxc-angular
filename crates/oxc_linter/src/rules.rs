@@ -1032,7 +1032,52 @@ pub(crate) mod angular_template {
 
 /// <https://github.com/angular-eslint/angular-eslint/tree/main/packages/eslint-plugin>
 pub(crate) mod angular {
+    pub mod component_class_suffix;
+    pub mod component_max_inline_declarations;
+    pub mod component_selector;
+    pub mod computed_must_return;
+    pub mod consistent_component_styles;
+    pub mod contextual_decorator;
+    pub mod contextual_lifecycle;
+    pub mod directive_class_suffix;
+    pub mod directive_selector;
+    pub mod inject_at_top;
+    pub mod no_async_lifecycle_method;
+    pub mod no_attribute_decorator;
+    pub mod no_duplicates_in_metadata_arrays;
+    pub mod no_empty_lifecycle_method;
+    pub mod no_forward_ref;
+    pub mod no_implicit_take_until_destroyed;
+    pub mod no_input_prefix;
+    pub mod no_input_rename;
+    pub mod no_inputs_metadata_property;
+    pub mod no_lifecycle_call;
+    pub mod no_output_native;
+    pub mod no_output_on_prefix;
+    pub mod no_output_rename;
+    pub mod no_outputs_metadata_property;
+    pub mod no_pipe_impure;
+    pub mod no_queries_metadata_property;
+    pub mod pipe_prefix;
+    pub mod prefer_host_metadata_property;
+    pub mod prefer_inject;
+    pub mod prefer_on_push_component_change_detection;
+    pub mod prefer_output_emitter_ref;
+    pub mod prefer_output_readonly;
+    pub mod prefer_service_decorator;
+    pub mod prefer_standalone;
+    pub mod relative_url_prefix;
+    pub mod require_lifecycle_on_prototype;
+    pub mod require_localize_metadata;
+    pub mod runtime_localize;
+    pub mod sort_keys_in_type_decorator;
+    pub mod sort_lifecycle_methods;
     pub mod sorted_component_imports;
+    pub mod use_component_selector;
+    pub mod use_component_view_encapsulation;
+    pub mod use_injectable_provided_in;
+    pub mod use_lifecycle_interface;
+    pub mod use_pipe_transform_interface;
 }
 
 pub(crate) mod shared;

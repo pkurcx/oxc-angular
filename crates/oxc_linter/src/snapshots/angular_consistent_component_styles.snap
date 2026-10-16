@@ -1,0 +1,183 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(consistent-component-styles): Use a `string` instead of a `string[]` for the `styles` property
+   ╭─[consistent_component_styles.ts:2:11]
+ 1 │ @Component({
+ 2 │   styles: [':host { display: block; }']
+   ·           ─────────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `[':host { display: block; }']` with `':host { display: block; }'`.
+
+  ⚠ angular(consistent-component-styles): Use a `string` instead of a `string[]` for the `styles` property
+   ╭─[consistent_component_styles.ts:4:11]
+ 3 │   imports: [MatButtonModule],
+ 4 │   styles: [':host { display: block; }'],
+   ·           ─────────────────────────────
+ 5 │ 
+   ╰────
+  help: Replace `[':host { display: block; }']` with `':host { display: block; }'`.
+
+  ⚠ angular(consistent-component-styles): Use `styleUrl` instead of `styleUrls` for a single stylesheet
+   ╭─[consistent_component_styles.ts:2:3]
+ 1 │ @Component({
+ 2 │   styleUrls: ['./test.component.css']
+   ·   ───────────────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `styleUrls: ['./test.component.css']` with `styleUrl: './test.component.css'`.
+
+  ⚠ angular(consistent-component-styles): Use `styleUrl` instead of `styleUrls` for a single stylesheet
+   ╭─[consistent_component_styles.ts:4:3]
+ 3 │   imports: [MatButtonModule],
+ 4 │   styleUrls: ['./test.component.css'],
+   ·   ───────────────────────────────────
+ 5 │ 
+   ╰────
+  help: Replace `styleUrls: ['./test.component.css']` with `styleUrl: './test.component.css'`.
+
+  ⚠ angular(consistent-component-styles): Use a `string` instead of a `string[]` for the `styles` property
+   ╭─[consistent_component_styles.ts:3:11]
+ 2 │ @Component({
+ 3 │   styles: [`:host\t{ display: ${type}; }`]
+   ·           ────────────────────────────────
+ 4 │ 
+   ╰────
+  help: Replace `[`:host\t{ display: ${type}; }`]` with ``:host\t{ display: ${type}; }``.
+
+  ⚠ angular(consistent-component-styles): Use a `string` instead of a `string[]` for the `styles` property
+   ╭─[consistent_component_styles.ts:2:11]
+ 1 │ @Component({
+ 2 │   styles: [':host\t{ display: block; }']
+   ·           ──────────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `[':host\t{ display: block; }']` with `':host\t{ display: block; }'`.
+
+  ⚠ angular(consistent-component-styles): Use a `string` instead of a `string[]` for the `styles` property
+   ╭─[consistent_component_styles.ts:2:11]
+ 1 │ @Component({
+ 2 │   styles: [':host{ display: block; }']
+   ·           ────────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `[':host{ display: block; }']` with `':host{ display: block; }'`.
+
+  ⚠ angular(consistent-component-styles): Use a `string` instead of a `string[]` for the `styles` property
+   ╭─[consistent_component_styles.ts:2:11]
+ 1 │ @Component({
+ 2 │   styles: [":host{ display: block; }"]
+   ·           ────────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `[":host{ display: block; }"]` with `":host{ display: block; }"`.
+
+  ⚠ angular(consistent-component-styles): Use a `string` instead of a `string[]` for the `styles` property
+   ╭─[consistent_component_styles.ts:2:11]
+ 1 │ @Component({
+ 2 │   styles: [`:host{ display: block; }`]
+   ·           ────────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `[`:host{ display: block; }`]` with ``:host{ display: block; }``.
+
+  ⚠ angular(consistent-component-styles): Use `styleUrl` instead of `styleUrls` for a single stylesheet
+   ╭─[consistent_component_styles.ts:2:3]
+ 1 │ @Component({
+ 2 │   styleUrls: [`./test.component.css`]
+   ·   ───────────────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `styleUrls: [`./test.component.css`]` with `styleUrl: `./test.component.css``.
+
+  ⚠ angular(consistent-component-styles): Use a `string` instead of a `string[]` for the `styles` property
+   ╭─[consistent_component_styles.ts:2:11]
+ 1 │ @Component({
+ 2 │   styles: [':host { display: block; }']
+   ·           ─────────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `[':host { display: block; }']` with `':host { display: block; }'`.
+
+  ⚠ angular(consistent-component-styles): Use `styleUrl` instead of `styleUrls` for a single stylesheet
+   ╭─[consistent_component_styles.ts:2:3]
+ 1 │ @Component({
+ 2 │   styleUrls: ['./test.component.css']
+   ·   ───────────────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `styleUrls: ['./test.component.css']` with `styleUrl: './test.component.css'`.
+
+  ⚠ angular(consistent-component-styles): Use a `string[]` instead of a `string` for the `styles` property
+   ╭─[consistent_component_styles.ts:2:11]
+ 1 │ @Component({
+ 2 │   styles: ':host { display: block; }'
+   ·           ───────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `':host { display: block; }'` with `[':host { display: block; }']`.
+
+  ⚠ angular(consistent-component-styles): Use a `string[]` instead of a `string` for the `styles` property
+   ╭─[consistent_component_styles.ts:4:11]
+ 3 │   imports: [MatButtonModule],
+ 4 │   styles: ':host { display: block; }',
+   ·           ───────────────────────────
+ 5 │ 
+   ╰────
+  help: Replace `':host { display: block; }'` with `[':host { display: block; }']`.
+
+  ⚠ angular(consistent-component-styles): Use `styleUrls` instead of `styleUrl`
+   ╭─[consistent_component_styles.ts:2:3]
+ 1 │ @Component({
+ 2 │   styleUrl: './test.component.css',
+   ·   ────────────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `styleUrl: './test.component.css'` with `styleUrls: ['./test.component.css']`.
+
+  ⚠ angular(consistent-component-styles): Use a `string[]` instead of a `string` for the `styles` property
+   ╭─[consistent_component_styles.ts:3:11]
+ 2 │ @Component({
+ 3 │   styles: `:host\t{ display: ${type}; }`
+   ·           ──────────────────────────────
+ 4 │ 
+   ╰────
+  help: Replace ``:host\t{ display: ${type}; }`` with `[`:host\t{ display: ${type}; }`]`.
+
+  ⚠ angular(consistent-component-styles): Use a `string[]` instead of a `string` for the `styles` property
+   ╭─[consistent_component_styles.ts:2:11]
+ 1 │ @Component({
+ 2 │   styles: ':host\t{ display: block; }'
+   ·           ────────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `':host\t{ display: block; }'` with `[':host\t{ display: block; }']`.
+
+  ⚠ angular(consistent-component-styles): Use a `string[]` instead of a `string` for the `styles` property
+   ╭─[consistent_component_styles.ts:2:11]
+ 1 │ @Component({
+ 2 │   styles: ':host{ display: block; }'
+   ·           ──────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `':host{ display: block; }'` with `[':host{ display: block; }']`.
+
+  ⚠ angular(consistent-component-styles): Use a `string[]` instead of a `string` for the `styles` property
+   ╭─[consistent_component_styles.ts:2:11]
+ 1 │ @Component({
+ 2 │   styles: ":host{ display: block; }"
+   ·           ──────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace `":host{ display: block; }"` with `[":host{ display: block; }"]`.
+
+  ⚠ angular(consistent-component-styles): Use a `string[]` instead of a `string` for the `styles` property
+   ╭─[consistent_component_styles.ts:2:11]
+ 1 │ @Component({
+ 2 │   styles: `:host{ display: block; }`
+   ·           ──────────────────────────
+ 3 │ 
+   ╰────
+  help: Replace ``:host{ display: block; }`` with `[`:host{ display: block; }`]`.

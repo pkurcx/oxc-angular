@@ -1,0 +1,102 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(use-lifecycle-interface): Lifecycle interface 'OnInit' should be implemented for method 'ngOnInit'.
+   ╭─[use_lifecycle_interface.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngOnInit() {
+   ·           ────────
+ 5 │           }
+   ╰────
+  help: Add `implements OnInit` to the class. See https://angular.dev/style-guide#use-lifecycle-hook-interfaces
+
+  ⚠ angular(use-lifecycle-interface): Lifecycle interface 'OnDestroy' should be implemented for method 'ngOnDestroy'.
+   ╭─[use_lifecycle_interface.ts:7:11]
+ 6 │ 
+ 7 │           ngOnDestroy() {
+   ·           ───────────
+ 8 │           }
+   ╰────
+  help: Add `implements OnDestroy` to the class. See https://angular.dev/style-guide#use-lifecycle-hook-interfaces
+
+  ⚠ angular(use-lifecycle-interface): Lifecycle interface 'DoBootstrap' should be implemented for method 'ngDoBootstrap'.
+   ╭─[use_lifecycle_interface.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngDoBootstrap() {}
+   ·           ─────────────
+ 5 │ 
+   ╰────
+  help: Add `implements DoBootstrap` to the class. See https://angular.dev/style-guide#use-lifecycle-hook-interfaces
+
+  ⚠ angular(use-lifecycle-interface): Lifecycle interface 'OnInit' should be implemented for method 'ngOnInit'.
+   ╭─[use_lifecycle_interface.ts:6:11]
+ 5 │ 
+ 6 │           ngOnInit() {}
+   ·           ────────
+ 7 │ 
+   ╰────
+  help: Add `implements OnInit` to the class. See https://angular.dev/style-guide#use-lifecycle-hook-interfaces
+
+  ⚠ angular(use-lifecycle-interface): Lifecycle interface 'OnDestroy' should be implemented for method 'ngOnDestroy'.
+   ╭─[use_lifecycle_interface.ts:8:11]
+ 7 │ 
+ 8 │           ngOnDestroy() {}
+   ·           ───────────
+ 9 │         }
+   ╰────
+  help: Add `implements OnDestroy` to the class. See https://angular.dev/style-guide#use-lifecycle-hook-interfaces
+
+  ⚠ angular(use-lifecycle-interface): Lifecycle interface 'OnDestroy' should be implemented for method 'ngOnDestroy'.
+   ╭─[use_lifecycle_interface.ts:6:11]
+ 5 │ 
+ 6 │           ngOnDestroy() {
+   ·           ───────────
+ 7 │           }
+   ╰────
+  help: Add `implements OnDestroy` to the class. See https://angular.dev/style-guide#use-lifecycle-hook-interfaces
+
+  ⚠ angular(use-lifecycle-interface): Lifecycle interface 'OnInit' should be implemented for method 'ngOnInit'.
+   ╭─[use_lifecycle_interface.ts:4:11]
+ 3 │         class Test extends Component {
+ 4 │           ngOnInit() {
+   ·           ────────
+ 5 │           }
+   ╰────
+  help: Add `implements OnInit` to the class. See https://angular.dev/style-guide#use-lifecycle-hook-interfaces
+
+  ⚠ angular(use-lifecycle-interface): Lifecycle interface 'OnDestroy' should be implemented for method 'ngOnDestroy'.
+    ╭─[use_lifecycle_interface.ts:11:11]
+ 10 │         class FoobarComponent extends FoobarBase {
+ 11 │           ngOnDestroy(): void {
+    ·           ───────────
+ 12 │             super.ngOnDestroy();
+    ╰────
+  help: Add `implements OnDestroy` to the class. See https://angular.dev/style-guide#use-lifecycle-hook-interfaces
+
+  ⚠ angular(use-lifecycle-interface): Lifecycle interface 'OnDestroy' should be implemented for method 'ngOnDestroy'.
+   ╭─[use_lifecycle_interface.ts:4:11]
+ 3 │         class Test {
+ 4 │           ngOnDestroy() {
+   ·           ───────────
+ 5 │           }
+   ╰────
+  help: Add `implements OnDestroy` to the class. See https://angular.dev/style-guide#use-lifecycle-hook-interfaces
+
+  ⚠ angular(use-lifecycle-interface): Lifecycle interface 'OnInit' should be implemented for method 'ngOnInit'.
+   ╭─[use_lifecycle_interface.ts:4:11]
+ 3 │         class Test<T> {
+ 4 │           ngOnInit() {
+   ·           ────────
+ 5 │           }
+   ╰────
+  help: Add `implements OnInit` to the class. See https://angular.dev/style-guide#use-lifecycle-hook-interfaces
+
+  ⚠ angular(use-lifecycle-interface): Lifecycle interface 'OnInit' should be implemented for method 'ngOnInit'.
+   ╭─[use_lifecycle_interface.ts:4:11]
+ 3 │         class Test<A, B extends C = D> {
+ 4 │           ngOnInit() {
+   ·           ────────
+ 5 │           }
+   ╰────
+  help: Add `implements OnInit` to the class. See https://angular.dev/style-guide#use-lifecycle-hook-interfaces

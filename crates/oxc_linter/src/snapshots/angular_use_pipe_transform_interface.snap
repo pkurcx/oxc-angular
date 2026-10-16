@@ -1,0 +1,48 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(use-pipe-transform-interface): Pipes should implement `PipeTransform` interface
+   ╭─[use_pipe_transform_interface.ts:2:7]
+ 1 │ @Pipe({ name: 'test' })
+ 2 │ class Test {
+   ·       ────
+ 3 │   transform(value: string) {}
+   ╰────
+  help: Add `implements PipeTransform` to the `@Pipe` class.
+
+  ⚠ angular(use-pipe-transform-interface): Pipes should implement `PipeTransform` interface
+   ╭─[use_pipe_transform_interface.ts:8:7]
+ 7 │ @Pipe({ name: 'test' })
+ 8 │ class Test implements AnInterface {
+   ·       ────
+ 9 │   transform(value: string) {}
+   ╰────
+  help: Add `implements PipeTransform` to the `@Pipe` class.
+
+  ⚠ angular(use-pipe-transform-interface): Pipes should implement `PipeTransform` interface
+   ╭─[use_pipe_transform_interface.ts:4:7]
+ 3 │ @OtherDecorator() @Pipe({ name: 'test' })
+ 4 │ class Test implements AnInterface, AnotherInterface {
+   ·       ────
+ 5 │   transform(value: string) {}
+   ╰────
+  help: Add `implements PipeTransform` to the `@Pipe` class.
+
+  ⚠ angular(use-pipe-transform-interface): Pipes should implement `PipeTransform` interface
+   ╭─[use_pipe_transform_interface.ts:2:7]
+ 1 │ @Pipe({ name: 'test' })
+ 2 │ class Test<T> {
+   ·       ────
+ 3 │   transform(value: T): T {}
+   ╰────
+  help: Add `implements PipeTransform` to the `@Pipe` class.
+
+  ⚠ angular(use-pipe-transform-interface): Pipes should implement `PipeTransform` interface
+   ╭─[use_pipe_transform_interface.ts:2:7]
+ 1 │ @Pipe({ name: 'test' })
+ 2 │ class Test<T, U extends SomeType> {
+   ·       ────
+ 3 │   transform(value: T): U {}
+   ╰────
+  help: Add `implements PipeTransform` to the `@Pipe` class.

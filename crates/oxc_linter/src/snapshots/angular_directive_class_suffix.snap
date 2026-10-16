@@ -1,0 +1,21 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(directive-class-suffix): Directive class names should end with one of these suffixes: "Directive"
+   ╭─[directive_class_suffix.ts:1:46]
+ 1 │ @Directive({ selector: 'sg-foo-bar' }) class Test {}
+   ·                                              ────
+   ╰────
+
+  ⚠ angular(directive-class-suffix): Directive class names should end with one of these suffixes: "Directive" or "Validator"
+   ╭─[directive_class_suffix.ts:1:46]
+ 1 │ @Directive({ selector: 'sg-foo-bar' }) class TestDirectivePage implements AsyncValidator {}
+   ·                                              ─────────────────
+   ╰────
+
+  ⚠ angular(directive-class-suffix): Directive class names should end with one of these suffixes: "Page"
+   ╭─[directive_class_suffix.ts:1:44]
+ 1 │ @Directive({ selector: 'sgBarFoo' }) class TestPageDirective {}
+   ·                                            ─────────────────
+   ╰────

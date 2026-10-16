@@ -1,0 +1,21 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(pipe-prefix): @Pipes should be prefixed with "ng"
+   ╭─[pipe_prefix.ts:1:15]
+ 1 │ @Pipe({ name: 'foo-bar' }) class Test {}
+   ·               ─────────
+   ╰────
+
+  ⚠ angular(pipe-prefix): @Pipes should have a selector after the "ng" prefix
+   ╭─[pipe_prefix.ts:1:15]
+ 1 │ @Pipe({ name: 'ng' }) class Test {}
+   ·               ────
+   ╰────
+
+  ⚠ angular(pipe-prefix): @Pipes should be prefixed with "ng", "mg" or "sg"
+   ╭─[pipe_prefix.ts:1:15]
+ 1 │ @Pipe({ name: 'foo-bar' }) class Test {}
+   ·               ─────────
+   ╰────

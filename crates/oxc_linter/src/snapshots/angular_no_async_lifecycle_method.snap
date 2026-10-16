@@ -1,0 +1,93 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-async-lifecycle-method): Angular lifecycle method should not be async.
+   ╭─[no_async_lifecycle_method.ts:4:15]
+ 3 │       class Test {
+ 4 │         async ngAfterContentChecked() { }
+   ·               ─────────────────────
+ 5 │       }
+   ╰────
+  help: Angular does not await lifecycle methods; call an async function from a synchronous hook instead.
+
+  ⚠ angular(no-async-lifecycle-method): Angular lifecycle method should not be async.
+   ╭─[no_async_lifecycle_method.ts:4:15]
+ 3 │       class Test {
+ 4 │         async ngAfterContentInit() { }
+   ·               ──────────────────
+ 5 │       }
+   ╰────
+  help: Angular does not await lifecycle methods; call an async function from a synchronous hook instead.
+
+  ⚠ angular(no-async-lifecycle-method): Angular lifecycle method should not be async.
+   ╭─[no_async_lifecycle_method.ts:4:15]
+ 3 │       class Test {
+ 4 │         async ngAfterViewChecked() { }
+   ·               ──────────────────
+ 5 │       }
+   ╰────
+  help: Angular does not await lifecycle methods; call an async function from a synchronous hook instead.
+
+  ⚠ angular(no-async-lifecycle-method): Angular lifecycle method should not be async.
+   ╭─[no_async_lifecycle_method.ts:4:15]
+ 3 │       class Test {
+ 4 │         async ngAfterViewInit() { }
+   ·               ───────────────
+ 5 │       }
+   ╰────
+  help: Angular does not await lifecycle methods; call an async function from a synchronous hook instead.
+
+  ⚠ angular(no-async-lifecycle-method): Angular lifecycle method should not be async.
+   ╭─[no_async_lifecycle_method.ts:4:15]
+ 3 │       class Test {
+ 4 │         async ngDoBootstrap() { }
+   ·               ─────────────
+ 5 │       }
+   ╰────
+  help: Angular does not await lifecycle methods; call an async function from a synchronous hook instead.
+
+  ⚠ angular(no-async-lifecycle-method): Angular lifecycle method should not be async.
+   ╭─[no_async_lifecycle_method.ts:4:15]
+ 3 │       class Test {
+ 4 │         async ngDoCheck() { }
+   ·               ─────────
+ 5 │       }
+   ╰────
+  help: Angular does not await lifecycle methods; call an async function from a synchronous hook instead.
+
+  ⚠ angular(no-async-lifecycle-method): Angular lifecycle method should not be async.
+   ╭─[no_async_lifecycle_method.ts:4:15]
+ 3 │       class Test {
+ 4 │         async ngOnChanges() { }
+   ·               ───────────
+ 5 │       }
+   ╰────
+  help: Angular does not await lifecycle methods; call an async function from a synchronous hook instead.
+
+  ⚠ angular(no-async-lifecycle-method): Angular lifecycle method should not be async.
+   ╭─[no_async_lifecycle_method.ts:4:15]
+ 3 │       class Test {
+ 4 │         async ngOnDestroy() { }
+   ·               ───────────
+ 5 │       }
+   ╰────
+  help: Angular does not await lifecycle methods; call an async function from a synchronous hook instead.
+
+  ⚠ angular(no-async-lifecycle-method): Angular lifecycle method should not be async.
+   ╭─[no_async_lifecycle_method.ts:4:15]
+ 3 │       class Test {
+ 4 │         async ngOnInit() { }
+   ·               ────────
+ 5 │       }
+   ╰────
+  help: Angular does not await lifecycle methods; call an async function from a synchronous hook instead.
+
+  ⚠ angular(no-async-lifecycle-method): Angular lifecycle method should not be async.
+   ╭─[no_async_lifecycle_method.ts:4:15]
+ 3 │       class Test {
+ 4 │         async ngOnDestroy() { }
+   ·               ───────────
+ 5 │       }
+   ╰────
+  help: Angular does not await lifecycle methods; call an async function from a synchronous hook instead.

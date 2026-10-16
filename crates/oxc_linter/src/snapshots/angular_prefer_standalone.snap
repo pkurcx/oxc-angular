@@ -1,0 +1,111 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(prefer-standalone): Components, Directives and Pipes should not opt out of standalone.
+   ╭─[prefer_standalone.ts:1:14]
+ 1 │ @Component({ standalone: false })
+   ·              ─────────────────
+ 2 │ 
+   ╰────
+  help: Following this guide is highly recommended: https://angular.dev/reference/migrations/standalone
+
+  ⚠ angular(prefer-standalone): Components, Directives and Pipes should not opt out of standalone.
+   ╭─[prefer_standalone.ts:2:3]
+ 1 │ @Component({
+ 2 │   standalone: false,
+   ·   ─────────────────
+ 3 │ 
+   ╰────
+  help: Following this guide is highly recommended: https://angular.dev/reference/migrations/standalone
+
+  ⚠ angular(prefer-standalone): Components, Directives and Pipes should not opt out of standalone.
+   ╭─[prefer_standalone.ts:1:14]
+ 1 │ @Directive({ standalone: false })
+   ·              ─────────────────
+ 2 │ 
+   ╰────
+  help: Following this guide is highly recommended: https://angular.dev/reference/migrations/standalone
+
+  ⚠ angular(prefer-standalone): Components, Directives and Pipes should not opt out of standalone.
+   ╭─[prefer_standalone.ts:2:3]
+ 1 │ @Directive({
+ 2 │   standalone: false,
+   ·   ─────────────────
+ 3 │ 
+   ╰────
+  help: Following this guide is highly recommended: https://angular.dev/reference/migrations/standalone
+
+  ⚠ angular(prefer-standalone): Components, Directives and Pipes should not opt out of standalone.
+   ╭─[prefer_standalone.ts:1:9]
+ 1 │ @Pipe({ standalone: false })
+   ·         ─────────────────
+ 2 │ 
+   ╰────
+  help: Following this guide is highly recommended: https://angular.dev/reference/migrations/standalone
+
+  ⚠ angular(prefer-standalone): Components, Directives and Pipes should not opt out of standalone.
+   ╭─[prefer_standalone.ts:2:3]
+ 1 │ @Pipe({
+ 2 │   standalone: false,
+   ·   ─────────────────
+ 3 │ 
+   ╰────
+  help: Following this guide is highly recommended: https://angular.dev/reference/migrations/standalone
+
+  ⚠ angular(prefer-standalone): Components, Directives and Pipes should not opt out of standalone.
+   ╭─[prefer_standalone.ts:1:14]
+ 1 │ @Component({ standalone: false })
+   ·              ─────────────────
+ 2 │ 
+   ╰────
+  help: Following this guide is highly recommended: https://angular.dev/reference/migrations/standalone
+
+  ⚠ angular(prefer-standalone): `standalone: true` is redundant because `standalone: true` is the default
+   ╭─[prefer_standalone.ts:1:14]
+ 1 │ @Component({ standalone: true })
+   ·              ────────────────
+ 2 │ 
+   ╰────
+  help: Remove `standalone: true`.
+
+  ⚠ angular(prefer-standalone): `standalone: true` is redundant because `standalone: true` is the default
+   ╭─[prefer_standalone.ts:1:14]
+ 1 │ @Component({ standalone: true, selector: 'app-test' })
+   ·              ────────────────
+ 2 │ 
+   ╰────
+  help: Remove `standalone: true`.
+
+  ⚠ angular(prefer-standalone): `standalone: true` is redundant because `standalone: true` is the default
+   ╭─[prefer_standalone.ts:1:36]
+ 1 │ @Component({ selector: 'app-test', standalone: true })
+   ·                                    ────────────────
+ 2 │ 
+   ╰────
+  help: Remove `standalone: true`.
+
+  ⚠ angular(prefer-standalone): `standalone: true` is redundant because `standalone: true` is the default
+   ╭─[prefer_standalone.ts:2:3]
+ 1 │ @Component({
+ 2 │   standalone: true,
+   ·   ────────────────
+ 3 │ 
+   ╰────
+  help: Remove `standalone: true`.
+
+  ⚠ angular(prefer-standalone): `standalone: true` is redundant because `standalone: true` is the default
+   ╭─[prefer_standalone.ts:1:14]
+ 1 │ @Directive({ standalone: true, selector: '[appTest]' })
+   ·              ────────────────
+ 2 │ 
+   ╰────
+  help: Remove `standalone: true`.
+
+  ⚠ angular(prefer-standalone): `standalone: true` is redundant because `standalone: true` is the default
+   ╭─[prefer_standalone.ts:1:9]
+ 1 │ @Pipe({ standalone: true, name: 'testPipe' })
+   ·         ────────────────
+ 2 │ 
+   ╰────
+  help: Remove `standalone: true`.

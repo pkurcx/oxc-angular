@@ -1,0 +1,39 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(use-component-view-encapsulation): Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect
+   ╭─[use_component_view_encapsulation.ts:2:36]
+ 1 │ @Component({
+ 2 │   encapsulation: ViewEncapsulation.None,
+   ·                                    ────
+ 3 │ 
+   ╰────
+  help: Use the default `ViewEncapsulation.Emulated` or `ViewEncapsulation.ShadowDom`.
+
+  ⚠ angular(use-component-view-encapsulation): Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect
+   ╭─[use_component_view_encapsulation.ts:6:38]
+ 5 │   selector: 'app-foo-bar',
+ 6 │   'encapsulation': ViewEncapsulation.None
+   ·                                      ────
+ 7 │ 
+   ╰────
+  help: Use the default `ViewEncapsulation.Emulated` or `ViewEncapsulation.ShadowDom`.
+
+  ⚠ angular(use-component-view-encapsulation): Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect
+   ╭─[use_component_view_encapsulation.ts:6:40]
+ 5 │   selector: 'app-foo-bar',
+ 6 │   ['encapsulation']: ViewEncapsulation.None
+   ·                                        ────
+ 7 │ 
+   ╰────
+  help: Use the default `ViewEncapsulation.Emulated` or `ViewEncapsulation.ShadowDom`.
+
+  ⚠ angular(use-component-view-encapsulation): Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect
+   ╭─[use_component_view_encapsulation.ts:6:40]
+ 5 │   selector: 'app-foo-bar',
+ 6 │   [`encapsulation`]: ViewEncapsulation.None
+   ·                                        ────
+ 7 │ 
+   ╰────
+  help: Use the default `ViewEncapsulation.Emulated` or `ViewEncapsulation.ShadowDom`.

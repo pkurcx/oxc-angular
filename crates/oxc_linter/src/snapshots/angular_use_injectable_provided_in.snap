@@ -1,0 +1,52 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(use-injectable-provided-in): The `providedIn` property is mandatory for `Injectables`.
+   ╭─[use_injectable_provided_in.ts:1:1]
+ 1 │ @Injectable() class Test {}
+   · ─────────────
+   ╰────
+  help: Set `providedIn` so the service can be tree-shaken.
+
+  ⚠ angular(use-injectable-provided-in): The `providedIn` property is mandatory for `Injectables`.
+   ╭─[use_injectable_provided_in.ts:1:1]
+ 1 │ @Injectable({}) class Test {}
+   · ───────────────
+   ╰────
+  help: Set `providedIn` so the service can be tree-shaken.
+
+  ⚠ angular(use-injectable-provided-in): The `providedIn` property is mandatory for `Injectables`.
+   ╭─[use_injectable_provided_in.ts:1:39]
+ 1 │ const providedIn = 'anotherProperty'; @Injectable({ [providedIn]: [] }) class Test {}
+   ·                                       ─────────────────────────────────
+   ╰────
+  help: Set `providedIn` so the service can be tree-shaken.
+
+  ⚠ angular(use-injectable-provided-in): The `providedIn` property is mandatory for `Injectables`.
+   ╭─[use_injectable_provided_in.ts:1:27]
+ 1 │ @Injectable({ providedIn: null }) class Test {}
+   ·                           ────
+   ╰────
+  help: Set `providedIn` so the service can be tree-shaken.
+
+  ⚠ angular(use-injectable-provided-in): The `providedIn` property is mandatory for `Injectables`.
+   ╭─[use_injectable_provided_in.ts:1:31]
+ 1 │ @Injectable({ ['providedIn']: undefined }) class Test {} @Injectable() class HttpPostInterceptor implements HttpInterceptor {}
+   ·                               ─────────
+   ╰────
+  help: Set `providedIn` so the service can be tree-shaken.
+
+  ⚠ angular(use-injectable-provided-in): The `providedIn` property is mandatory for `Injectables`.
+   ╭─[use_injectable_provided_in.ts:1:31]
+ 1 │ @Injectable({ ['providedIn']: undefined }) class Test {} @Injectable() class ProvidedInNgModule {}
+   ·                               ─────────
+   ╰────
+  help: Set `providedIn` so the service can be tree-shaken.
+
+  ⚠ angular(use-injectable-provided-in): The `providedIn` property is mandatory for `Injectables`.
+   ╭─[use_injectable_provided_in.ts:1:31]
+ 1 │ @Injectable({ [`providedIn`]: undefined }) class Test {} @Injectable() class TestEffects {}
+   ·                               ─────────
+   ╰────
+  help: Set `providedIn` so the service can be tree-shaken.

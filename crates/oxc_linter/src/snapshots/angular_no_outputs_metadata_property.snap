@@ -1,0 +1,68 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(no-outputs-metadata-property): Use `@Output` rather than the `outputs` metadata property
+   ╭─[no_outputs_metadata_property.ts:3:11]
+ 2 │             @Component({
+ 3 │ ╭─▶           outputs: [
+ 4 │ │               'id: foo'
+ 5 │ ╰─▶           ],
+ 6 │               selector: 'app-test'
+   ╰────
+  help: Declare the output on the class member with `output()` or `@Output()`.
+
+  ⚠ angular(no-outputs-metadata-property): Use `@Output` rather than the `outputs` metadata property
+   ╭─[no_outputs_metadata_property.ts:3:11]
+ 2 │             @Directive({
+ 3 │ ╭─▶           outputs: [
+ 4 │ │               'id: foo'
+ 5 │ ╰─▶           ],
+ 6 │               selector: 'app-test'
+   ╰────
+  help: Declare the output on the class member with `output()` or `@Output()`.
+
+  ⚠ angular(no-outputs-metadata-property): Use `@Output` rather than the `outputs` metadata property
+   ╭─[no_outputs_metadata_property.ts:3:11]
+ 2 │         @Component({
+ 3 │           outputs,
+   ·           ───────
+ 4 │         })
+   ╰────
+  help: Declare the output on the class member with `output()` or `@Output()`.
+
+  ⚠ angular(no-outputs-metadata-property): Use `@Output` rather than the `outputs` metadata property
+   ╭─[no_outputs_metadata_property.ts:3:11]
+ 2 │         @Directive({
+ 3 │           outputs: [],
+   ·           ───────────
+ 4 │         })
+   ╰────
+  help: Declare the output on the class member with `output()` or `@Output()`.
+
+  ⚠ angular(no-outputs-metadata-property): Use `@Output` rather than the `outputs` metadata property
+   ╭─[no_outputs_metadata_property.ts:4:11]
+ 3 │         @Component({
+ 4 │           'outputs': test,
+   ·           ───────────────
+ 5 │         })
+   ╰────
+  help: Declare the output on the class member with `output()` or `@Output()`.
+
+  ⚠ angular(no-outputs-metadata-property): Use `@Output` rather than the `outputs` metadata property
+   ╭─[no_outputs_metadata_property.ts:3:11]
+ 2 │         @Directive({
+ 3 │           ['outputs']: undefined,
+   ·           ──────────────────────
+ 4 │         })
+   ╰────
+  help: Declare the output on the class member with `output()` or `@Output()`.
+
+  ⚠ angular(no-outputs-metadata-property): Use `@Output` rather than the `outputs` metadata property
+   ╭─[no_outputs_metadata_property.ts:7:11]
+ 6 │         @Component({
+ 7 │           [`outputs`]: outputs(),
+   ·           ──────────────────────
+ 8 │         })
+   ╰────
+  help: Declare the output on the class member with `output()` or `@Output()`.

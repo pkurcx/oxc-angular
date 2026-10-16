@@ -1,0 +1,44 @@
+---
+source: crates/oxc_linter/src/tester.rs
+---
+
+  ⚠ angular(runtime-localize): $localize could be called before translations are loaded
+   ╭─[runtime_localize.ts:1:13]
+ 1 │ const foo = $localize`foo`;
+   ·             ─────────
+   ╰────
+  help: Call `$localize` inside a function, a method or a non-static class property initializer.
+
+  ⚠ angular(runtime-localize): $localize could be called before translations are loaded
+   ╭─[runtime_localize.ts:3:13]
+ 2 │   x: [{
+ 3 │     y: `--${$localize`foo`}--`
+   ·             ─────────
+ 4 │   }]
+   ╰────
+  help: Call `$localize` inside a function, a method or a non-static class property initializer.
+
+  ⚠ angular(runtime-localize): $localize could be called before translations are loaded
+   ╭─[runtime_localize.ts:1:22]
+ 1 │ (x => { return x; })($localize`foo`);
+   ·                      ─────────
+   ╰────
+  help: Call `$localize` inside a function, a method or a non-static class property initializer.
+
+  ⚠ angular(runtime-localize): $localize could be called before translations are loaded
+   ╭─[runtime_localize.ts:2:16]
+ 1 │ class Test {
+ 2 │   static foo = $localize`foo`;
+   ·                ─────────
+ 3 │ }
+   ╰────
+  help: Call `$localize` inside a function, a method or a non-static class property initializer.
+
+  ⚠ angular(runtime-localize): $localize could be called before translations are loaded
+   ╭─[runtime_localize.ts:4:15]
+ 3 │     x: [{
+ 4 │       y: `--${$localize`foo`}--`
+   ·               ─────────
+ 5 │     }]
+   ╰────
+  help: Call `$localize` inside a function, a method or a non-static class property initializer.
